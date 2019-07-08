@@ -1,6 +1,8 @@
 # 点
 
-<point/>
+<ClientOnly>
+  <point/>
+</ClientOnly>
 
 ``` js
 map.addLayer({
