@@ -9,8 +9,11 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "vuepress": "^1.0.0-rc.1"
+  },
+  "dependencies": {
+    "mapbox-gl": "^1.1.0"
   }
 }
