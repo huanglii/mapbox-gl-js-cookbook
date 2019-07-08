@@ -1,5 +1,6 @@
 module.exports = {
   title: 'cookbook',
+  base: 'mapbox-gl-js-cookbook',
   description: 'mapbox-gl-js-cookbook',
   head: [
     ['link', { rel: 'icon', href: '/logo.png' }]
@@ -30,7 +31,7 @@ module.exports = {
     // 假如你的文档仓库和项目本身不在一个仓库：
     // docsRepo: 'vuejs/vuepress',
     // 假如文档不是放在仓库的根目录下：
-    // docsDir: 'docs',
+    docsDir: 'docs',
     // 假如文档放在一个特定的分支下：
     // docsBranch: 'master',
     // 默认是 false, 设置为 true 来启用
