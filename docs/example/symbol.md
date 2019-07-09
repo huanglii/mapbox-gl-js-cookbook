@@ -2,4 +2,4 @@
   <m-symbol/>
 </ClientOnly>
 
-<<< @/./docs/snippet/symbol.js
+<<< @/docs/.vuepress/snippet/symbol.js

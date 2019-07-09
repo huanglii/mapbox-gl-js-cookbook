@@ -4,7 +4,7 @@
 
 <script>
 import baseMap from './base-map'
-import addHeatmapLayer from '../../snippet/heatmap'
+import addHeatmapLayer from '../snippet/heatmap'
 export default {
   components: {
     baseMap

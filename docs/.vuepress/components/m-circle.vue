@@ -4,7 +4,7 @@
 
 <script>
 import baseMap from './base-map'
-import addCircleLayer from '../../snippet/circle'
+import addCircleLayer from '../snippet/circle'
 export default {
   components: {
     baseMap

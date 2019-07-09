@@ -2,4 +2,4 @@
   <m-line/>
 </ClientOnly>
 
-<<< @/./docs/snippet/line.js
+<<< @/docs/.vuepress/snippet/line.js

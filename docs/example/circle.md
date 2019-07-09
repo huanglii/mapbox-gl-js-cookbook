@@ -2,4 +2,4 @@
   <m-circle/>
 </ClientOnly>
 
-<<< @/./docs/snippet/circle.js
+<<< @/docs/.vuepress/snippet/circle.js

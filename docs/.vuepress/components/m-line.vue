@@ -4,7 +4,7 @@
 
 <script>
 import baseMap from './base-map'
-import addLineLayer from '../../snippet/line'
+import addLineLayer from '../snippet/line'
 export default {
   components: {
     baseMap

@@ -4,7 +4,7 @@
 
 <script>
 import baseMap from './base-map'
-import addSymbolLayer from '../../snippet/symbol'
+import addSymbolLayer from '../snippet/symbol'
 export default {
   components: {
     baseMap

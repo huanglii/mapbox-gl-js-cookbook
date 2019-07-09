@@ -2,4 +2,4 @@
   <m-heatmap/>
 </ClientOnly>
 
-<<< @/./docs/snippet/heatmap.js
+<<< @/docs/.vuepress/snippet/heatmap.js
