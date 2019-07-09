@@ -1,1 +1,1 @@
-# mapbox-gl-js-cookbook
+# Mapbox GL JS Cookbook

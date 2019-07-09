@@ -1,16 +1,20 @@
 {
   "name": "mapbox-gl-js-cookbook",
   "version": "1.0.0",
-  "description": "",
+  "description": "Mapbox GL JS Cookbook",
+  "private": true,
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
     "deploy": "bash deploy.sh"
   },
   "keywords": [],
-  "author": "",
+  "author": "huangli",
   "license": "MIT",
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.0.0-rc.1",
+    "less": "^3.9.0",
+    "less-loader": "^5.0.0",
     "vuepress": "^1.0.0-rc.1"
   },
   "dependencies": {

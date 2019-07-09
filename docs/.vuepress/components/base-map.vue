@@ -1,12 +1,21 @@
 <template>
-  <div id="map-container" :style="{ width: '100%', height: '400px' }"></div>
+  <div :id="container" :style="{ width: '100%', height: '400px' }"></div>
 </template>
 
 <script>
 import mapboxgl from 'mapbox-gl'
+import 'mapbox-gl/dist/mapbox-gl.css'
 export default {
   name: 'base-map',
   props: {
+    container: {
+      type: String,
+      default: `map-${new Date().getTime()}`
+    },
+    mapStyle: {
+      type: String,
+      default: 'mapbox://styles/huanglii/cjq2bt5sy50822smhq4ovebf5'
+    },
     center: {
       type: Array,
       default () {
@@ -16,6 +25,10 @@ export default {
     zoom: {
       type: Number,
       default: 9
+    },
+    scrollZoom: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
@@ -24,11 +37,13 @@ export default {
     }
   },
   mounted () {
+    let { container, mapStyle : style, center, zoom, scrollZoom } = this
     this.initMap({
-      container: 'map-container',
-      style: 'mapbox://styles/huanglii/cjq2bt5sy50822smhq4ovebf5',
-      center: this.center,
-      zoom: this.zoom
+      container,
+      style,
+      center,
+      zoom,
+      scrollZoom
     })
     window.addEventListener('resize', this.resize)
   },
@@ -36,17 +51,80 @@ export default {
     initMap (options) {
       mapboxgl.accessToken = 'pk.eyJ1IjoiaHVhbmdsaWkiLCJhIjoiY2pzNHBtendwMDZ2ZDQzbnVmZXdtMDlvdiJ9.GSija86yNNR4ssBtFFpx0g'
       this.map = new mapboxgl.Map(options)
+      this.map.addControl(new mapboxgl.NavigationControl(), 'top-left')
       this.map.on('load', this.handleMapLoaded)
     },
     handleMapLoaded (evt) {
       this.$emit('load', evt)
+      this.map.on('click', this.handleMapClick)
+    },
+    handleMapClick (evt) {
+      let features = this.map.queryRenderedFeatures(
+        evt.point
+      )
+      if (features.length > 0) {
+        let { layer, properties} = features[0]
+        new mapboxgl.Popup()
+          .setLngLat(evt.lngLat)
+          .setHTML(this.createPropHtml(layer.id, properties))
+          .addTo(this.map)
+      }
+    },
+    createPropHtml (title, prop) {
+      return `
+        <div class="title"><b>${title}</b></div>
+        <div class="content">
+          ${
+            Object.keys(prop).map(key => `
+              ${`<p><b>${key}: </b>${prop[key]}</p>`}
+            `).join('')
+          }
+        </div>
+      `
     },
     resize () {
       this.map.resize()
     },
     addLayer (layer) {
       this.map.addLayer(layer)
+    },
+    addSource (sourceId, source) {
+      this.map.addSource(sourceId, source)
     }
   }
 }
 </script>
+
+<style lang="less">
+.mapboxgl-popup {
+  &-content {
+    padding: 0;
+    .title {
+      padding: 0 30px 0 10px;
+      line-height: 32px;
+      font-size: 14px;
+      color: #fff;
+      background-color: #3eaf7c;
+    }
+    .content {
+      padding: 10px;
+      max-height: 200px;
+      overflow-x: hidden;
+      overflow-y: auto;
+      background-color: #fff;
+      p {
+        margin: 0;
+        line-height: 24px;
+      }
+    }
+  }
+  &-close-button {
+    outline: none;
+    color: #fff;
+    font-size: 24px;
+    line-height: 32px;
+    padding: 0 6px;
+    font-family: inherit;
+  }
+}
+</style>
