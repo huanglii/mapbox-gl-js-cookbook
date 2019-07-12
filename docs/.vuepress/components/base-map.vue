@@ -1,5 +1,5 @@
 <template>
-  <div :id="container" :style="{ width: '100%', height: '400px' }"></div>
+  <div :id="container" :style="{ width: '100%', height: '400px', borderRadius: '6px' }"></div>
 </template>
 
 <script>
