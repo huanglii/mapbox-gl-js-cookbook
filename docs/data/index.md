@@ -1,5 +1,7 @@
 # 数据
-本章将介绍常用空间数据在 Mapbox GL JS 中如何可视化与交互。空间数据包含矢量数据和栅格数据。
+本章以 Mapbox 样式规范（[Style Specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/)）中的图层类型为基础，介绍常用空间数据在 Mapbox GL JS 中如何可视化与交互。
+
+空间数据包含矢量数据和栅格数据。
 
 下表是空间数据第一课都会讲的内容，矢量数据与栅格数据的优缺点对比：
 | | 优点 | 缺点 | 特点 |

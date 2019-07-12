@@ -17,7 +17,7 @@ module.exports = {
       { text: '指南', link: '/guide/' },
       { text: '数据', link: '/data/' },
       { text: '服务', link: '/service/' },
-      { text: '扩展', link: '/extend/' },
+      { text: '进阶', link: '/advance/' },
       { text: 'Mapbox', items: [
         { text: '文档丨英文', link: 'https://docs.mapbox.com/' },
         { text: '文档丨中文', link: 'https://www.mapbox.cn/documentation/' }
@@ -32,8 +32,11 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'base',
-            'advance'
+            'style-spec',
+            'point',
+            'line',
+            'polygon',
+            'raster'
           ]
         }
       ],
@@ -42,18 +45,16 @@ module.exports = {
           title: '服务',
           collapsable: false,
           children: [
-            '',
-            'tms'
+            ''
           ]
         }
       ],
-      '/extend/': [
+      '/advance/': [
         {
-          title: '扩展',
+          title: '进阶',
           collapsable: false,
           children: [
-            '',
-            'heatmap'
+            ''
           ]
         }
       ]
