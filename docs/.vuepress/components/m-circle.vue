@@ -12,8 +12,8 @@ export default {
   data () {
     return {
       container: 'm-circle',
-      center: [-122.447303, 37.753574],
-      zoom: 12
+      center: [-76.53063297271729, 39.18174077994108],
+      zoom: 16
     }
   },
   methods: {

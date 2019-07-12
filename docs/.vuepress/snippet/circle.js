@@ -3,27 +3,30 @@ export default function addCircleLayer(map) {
     'id': 'population',
     'type': 'circle',
     'source': {
-      'type': 'vector',
-      'url': 'mapbox://examples.8fgz4egr'
+      'type': 'geojson',
+      'data': {
+        "type": "FeatureCollection",
+        "features": [{
+          "type": "Feature",
+          "properties": {},
+          "geometry": {
+            "type": "Point",
+            "coordinates": [
+              -76.53063297271729,
+              39.18174077994108
+            ]
+          }
+        }]
+      }
     },
-    'source-layer': 'sf2010',
     'paint': {
-      // make circles larger as the user zooms from z12 to z22
-      'circle-radius': {
-        'base': 1.75,
-        'stops': [[12, 2], [22, 180]]
-      },
-      // color circles by ethnicity, using a match expression
-      // https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions-match
-      'circle-color': [
-        'match',
-        ['get', 'ethnicity'],
-        'White', '#fbb03b',
-        'Black', '#223b53',
-        'Hispanic', '#e55e5e',
-        'Asian', '#3bb2d0',
-        /* other */ '#ccc'
-      ]
+      'circle-radius': 50,
+      'circle-color': '#DA4949',
+      'circle-opacity': .5,
+      'circle-stroke-width': 20,
+      'circle-stroke-color': '#DA4949',
+      'circle-stroke-opacity': .2,
+      'circle-blur': 0
     }
   })
 }
