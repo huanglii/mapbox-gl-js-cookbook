@@ -19,12 +19,26 @@ export default function addSymbolLayer(map) {
         }]
       }
     },
+    'paint': {
+      'icon-opacity': .8,
+      'icon-color': '#FF0000',
+      'icon-halo-color': '#00FF00',
+      'icon-halo-width': 5,
+      'icon-halo-blur': .6,
+      'text-opacity': .8,
+      'text-color': '#f7c5c5',
+      'text-halo-color': '#9f1919',
+      'text-halo-width': 3,
+      'text-halo-blur': 5
+    },
     'layout': {
-    'icon-image': '{icon}-15',
-    'text-field': '{title}',
-    'text-font': ['Open Sans Semibold', 'Arial Unicode MS Bold'],
-    'text-offset': [0, 0.6],
-    'text-anchor': 'top'
+      'icon-size': 5,
+      'icon-image': '{icon}-15',
+      'icon-rotate': 30,
+      'text-field': '{title}',
+      'text-offset': [0, .6],
+      'text-anchor': 'top',
+      'text-size': 64
     }
   })
 }
