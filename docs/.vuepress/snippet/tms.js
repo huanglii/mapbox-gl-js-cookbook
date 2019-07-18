@@ -1,0 +1,23 @@
+export default function addTmsLayer(map){
+    map.addLayer({
+        'id':'tms-layer',
+        'type':"circle",
+        'source':{
+            'type':'vector',
+            'tiles':['http://900913.cn:80/geoserver/gwc/service/tms/1.0.0/buildings:cq_point@EPSG:900913@pbf/{z}/{x}/{y}.pbf'],
+            'scheme':"tms"
+        },
+        'source-layer': 'cq_point',
+        'paint':{
+            'circle-radius':5,
+            'circle-color':['interpolate',
+                ['linear'],
+               ["to-number", ['get', 'CID']],
+                 10,'#fbb03b',
+                 20,'#223b53',
+                 30,'#e55e5e',
+                 40,'#3bb2d0'
+                ]
+        }
+    });
+}
