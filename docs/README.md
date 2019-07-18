@@ -14,3 +14,9 @@ features:
   details: 专题图、自定义接口、自定义插件
 footer: MIT Licensed | Copyright © 2019 by huangli
 ---
+
+***
+
+### 贡献者
+[![](https://avatars2.githubusercontent.com/u/20068340?s=60&v=4)](https://github.com/huanglii/)
+[![](https://avatars0.githubusercontent.com/u/27879336?s=60&v=4)](https://github.com/JerckyLY)
