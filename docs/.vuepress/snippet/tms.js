@@ -1,11 +1,11 @@
-export default function addTmsLayer(map) {
+export default function addTMSLayer(map) {
   map.addLayer({
     'id': 'tms-layer',
     'type': "circle",
     'source': {
       'type': 'vector',
       'tiles': [
-        'http://900913.cn/geoserver/gwc/service/tms/1.0.0/buildings:cq_point@EPSG:900913@pbf/{z}/{x}/{y}.pbf'
+        'https://900913.cn/geoserver/gwc/service/tms/1.0.0/buildings:cq_point@EPSG:900913@pbf/{z}/{x}/{y}.pbf'
       ],
       'scheme': "tms"
     },
