@@ -14,6 +14,7 @@ MapboxGL 在加载 `tms` 服务时，需要注意 `source` 的 `scheme` 属性�
 
 其中 **`xyz`** 代表常用的切片规则，即 `OGC` 标准，切片源点在左上角。**`tms`** 是 `OSGeo` 提出的切片规则，切片源点是左下角。
 :::
+
 加载示例：(geoserver)
 ``` js
 "{source-id}": {
@@ -58,30 +59,34 @@ Web Map Tile Service（网络地图瓦片服务），简称 `WMTS`，由`OGC`制
 </ClientOnly>
 
 ## WFS
- Web Feature Service(Web要素服务)，简称`wfs`, 是`OGC`标准之一。**`WFS`** 是服务器将矢量数据发送给客户端。在使用  **`WFS`** 时地图是由客户端绘制的。
- - 加载示例：(geojson)
- ```js
- "source": {
+Web Feature Service(Web要素服务)，简称`WFS`, 是`OGC`标准之一。**`WFS`** 是服务器将矢量数据发送给客户端。在使用  **`WFS`** 时地图是由客户端绘制的。
+
+加载示例（geojson）
+``` js
+"source": {
   "type": "geojson",
-    'data': 'http://900913.cn/geoserver/buildings/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=buildings%3Acq_point&outputFormat=application%2Fjson',
-  }
- ```
- <ClientOnly>
+  "data": "http://900913.cn/geoserver/buildings/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=buildings%3Acq_point&outputFormat=application%2Fjson",
+}
+```
+
+<ClientOnly>
   <code-view name="wfs"/>
 </ClientOnly>
 
 ## WMS
-Web Map Service(Web地图服务)，简称`wms`，由`OGC`制定，是一种动态服务。
+Web Map Service(Web地图服务)，简称`WMS`，由`OGC`制定，是一种动态服务。
 **`WMS`** 是根据传入的地理范围，在服务器端进行渲染，返回图片。`MapboxGL`只支持`EPSG:3857`坐标系。
-- 加载示例（png）
-```js
-  'source': {
-    'type': 'raster',
-     'tiles':[ 'http://900913.cn/geoserver/china_admin/wms?service=WMS&version=1.1.0&request=GetMap&layers=china_admin:Chongqing&bbox={bbox-epsg-3857}&width=661&height=768&srs=EPSG:3857&format=image%2Fpng&TRANSPARENT=TRUE'],
-  }
+
+加载示例（png）
+``` js
+'source': {
+  'type': 'raster',
+  'tiles': [
+    'http://900913.cn/geoserver/china_admin/wms?service=WMS&version=1.1.0&request=GetMap&layers=china_admin:Chongqing&bbox={bbox-epsg-3857}&width=661&height=768&srs=EPSG:3857&format=image%2Fpng&TRANSPARENT=TRUE'
+  ],
+}
 ```
- <ClientOnly>
+
+<ClientOnly>
   <code-view name="wms"/>
 </ClientOnly>
-
-
