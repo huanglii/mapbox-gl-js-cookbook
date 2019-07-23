@@ -65,7 +65,7 @@ Web Feature Service(Web要素服务)，简称`WFS`, 是`OGC`标准之一。**`WF
 ``` js
 "source": {
   "type": "geojson",
-  "data": "http://900913.cn/geoserver/buildings/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=buildings%3Acq_point&outputFormat=application%2Fjson",
+  "data": "https://900913.cn/geoserver/buildings/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=buildings%3Acq_point&outputFormat=application%2Fjson",
 }
 ```
 
@@ -82,7 +82,7 @@ Web Map Service(Web地图服务)，简称`WMS`，由`OGC`制定，是一种动�
 'source': {
   'type': 'raster',
   'tiles': [
-    'http://900913.cn/geoserver/china_admin/wms?service=WMS&version=1.1.0&request=GetMap&layers=china_admin:Chongqing&bbox={bbox-epsg-3857}&width=661&height=768&srs=EPSG:3857&format=image%2Fpng&TRANSPARENT=TRUE'
+    'https://900913.cn/geoserver/china_admin/wms?service=WMS&version=1.1.0&request=GetMap&layers=china_admin:Chongqing&bbox={bbox-epsg-3857}&width=661&height=768&srs=EPSG:3857&format=image%2Fpng&TRANSPARENT=TRUE'
   ],
 }
 ```

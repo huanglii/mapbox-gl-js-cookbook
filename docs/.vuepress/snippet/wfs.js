@@ -4,7 +4,7 @@ export default function addWFSLayer(map) {
     'type': 'circle',
     'source': {
       'type': 'geojson',
-      'data': 'http://900913.cn/geoserver/buildings/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=buildings%3Acq_point&outputFormat=application%2Fjson',
+      'data': 'https://900913.cn/geoserver/buildings/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=buildings%3Acq_point&outputFormat=application%2Fjson',
     },
     'paint': {
       'circle-radius': 5,
