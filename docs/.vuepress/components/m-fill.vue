@@ -4,21 +4,21 @@
 
 <script>
 import baseMap from './base-map'
-import addLineLayer from '../snippet/line'
+import addFillLayer from '../snippet/fill'
 export default {
   components: {
     baseMap
   },
   data () {
     return {
-      container: 'm-line',
-      center: [-122.486552, 37.831048],
-      zoom: 14.5
+      container: 'm-fill',
+      center: [-68.13734351262877, 45.137451890638886],
+      zoom: 5
     }
   },
   methods: {
     handleMapLoaded () {
-      addLineLayer(this.$refs.map)
+      addFillLayer(this.$refs.map)
     }
   }
 }

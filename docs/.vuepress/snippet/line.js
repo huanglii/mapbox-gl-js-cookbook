@@ -40,8 +40,9 @@ export default function addLineLayer(map) {
       'line-cap': 'round'
     },
     'paint': {
-      'line-color': '#888',
-      'line-width': 8
+      'line-color': '#fb5614',
+      'line-width': 6,
+      'line-gap-width': 4
     }
   })
 }

@@ -29,6 +29,10 @@ export default {
     scrollZoom: {
       type: Boolean,
       default: true
+    },
+    pitch: {
+      type: Number,
+      default: 0
     }
   },
   data () {
@@ -37,13 +41,14 @@ export default {
     }
   },
   mounted () {
-    let { container, mapStyle : style, center, zoom, scrollZoom } = this
+    let { container, mapStyle : style, center, zoom, scrollZoom, pitch } = this
     this.initMap({
       container,
       style,
       center,
       zoom,
-      scrollZoom
+      scrollZoom,
+      pitch
     })
     window.addEventListener('resize', this.resize)
   },
