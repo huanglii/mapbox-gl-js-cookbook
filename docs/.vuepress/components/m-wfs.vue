@@ -12,8 +12,8 @@ export default {
   data () {
     return {
       container: 'm-wfs',
-      center: [106.54486062690614, 29.56357402345421],
-      zoom: 7
+      center: [106.30486062690614, 29.56357402345421],
+      zoom: 10
     }
   },
   methods: {
