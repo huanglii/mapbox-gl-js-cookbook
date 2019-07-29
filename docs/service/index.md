@@ -30,6 +30,24 @@ MapboxGL 在加载 `tms` 服务时，需要注意 `source` 的 `scheme` 属性�
   <code-view name="tms"/>
 </ClientOnly>
 
+## WMS
+Web Map Service(Web地图服务)，简称`WMS`，由`OGC`制定，是一种动态服务。
+**`WMS`** 是根据传入的地理范围，在服务器端进行渲染，返回图片。`MapboxGL`只支持`EPSG:3857`坐标系。
+
+加载示例（png）
+``` js
+'source': {
+  'type': 'raster',
+  'tiles': [
+    'https://900913.cn/geoserver/china_admin/wms?service=WMS&version=1.1.0&request=GetMap&layers=china_admin:Chongqing&bbox={bbox-epsg-3857}&width=661&height=768&srs=EPSG:3857&format=image%2Fpng&TRANSPARENT=TRUE'
+  ],
+}
+```
+
+<ClientOnly>
+  <code-view name="wms"/>
+</ClientOnly>
+
 ## WMTS
 Web Map Tile Service（网络地图瓦片服务），简称 `WMTS`，由`OGC`制定。
 * 图片格式
@@ -71,22 +89,4 @@ Web Feature Service(Web要素服务)，简称`WFS`, 是`OGC`标准之一。**`WF
 
 <ClientOnly>
   <code-view name="wfs"/>
-</ClientOnly>
-
-## WMS
-Web Map Service(Web地图服务)，简称`WMS`，由`OGC`制定，是一种动态服务。
-**`WMS`** 是根据传入的地理范围，在服务器端进行渲染，返回图片。`MapboxGL`只支持`EPSG:3857`坐标系。
-
-加载示例（png）
-``` js
-'source': {
-  'type': 'raster',
-  'tiles': [
-    'https://900913.cn/geoserver/china_admin/wms?service=WMS&version=1.1.0&request=GetMap&layers=china_admin:Chongqing&bbox={bbox-epsg-3857}&width=661&height=768&srs=EPSG:3857&format=image%2Fpng&TRANSPARENT=TRUE'
-  ],
-}
-```
-
-<ClientOnly>
-  <code-view name="wms"/>
 </ClientOnly>
