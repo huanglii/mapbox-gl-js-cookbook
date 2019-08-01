@@ -3,15 +3,15 @@
 
 ## circle
 部分 **`paint`** 属性：
-| 属性 | 可变 | 描述 |
-| :-- | :--: | :-- |
-| **`circle-radius`** | 是 | 半径，默认`5` |
-| **`circle-color`** | 是 | 颜色，默认`"#000000"` |
-| **`circle-opacity`** | 是 | 不透明度[0, 1]，默认`1` |
-| **`circle-stroke-width`** | 是 | 边框宽度，默认`0` |
-| **`circle-stroke-color`** | 是 | 边框颜色，默认`"#000000"` |
-| **`circle-stroke-opacity`** | 是 | 不透明度[0, 1]，默认`1` |
-| **`circle-blur`** | 是 | 模糊度，默认`0` |
+| 属性 | 描述 |
+| :-- | :-- |
+| **`circle-radius`** | 半径，默认`5` |
+| **`circle-color`** | 颜色，默认`"#000000"` |
+| **`circle-opacity`** | 不透明度[0, 1]，默认`1` |
+| **`circle-stroke-width`** | 边框宽度，默认`0` |
+| **`circle-stroke-color`** | 边框颜色，默认`"#000000"` |
+| **`circle-stroke-opacity`** | 不透明度[0, 1]，默认`1` |
+| **`circle-blur`** | 模糊度，默认`0` |
 
 <ClientOnly>
   <code-view name="circle"/>
@@ -19,18 +19,18 @@
 
 ## symbol
 部分 **`paint`** 属性：
-| 属性 | 可变 | 描述 |
-| :-- | :--: | :-- |
-| **`icon-opacity`** | 是 | 图标不透明度[0, 1]，默认`1` |
-| **`icon-color`** | 是 | 图标颜色，默认`"#000000"` |
-| **`icon-halo-color`** | 是 | 图标阴影颜色，默认`"rgba(0, 0, 0, 0)"` |
-| **`icon-halo-width`** | 是 | 图标阴影宽度，默认`0` |
-| **`icon-halo-blur`** | 是 | 图标模糊度，默认`0` |
-| **`text-opacity`** | 是 | 文本不透明度[0, 1]，默认`1` |
-| **`text-color`** | 是 | 文本颜色，默认`"#000000"` |
-| **`text-halo-color`** | 是 | 文本阴影颜色，默认`"rgba(0, 0, 0, 0)"` |
-| **`text-halo-width`** | 是 | 文本阴影宽度，默认`0` |
-| **`text-halo-blur`** | 是 | 文本模糊度，默认`0` |
+| 属性 | 描述 |
+| :-- | :-- |
+| **`icon-opacity`** | 图标不透明度[0, 1]，默认`1` |
+| **`icon-color`** | 图标颜色，默认`"#000000"` |
+| **`icon-halo-color`** | 图标阴影颜色，默认`"rgba(0, 0, 0, 0)"` |
+| **`icon-halo-width`** | 图标阴影宽度，默认`0` |
+| **`icon-halo-blur`** | 图标模糊度，默认`0` |
+| **`text-opacity`** | 文本不透明度[0, 1]，默认`1` |
+| **`text-color`** | 文本颜色，默认`"#000000"` |
+| **`text-halo-color`** | 文本阴影颜色，默认`"rgba(0, 0, 0, 0)"` |
+| **`text-halo-width`** | 文本阴影宽度，默认`0` |
+| **`text-halo-blur`** | 文本模糊度，默认`0` |
 
 部分 **`layout`** 属性：
 | 属性 | 描述 |
@@ -52,13 +52,13 @@
 
 ## heatmap
 部分 **`paint`** 属性：
-| 属性 | 可变 | 描述 |
-| :-- | :--: | :-- |
-| **`heatmap-radius`** | 是 | 热力点的影响半径，默认`30` |
-| **`heatmap-weight`** | 是 | 权重，默认`1` |
-| **`heatmap-intensity`** | 是 | 强度，默认`1` |
-| **`heatmap-opacity`** | 是 | 不透明度，默认`1` |
-| **`heatmap-color`** | 是 | 颜色，默认值如下： |
+| 属性 | 描述 |
+| :-- | :-- |
+| **`heatmap-radius`** | 热力点的影响半径，默认`30` |
+| **`heatmap-weight`** | 权重，默认`1` |
+| **`heatmap-intensity`** | 强度，默认`1` |
+| **`heatmap-opacity`** | 不透明度，默认`1` |
+| **`heatmap-color`** | 颜色，默认值如下： |
 
 ``` js
 {

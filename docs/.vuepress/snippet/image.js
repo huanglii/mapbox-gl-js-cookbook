@@ -12,5 +12,5 @@ export default function addImageLayer(map) {
         [73.5001449800, 18.158746]
       ]
     }
-  })
+  }, 'aeroway-line')
 }

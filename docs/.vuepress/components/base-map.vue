@@ -14,7 +14,7 @@ export default {
     },
     mapStyle: {
       type: String,
-      default: 'mapbox://styles/huanglii/cjq2bt5sy50822smhq4ovebf5'
+      default: 'mapbox://styles/huanglii/cjmn2rlvn0c8u2sl97kkiep6r'
     },
     center: {
       type: Array,
@@ -90,8 +90,8 @@ export default {
     resize () {
       this.map.resize()
     },
-    addLayer (layer) {
-      this.map.addLayer(layer)
+    addLayer (layer, beforeId) {
+      this.map.addLayer(layer, beforeId)
     },
     addSource (sourceId, source) {
       this.map.addSource(sourceId, source)
