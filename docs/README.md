@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /hero.jpg
+heroImage: /images/hero.jpg
 heroText: Mapbox GL JS Cookbook
 tagline: 可视化中心
 actionText: 快速开始 →

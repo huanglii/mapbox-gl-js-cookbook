@@ -18,15 +18,15 @@
 ## image
 有如下一张中国大陆范围的温度图：
 
-<!-- ![温度图](/3857.png) -->
+<!-- ![温度图](/images/3857.png) -->
 <div align="center">
-  <img :src="$withBase('/3857.png')" width="300" />
+  <img :src="$withBase('/images/3857.png')" width="300" />
 </div>
 
 ``` js
 "{source-id}": {
   "type": "image",
-  "url": "/3857.png",
+  "url": "/images/3857.png",
   "coordinates": [
     [73.5001449800, 53.5614389930],
     [135.088932019, 53.5614389930],

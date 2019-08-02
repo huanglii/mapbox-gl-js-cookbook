@@ -9,7 +9,7 @@ module.exports = {
     }
   },
   head: [
-    ['link', { rel: 'icon', href: '/logo.png' }]
+    ['link', { rel: 'icon', href: '/images/logo.png' }]
   ],
   themeConfig: {
     displayAllHeaders: true,

@@ -14,7 +14,11 @@ Mapbox GL JS 版本号：[v1.1.0](https://docs.mapbox.com/mapbox-gl-js/overview/
 
 ## 目录
 * [数据](/data/)
+  * 点、线、面、栅格等数据，以及不同数据格式在 Mapbox GL JS 中的可视化。
 * [服务](/service/)
+  * 加载 WMS、WMTS、TMS 等 OGC、OSGeo 标准的服务。
 * [进阶](/advance/)
+  * 专题图、自定义图层、自定义控件以及与第三方库的结合。
 
-## TODO
+## ToDo
+结合 ECharts、Three.js、deck.gl 等。
