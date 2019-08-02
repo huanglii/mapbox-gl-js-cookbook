@@ -55,6 +55,7 @@ module.exports = {
           collapsable: false,
           children: [
             '',
+            'thematic',
             'control'
           ]
         }
