@@ -18,6 +18,7 @@
     "vuepress": "^1.0.0-rc.1"
   },
   "dependencies": {
+    "city-selector-control": "^0.2.2",
     "mapbox-gl": "^1.1.0"
   }
 }

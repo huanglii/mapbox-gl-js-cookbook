@@ -90,6 +90,9 @@ export default {
     resize () {
       this.map.resize()
     },
+    addControl (control, controlPosition) {
+      this.map.addControl(control, controlPosition || 'top-right')
+    },
     addLayer (layer, beforeId) {
       this.map.addLayer(layer, beforeId)
     },
