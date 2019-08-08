@@ -18,13 +18,13 @@ yarn docs:dev # 或者：npm run docs:dev
   <code-view name="{名称}"/>
 </ClientOnly>
 ```
-如果不需要`查看代码`按钮，添加 `is-code-view` 属性为 `false`。
+如果不需要 `查看代码` 按钮，添加 `is-code-view` 属性为 `false`。
 ```
 <ClientOnly>
   <code-view name="{名称}" :is-code-view="false"/>
 </ClientOnly>
 ```
-3. 如果需要`查看代码`按钮，在 `example` 中添加 `{name}.md`，插入相应代码即可。
+3. 如果需要 `查看代码` 按钮，在 `example` 中添加 `{name}.md`，插入相应代码即可。
 
 ### 代码规范
 代码遵循 [JavaScript Standard Style](https://github.com/standard/standard/blob/master/docs/README-zhcn.md)。
