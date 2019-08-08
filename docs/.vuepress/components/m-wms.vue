@@ -13,7 +13,7 @@ export default {
     return {
       container: 'm-wms',
       center: [106.54486062690614, 29.56357402345421],
-      zoom: 9
+      zoom: 10
     }
   },
   methods: {
