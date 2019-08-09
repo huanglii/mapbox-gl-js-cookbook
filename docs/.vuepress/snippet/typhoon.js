@@ -7,6 +7,7 @@ import {
 import lineArc from '@turf/line-arc'
 
 import lekima from '../public/data/lekima'
+
 export default function addTyphoonLayer (map) {
   let typhoonFeatureCollection = pointsToFeatureCollection(lekima.points)
   map.addSource('typhoon-source', {
@@ -93,8 +94,6 @@ export default function addTyphoonLayer (map) {
         10,
         ['*', ['to-number', ['get', 'power']], 1]
       ],
-      // 'circle-radius': ['*', ['number', ['get', 'speed']], 100000],
-      // 'circle-radius': ['to-number', ['get', 'power']],
       'circle-color': [
         'match',
         ['get', 'strong'],
@@ -110,8 +109,17 @@ export default function addTyphoonLayer (map) {
       'circle-stroke-width': 3,
       'circle-stroke-color': 'rgba(110, 110, 110, .3)'
     },
-    // 'filter': ['all', ['==', '$type', 'Point'], ['==', 'type', 'track']]
-    'filter': ['all', ['==', '$type', 'Point']]
+    'filter': ['all', ['==', '$type', 'Point'], ['in', 'type', 'track', 'forecast']]
+  })
+  // 当前台风点
+  map.addLayer({
+    'id': 'points',
+    'type': 'symbol',
+    'source': 'typhoon-source',
+    'layout': {
+      'icon-image': 'typhoon'
+    },
+    'filter': ['all', ['==', '$type', 'Point'], ['==', 'type', 'current']]
   })
 }
 
@@ -132,10 +140,17 @@ function pointsToFeatureCollection (typhoonPoints) {
     if (prop.hasOwnProperty('forecast')) {
       delete prop.forecast
     }
-    typhoonFeatures.push(pointHelper(point, {
-      ...prop,
-      type: 'track'
-    }))
+    if (i < len - 1) {
+      typhoonFeatures.push(pointHelper(point, {
+        ...prop,
+        type: 'track'
+      }))
+    } else {
+      typhoonFeatures.push(pointHelper(point, {
+        ...prop,
+        type: 'current'
+      }))
+    }
   }
   // 路径线
   typhoonFeatures.push(lineStringHelper(trackPoints, {
@@ -157,6 +172,7 @@ function pointsToFeatureCollection (typhoonPoints) {
       let point = [forecastpoint.lng - 0, forecastpoint.lat - 0]
       forecastPoints.push(point)
       if (i >= 1) {
+        // 第一个点及当前台风点，不需要
         typhoonFeatures.push(pointHelper(point, {
           ...forecastpoint,
           tm,

@@ -18,7 +18,7 @@ export default {
   },
   methods: {
     handleMapLoaded (map) {
-      addImageLayer(map)
+      addImageLayer(map, this.$withBase('/images/3857.png'))
     }
   }
 }
