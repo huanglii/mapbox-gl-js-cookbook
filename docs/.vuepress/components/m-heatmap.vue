@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :mapStyle="mapStyle" :center="center" :zoom="zoom" ref="map" @load="handleMapLoaded"/>
+  <base-map :container="container" :mapStyle="mapStyle" :center="center" :zoom="zoom" @load="handleMapLoaded"/>
 </template>
 
 <script>
@@ -18,8 +18,8 @@ export default {
     }
   },
   methods: {
-    handleMapLoaded () {
-      addHeatmapLayer(this.$refs.map)
+    handleMapLoaded (map) {
+      addHeatmapLayer(map)
     }
   }
 }

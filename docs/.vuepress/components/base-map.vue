@@ -1,5 +1,9 @@
 <template>
-  <div :id="container" :style="{ width: '100%', height: '400px', borderRadius: '6px' }"></div>
+  <div class="map-wrapper">
+    <div :id="container" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }"></div>
+    <slot v-if="maploaded"></slot>
+    
+  </div>
 </template>
 
 <script>
@@ -11,6 +15,10 @@ export default {
     container: {
       type: String,
       default: `map-${new Date().getTime()}`
+    },
+    height: {
+      type: Number,
+      default: 400
     },
     mapStyle: {
       type: String,
@@ -26,6 +34,14 @@ export default {
       type: Number,
       default: 9
     },
+    minZoom: {
+      type: Number,
+      default: 0
+    },
+    maxZoom: {
+      type: Number,
+      default: 22
+    },
     scrollZoom: {
       type: Boolean,
       default: true
@@ -37,16 +53,19 @@ export default {
   },
   data () {
     return {
-      map: null
+      map: null,
+      maploaded: false
     }
   },
   mounted () {
-    let { container, mapStyle : style, center, zoom, scrollZoom, pitch } = this
+    let { container, mapStyle : style, center, zoom, minZoom, maxZoom, scrollZoom, pitch } = this
     this.initMap({
       container,
       style,
       center,
       zoom,
+      minZoom,
+      maxZoom,
       scrollZoom,
       pitch
     })
@@ -63,7 +82,8 @@ export default {
       this.map.on('load', this.handleMapLoaded)
     },
     handleMapLoaded (evt) {
-      this.$emit('load', evt)
+      this.maploaded = true
+      this.$emit('load', evt.target)
       this.map.on('click', this.handleMapClick)
     },
     handleMapClick (evt) {
@@ -92,15 +112,6 @@ export default {
     },
     resize () {
       this.map.resize()
-    },
-    addControl (control, controlPosition) {
-      this.map.addControl(control, controlPosition || 'top-right')
-    },
-    addLayer (layer, beforeId) {
-      this.map.addLayer(layer, beforeId)
-    },
-    addSource (sourceId, source) {
-      this.map.addSource(sourceId, source)
     }
   }
 }

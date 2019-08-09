@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :center="center" :zoom="zoom" ref="map" @load="handleMapLoaded"/>
+  <base-map :container="container" :center="center" :zoom="zoom" @load="handleMapLoaded"/>
 </template>
 
 <script>
@@ -17,8 +17,8 @@ export default {
     }
   },
   methods: {
-    handleMapLoaded () {
-      addWFSLayer(this.$refs.map)
+    handleMapLoaded (map) {
+      addWFSLayer(map)
     }
   }
 }

@@ -18,6 +18,8 @@
     "vuepress": "^1.0.0-rc.1"
   },
   "dependencies": {
+    "@turf/helpers": "^6.1.4",
+    "@turf/line-arc": "^6.0.0",
     "city-selector-control": "^0.2.2",
     "mapbox-gl": "^1.1.0"
   }

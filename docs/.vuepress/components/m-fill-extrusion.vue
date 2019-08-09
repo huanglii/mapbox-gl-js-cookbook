@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :center="center" :zoom="zoom" :pitch="pitch" ref="map" @load="handleMapLoaded"/>
+  <base-map :container="container" :center="center" :zoom="zoom" :pitch="pitch" @load="handleMapLoaded"/>
 </template>
 
 <script>
@@ -18,8 +18,8 @@ export default {
     }
   },
   methods: {
-    handleMapLoaded () {
-      addFillExtrusionLayer(this.$refs.map)
+    handleMapLoaded (map) {
+      addFillExtrusionLayer(map)
     }
   }
 }
