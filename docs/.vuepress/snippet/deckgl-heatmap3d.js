@@ -43,7 +43,7 @@ export default function addHexagonLayer (map) {
         getPosition: d => [Number(d.lng), Number(d.lat)],
         lightSettings: LIGHT_SETTINGS,
         opacity: 1,
-        // material: material
+        material
     });
     map.addLayer(hexagonLayer);
 }
