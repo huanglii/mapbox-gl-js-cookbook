@@ -50,6 +50,10 @@ export default {
     pitch: {
       type: Number,
       default: 0
+    },
+    bearing:{
+      type: Number,
+      default: 0
     }
   },
   data () {
@@ -59,7 +63,7 @@ export default {
     }
   },
   mounted () {
-    let { container, mapStyle : style, center, zoom, minZoom, maxZoom, scrollZoom, pitch } = this
+    let { container, mapStyle : style, center, zoom, minZoom, maxZoom, scrollZoom, pitch, bearing } = this
     this.initMap({
       container,
       style,
@@ -68,7 +72,8 @@ export default {
       minZoom,
       maxZoom,
       scrollZoom,
-      pitch
+      pitch,
+      bearing
     })
     window.addEventListener('resize', this.resize)
   },
