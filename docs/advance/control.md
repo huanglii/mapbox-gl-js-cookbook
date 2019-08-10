@@ -5,35 +5,35 @@ Mapbox GL JS 提供了 **`IControl`** 接口。自定义控件必须实现 **`on
 ``` js
 // es6 类
 class HelloWorldControl {
-  onAdd(map) {
-    this._map = map;
-    this._container = document.createElement('div');
-    this._container.className = 'mapboxgl-ctrl';
-    this._container.textContent = 'Hello, world';
-    return this._container;
+  onAdd (map) {
+    this._map = map
+    this._container = document.createElement('div')
+    this._container.className = 'mapboxgl-ctrl'
+    this._container.textContent = 'Hello, world'
+    return this._container
   }
 
-  onRemove() {
-    this._container.parentNode.removeChild(this._container);
-    this._map = undefined;
+  onRemove () {
+    this._container.parentNode.removeChild(this._container)
+    this._map = undefined
   }
 }
 
 // es5 原型类
-function HelloWorldControl() { }
+function HelloWorldControl () { }
 
-HelloWorldControl.prototype.onAdd = function(map) {
-  this._map = map;
-  this._container = document.createElement('div');
-  this._container.className = 'mapboxgl-ctrl';
-  this._container.textContent = 'Hello, world';
-  return this._container;
-};
+HelloWorldControl.prototype.onAdd = function (map) {
+  this._map = map
+  this._container = document.createElement('div')
+  this._container.className = 'mapboxgl-ctrl'
+  this._container.textContent = 'Hello, world'
+  return this._container
+}
 
 HelloWorldControl.prototype.onRemove = function () {
-  this._container.parentNode.removeChild(this._container);
-  this._map = undefined;
-};
+  this._container.parentNode.removeChild(this._container)
+  this._map = undefined
+}
 ```
 
 ## 城市选择器

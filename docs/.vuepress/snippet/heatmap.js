@@ -2,13 +2,14 @@ export default function addHeatmapLayer(map) {
   // Add a geojson point source.
   // Heatmap layers also work with a vector tile source.
   map.addSource('earthquakes', {
-    'type': 'geojson',
-    'data': 'https://docs.mapbox.com/mapbox-gl-js/assets/earthquakes.geojson'
+    type: 'vector',
+    url: 'mapbox://huanglii.d41k5fmy'
   });
   map.addLayer({
     'id': 'earthquakes-heat',
     'type': 'heatmap',
     'source': 'earthquakes',
+    'source-layer': 'earthquakes-cs3906',
     'maxzoom': 9,
     'paint': {
       // Increase the heatmap weight based on frequency and property magnitude

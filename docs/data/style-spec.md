@@ -4,11 +4,11 @@
 一个样式有以下根属性： `version`, `name`, `metadata`, `center`, `zoom`, `bearing`, `pitch`, `light`, `sources`, `sprite`, `glyphs`, `transition`, `layers` 。在开发中一般关注 **`sources`**, **`layers`** 即可。
 ``` js
 {
-  "version": 8, // 版本号，必须且必须为 8
-  "sprite": "mapbox://sprites/mapbox/streets-v8", // 雪碧图
-  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf", // 字体
-  "sources": {...}, // 数据源
-  "layers": [...] // 图层
+  'version': 8, // 版本号，必须且必须为 8
+  'sprite': 'mapbox://sprites/mapbox/streets-v8', // 雪碧图
+  'glyphs': 'mapbox://fonts/mapbox/{fontstack}/{range}.pbf', // 字体
+  'sources': {...}, // 数据源
+  'layers': [...] // 图层
 }
 ```
 
@@ -19,35 +19,35 @@
 :::
 数据源示例：
 ``` js
-"sources": {
+'sources': {
   // vector
-  "{source-id}": {
-    "type": "vector",
-    "tiles": [
-      "http://a.example.com/tiles/{z}/{x}/{y}.pbf"
+  '{source-id}': {
+    'type': 'vector',
+    'tiles': [
+      'http://a.example.com/tiles/{z}/{x}/{y}.pbf'
     ],
-    "minzoom": 6,
-    "maxzoom": 14
+    'minzoom': 6,
+    'maxzoom': 14
   },
   // vector
-  "{source-id}": {
-    "type": "vector",
-    "url": "http://api.example.com/tilejson.json"
+  '{source-id}': {
+    'type': 'vector',
+    'url': 'http://api.example.com/tilejson.json'
   },
   // raster
-  "{source-id}": {
-    "type": "raster",
-    "tiles": [
-      "http://t0.tianditu.com/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk={天地图 key}",
-      "http://t1.tianditu.com/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk={天地图 key}"
+  '{source-id}': {
+    'type': 'raster',
+    'tiles': [
+      'http://t0.tianditu.com/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk={天地图 key}',
+      'http://t1.tianditu.com/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk={天地图 key}'
     ],
-    "tileSize": 256
+    'tileSize': 256
   },
   // image
-  "{source-id}": {
-    "type": "image",
-    "url": "https://docs.mapbox.com/mapbox-gl-js/assets/radar.gif",
-    "coordinates": [
+  '{source-id}': {
+    'type': 'image',
+    'url': 'https://docs.mapbox.com/mapbox-gl-js/assets/radar.gif',
+    'coordinates': [
         [-80.425, 46.437],
         [-71.516, 46.437],
         [-71.516, 37.936],
@@ -90,23 +90,23 @@
 
 图层示例：
 ``` js
-"layers": [
+'layers': [
   {
-    "id": "road",
-    "type": "line",
-    "source": "mapbox://mapbox.mapbox-streets-v7",
-    "source-layer": "road",
-    "minzoom": 7,
-    "maxzoom": 18,
-    "layout": {
-      "visibility": "visible"
+    'id': 'road',
+    'type': 'line',
+    'source': 'mapbox://mapbox.mapbox-streets-v7',
+    'source-layer': 'road',
+    'minzoom': 7,
+    'maxzoom': 18,
+    'layout': {
+      'visibility': 'visible'
     },
-    "paint": {
-      "line-color": "hsl(55, 1%, 20%)"
+    'paint': {
+      'line-color': 'hsl(55, 1%, 20%)'
     },
-    "filter": ["==", "$type", "LineString"]
-    "metadata": {
-      "type": "base"
+    'filter': ['==', '$type', 'LineString']
+    'metadata': {
+      'type': 'base'
     }
   }
 ]

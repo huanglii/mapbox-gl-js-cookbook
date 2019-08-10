@@ -3,12 +3,12 @@
 
 ## raster
 ``` js
-"{source-id}": {
-  "type": "raster",
-  "tiles": [
-    "https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg"
+'source-id': {
+  'type': 'raster',
+  'tiles': [
+    'https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg'
   ],
-  "tileSize": 256,
+  'tileSize': 256,
 }
 ```
 <ClientOnly>
@@ -24,10 +24,10 @@
 </div>
 
 ``` js
-"{source-id}": {
-  "type": "image",
-  "url": "/images/3857.png",
-  "coordinates": [
+'source-id': {
+  'type': 'image',
+  'url': '/images/3857.png',
+  'coordinates': [
     [73.5001449800, 53.5614389930],
     [135.088932019, 53.5614389930],
     [135.088932019, 18.158746],
