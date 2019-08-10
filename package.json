@@ -19,6 +19,8 @@
   },
   "dependencies": {
     "city-selector-control": "^0.2.2",
+    "d3": "^5.9.7",
+    "deck.gl": "^7.1.10",
     "mapbox-gl": "^1.1.0"
   }
 }
