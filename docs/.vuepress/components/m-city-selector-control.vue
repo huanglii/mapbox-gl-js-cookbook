@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :center="center" ref="map" @load="handleMapLoaded"/>
+  <base-map :container="container" :center="center" @load="handleMapLoaded"/>
 </template>
 
 <script>
@@ -16,8 +16,8 @@ export default {
     }
   },
   methods: {
-    handleMapLoaded () {
-      addCitySeletorControl(this.$refs.map)
+    handleMapLoaded (map) {
+      addCitySeletorControl(map)
     }
   }
 }

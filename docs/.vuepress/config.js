@@ -57,6 +57,7 @@ module.exports = {
             '',
             'thematic',
             'control',
+            'typhoon',
             'deck-gl'
           ]
         }

@@ -1,10 +1,10 @@
-export default function addImageLayer(map) {
+export default function addImageLayer(map, url) {
   map.addLayer({
     'id': 'image-layer',
     'type': 'raster',
     'source': {
       'type': 'image',
-      'url': '/mapbox-gl-js-cookbook/images/3857.png',
+      'url': url,
       'coordinates': [
         [73.5001449800, 53.5614389930],
         [135.088932019, 53.5614389930],
