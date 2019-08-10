@@ -66,7 +66,7 @@ module.exports = {
     lastUpdated: '上次更新',
     repo: 'huanglii/mapbox-gl-js-cookbook',
     docsDir: 'docs',
-    editLinks: false,
+    editLinks: true,
     editLinkText: '在 GitHub 上编辑此页！'
   },
   markdown: {
