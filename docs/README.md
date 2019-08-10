@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/hero.jpg
+heroImage: /images/index.png
 heroText: Mapbox GL JS Cookbook
 tagline: 可视化中心
 actionText: 快速开始 →
@@ -15,8 +15,4 @@ features:
 footer: MIT Licensed | Copyright © 2019 by huangli
 ---
 
-***
 
-### 贡献者
-[![](https://avatars2.githubusercontent.com/u/20068340?s=60&v=4)](https://github.com/huanglii/)
-[![](https://avatars0.githubusercontent.com/u/27879336?s=60&v=4)](https://github.com/JerckyLY)

@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Mapbox GL JS Cookbook',
-  base: '/mapbox-gl-js-cookbook/',
+  base: '/',
   description: 'Mapbox GL JS Cookbook',
   plugins: ['@vuepress/back-to-top'],
   locales: {
@@ -22,7 +22,7 @@ module.exports = {
         { text: '文档丨英文', link: 'https://docs.mapbox.com/' },
         { text: '文档丨中文', link: 'https://www.mapbox.cn/documentation/' }
       ]},
-      { text: 'GISer 空间', link: 'https://giser.xyz' },
+      { text: 'Blog', link: 'https://allanhao.com' },
     ],
     sidebarDepth: 2,
     sidebar: {
@@ -65,9 +65,9 @@ module.exports = {
     },
     // sidebar: 'auto',
     lastUpdated: '上次更新',
-    repo: 'huanglii/mapbox-gl-js-cookbook',
+    repo: 'allanhao/mapbox-gl-js-cookbook',
     docsDir: 'docs',
-    editLinks: true,
+    editLinks: false,
     editLinkText: '在 GitHub 上编辑此页！'
   },
   markdown: {
