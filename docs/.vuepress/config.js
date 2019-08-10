@@ -56,7 +56,8 @@ module.exports = {
           children: [
             '',
             'thematic',
-            'control'
+            'control',
+            'typhoon'
           ]
         }
       ]
