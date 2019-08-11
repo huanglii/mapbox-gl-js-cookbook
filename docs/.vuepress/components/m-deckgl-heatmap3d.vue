@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :center="center" :zoom="zoom" :pitch="pitch" :mapStyle="style" ref="map" @load="handleMapLoaded"/>
+  <base-map :container="container" :center="center" :zoom="zoom" :pitch="pitch" :mapStyle="style" :bearing="bearing" @load="handleMapLoaded"/>
 </template>
 
 <script>
@@ -13,14 +13,15 @@ export default {
     return {
       container: 'm-deckgl-heatmap3d',
       center: [-1.4157267858730052, 52.232395363869415],
-      zoom: 6.6, 
+      zoom: 5, 
       pitch: 40.5,
+      bearing: -27.396674584323023,
       style:'mapbox://styles/mapbox/dark-v9?optimize=true'
     }
   },
   methods: {
-    handleMapLoaded () {
-     addHexgonLayer(this.$refs.map)
+    handleMapLoaded (map) {
+     addHexgonLayer(map)
     }
   }
 }
