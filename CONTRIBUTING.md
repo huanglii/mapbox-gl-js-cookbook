@@ -6,7 +6,11 @@
 ```
 yarn docs:dev # 或者：npm run docs:dev
 ```
-4. 提交 `Pull Request`
+4. 检查代码规范
+```
+yarn lint # 或者：npm run lint
+```
+5. 第4步检查无误后，提交 `Pull Request`
 
 ## 文档规范
 文档暂无规范，后续补充。
