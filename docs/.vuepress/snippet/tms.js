@@ -1,4 +1,4 @@
-export default function addTMSLayer(map) {
+export default function addTMSLayer (map) {
   map.addLayer({
     'id': 'tms-layer',
     'type': 'circle',

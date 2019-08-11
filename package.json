@@ -6,13 +6,22 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
+    "lint": "eslint --ext .js ./docs/.vuepress",
     "deploy": "bash deploy.sh"
   },
   "keywords": [],
   "author": "huangli",
   "license": "MIT",
   "devDependencies": {
+    "@vue/eslint-config-standard": "4.0.0",
     "@vuepress/plugin-back-to-top": "^1.0.3",
+    "babel-eslint": "10.0.1",
+    "eslint": "5.16.0",
+    "eslint-plugin-import": "2.18.0",
+    "eslint-plugin-node": "8.0.1",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.0",
+    "eslint-plugin-vue": "5.2.3",
     "less": "^3.9.0",
     "less-loader": "^5.0.0",
     "vuepress": "^1.0.3"

@@ -1,10 +1,10 @@
-export default function addHeatmapLayer(map) {
+export default function addHeatmapLayer (map) {
   // Add a geojson point source.
   // Heatmap layers also work with a vector tile source.
   map.addSource('earthquakes', {
     type: 'vector',
     url: 'mapbox://huanglii.d41k5fmy'
-  });
+  })
   map.addLayer({
     'id': 'earthquakes-heat',
     'type': 'heatmap',
@@ -58,7 +58,7 @@ export default function addHeatmapLayer(map) {
         ['zoom'],
         7, 1,
         9, 0
-      ],
+      ]
     }
   })
 }

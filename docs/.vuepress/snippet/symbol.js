@@ -1,4 +1,4 @@
-export default function addSymbolLayer(map) {
+export default function addSymbolLayer (map) {
   map.addLayer({
     'id': 'symbol-layer',
     'type': 'symbol',
@@ -20,12 +20,12 @@ export default function addSymbolLayer(map) {
       }
     },
     'paint': {
-      'icon-opacity': .8,
+      'icon-opacity': 0.8,
       'icon-color': '#FF0000',
       'icon-halo-color': '#00FF00',
       'icon-halo-width': 5,
-      'icon-halo-blur': .6,
-      'text-opacity': .8,
+      'icon-halo-blur': 0.6,
+      'text-opacity': 0.8,
       'text-color': '#f7c5c5',
       'text-halo-color': '#9f1919',
       'text-halo-width': 3,
@@ -36,7 +36,7 @@ export default function addSymbolLayer(map) {
       'icon-image': '{icon}-15',
       'icon-rotate': 30,
       'text-field': '{title}',
-      'text-offset': [0, .6],
+      'text-offset': [0, 0.6],
       'text-anchor': 'top',
       'text-size': 64
     }

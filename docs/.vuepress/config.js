@@ -5,7 +5,7 @@ module.exports = {
   plugins: ['@vuepress/back-to-top'],
   locales: {
     '/': {
-      lang: 'zh-CN', 
+      lang: 'zh-CN'
     }
   },
   head: [
@@ -18,11 +18,14 @@ module.exports = {
       { text: '数据', link: '/data/' },
       { text: '服务', link: '/service/' },
       { text: '进阶', link: '/advance/' },
-      { text: 'Mapbox', items: [
-        { text: '文档丨英文', link: 'https://docs.mapbox.com/' },
-        { text: '文档丨中文', link: 'https://www.mapbox.cn/documentation/' }
-      ]},
-      { text: 'GISer 空间', link: 'https://giser.xyz' },
+      {
+        text: 'Mapbox',
+        items: [
+          { text: '文档丨英文', link: 'https://docs.mapbox.com/' },
+          { text: '文档丨中文', link: 'https://www.mapbox.cn/documentation/' }
+        ]
+      },
+      { text: 'GISer 空间', link: 'https://giser.xyz' }
     ],
     sidebarDepth: 2,
     sidebar: {

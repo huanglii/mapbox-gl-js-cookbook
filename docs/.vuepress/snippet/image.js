@@ -1,4 +1,4 @@
-export default function addImageLayer(map, url) {
+export default function addImageLayer (map, url) {
   map.addLayer({
     'id': 'image-layer',
     'type': 'raster',

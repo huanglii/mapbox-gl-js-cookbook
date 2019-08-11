@@ -1,4 +1,4 @@
-export default function addWFSLayer(map) {
+export default function addWFSLayer (map) {
   map.addLayer({
     'id': 'wfs-layer',
     'type': 'circle',

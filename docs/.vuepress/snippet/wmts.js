@@ -1,4 +1,4 @@
-export default function addWMTSLayer(map) {
+export default function addWMTSLayer (map) {
   // 矢量瓦片格式
   map.addLayer({
     'id': 'wmts-layer-2',

@@ -105,7 +105,7 @@ export default function addTyphoonLayer (map) {
         '超强台风', '#AE00D9',
         '#ff0000'
       ],
-      'circle-opacity': .8,
+      'circle-opacity': 0.8,
       'circle-stroke-width': 3,
       'circle-stroke-color': 'rgba(110, 110, 110, .3)'
     },
@@ -125,7 +125,7 @@ export default function addTyphoonLayer (map) {
 
 /**
  * 台风点数据转换为 GeoJSON FeatureCollection
- * @param {Array} typhoonPoints 
+ * @param {Array} typhoonPoints
  */
 function pointsToFeatureCollection (typhoonPoints) {
   let typhoonFeatures = []
@@ -160,7 +160,7 @@ function pointsToFeatureCollection (typhoonPoints) {
   let currentTyphoonPoint = typhoonPoints[typhoonPoints.length - 1]
   // 风圈
   typhoonFeatures.push(...generateWindCircleFeature(currentTyphoonPoint))
-  
+
   // 取当前点的预测数据
   let forecastAgencys = currentTyphoonPoint.forecast
   for (let i = 0, len = forecastAgencys.length; i < len; i++) {
@@ -193,7 +193,7 @@ function pointsToFeatureCollection (typhoonPoints) {
  * 生成台风点的风圈风圈（面）
  * @param {Object} typhoonPoint
  */
-function generateWindCircleFeature(typhoonPoint) {
+function generateWindCircleFeature (typhoonPoint) {
   let center = [typhoonPoint.lng, typhoonPoint.lat]
   let windCircle7 = radiiToPolygon(center, typhoonPoint.radius7)
   let windCircle10 = radiiToPolygon(center, typhoonPoint.radius10)
@@ -206,21 +206,21 @@ function generateWindCircleFeature(typhoonPoint) {
  * @param {Array} center 中心点
  * @param {String} radii 风圈半径 '320|380|300|380'
  */
-function radiiToPolygon(center, radii) {
-  let r_r = radii.split('|')
-  let r_ne = r_r[0]
-  let r_se = r_r[1]
-  let r_sw = r_r[2]
-  let r_nw = r_r[3]
+function radiiToPolygon (center, radii) {
+  let radiiArr = radii.split('|')
+  let rNE = radiiArr[0]
+  let rSE = radiiArr[1]
+  let rSW = radiiArr[2]
+  let rNW = radiiArr[3]
 
   // lineArc 的一个 bug，需将 steps 设置得足够大，生成的圆弧才看起来正常
   // 详见：https://github.com/Turfjs/turf/pull/1590
   let lineArcOptions = {
-  	steps: 1024
+    steps: 1024
   }
-  let ne = lineArc(center, r_ne, 0, 90, lineArcOptions).geometry.coordinates
-  let se = lineArc(center, r_se, 90, 180, lineArcOptions).geometry.coordinates
-  let sw = lineArc(center, r_sw, 180, 270, lineArcOptions).geometry.coordinates
-  let nw = lineArc(center, r_nw, 270, 360, lineArcOptions).geometry.coordinates
+  let ne = lineArc(center, rNE, 0, 90, lineArcOptions).geometry.coordinates
+  let se = lineArc(center, rSE, 90, 180, lineArcOptions).geometry.coordinates
+  let sw = lineArc(center, rSW, 180, 270, lineArcOptions).geometry.coordinates
+  let nw = lineArc(center, rNW, 270, 360, lineArcOptions).geometry.coordinates
   return polygonHelper([[...ne, ...se, ...sw, ...nw, ne[0]]], { type: 'wind-circle' })
 }

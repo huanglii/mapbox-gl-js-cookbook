@@ -1,4 +1,4 @@
-export default function addFillLayer(map) {
+export default function addFillLayer (map) {
   map.addLayer({
     'id': 'maine',
     'type': 'fill',

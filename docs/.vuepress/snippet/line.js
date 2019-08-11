@@ -1,4 +1,4 @@
-export default function addLineLayer(map) {
+export default function addLineLayer (map) {
   map.addLayer({
     'id': 'route',
     'type': 'line',

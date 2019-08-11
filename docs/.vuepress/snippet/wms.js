@@ -1,7 +1,7 @@
-export default function addWMSLayer(map) {
+export default function addWMSLayer (map) {
   map.addLayer({
     'id': 'wms-layer',
-    'type': "raster",
+    'type': 'raster',
     'source': {
       'type': 'raster',
       'tiles': [
