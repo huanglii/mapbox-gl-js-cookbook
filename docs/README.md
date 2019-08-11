@@ -12,7 +12,7 @@ features:
   details: TMS、WMS、WMTS、WFS
 - title: 进阶
   details: 专题图、自定义图层、自定义控件
-footer: MIT Licensed | Copyright © 2019 by Allan
+footer: MIT Licensed | Copyright © 2019 by huangli,Allan
 ---
 
 
