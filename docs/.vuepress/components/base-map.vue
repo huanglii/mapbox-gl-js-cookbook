@@ -9,6 +9,7 @@
 <script>
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
+mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA'
 export default {
   name: 'base-map',
   props: {
@@ -49,6 +50,10 @@ export default {
     pitch: {
       type: Number,
       default: 0
+    },
+    bearing:{
+      type: Number,
+      default: 0
     }
   },
   data () {
@@ -58,7 +63,7 @@ export default {
     }
   },
   mounted () {
-    let { container, mapStyle : style, center, zoom, minZoom, maxZoom, scrollZoom, pitch } = this
+    let { container, mapStyle : style, center, zoom, minZoom, maxZoom, scrollZoom, pitch, bearing } = this
     this.initMap({
       container,
       style,
@@ -67,7 +72,8 @@ export default {
       minZoom,
       maxZoom,
       scrollZoom,
-      pitch
+      pitch,
+      bearing
     })
     window.addEventListener('resize', this.resize)
   },
