@@ -22,7 +22,7 @@
     "@turf/line-arc": "^6.0.0",
     "city-selector-control": "^0.2.2",
     "d3": "^5.9.7",
-    "deck.gl": "^7.1.10",
+    "deck.gl": "^7.1.11",
     "mapbox-gl": "^1.1.0"
   }
 }
