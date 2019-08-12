@@ -6,7 +6,7 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "lint": "eslint --ext .js ./docs/.vuepress",
+    "lint": "eslint --ext .js,.vue ./docs/.vuepress",
     "deploy": "bash deploy.sh"
   },
   "keywords": [],
@@ -15,7 +15,6 @@
   "devDependencies": {
     "@vue/eslint-config-standard": "4.0.0",
     "@vuepress/plugin-back-to-top": "^1.0.3",
-    "babel-eslint": "10.0.1",
     "eslint": "5.16.0",
     "eslint-plugin-import": "2.18.0",
     "eslint-plugin-node": "8.0.1",

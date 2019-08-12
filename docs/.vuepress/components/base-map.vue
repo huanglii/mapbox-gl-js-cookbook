@@ -2,7 +2,6 @@
   <div class="map-wrapper">
     <div :id="container" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }"></div>
     <slot v-if="maploaded"></slot>
-    
   </div>
 </template>
 
@@ -50,7 +49,7 @@ export default {
       type: Number,
       default: 0
     },
-    bearing:{
+    bearing: {
       type: Number,
       default: 0
     }
@@ -62,7 +61,7 @@ export default {
     }
   },
   mounted () {
-    let { container, mapStyle : style, center, zoom, minZoom, maxZoom, scrollZoom, pitch, bearing } = this
+    let { container, mapStyle: style, center, zoom, minZoom, maxZoom, scrollZoom, pitch, bearing } = this
     this.initMap({
       container,
       style,
@@ -96,7 +95,7 @@ export default {
         evt.point
       )
       if (features.length > 0) {
-        let { layer, properties} = features[0]
+        let { layer, properties } = features[0]
         new mapboxgl.Popup()
           .setLngLat(evt.lngLat)
           .setHTML(this.createPropHtml(layer.id, properties))
@@ -107,11 +106,7 @@ export default {
       return `
         <div class="title"><b>${title}</b></div>
         <div class="content">
-          ${
-            Object.keys(prop).map(key => `
-              ${`<p><b>${key}: </b>${prop[key]}</p>`}
-            `).join('')
-          }
+          ${Object.keys(prop).map(key => `${`<p><b>${key}: </b>${prop[key]}</p>`}`).join('')}
         </div>
       `
     },
