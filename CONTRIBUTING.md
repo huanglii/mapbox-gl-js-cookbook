@@ -31,7 +31,7 @@ yarn lint # 或者：npm run lint
 3. 如果需要 `查看代码` 按钮，在 `example` 中添加 `{name}.md`，插入相应代码即可。
 
 ### 代码规范
-代码遵循 [JavaScript Standard Style](https://github.com/standard/standard/blob/master/docs/README-zhcn.md)。
+[![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
 
 #### 细则
 - **使用两个空格** – 进行缩进
