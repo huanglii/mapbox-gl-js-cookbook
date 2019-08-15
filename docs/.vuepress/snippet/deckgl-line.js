@@ -37,14 +37,14 @@ function getSize (type) {
   return 60;
 }
 
-export default function addLineLayer (map) {
+export default function addLineLayer (map, id) {
   const getWidth = 3
   let deck = new Deck({
-    canvas: 'deck-canvas',
-    id: 'deck-canvas',
+    id,
+    canvas: id,
     width: '100%',
     height: '100%',
-    style: { postion: 'relative', top:'0px'},
+    style: { postion: 'relative', top: '0px' },
     initialViewState: INITIAL_VIEW_STATE,
     controller: true,
     onViewStateChange: ({ viewState }) => {

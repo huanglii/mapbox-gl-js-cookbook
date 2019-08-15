@@ -34,6 +34,7 @@ export default {
     line-height: 30px;
     background-color: #fff;
     box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    z-index: 999;
   }
 }
 </style>
