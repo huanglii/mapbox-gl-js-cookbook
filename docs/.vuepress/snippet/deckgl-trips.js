@@ -3,9 +3,7 @@ import { PhongMaterial } from '@luma.gl/core';
 import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
 import { PolygonLayer } from '@deck.gl/layers';
 import { TripsLayer } from '@deck.gl/geo-layers';
-import mapboxgl from 'mapbox-gl';
 
-mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA'
 // Source data CSV
 const DATA_URL = {
   BUILDINGS:
@@ -105,7 +103,7 @@ export default function addLineLayer (map, id) {
     Object.assign(_props, tripsLayer.props, { 'currentTime': time, data: trips })
     const layers = [new TripsLayer(_props), groundLayer, buildingsLayer]
     deck.setProps({ layers })
-    
+
     let animationFrame = window.requestAnimationFrame(animate);
   }
 
