@@ -10,3 +10,11 @@ deck.gl是由Uber开发并开源出来的基于WebGL的大数据量可视化框�
 <ClientOnly>
   <code-view name="deckgl-heatmap3d" />
 </ClientOnly>
+
+## LineLayer
+
+航线路径图示例
+
+<ClientOnly>
+  <code-view name="deckgl-line" />
+</ClientOnly>
