@@ -4,7 +4,7 @@ import { HexagonLayer } from '@deck.gl/aggregation-layers'
 import * as d3 from 'd3'
 
 export default function addHexagonLayer (map) {
-  const DATA_URL = 'https://raw.githubusercontent.com/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv'
+  const DATA_URL = 'https://uber.osgis.cn/uber-common/deck.gl-data/master/examples/3d-heatmap/heatmap-data.csv'
   const material = new PhongMaterial({
     ambient: 0.64,
     diffuse: 0.6,
