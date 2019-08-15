@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /images/hero.jpg
+heroImage: /images/index.png
 heroText: Mapbox GL JS Cookbook
 tagline: 可视化中心
 actionText: 快速开始 →
@@ -12,12 +12,7 @@ features:
   details: TMS、WMS、WMTS、WFS
 - title: 进阶
   details: 专题图、自定义图层、自定义控件
-footer: MIT Licensed | Copyright © 2019 by huangli
+footer: MIT Licensed | Copyright © 2019 by huangli,Allan
 ---
 
-***
 
-### 贡献者
-[![](https://avatars2.githubusercontent.com/u/20068340?s=60&v=4)](https://github.com/huanglii/)
-[![](https://avatars0.githubusercontent.com/u/27879336?s=60&v=4)](https://github.com/JerckyLY)
-[![](https://avatars1.githubusercontent.com/u/3953310?s=60&v=4)](https://github.com/AllanHao)

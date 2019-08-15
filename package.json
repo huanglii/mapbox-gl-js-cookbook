@@ -10,7 +10,7 @@
     "deploy": "bash deploy.sh"
   },
   "keywords": [],
-  "author": "huangli",
+  "author": "allan",
   "license": "MIT",
   "devDependencies": {
     "@vue/eslint-config-standard": "4.0.0",
