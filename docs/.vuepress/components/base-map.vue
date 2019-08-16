@@ -1,6 +1,9 @@
 <template>
   <div class="map-wrapper">
-    <div :id="container" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }"></div>
+    <div :id="container" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }">
+      <!-- 自定义层(canvas) -->
+      <slot name="custom"></slot>
+    </div>
     <slot v-if="maploaded"></slot>
   </div>
 </template>

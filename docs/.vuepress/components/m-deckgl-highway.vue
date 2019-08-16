@@ -1,5 +1,5 @@
 <template>
-  <custom-map :container="container"
+  <base-map :container="container"
               :center="center"
               :zoom="zoom"
               :pitch="pitch"
@@ -9,16 +9,16 @@
     <canvas :id="canvasId"
             slot="custom"
             style="z-index: 2;"></canvas>
-  </custom-map>
+  </base-map>
 
 </template>
 
 <script>
-import customMap from './custom-map'
+import baseMap from './base-map'
 import addHighwayLayer from '../snippet/deckgl-highway'
 export default {
   components: {
-    customMap
+    baseMap
   },
   data () {
     return {
