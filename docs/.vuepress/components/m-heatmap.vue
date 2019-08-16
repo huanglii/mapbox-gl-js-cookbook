@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :mapStyle="mapStyle" :center="center" :zoom="zoom" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
 </template>
 
 <script>
@@ -11,10 +11,11 @@ export default {
   },
   data () {
     return {
-      container: 'm-heatmap',
-      mapStyle: 'mapbox://styles/mapbox/dark-v10',
-      center: [-120, 50],
-      zoom: 2
+      mapOptions: {
+        style: 'mapbox://styles/mapbox/dark-v10?optimize=true',
+        center: [-120, 50],
+        zoom: 2
+      }
     }
   },
   methods: {

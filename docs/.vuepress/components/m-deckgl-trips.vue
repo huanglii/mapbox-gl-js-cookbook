@@ -1,13 +1,6 @@
 <template>
-  <base-map :container="container"
-              :center="center"
-              :zoom="zoom"
-              :pitch="pitch"
-              :mapStyle="style"
-              :bearing="bearing"
-              @load="handleMapLoaded">
-    <canvas id="trips-canvas"
-            slot="custom" style="z-index: 2;"></canvas>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded">
+    <canvas :id="canvasId" slot="custom" style="z-index: 2;"></canvas>
   </base-map>
 
 </template>
@@ -21,17 +14,19 @@ export default {
   },
   data () {
     return {
-      container: 'm-deckgl-trips',
-      center: [7, 47.65],
-      zoom: 4.5,
-      pitch: 50,
-      bearing: 0,
-      style: 'mapbox://styles/mapbox/dark-v9?optimize=true'
+      mapOptions: {
+        style: 'mapbox://styles/mapbox/dark-v9?optimize=true',
+        center: [7, 47.65],
+        zoom: 4.5,
+        pitch: 50,
+        bearing: 0
+      },
+      canvasId: 'trips-canvas'
     }
   },
   methods: {
     handleMapLoaded (map) {
-      addTripsLayer(map, 'trips-canvas')
+      addTripsLayer(map, this.canvasId)
     }
   }
 }
