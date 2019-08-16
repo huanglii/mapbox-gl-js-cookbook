@@ -57,6 +57,10 @@ export default {
     bearing: {
       type: Number,
       default: 0
+    },
+    antialias: {
+      type: Boolean,
+      default: true
     }
   },
   data () {
@@ -66,7 +70,7 @@ export default {
     }
   },
   mounted () {
-    let { container, mapStyle: style, center, zoom, minZoom, maxZoom, scrollZoom, pitch, bearing } = this
+    let { container, mapStyle: style, center, zoom, minZoom, maxZoom, scrollZoom, pitch, bearing, antialias } = this
     this.initMap({
       container,
       style,
@@ -77,7 +81,7 @@ export default {
       scrollZoom,
       pitch,
       bearing,
-      antialias: true
+      antialias
     })
     window.addEventListener('resize', this.resize)
   },
