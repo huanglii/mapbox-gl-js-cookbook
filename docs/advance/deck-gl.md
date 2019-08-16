@@ -21,8 +21,16 @@ deck.gl是由Uber开发并开源出来的基于WebGL的大数据量可视化框�
 
 ## TripsLayer
 
-出租车路径图
+出租车路径可视化
 
 <ClientOnly>
   <code-view name="deckgl-trips" />
+</ClientOnly>
+
+## HighwayLayer
+
+2015年高速公路事故率可视化
+
+<ClientOnly>
+  <code-view name="deckgl-highway"/>
 </ClientOnly>
