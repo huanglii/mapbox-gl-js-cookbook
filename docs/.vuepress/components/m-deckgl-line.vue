@@ -14,27 +14,27 @@
 </template>
 
 <script>
-  import customMap from './custom-map'
-  import addLineLayer from '../snippet/deckgl-line'
-  export default {
-    components: {
-      customMap
-    },
-    data () {
-      return {
-        container: 'm-deckgl-line',
-        center: [7, 47.65],
-        zoom: 4.5,
-        pitch: 50,
-        bearing: 0,
-        style: 'mapbox://styles/mapbox/dark-v9?optimize=true',
-        canvasId: 'line-canvas'
-      }
-    },
-    methods: {
-      handleMapLoaded (map) {
-        addLineLayer(map, this.canvasId)
-      }
+import customMap from './custom-map'
+import addLineLayer from '../snippet/deckgl-line'
+export default {
+  components: {
+    customMap
+  },
+  data () {
+    return {
+      container: 'm-deckgl-line',
+      center: [7, 47.65],
+      zoom: 4.5,
+      pitch: 50,
+      bearing: 0,
+      style: 'mapbox://styles/mapbox/dark-v9?optimize=true',
+      canvasId: 'line-canvas'
+    }
+  },
+  methods: {
+    handleMapLoaded (map) {
+      addLineLayer(map, this.canvasId)
     }
   }
+}
 </script>

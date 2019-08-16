@@ -1,8 +1,7 @@
-import { Deck } from '@deck.gl/core';
-import { PhongMaterial } from '@luma.gl/core';
-import { AmbientLight, PointLight, LightingEffect } from '@deck.gl/core';
-import { PolygonLayer } from '@deck.gl/layers';
-import { TripsLayer } from '@deck.gl/geo-layers';
+import { PhongMaterial } from '@luma.gl/core'
+import { Deck, AmbientLight, PointLight, LightingEffect } from '@deck.gl/core'
+import { PolygonLayer } from '@deck.gl/layers'
+import { TripsLayer } from '@deck.gl/geo-layers'
 
 // Source data CSV
 const DATA_URL = {
@@ -10,27 +9,27 @@ const DATA_URL = {
     'https://uber.osgis.cn/uber-common/deck.gl-data/master/examples/trips/buildings.json', // eslint-disable-line
   TRIPS:
     'https://uber.osgis.cn/uber-common/deck.gl-data/master/examples/trips/trips-v7.json' // eslint-disable-line
-};
+}
 
 const ambientLight = new AmbientLight({
   color: [255, 255, 255],
   intensity: 1.0
-});
+})
 
 const pointLight = new PointLight({
   color: [255, 255, 255],
   intensity: 2.0,
   position: [-74.05, 40.7, 8000]
-});
+})
 
-const lightingEffect = new LightingEffect({ ambientLight, pointLight });
+const lightingEffect = new LightingEffect({ ambientLight, pointLight })
 
 const material = new PhongMaterial({
   ambient: 0.1,
   diffuse: 0.6,
   shininess: 32,
   specularColor: [60, 64, 70]
-});
+})
 
 const DEFAULT_THEME = {
   buildingColor: [74, 80, 87],
@@ -38,7 +37,7 @@ const DEFAULT_THEME = {
   trailColor1: [23, 184, 190],
   material,
   effects: [lightingEffect]
-};
+}
 
 const INITIAL_VIEW_STATE = {
   longitude: -74,
@@ -46,16 +45,15 @@ const INITIAL_VIEW_STATE = {
   zoom: 13,
   pitch: 45,
   bearing: 0
-};
+}
 
-const landCover = [[[-74.0, 40.7], [-74.02, 40.7], [-74.02, 40.72], [-74.0, 40.72]]];
-
+const landCover = [[[-74.0, 40.7], [-74.02, 40.7], [-74.02, 40.72], [-74.0, 40.72]]]
 
 export default function addLineLayer (map, id) {
-  const buildings = DATA_URL.BUILDINGS,
-    trips = DATA_URL.TRIPS,
-    trailLength = 180,
-    theme = DEFAULT_THEME
+  const buildings = DATA_URL.BUILDINGS
+  const trips = DATA_URL.TRIPS
+  const trailLength = 180
+  const theme = DEFAULT_THEME
 
   const groundLayer = new PolygonLayer({
     id: 'ground',
@@ -92,11 +90,11 @@ export default function addLineLayer (map, id) {
   })
 
   const animate = () => {
-    const loopLength = 1800, // unit corresponds to the timestamp in source data
-      animationSpeed = 30 // unit time per second
+    const loopLength = 1800 // unit corresponds to the timestamp in source data
+    const animationSpeed = 30 // unit time per second
 
-    const timestamp = Date.now() / 1000;
-    const loopTime = loopLength / animationSpeed;
+    const timestamp = Date.now() / 1000
+    const loopTime = loopLength / animationSpeed
     let time = ((timestamp % loopTime) / loopTime) * loopLength
 
     let _props = {}
@@ -104,7 +102,7 @@ export default function addLineLayer (map, id) {
     const layers = [new TripsLayer(_props), groundLayer, buildingsLayer]
     deck.setProps({ layers })
 
-    let animationFrame = window.requestAnimationFrame(animate);
+    window.requestAnimationFrame(animate)
   }
 
   let deck = new Deck({
@@ -121,7 +119,7 @@ export default function addLineLayer (map, id) {
         zoom: viewState.zoom,
         bearing: viewState.bearing,
         pitch: viewState.pitch
-      });
+      })
     },
     effects: theme.effects,
     layers: [

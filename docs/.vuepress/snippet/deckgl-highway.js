@@ -1,6 +1,6 @@
-import { Deck } from '@deck.gl/core';
-import { GeoJsonLayer } from '@deck.gl/layers';
-import { scaleLinear, scaleThreshold } from 'd3-scale';
+import { Deck } from '@deck.gl/core'
+import { GeoJsonLayer } from '@deck.gl/layers'
+import { scaleLinear, scaleThreshold } from 'd3-scale'
 import { csv } from 'd3-fetch'
 
 // Source data GeoJSON
@@ -9,14 +9,14 @@ const DATA_URL = {
     'https://uber.osgis.cn/uber-common/deck.gl-data/master/examples/highway/accidents.csv',
   ROADS:
     'https://uber.osgis.cn/uber-common/deck.gl-data/master/examples/highway/roads.json'
-};
+}
 
 function getKey ({ state, type, id }) {
-  return `${state}-${type}-${id}`;
+  return `${state}-${type}-${id}`
 }
 
 const COLOR_SCALE = scaleThreshold()
-  .domain([0, 4, 8, 12, 20, 32, 52, 84, 136, 220])
+  .domain([0, 12, 20, 32, 84, 136, 220, 400, 500, 600])
   .range([
     [26, 152, 80],
     [102, 189, 99],
@@ -44,45 +44,45 @@ const INITIAL_VIEW_STATE = {
 }
 
 export default function addLineLayer (map, id) {
-  const roads = DATA_URL.ROADS,
-    year = 2015,
-    trailLength = 180
+  const roads = DATA_URL.ROADS
+  const year = 2015
+  // const trailLength = 180
 
-  let incidents = {},
-    fatalities = {}
+  let incidents = {}
+  let fatalities = {}
 
   const _aggregateAccidents = function (accidents) {
-    incidents = {};
-    fatalities = {};
+    incidents = {}
+    fatalities = {}
 
     if (accidents) {
       accidents.forEach(a => {
-        const r = (incidents[a.year] = incidents[a.year] || {});
-        const f = (fatalities[a.year] = fatalities[a.year] || {});
-        const key = getKey(a);
-        r[key] = a.incidents;
-        f[key] = a.fatalities;
-      });
+        const r = (incidents[a.year] = incidents[a.year] || {})
+        const f = (fatalities[a.year] = fatalities[a.year] || {})
+        const key = getKey(a)
+        r[key] = a.incidents
+        f[key] = a.fatalities
+      })
     }
-    return { incidents, fatalities };
+    return { incidents, fatalities }
   }
 
   const _getLineColor = function (f, fatalities) {
     if (!fatalities) {
-      return [200, 200, 200];
+      return [200, 200, 200]
     }
-    const key = getKey(f.properties);
-    const fatalitiesPer1KMile = ((fatalities[key] || 0) / f.properties.length) * 1000;
-    return COLOR_SCALE(fatalitiesPer1KMile);
+    const key = getKey(f.properties)
+    const fatalitiesPer1KMile = ((fatalities[key] || 0) / f.properties.length) * 1000
+    return COLOR_SCALE(fatalitiesPer1KMile)
   }
 
   const _getLineWidth = function (f, incidents) {
     if (!incidents) {
-      return 10;
+      return 10
     }
-    const key = getKey(f.properties);
-    const incidentsPer1KMile = ((incidents[key] || 0) / f.properties.length) * 1000;
-    return WIDTH_SCALE(incidentsPer1KMile);
+    const key = getKey(f.properties)
+    const incidentsPer1KMile = ((incidents[key] || 0) / f.properties.length) * 1000
+    return WIDTH_SCALE(incidentsPer1KMile)
   }
 
   const formatRow = d => ({
@@ -93,9 +93,9 @@ export default function addLineLayer (map, id) {
 
   csv(DATA_URL.ACCIDENTS, formatRow).then(data => {
     _aggregateAccidents(data)
-  });
+  })
 
-  let deck = new Deck({
+  return new Deck({
     canvas: id,
     id: id,
     width: '100%',
@@ -109,7 +109,7 @@ export default function addLineLayer (map, id) {
         zoom: viewState.zoom,
         bearing: viewState.bearing,
         pitch: viewState.pitch
-      });
+      })
     },
     layers: [
       new GeoJsonLayer({

@@ -1,5 +1,5 @@
-import { Deck } from '@deck.gl/core';
-import { LineLayer, ScatterplotLayer } from '@deck.gl/layers';
+import { Deck } from '@deck.gl/core'
+import { LineLayer, ScatterplotLayer } from '@deck.gl/layers'
 
 // Source data CSV
 const DATA_URL = {
@@ -7,7 +7,7 @@ const DATA_URL = {
     'https://uber.osgis.cn/uber-common/deck.gl-data/master/website/airports.json', // eslint-disable-line
   FLIGHT_PATHS:
     'https://uber.osgis.cn/uber-common/deck.gl-data/master/examples/line/heathrow-flights.json' // eslint-disable-line
-};
+}
 
 const INITIAL_VIEW_STATE = {
   latitude: 47.65,
@@ -16,28 +16,27 @@ const INITIAL_VIEW_STATE = {
   maxZoom: 16,
   pitch: 50,
   bearing: 0
-};
+}
 
 function getColor (d) {
-  const z = d.start[2];
-  const r = z / 10000;
-
-  return [255 * (1 - r * 2), 128 * r, 255 * r, 255 * (1 - r)];
+  const z = d.start[2]
+  const r = z / 10000
+  return [255 * (1 - r * 2), 128 * r, 255 * r, 255 * (1 - r)]
 }
 
 function getSize (type) {
   if (type.search('major') >= 0) {
-    return 100;
+    return 100
   }
   if (type.search('small') >= 0) {
-    return 30;
+    return 30
   }
-  return 60;
+  return 60
 }
 
 export default function addLineLayer (map, id) {
   const getWidth = 3
-  let deck = new Deck({
+  return new Deck({
     id,
     canvas: id,
     width: '100%',
@@ -51,7 +50,7 @@ export default function addLineLayer (map, id) {
         zoom: viewState.zoom,
         bearing: viewState.bearing,
         pitch: viewState.pitch
-      });
+      })
     },
     layers: [
       new ScatterplotLayer({
@@ -60,7 +59,7 @@ export default function addLineLayer (map, id) {
         radiusScale: 20,
         getPosition: d => d.coordinates,
         getFillColor: [255, 140, 0],
-        getRadius: d => getSize(d.type),
+        getRadius: d => getSize(d.type)
         // pickable: true,
         // onHover: this._onHover
       }),
@@ -70,7 +69,7 @@ export default function addLineLayer (map, id) {
         getSourcePosition: d => d.start,
         getTargetPosition: d => d.end,
         getColor,
-        getWidth,
+        getWidth
         // pickable: true,
         // onHover: this._onHover
       })
