@@ -2,7 +2,6 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded">
     <canvas :id="canvasId" slot="custom" style="z-index: 2;"></canvas>
   </base-map>
-
 </template>
 
 <script>
@@ -19,7 +18,7 @@ export default {
         center: [7, 47.65],
         zoom: 4.5,
         pitch: 50,
-        bearing: 0,
+        bearing: 0
       },
       canvasId: 'line-canvas'
     }

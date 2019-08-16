@@ -23,7 +23,7 @@ export default {
         style: 'mapbox://styles/huanglii/cjz3skxz325xf1cp7vk8sq49i?optimize=true',
         center: [124.90, 28.55],
         zoom: 4.2,
-        maxZoom: 8,
+        maxZoom: 8
       },
       // 台风强度
       legendStrong: [
