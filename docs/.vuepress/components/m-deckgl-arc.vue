@@ -14,25 +14,25 @@
 
 <script>
 import customMap from './custom-map'
-import addTripsLayer from '../snippet/deckgl-trips'
+import addArcLayer from '../snippet/deckgl-arc'
 export default {
   components: {
     customMap
   },
   data () {
     return {
-      container: 'm-deckgl-trips',
-      center: [-74, 40.72],
-      zoom: 13,
-      pitch: 45,
-      bearing: 0,
-      style: 'mapbox://styles/mapbox/dark-v9?optimize=true',
-      canvasId: 'trips-canvas'
+      container: 'm-deckgl-arc',
+      center: [-100, 40.7],
+      zoom: 2.5,
+      pitch: 30,
+      bearing: 30,
+      style: 'mapbox://styles/mapbox/light-v9?optimize=true',
+      canvasId: 'arc-canvas'
     }
   },
   methods: {
     handleMapLoaded (map) {
-      addTripsLayer(map, this.canvasId)
+      addArcLayer(map, this.canvasId)
     }
   }
 }

@@ -32,5 +32,13 @@ deck.gl是由Uber开发并开源出来的基于WebGL的大数据量可视化框�
 2015年高速公路事故率可视化
 
 <ClientOnly>
-  <code-view name="deckgl-highway"/>
+  <code-view name="deckgl-highway" />
+</ClientOnly>
+
+## ArcLayer
+
+在2009年至2013年期间进出达拉斯人口路线可视化（基于Arc图层）
+
+<ClientOnly>
+  <code-view name="deckgl-arc" />
 </ClientOnly>
