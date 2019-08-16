@@ -76,7 +76,8 @@ export default {
       maxZoom,
       scrollZoom,
       pitch,
-      bearing
+      bearing,
+      antialias: true
     })
     window.addEventListener('resize', this.resize)
   },
