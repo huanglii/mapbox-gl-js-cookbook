@@ -1,6 +1,6 @@
 <template>
   <div class="map-wrapper">
-    <div :id="container" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }">
+    <div :id="mapContainer" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }">
       <!-- 自定义层(canvas) -->
       <slot name="custom"></slot>
     </div>
@@ -9,78 +9,46 @@
 </template>
 
 <script>
+import uuid from 'uuid/v4'
 import mapboxgl from 'mapbox-gl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 export default {
   name: 'base-map',
   props: {
-    container: {
-      type: String,
-      default: `map-${new Date().getTime()}`
-    },
     height: {
       type: Number,
       default: 400
     },
-    mapStyle: {
-      type: String,
-      default: 'mapbox://styles/huanglii/cjmn2rlvn0c8u2sl97kkiep6r'
-    },
-    center: {
-      type: Array,
-      default () {
-        return [-74.50, 40]
-      }
-    },
-    zoom: {
-      type: Number,
-      default: 9
-    },
-    minZoom: {
-      type: Number,
-      default: 0
-    },
-    maxZoom: {
-      type: Number,
-      default: 22
-    },
-    scrollZoom: {
-      type: Boolean,
-      default: true
-    },
-    pitch: {
-      type: Number,
-      default: 0
-    },
-    bearing: {
-      type: Number,
-      default: 0
-    },
-    antialias: {
-      type: Boolean,
-      default: true
+    mapOptions: {
+      type: Object
     }
   },
   data () {
     return {
       map: null,
-      maploaded: false
+      maploaded: false,
+      mapDefaultOptions: {
+        container: uuid(),
+        style: 'mapbox://styles/huanglii/cjmn2rlvn0c8u2sl97kkiep6r?optimize=true',
+        center: [-74.50, 40],
+        zoom: 6,
+        minZoom: 0,
+        maxZoom: 22,
+        scrollZoom: true,
+        pitch: 0,
+        bearing: 0,
+        antialias: false
+      }
+    }
+  },
+  computed: {
+    mapContainer () {
+      return this.mapOptions.container || this.mapDefaultOptions.container
     }
   },
   mounted () {
-    let { container, mapStyle: style, center, zoom, minZoom, maxZoom, scrollZoom, pitch, bearing, antialias } = this
-    this.initMap({
-      container,
-      style,
-      center,
-      zoom,
-      minZoom,
-      maxZoom,
-      scrollZoom,
-      pitch,
-      bearing,
-      antialias
-    })
+    let options = Object.assign({}, this.mapDefaultOptions, this.mapOptions)
+    this.initMap(options)
     window.addEventListener('resize', this.resize)
   },
   methods: {

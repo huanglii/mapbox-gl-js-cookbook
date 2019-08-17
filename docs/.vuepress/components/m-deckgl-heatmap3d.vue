@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :center="center" :zoom="zoom" :pitch="pitch" :mapStyle="style" :bearing="bearing" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
 </template>
 
 <script>
@@ -11,12 +11,13 @@ export default {
   },
   data () {
     return {
-      container: 'm-deckgl-heatmap3d',
-      center: [-1.4157267858730052, 52.232395363869415],
-      zoom: 5,
-      pitch: 40.5,
-      bearing: -27.396674584323023,
-      style: 'mapbox://styles/mapbox/dark-v9?optimize=true'
+      mapOptions: {
+        style: 'mapbox://styles/mapbox/dark-v9?optimize=true',
+        center: [-1.4157267858730052, 52.232395363869415],
+        zoom: 5,
+        pitch: 40.5,
+        bearing: -27.396674584323023
+      }
     }
   },
   methods: {

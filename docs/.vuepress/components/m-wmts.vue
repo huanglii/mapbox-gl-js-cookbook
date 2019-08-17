@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :center="center" :zoom="zoom" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
 </template>
 
 <script>
@@ -11,9 +11,10 @@ export default {
   },
   data () {
     return {
-      container: 'm-wmts',
-      center: [106.54486062690614, 29.56357402345421],
-      zoom: 14
+      mapOptions: {
+        center: [106.54486062690614, 29.56357402345421],
+        zoom: 14
+      }
     }
   },
   methods: {

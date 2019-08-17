@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :center="center" :zoom="zoom" :pitch="pitch" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
 </template>
 
 <script>
@@ -11,10 +11,12 @@ export default {
   },
   data () {
     return {
-      container: 'm-fill-extrusion',
-      center: [106.581355, 29.561788],
-      zoom: 16,
-      pitch: 60
+      mapOptions: {
+        center: [106.581355, 29.561788],
+        zoom: 16,
+        pitch: 60,
+        antialias: true
+      }
     }
   },
   methods: {

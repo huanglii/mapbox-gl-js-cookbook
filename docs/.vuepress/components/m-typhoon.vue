@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :height="height" :mapStyle="mapStyle" :center="center" :zoom="zoom" :maxZoom="maxZoom" @load="handleMapLoaded">
+  <base-map :height="height" :map-options="mapOptions" @load="handleMapLoaded">
     <div class="legend">
       <div class="legend-item" v-for="(item, index) in legendStrong" :key="index">
         <span class="circle" :style="{backgroundColor: item[1]}"></span>
@@ -18,12 +18,13 @@ export default {
   },
   data () {
     return {
-      container: 'm-typhoon',
       height: 800,
-      mapStyle: 'mapbox://styles/huanglii/cjz3skxz325xf1cp7vk8sq49i',
-      center: [124.90, 28.55],
-      zoom: 4.2,
-      maxZoom: 8,
+      mapOptions: {
+        style: 'mapbox://styles/huanglii/cjz3skxz325xf1cp7vk8sq49i?optimize=true',
+        center: [124.90, 28.55],
+        zoom: 4.2,
+        maxZoom: 8
+      },
       // 台风强度
       legendStrong: [
         ['热带低压', '#00FEDF'],

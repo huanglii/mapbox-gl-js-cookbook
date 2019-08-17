@@ -1,5 +1,5 @@
 <template>
-  <base-map :container="container" :center="center" :zoom="zoom" @load="handleMapLoaded"/>
+  <base-map @load="handleMapLoaded"/>
 </template>
 
 <script>
@@ -10,11 +10,7 @@ export default {
     baseMap
   },
   data () {
-    return {
-      container: 'm-raster',
-      center: [-74.50, 40],
-      zoom: 2
-    }
+    return {}
   },
   methods: {
     handleMapLoaded (map) {
