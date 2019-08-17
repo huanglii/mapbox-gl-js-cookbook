@@ -54,7 +54,6 @@ export default function addLineLayer (map, id) {
   const trips = DATA_URL.TRIPS
   const trailLength = 180
   const theme = DEFAULT_THEME
-
   const groundLayer = new PolygonLayer({
     id: 'ground',
     data: landCover,
