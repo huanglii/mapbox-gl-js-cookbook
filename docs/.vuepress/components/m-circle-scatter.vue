@@ -20,7 +20,7 @@ export default {
       },
       borderOptions: {
         paint: {
-          'line-color': '#6e6e6e',
+          'line-color': '#6e6e6e'
         },
         beforeId: 'admin-1-boundary-bg'
       }

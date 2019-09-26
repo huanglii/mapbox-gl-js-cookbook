@@ -77,7 +77,7 @@ export default {
       this.$emit('load', evt.target)
       this.map.on('click', this.handleMapClick)
       let chinaBorderLayer = this.map.getLayer('border-2oej0r')
-      if ( !chinaBorderLayer) {
+      if (!chinaBorderLayer) {
         this.addBorderLayer()
       }
     },

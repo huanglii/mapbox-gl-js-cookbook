@@ -9,70 +9,70 @@ export default function addCircleScatterLayer (map) {
       radius: 2,
       color: '#0098a3',
       blur: 1,
-      opacity: .7,
+      opacity: 0.7,
       filter: ['<=', 'mag', 5]
-    }, 
+    },
     {
       radius: 3,
       color: '#00ca8d',
       blur: 1,
-      opacity: .7,
+      opacity: 0.7,
       filter: ['all', ['>', 'mag', 5], ['<=', 'mag', 6]]
     },
     {
       radius: 4,
       color: '#37C508',
       blur: 1,
-      opacity: .5,
+      opacity: 0.5,
       filter: ['all', ['>', 'mag', 6], ['<=', 'mag', 7]]
     },
     {
       radius: 5,
       color: '#98f300',
       blur: 1,
-      opacity: .6,
+      opacity: 0.6,
       filter: ['all', ['>', 'mag', 7], ['<=', 'mag', 8]]
     },
     {
       radius: 6,
       color: '#efff85',
       blur: 1,
-      opacity: .6,
+      opacity: 0.6,
       filter: ['>', 'mag', 8]
     },
     {
       radius: 1,
       color: '#0098a3',
-      blur: .4,
-      opacity: .8,
+      blur: 0.4,
+      opacity: 0.8,
       filter: ['<=', 'mag', 5]
     },
     {
       radius: 1,
       color: '#00ca8d',
-      blur: .4,
-      opacity: .8,
+      blur: 0.4,
+      opacity: 0.8,
       filter: ['all', ['>', 'mag', 5], ['<=', 'mag', 6]]
     },
     {
       radius: 1,
       color: '#37C508',
-      blur: .4,
-      opacity: .8,
+      blur: 0.4,
+      opacity: 0.8,
       filter: ['all', ['>', 'mag', 6], ['<=', 'mag', 7]]
     },
     {
       radius: 2,
       color: '#98f300',
-      blur: .4,
-      opacity: .8,
+      blur: 0.4,
+      opacity: 0.8,
       filter: ['all', ['>', 'mag', 7], ['<=', 'mag', 8]]
     },
     {
       radius: 2,
       color: '#efff85',
-      blur: .4,
-      opacity: .8,
+      blur: 0.4,
+      opacity: 0.8,
       filter: ['>', 'mag', 8]
     }
   ]
@@ -92,7 +92,7 @@ export default function addCircleScatterLayer (map) {
       'filter': option.filter
     })
   })
-  
+
   // 使用表达式
   // map.addLayer({
   //   'id': 'earthquakes-layer',
