@@ -13,8 +13,14 @@
 | **`circle-stroke-opacity`** | 不透明度[0, 1]，默认`1` |
 | **`circle-blur`** | 模糊度，默认`0` |
 
+#### 普通点
 <ClientOnly>
   <code-view name="circle"/>
+</ClientOnly>
+
+#### 海量点
+<ClientOnly>
+  <code-view name="circle-scatter"/>
 </ClientOnly>
 
 ## symbol

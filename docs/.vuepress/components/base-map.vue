@@ -21,6 +21,9 @@ export default {
     },
     mapOptions: {
       type: Object
+    },
+    borderOptions: {
+      type: Object
     }
   },
   data () {
@@ -38,6 +41,14 @@ export default {
         pitch: 0,
         bearing: 0,
         antialias: false
+      },
+      borderDefaultOptions: {
+        paint: {
+          'line-color': 'hsl(357, 67%, 60%)',
+          'line-opacity': ['step', ['zoom'], 1, 10, 0],
+          'line-width': ['interpolate', ['linear'], ['zoom'], 0, 1, 22, 3]
+        },
+        beforeId: ''
       }
     }
   },
@@ -65,6 +76,10 @@ export default {
       this.maploaded = true
       this.$emit('load', evt.target)
       this.map.on('click', this.handleMapClick)
+      let chinaBorderLayer = this.map.getLayer('border-2oej0r')
+      if ( !chinaBorderLayer) {
+        this.addBorderLayer()
+      }
     },
     handleMapClick (evt) {
       let features = this.map.queryRenderedFeatures(
@@ -87,6 +102,22 @@ export default {
           ${Object.keys(prop).map(key => `${`<p><b>${key}: </b>${prop[key]}</p>`}`).join('')}
         </div>
       `
+    },
+    // 国界线
+    addBorderLayer () {
+      let borderOptions = Object.assign({}, this.borderDefaultOptions, this.borderOptions)
+      let { paint, beforeId } = borderOptions
+      this.map.addSource('border', {
+        type: 'vector',
+        url: 'mapbox://huanglii.4nxu8jv0'
+      })
+      this.map.addLayer({
+        'id': 'border-2oej0r',
+        'source': 'border',
+        'source-layer': 'Border-2oej0r',
+        'type': 'line',
+        'paint': paint
+      }, beforeId || undefined)
     },
     resize () {
       this.map.resize()
