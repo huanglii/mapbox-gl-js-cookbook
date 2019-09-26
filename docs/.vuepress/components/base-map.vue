@@ -72,10 +72,12 @@ export default {
       )
       if (features.length > 0) {
         let { layer, properties } = features[0]
-        new mapboxgl.Popup()
-          .setLngLat(evt.lngLat)
-          .setHTML(this.createPropHtml(layer.id, properties))
-          .addTo(this.map)
+        if (Object.keys(properties).length > 0) {
+          new mapboxgl.Popup()
+            .setLngLat(evt.lngLat)
+            .setHTML(this.createPropHtml(layer.id, properties))
+            .addTo(this.map)
+        }
       }
     },
     createPropHtml (title, prop) {
