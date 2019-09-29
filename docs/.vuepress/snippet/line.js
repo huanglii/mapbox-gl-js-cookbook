@@ -16,7 +16,6 @@ const lineStringCoordinates = [
   [-122.49163627624512, 37.832564787218985]
 ]
 export default function addLineLayer (map) {
-
   const linestring1 = lineStringHelper(lineStringCoordinates)
   const linestring2 = lineStringHelper(lineStringCoordinates.map(coord => {
     return [coord[0] + 0.01, coord[1]]
