@@ -39,8 +39,7 @@ module.exports = {
             'point',
             'line',
             'polygon',
-            'raster',
-            'video'
+            'raster'
           ]
         }
       ],
