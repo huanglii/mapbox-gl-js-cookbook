@@ -11,6 +11,7 @@
   'tileSize': 256,
 }
 ```
+
 <ClientOnly>
   <code-view name="raster"/>
 </ClientOnly>
@@ -35,6 +36,7 @@
   ]
 }
 ```
+
 <ClientOnly>
   <code-view name="image"/>
 </ClientOnly>

@@ -4,7 +4,7 @@
 
 <script>
 import baseMap from './base-map'
-import addRasterLayer from '../snippet/raster'
+import addFillLineLayer from '../snippet/fill-line'
 export default {
   components: {
     baseMap
@@ -12,13 +12,14 @@ export default {
   data () {
     return {
       mapOptions: {
-        zoom: 2
+        center: [10.5, 10.0],
+        zoom: 3.2
       }
     }
   },
   methods: {
     handleMapLoaded (map) {
-      addRasterLayer(map)
+      addFillLineLayer(map)
     }
   }
 }
