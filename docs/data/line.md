@@ -33,6 +33,11 @@
   <code-view name="line-gradient"/>
 </ClientOnly>
 
+结合 `symbol` 还可以做出如下箭头效果：
+<ClientOnly>
+  <code-view name="line-arrow"/>
+</ClientOnly>
+
 ## line(point)
 线是由点构成的，当然也可以用点表示。
 
