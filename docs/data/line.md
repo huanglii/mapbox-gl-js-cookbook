@@ -2,7 +2,6 @@
 线可以用 **`line`** 表示。
 
 ## line
-
 部分 **`paint`** 属性：
 | 属性 | 描述 |
 | :-- | :-- |
@@ -21,4 +20,22 @@
 
 <ClientOnly>
   <code-view name="line"/>
+</ClientOnly>
+
+## line-gradient
+::: warning
+1. 使用线性渐变，数据源只能是 **`GeoJSON`**。并设置 **`lineMetrics`** 为 **`true`**；
+2. **`line-gradient`** 必须使用表达式，并且目前只能用 **`line-progress`**；
+3. 经测试，对于 `multiLineString` 和 `featureCollection` 的线数据会按单个 `lineString` 渲染，如下：
+:::
+
+<ClientOnly>
+  <code-view name="line-gradient"/>
+</ClientOnly>
+
+## line(point)
+线是由点构成的，当然也可以用点表示。
+
+<ClientOnly>
+  <code-view name="line-point"/>
 </ClientOnly>

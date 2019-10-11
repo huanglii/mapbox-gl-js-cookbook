@@ -73,7 +73,7 @@ export default function addSymbolLayer (map) {
       'text-color': '#f7c5c5',
       'text-halo-color': '#9f1919',
       'text-halo-width': 3,
-      'text-halo-blur': 5
+      'text-halo-blur': 1.5
     },
     'layout': {
       'icon-size': 2,
