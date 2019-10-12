@@ -33,6 +33,8 @@
   <code-view name="line-gradient"/>
 </ClientOnly>
 
+> 线性渐变：[Create a gradient line using an expression](https://docs.mapbox.com/mapbox-gl-js/example/line-gradient/)
+
 结合 `symbol` 还可以做出如下箭头效果：
 <ClientOnly>
   <code-view name="line-arrow"/>

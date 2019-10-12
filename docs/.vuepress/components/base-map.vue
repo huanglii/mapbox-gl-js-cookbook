@@ -33,7 +33,8 @@ export default {
       maploaded: false,
       mapDefaultOptions: {
         container: uuid(),
-        style: 'mapbox://styles/huanglii/cjmn2rlvn0c8u2sl97kkiep6r?optimize=true',
+        // style: 'mapbox://styles/huanglii/cjmn2rlvn0c8u2sl97kkiep6r?optimize=true',
+        style: 'mapbox://styles/huanglii/ck1n985b20oan1cmhp4i0o9c9?optimize=true',
         center: [-74.50, 40],
         zoom: 6,
         minZoom: 0,

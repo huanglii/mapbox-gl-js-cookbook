@@ -56,6 +56,8 @@
   <code-view name="symbol"/>
 </ClientOnly>
 
+> 原型扩散：[Add an animated icon to the map](https://docs.mapbox.com/mapbox-gl-js/example/add-image-animated/)
+
 ## heatmap
 部分 **`paint`** 属性：
 | 属性 | 描述 |
@@ -85,3 +87,5 @@
 <ClientOnly>
   <code-view name="heatmap"/>
 </ClientOnly>
+
+> 热力图：[Create a heatmap layer](https://docs.mapbox.com/mapbox-gl-js/example/heatmap-layer/)
