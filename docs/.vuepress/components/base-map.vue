@@ -11,13 +11,14 @@
 <script>
 import uuid from 'uuid/v4'
 import mapboxgl from 'mapbox-gl'
+import HomeControl from './control/HomeControl'
 import 'mapbox-gl/dist/mapbox-gl.css'
 export default {
   name: 'base-map',
   props: {
     height: {
       type: Number,
-      default: 400
+      default: 520
     },
     mapOptions: {
       type: Object
@@ -66,9 +67,11 @@ export default {
     initMap (options) {
       mapboxgl.accessToken = 'pk.eyJ1IjoiaHVhbmdsaWkiLCJhIjoiY2pzNHBtendwMDZ2ZDQzbnVmZXdtMDlvdiJ9.GSija86yNNR4ssBtFFpx0g'
       this.map = new mapboxgl.Map(options)
-      this.map.addControl(new mapboxgl.NavigationControl({
-        showCompass: false
-      }), 'top-left')
+      this.map.addControl(new mapboxgl.NavigationControl(), 'top-left')
+      let { center, zoom } = options
+      this.map.addControl(new HomeControl({
+        center, zoom
+      }), 'bottom-left')
       this.map.addControl(new mapboxgl.FullscreenControl(), 'top-left')
       this.map.on('load', this.handleMapLoaded)
     },
@@ -82,6 +85,7 @@ export default {
       }
     },
     handleMapClick (evt) {
+      console.log(evt.lngLat)
       let features = this.map.queryRenderedFeatures(
         evt.point
       )

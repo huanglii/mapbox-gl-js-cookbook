@@ -14,7 +14,7 @@ export default {
       mapOptions: {
         style: 'mapbox://styles/mapbox/dark-v10?optimize=true',
         center: [-122.486552, 37.831048],
-        zoom: 14.5
+        zoom: 15
       }
     }
   },

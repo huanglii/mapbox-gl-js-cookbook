@@ -1,6 +1,6 @@
 <template>
   <base-map :height="height" :map-options="mapOptions" @load="handleMapLoaded">
-    <div class="legend">
+    <div class="legend custom">
       <div class="legend-item" v-for="(item, index) in legendStrong" :key="index">
         <span class="circle" :style="{backgroundColor: item[1]}"></span>
         <span class="text">{{ item[0] }}</span>
@@ -69,24 +69,10 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
-.legend {
-  position: absolute;
-  right: 10px;
-  bottom: 28px;
-  font-size: 12px;
-  &-item {
-    padding: 3px 0;
-    .circle {
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      margin-right: 2px;
-      border-radius: 50%;
-    }
-    .text {
-      color: #496C8A;
-    }
+<style lang="less">
+.legend.custom {
+  .text {
+    color: #496C8A;
   }
 }
 </style>
