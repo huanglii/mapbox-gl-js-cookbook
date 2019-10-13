@@ -12,8 +12,8 @@ export default {
   data () {
     return {
       mapOptions: {
-        center: [25, 10],
-        zoom: 3.2
+        center: [106.55955364671473, 29.56198696123272],
+        zoom: 16
       }
     }
   },

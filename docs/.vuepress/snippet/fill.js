@@ -1,60 +1,42 @@
-import { polygon as polygonHelper } from '@turf/helpers'
-const coords1 = [
-  [
-    [1, -1],
-    [20, -1],
-    [20, 21],
-    [1, 21],
-    [1, -1]
-  ]
-]
-const coords2 = [
-  [
-    [30, -1],
-    [49, -1],
-    [49, 21],
-    [30, 21],
-    [30, -1]
-  ]
-]
 export default function addFillLayer (map) {
-  const polygon1 = polygonHelper(coords1)
-  const polygon2 = polygonHelper(coords2)
+  map.addSource('buildings', {
+    'type': 'vector',
+    'scheme': 'tms',
+    'tiles': [
+      'https://900913.cn/geoserver/gwc/service/tms/1.0.0/buildings:Chongqing@EPSG:900913@pbf/{z}/{x}/{y}.pbf'
+    ]
+  })
   map.addLayer({
     'id': 'polygon-layer-1',
     'type': 'fill',
-    'source': {
-      'type': 'geojson',
-      'data': polygon1
-    },
+    'source': 'buildings',
+    'source-layer': 'Chongqing',
     'paint': {
-      'fill-color': '#088',
+      'fill-color': '#FFD273',
       'fill-outline-color': '#f00',
       'fill-opacity': 0.8
-    }
+    },
+    'filter': ['==', ['%', ['get', 'Floor'], 2], 0]
   })
   map.addLayer({
     'id': 'polygon-layer-2',
     'type': 'fill',
-    'source': {
-      'type': 'geojson',
-      'data': polygon2
-    },
+    'source': 'buildings',
+    'source-layer': 'Chongqing',
     'paint': {
-      'fill-color': '#088',
-      'fill-opacity': 0.8,
-      'fill-pattern': 'square-stroked-15'
-    }
+      'fill-pattern': 'religious-buddhist-11'
+    },
+    'filter': ['!=', ['%', ['get', 'Floor'], 2], 0]
   })
   map.addLayer({
     'id': 'line-layer-2',
     'type': 'line',
-    'source': {
-      'type': 'geojson',
-      'data': polygon2
-    },
+    'source': 'buildings',
+    'source-layer': 'Chongqing',
     'paint': {
-      'line-color': '#f00'
+      'line-color': '#E86D68',
+      'line-width': 1,
+      'line-dasharray': [2, 2]
     }
   })
 }

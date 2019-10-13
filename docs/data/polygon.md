@@ -8,13 +8,8 @@
 </ClientOnly>
 
 ## fill(line & point)
-面是由线构成的，也可以用线表示。
+面是由线构成的，也可以用线表示，当然也可以用点。
 
-<ClientOnly>
-  <code-view name="fill-line"/>
-</ClientOnly>
-
-当然也可以用点。
 <ClientOnly>
   <code-view name="fill-point" :is-code-view="false"/>
 </ClientOnly>

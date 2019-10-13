@@ -12,7 +12,12 @@ export default {
   data () {
     return {
       mapOptions: {
-        zoom: 2
+        zoom: 2,
+        style: {
+          version: 8,
+          sources: {},
+          layers: []
+        }
       }
     }
   },

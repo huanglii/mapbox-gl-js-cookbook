@@ -12,11 +12,14 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: 'mapbox://styles/mapbox/dark-v10?optimize=true',
+        style: 'mapbox://styles/huanglii/ck1ocwsbl1fja1cloy67tyefi?optimize=true',
         center: [-120, 50],
         zoom: 2
       },
       borderOptions: {
+        layout: {
+          'visibility': 'visible'
+        },
         paint: {
           'line-color': '#6e6e6e'
         },

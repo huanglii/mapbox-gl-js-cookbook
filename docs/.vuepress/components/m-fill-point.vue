@@ -15,7 +15,6 @@ export default {
         style: 'mapbox://styles/huanglii/cjweb960x1nbn1drxxtuaz9cr?optimize=true',
         center: [106.98044, 29.35100],
         zoom: 12.7,
-        // dragPan: false,
         scrollZoom: false,
         doubleClickZoom: false,
         touchZoomRotate: false

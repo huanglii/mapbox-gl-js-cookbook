@@ -19,6 +19,9 @@ export default {
         minZoom: 1
       },
       borderOptions: {
+        layout: {
+          'visibility': 'visible'
+        },
         paint: {
           'line-color': '#6e6e6e'
         },

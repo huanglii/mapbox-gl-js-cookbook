@@ -45,6 +45,9 @@ export default {
         antialias: false
       },
       borderDefaultOptions: {
+        layout: {
+          'visibility': 'none'
+        },
         paint: {
           'line-color': 'hsl(357, 67%, 60%)',
           'line-opacity': ['step', ['zoom'], 1, 10, 0],
@@ -80,10 +83,10 @@ export default {
       this.maploaded = true
       this.$emit('load', evt.target)
       this.map.on('click', this.handleMapClick)
-      let chinaBorderLayer = this.map.getLayer('border-2oej0r')
-      if (!chinaBorderLayer) {
-        this.addBorderLayer()
-      }
+      // let chinaBorderLayer = this.map.getLayer('border-2oej0r')
+      // if (!chinaBorderLayer) {
+      //   this.addBorderLayer()
+      // }
     },
     handleMapClick (evt) {
       console.log(evt.lngLat)
@@ -111,7 +114,7 @@ export default {
     // 国界线
     addBorderLayer () {
       let borderOptions = Object.assign({}, this.borderDefaultOptions, this.borderOptions)
-      let { paint, beforeId } = borderOptions
+      let { layout, paint, beforeId } = borderOptions
       this.map.addSource('border', {
         type: 'vector',
         url: 'mapbox://huanglii.4nxu8jv0'
@@ -121,6 +124,7 @@ export default {
         'source': 'border',
         'source-layer': 'Border-2oej0r',
         'type': 'line',
+        'layout': layout,
         'paint': paint
       }, beforeId || undefined)
     },

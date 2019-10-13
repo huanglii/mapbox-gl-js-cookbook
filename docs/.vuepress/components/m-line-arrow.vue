@@ -12,7 +12,7 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: 'mapbox://styles/mapbox/dark-v10?optimize=true',
+        style: 'mapbox://styles/huanglii/ck1ocwsbl1fja1cloy67tyefi?optimize=true',
         center: [-122.486552, 37.831048],
         zoom: 15
       }
