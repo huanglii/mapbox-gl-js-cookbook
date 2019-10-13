@@ -89,3 +89,10 @@
 </ClientOnly>
 
 > 热力图：[Create a heatmap layer](https://docs.mapbox.com/mapbox-gl-js/example/heatmap-layer/)
+
+## Marker
+<ClientOnly>
+  <code-view name="marker"/>
+</ClientOnly>
+
+> Marker：[Add custom icons with Markers](https://docs.mapbox.com/mapbox-gl-js/example/custom-marker-icons/)
