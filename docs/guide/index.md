@@ -13,7 +13,7 @@ Mapbox GL JS 版本号：[v1.1.0](https://docs.mapbox.com/mapbox-gl-js/overview/
 :::
 
 ## 目录
-* [样式规范](/style-spec)
+* [样式规范](/style-spec/)
   * 绘制哪些数据，绘制顺序以及绘制数据时如何设置数据样式。
 * [数据](/data/)
   * 点、线、面、栅格等数据，以及不同数据格式在 Mapbox GL JS 中的可视化。
