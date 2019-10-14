@@ -15,6 +15,7 @@ module.exports = {
     displayAllHeaders: true,
     nav: [
       { text: '指南', link: '/guide/' },
+      { text: '样式规范', link: '/style-spec/' },
       { text: '数据', link: '/data/' },
       { text: '服务', link: '/service/' },
       { text: '进阶', link: '/advance/' },
@@ -35,11 +36,19 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'style-spec',
             'point',
             'line',
             'polygon',
             'raster'
+          ]
+        }
+      ],
+      '/style-spec/': [
+        {
+          title: '样式规范',
+          collapsable: false,
+          children: [
+            ''
           ]
         }
       ],

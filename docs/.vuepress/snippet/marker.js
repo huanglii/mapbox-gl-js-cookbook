@@ -15,13 +15,14 @@ const points = [
 ]
 export default function addMarker (map) {
   points.forEach(point => {
-    let el = window.document.createElement('div')
-    let img = window.document.createElement('img')
-    el.appendChild(img)
+    let el = document.createElement('div')
     el.className = 'marker'
     el.style.width = `${point.iconSize[0]}px`
     el.style.height = `${point.iconSize[1]}px`
+
+    let img = document.createElement('img')
     img.src = `https://placekitten.com/g/${point.iconSize.join('/')}/`
+    el.appendChild(img)
 
     new mapboxgl.Marker(el)
       .setLngLat(point.coordinates)

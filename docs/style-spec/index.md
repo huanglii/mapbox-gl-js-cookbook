@@ -1,7 +1,8 @@
 # 样式规范
-本节只简单介绍样式规范有哪些属性，并**稍**详细介绍了数据源和图层配置，不过以下内容对实际开发已经足够了，想要详细了解样式规范，可查阅 [官方文档](https://docs.mapbox.com/mapbox-gl-js/style-spec/)
+[Mapbox Style Specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/)是定义地图视觉外观的文档：绘制哪些数据，绘制顺序以及绘制数据时如何设置数据样式。
 
-一个样式有以下根属性： `version`, `name`, `metadata`, `center`, `zoom`, `bearing`, `pitch`, `light`, `sources`, `sprite`, `glyphs`, `transition`, `layers` 。在开发中一般关注 **`sources`**, **`layers`** 即可。
+一个样式有以下根属性： `version`, `name`, `metadata`, `center`, `zoom`, `bearing`, `pitch`, `light`, `sources`, `sprite`, `glyphs`, `transition`, `layers` 。重点关注 **`sources`**, **`layers`**。
+
 ``` js
 {
   'version': 8, // 版本号，必须且必须为 8
@@ -11,6 +12,13 @@
   'layers': [...] // 图层
 }
 ```
+
+## 版本号
+样式规范版本号。必须为 **`8`**。
+
+## 雪碧图
+
+## 字体
 
 ## 数据源
 数据源的类型由 **`type`** 指定，并且必须是 `vector`, `raster`, `raster-dem`, `geojson`, `image`, `video` 之一。
