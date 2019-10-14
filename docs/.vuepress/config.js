@@ -48,7 +48,11 @@ module.exports = {
           title: '样式规范',
           collapsable: false,
           children: [
-            ''
+            '',
+            'sprite',
+            'glyphs',
+            'sources',
+            'layers'
           ]
         }
       ],
