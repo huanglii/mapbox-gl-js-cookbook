@@ -18,6 +18,25 @@
   <code-view name="circle"/>
 </ClientOnly>
 
+#### 点聚合
+使用聚合图层时，数据必须为 `geojson`，并设置 `cluster` 为 `true`。
+
+``` js
+map.addSource('points', {
+  'type': 'geojson',
+  'data': 'https://900913.cn/geoserver/buildings/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=buildings:cq_point&outputFormat=application/json',
+  'cluster': true,
+  'clusterMaxZoom': 10, // 最大聚合 zoom， 超过这个值则不聚合
+  'clusterRadius': 50 // 聚合半径，默认 50
+})
+```
+
+添加聚合图层时，分三个图层：①聚合图层，②聚合数量图层，③不聚合的点图层。
+
+<ClientOnly>
+  <code-view name="circle-cluster"/>
+</ClientOnly>
+
 #### 海量点
 <ClientOnly>
   <code-view name="circle-scatter"/>

@@ -4,7 +4,7 @@
 
 <script>
 import baseMap from './base-map'
-import addCircleScatterLayer from '../snippet/circle-scatter'
+import addCircleClusterLayer from '../snippet/circle-cluster'
 export default {
   components: {
     baseMap
@@ -13,10 +13,9 @@ export default {
     return {
       mapOptions: {
         style: 'mapbox://styles/huanglii/ck1ocwsbl1fja1cloy67tyefi?optimize=true',
-        center: [116.3162548, 36.9017491],
-        zoom: 2,
-        maxZoom: 6,
-        minZoom: 1
+        center: [(105.28976 + 110.199858) / 2, (28.160225 + 32.2011870) / 2],
+        zoom: 6,
+        minZoom: 4
       },
       borderOptions: {
         layout: {
@@ -31,7 +30,7 @@ export default {
   },
   methods: {
     handleMapLoaded (map) {
-      addCircleScatterLayer(map)
+      addCircleClusterLayer(map)
     }
   }
 }
