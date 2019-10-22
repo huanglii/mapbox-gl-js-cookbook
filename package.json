@@ -26,8 +26,10 @@
     "vuepress": "^1.0.3"
   },
   "dependencies": {
+    "@turf/bearing": "^6.0.1",
     "@turf/helpers": "^6.1.4",
     "@turf/line-arc": "^6.0.0",
+    "@turf/meta": "^6.0.2",
     "city-selector-control": "^0.2.2",
     "d3": "^5.9.7",
     "d3-fetch": "^1.1.2",

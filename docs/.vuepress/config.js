@@ -72,8 +72,8 @@ module.exports = {
           children: [
             '',
             'thematic',
+            'track',
             'control',
-            'typhoon',
             'deck-gl'
           ]
         }

@@ -1,4 +1,16 @@
-# 台风路径
+# 轨迹
+
+## 骑行轨迹
+轨迹线可用前面 [**数据**](/data/) 章节提到的使用 `symbol` + `line` 的方式。
+
+骑行过程的轨迹动画通过不断修改数据源（`source.setData()`），来达到动画的效果，同时根据两点坐标计算 `bearing`，来设置“自行车”的姿态。
+<ClientOnly>
+  <code-view name="track"/>
+</ClientOnly>
+
+> 路径动画：[Animate a point along a route](https://docs.mapbox.com/mapbox-gl-js/example/animate-point-along-route/)
+
+## 台风路径
 2019 年第 09 号超强台风利奇马（LEKIMA）路径可视化，数据截止时间：2019/8/9 20:00:00。数据来自“浙江台风路径实时发布系统”，各平台的台风数据格式都大同小异，这里对接口原始数据处理后再做可视化。关键点在于将台风的路径点数据处理成 GeoJSON 数据，使用 [Turf](http://turfjs.org/) 库可以方便处理。
 
 可视化过程中涉及到一些 [表达式(Expressions)](https://docs.mapbox.com/mapbox-gl-js/style-spec/#expressions)和 [过滤器(Filters)](https://docs.mapbox.com/mapbox-gl-js/style-spec/#other-filter) 。
@@ -57,7 +69,6 @@
 ``` js
 'filter': ['all', ['==', '$type', 'LineString'], ['==', 'type', 'track']]
 ```
-
 
 <ClientOnly>
   <code-view name="typhoon" />
