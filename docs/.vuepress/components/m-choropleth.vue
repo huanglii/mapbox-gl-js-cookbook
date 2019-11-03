@@ -1,7 +1,12 @@
 <template>
   <base-map :map-options="mapOptions" @load="handleMapLoaded">
     <div class="legend custom">
-      <div class="legend-item" v-for="(item, index) in legends" :key="index">
+      <div class="legend-item" @click="setFilter('0-100')">
+        <span class="square"></span>
+        <span class="text">全部值</span>
+      </div>
+      <div class="legend-item" v-for="(item, index) in legends" :key="index"
+        @click="setFilter(item[0])">
         <span class="square" :style="{backgroundColor: item[1]}"></span>
         <span class="text">{{ item[0] }}</span>
       </div>
@@ -18,6 +23,7 @@ export default {
   },
   data () {
     return {
+      map: undefined,
       mapOptions: {
         style: 'mapbox://styles/huanglii/ck1naxpm00gvj1co6r4pxgxzl?optimize=true',
         center: [(105.28976 + 110.199858) / 2, (28.160225 + 32.2011870) / 2],
@@ -35,7 +41,16 @@ export default {
   },
   methods: {
     handleMapLoaded (map) {
+      this.map = map
       addChoroplethLayer(map, this.$withBase('/data/cq.geojson'))
+    },
+    setFilter (value) {
+      let prop = value.split('-')
+      this.map.setFilter('choropleth-layer', [
+        'all', 
+        ['>=', ['get', 'value'], prop[0] - 0], 
+        ['<', ['get', 'value'], prop[1] - 0]
+      ])
     }
   }
 }
@@ -44,5 +59,11 @@ export default {
 <style lang="less">
 .legend.custom {
   background-color: rgba(255, 255, 255, 0.8);
+  .legend-item {
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, .1);
+    }
+  }
 }
 </style>
