@@ -18,6 +18,7 @@ export default function addFillLayer (map) {
     },
     'filter': ['==', ['%', ['get', 'Floor'], 2], 0]
   })
+  // 纹理
   map.addLayer({
     'id': 'polygon-layer-2',
     'type': 'fill',
@@ -28,6 +29,7 @@ export default function addFillLayer (map) {
     },
     'filter': ['!=', ['%', ['get', 'Floor'], 2], 0]
   })
+  // 虚线
   map.addLayer({
     'id': 'line-layer-2',
     'type': 'line',
