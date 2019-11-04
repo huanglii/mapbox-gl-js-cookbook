@@ -1,9 +1,9 @@
 # 轨迹
 
-## 骑行轨迹
+## 行车轨迹
 轨迹线可用前面 [**数据**](/data/) 章节提到的使用 `symbol` + `line` 的方式。
 
-骑行过程的轨迹动画通过不断修改数据源（`source.setData()`），来达到动画的效果，同时根据两点坐标计算 `bearing`，来设置“自行车”的姿态。
+行车过程的轨迹动画通过不断修改数据源（`source.setData()`），来达到动画的效果，同时根据两点坐标计算 `bearing`，来设置“出租车”的姿态。
 <ClientOnly>
   <code-view name="track"/>
 </ClientOnly>

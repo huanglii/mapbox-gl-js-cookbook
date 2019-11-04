@@ -14,7 +14,7 @@ export default {
     return {
       mapOptions: {
         style: 'mapbox://styles/huanglii/ck23131s00los1cnz1qjms49i?optimize=true',
-        center: [106.56272183918276, 29.557833499498457],
+        center: [106.573193, 29.558285],
         zoom: 13.5
       }
     }

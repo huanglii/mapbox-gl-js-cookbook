@@ -121,7 +121,7 @@ export default function addTrackLayer (map, data) {
       map.easeTo({
         pitch: 0,
         zoom: 13.5,
-        center: [106.56272183918276, 29.557833499498457],
+        center: [106.573193, 29.558285],
         bearing: 0
       })
     }
