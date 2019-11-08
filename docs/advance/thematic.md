@@ -23,7 +23,7 @@ Mapbox GL 样式中可使用 `case`、`match`、`interpolate`、`step` 等来实
 ## 比例符号图
 比例符号图中，所使用的符号（如圆圈）与其所代表的数值成比例地缩放。 符号可能代表点数据，但使用比例符号来表示面数据也十分常见。
 
-使用以下公式将数值归一化到指定区间 **[MIN_R, MAX_R]**。其中：MAX_V、MIN_V 分别为样本数据的最大值、最小值。
+我们通常会使用以下公式将数值归一化到指定区间 **[MIN_R, MAX_R]**。其中：MAX_V、MIN_V 分别为样本数据的最大值、最小值。
 <div class="formula">
   <p>R = (MAX_R - MIN_R) / (MAX_V - MIN_V) * (V - MIN_V) + MIN_R</p>
 </div>
@@ -42,6 +42,17 @@ Mapbox GL 样式中使用如下：
   ],
   MIN_R
 ]
+```
+
+但是，Mapbox GL 表达式提供了插值方法，我们可以使用如下表达式，省去了上面复杂的表达式，并且代码可读性更好了。
+``` js
+'circle-radius': [
+  'interpolate', ['linear'], ['get', 'value'],
+  // value ≤ 0 时，半径为 5
+  0, 5,
+  // value ≥ 100 时，半径为 15
+  100, 15
+],
 ```
 
 <ClientOnly>

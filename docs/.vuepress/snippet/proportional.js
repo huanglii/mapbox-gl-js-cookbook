@@ -13,17 +13,22 @@ export default function addProportionalLayer (map, data) {
     },
     'paint': {
       // 'circle-radius': (MAX_R - MIN_R) / (MAX_V - MIN_V) * (V - MIN_V) + MIN_R,
+      // 'circle-radius': [
+      //   '+',
+      //   ['*',
+      //     [
+      //       '/',
+      //       ['-', MAX_R, MIN_R],
+      //       ['-', MAX_V, MIN_V]
+      //     ],
+      //     ['-', ['get', 'value'], MIN_V]
+      //   ],
+      //   MIN_R
+      // ],
       'circle-radius': [
-        '+',
-        ['*',
-          [
-            '/',
-            ['-', MAX_R, MIN_R],
-            ['-', MAX_V, MIN_V]
-          ],
-          ['-', ['get', 'value'], MIN_V]
-        ],
-        MIN_R
+        'interpolate', ['linear'], ['get', 'value'],
+        0, 5,
+        100, 15
       ],
       'circle-color': [
         'interpolate',
