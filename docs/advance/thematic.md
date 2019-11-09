@@ -20,6 +20,25 @@ Mapbox GL 样式中可使用 `case`、`match`、`interpolate`、`step` 等来实
   <code-view name="choropleth"/>
 </ClientOnly>
 
+## 唯一值图
+唯一值可对值的定性分类进行符号化。示例包括土地类型、规划区域、投票意向等。
+``` js
+'fill-color': [
+  'match',
+  ['get', 'type'],
+  1, '#FFD273',
+  2, '#E86D68',
+  3, '#A880FF',
+  4, '#68E0E8',
+  5, '#9BFF69',
+  '#000' // 无匹配值颜色
+],
+```
+
+<ClientOnly>
+  <code-view name="unique"/>
+</ClientOnly>
+
 ## 比例符号图
 比例符号图中，所使用的符号（如圆圈）与其所代表的数值成比例地缩放。 符号可能代表点数据，但使用比例符号来表示面数据也十分常见。
 
