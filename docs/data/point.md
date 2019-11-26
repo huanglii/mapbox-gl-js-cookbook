@@ -15,7 +15,7 @@
 
 #### 普通点
 <ClientOnly>
-  <code-view name="circle"/>
+  <common-code-view name="circle"/>
 </ClientOnly>
 
 #### 点聚合
@@ -34,12 +34,12 @@ map.addSource('points', {
 添加聚合图层时，分三个图层：①聚合图层，②聚合数量图层，③不聚合的点图层。
 
 <ClientOnly>
-  <code-view name="circle-cluster"/>
+  <common-code-view name="circle-cluster"/>
 </ClientOnly>
 
 #### 海量点
 <ClientOnly>
-  <code-view name="circle-scatter"/>
+  <common-code-view name="circle-scatter"/>
 </ClientOnly>
 
 ## symbol
@@ -72,7 +72,7 @@ map.addSource('points', {
 | **`text-allow-overlap`** | 文本是否允许重叠，默认`false` |
 
 <ClientOnly>
-  <code-view name="symbol"/>
+  <common-code-view name="symbol"/>
 </ClientOnly>
 
 > 原型扩散：[Add an animated icon to the map](https://docs.mapbox.com/mapbox-gl-js/example/add-image-animated/)
@@ -104,14 +104,14 @@ map.addSource('points', {
 ```
 
 <ClientOnly>
-  <code-view name="heatmap"/>
+  <common-code-view name="heatmap"/>
 </ClientOnly>
 
 > 热力图：[Create a heatmap layer](https://docs.mapbox.com/mapbox-gl-js/example/heatmap-layer/)
 
 ## Marker
 <ClientOnly>
-  <code-view name="marker"/>
+  <common-code-view name="marker"/>
 </ClientOnly>
 
 > Marker：[Add custom icons with Markers](https://docs.mapbox.com/mapbox-gl-js/example/custom-marker-icons/)

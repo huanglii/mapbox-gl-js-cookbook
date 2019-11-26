@@ -8,7 +8,7 @@ deck.gl是由Uber开发并开源出来的基于WebGL的大数据量可视化框�
 3D热度图
 
 <ClientOnly>
-  <code-view name="deckgl-heatmap3d" />
+  <common-code-view name="deckgl-heatmap3d" />
 </ClientOnly>
 
 ## LineLayer
@@ -16,7 +16,7 @@ deck.gl是由Uber开发并开源出来的基于WebGL的大数据量可视化框�
 航线路径图示例
 
 <ClientOnly>
-  <code-view name="deckgl-line" />
+  <common-code-view name="deckgl-line" />
 </ClientOnly>
 
 ## TripsLayer
@@ -24,7 +24,7 @@ deck.gl是由Uber开发并开源出来的基于WebGL的大数据量可视化框�
 出租车路径可视化
 
 <ClientOnly>
-  <code-view name="deckgl-trips" />
+  <common-code-view name="deckgl-trips" />
 </ClientOnly>
 
 ## HighwayLayer
@@ -32,7 +32,7 @@ deck.gl是由Uber开发并开源出来的基于WebGL的大数据量可视化框�
 2015年高速公路事故率可视化
 
 <ClientOnly>
-  <code-view name="deckgl-highway" />
+  <common-code-view name="deckgl-highway" />
 </ClientOnly>
 
 ## ArcLayer
@@ -40,5 +40,5 @@ deck.gl是由Uber开发并开源出来的基于WebGL的大数据量可视化框�
 在2009年至2013年期间进出达拉斯人口路线可视化（基于Arc图层）
 
 <ClientOnly>
-  <code-view name="deckgl-arc" />
+  <common-code-view name="deckgl-arc" />
 </ClientOnly>

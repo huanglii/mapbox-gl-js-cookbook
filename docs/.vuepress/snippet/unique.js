@@ -27,7 +27,7 @@ export default function addUniqueLayer (map, data) {
     'source': 'land',
     'paint': {
       'line-color': '#FFF',
-      'line-width': 1.5,
+      'line-width': 1.5
     }
   })
 }

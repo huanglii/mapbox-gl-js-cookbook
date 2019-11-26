@@ -13,7 +13,7 @@
 ```
 
 <ClientOnly>
-  <code-view name="raster"/>
+  <common-code-view name="raster"/>
 </ClientOnly>
 
 > 栅格瓦片：[Add a raster tile source](https://docs.mapbox.com/mapbox-gl-js/example/map-tiles/)
@@ -40,7 +40,7 @@
 ```
 
 <ClientOnly>
-  <code-view name="image"/>
+  <common-code-view name="image"/>
 </ClientOnly>
 
 
@@ -63,5 +63,5 @@ Mapbox GL JS 还支持视频数据源，同 `image` 差不多。
 ```
 
 <ClientOnly>
-  <code-view name='video'/>
+  <common-code-view name='video'/>
 </ClientOnly>

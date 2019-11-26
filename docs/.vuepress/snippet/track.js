@@ -90,7 +90,7 @@ export default function addTrackLayer (map, data) {
       'text-size': 14
     }
   })
-  
+
   let counter = 0
   function animate () {
     let lnglat = points[counter]
@@ -100,7 +100,7 @@ export default function addTrackLayer (map, data) {
     point.properties.bearing = bearing(
       pointHelper(points[counter >= steps ? counter - 1 : counter]),
       pointHelper(points[counter >= steps ? counter : counter + 1])
-      )
+    )
     // 更新线坐标
     trackLine.geometry.coordinates.push(lnglat)
     // 更新数据源

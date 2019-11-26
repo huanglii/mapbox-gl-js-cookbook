@@ -9,14 +9,13 @@ export default function addProportionalLayer (map) {
     'paint': {
       'circle-radius': 2,
       'circle-color': [
-        'interpolate',
-        ['linear'],
+        'step',
         ['to-number', ['get', 'CID']],
-        0, '#FFD273',
-        10, '#E86D68',
-        20, '#A880FF',
-        30, '#68E0E8',
-        40, '#9BFF69'
+        '#0098A3',
+        10, '#00CA8D',
+        20, '#37C508',
+        30, '#98F300',
+        40, '#EFFF85'
       ]
     }
   }, 'poi-label')

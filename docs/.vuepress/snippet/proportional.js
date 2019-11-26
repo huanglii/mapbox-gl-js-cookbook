@@ -1,7 +1,7 @@
-const MAX_R = 15 // 最大半径
-const MIN_R = 5 // 最小半径
-const MAX_V = 100 // 字段最大值
-const MIN_V = 0 // 字段最小值
+// const MAX_R = 15 // 最大半径
+// const MIN_R = 5 // 最小半径
+// const MAX_V = 100 // 字段最大值
+// const MIN_V = 0 // 字段最小值
 
 export default function addProportionalLayer (map, data) {
   map.addLayer({
