@@ -29,7 +29,6 @@ yarn lint # 或者：npm run lint
 </ClientOnly>
 ```
 3. 如果需要 `查看代码` 按钮，在 `example` 中添加 `{name}.md`，插入相应代码即可。
-4. 如果添加公共组件，写在 `.vuepress/components/common` 文件夹中。
 
 ### 代码规范
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
@@ -56,6 +55,9 @@ yarn lint # 或者：npm run lint
 ├── docs                     // 文档
 │   ├── .vuepress            // 所有 VuePress 相关的文件都将会被放在这里
 │       ├── components       // Vue 组件
+│           ├── common       // 公共组件
+│           ├── control      // 地图控件
+│           ├── map          // 地图
 │       ├── public           // 公共文件
 │       ├── snippet          // 代码段
 │       ├── config.js        // VuePress 配置文件
