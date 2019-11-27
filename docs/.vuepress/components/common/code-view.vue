@@ -1,6 +1,6 @@
 <template>
   <div class="code-view-wrapper">
-    <component :is="`map-m-${name}`"></component>
+    <component :is="`map-${name}`"></component>
     <a class="link" v-if="isCodeView" :href="$withBase(`/example/${name}.html`)" target="_blank">查看代码</a>
   </div>
 </template>

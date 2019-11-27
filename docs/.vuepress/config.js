@@ -74,6 +74,7 @@ module.exports = {
             'thematic',
             'track',
             'control',
+            'ECharts',
             'deck-gl'
           ]
         }

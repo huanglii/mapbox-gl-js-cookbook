@@ -23,7 +23,7 @@ Mapbox GL 样式中可使用 `interpolate`、`step`、`case`、`match` 及函数
 ```
 
 <ClientOnly>
-  <common-code-view name="choropleth"/>
+  <common-code-view name="thematic-choropleth"/>
 </ClientOnly>
 
 ## 唯一值图
@@ -64,7 +64,7 @@ Mapbox GL 样式中可使用 `interpolate`、`step`、`case`、`match` 及函数
 ```
 
 <ClientOnly>
-  <common-code-view name="unique"/>
+  <common-code-view name="thematic-unique"/>
 </ClientOnly>
 
 ## 比例符号图
@@ -103,7 +103,7 @@ Mapbox GL 样式中使用如下：
 ```
 
 <ClientOnly>
-  <common-code-view name="proportional"/>
+  <common-code-view name="thematic-proportional"/>
 </ClientOnly>
 
 ## 点密度图
@@ -127,7 +127,7 @@ Mapbox GL 样式中使用如下：
 ```
 
 <ClientOnly>
-  <common-code-view name="dot"/>
+  <common-code-view name="thematic-dot"/>
 </ClientOnly>
 
 ## 等值线图
@@ -142,5 +142,5 @@ Mapbox GL 样式中使用如下：
 ]
 ```
 <ClientOnly>
-  <common-code-view name="contours"/>
+  <common-code-view name="thematic-contours"/>
 </ClientOnly>

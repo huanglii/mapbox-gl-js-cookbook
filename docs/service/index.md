@@ -43,7 +43,7 @@ Mapbox GL JS 在加载 TMS 服务时，需要设置 `scheme` 属性为 `tms`。`
  ```
 
 <ClientOnly>
-  <common-code-view name="tms"/>
+  <common-code-view name="service-tms"/>
 </ClientOnly>
 
 ## WMS
@@ -94,7 +94,7 @@ Web Map Service（Web 地图服务），简称 `WMS`。WMS 标准定义了允许
 注意 url 中的 `bbox` 参数值 `"{bbox-epsg-3857}"`。Mapbox GL JS 会自动计算地图范围替换该值，获取地图。这也是与下面 WMTS 同样用栅格格式，WMS 不会模糊的原因。
 
 <ClientOnly>
-  <common-code-view name="wms"/>
+  <common-code-view name="service-wms"/>
 </ClientOnly>
 
 ## WMTS
@@ -146,7 +146,7 @@ WMTS 的切片坐标系统和组织方式可参考下图：
 这里也建议在使用 Mapbox GL JS 的时候能使用矢量就尽量用矢量格式。
 
 <ClientOnly>
-  <common-code-view name="wmts"/>
+  <common-code-view name="service-wmts"/>
 </ClientOnly>
 
 ## WFS
@@ -193,5 +193,5 @@ Web Feature Service（Web 要素服务），简称 WFS。WFS 标准定义了一�
 ```
 
 <ClientOnly>
-  <common-code-view name="wfs"/>
+  <common-code-view name="service-wfs"/>
 </ClientOnly>

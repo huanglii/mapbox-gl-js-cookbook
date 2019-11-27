@@ -5,7 +5,7 @@
 
 行车过程的轨迹动画通过不断修改数据源（`source.setData()`），来达到动画的效果，同时根据两点坐标计算 `bearing`，来设置“出租车”的姿态。
 <ClientOnly>
-  <common-code-view name="track"/>
+  <common-code-view name="track-car"/>
 </ClientOnly>
 
 > 路径动画：[Animate a point along a route](https://docs.mapbox.com/mapbox-gl-js/example/animate-point-along-route/)
@@ -71,5 +71,5 @@
 ```
 
 <ClientOnly>
-  <common-code-view name="typhoon" />
+  <common-code-view name="track-typhoon" />
 </ClientOnly>

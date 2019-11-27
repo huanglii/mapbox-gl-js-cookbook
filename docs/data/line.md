@@ -19,7 +19,7 @@
 | **`line-join`** | 线条连接样式，可选`"bevel"`, `"round"`, `"miter"`，默认`"miter"` |
 
 <ClientOnly>
-  <common-code-view name="line"/>
+  <common-code-view name="data-line"/>
 </ClientOnly>
 
 ## line-gradient
@@ -30,19 +30,19 @@
 :::
 
 <ClientOnly>
-  <common-code-view name="line-gradient"/>
+  <common-code-view name="data-line-gradient"/>
 </ClientOnly>
 
 > 线性渐变：[Create a gradient line using an expression](https://docs.mapbox.com/mapbox-gl-js/example/line-gradient/)
 
 结合 `symbol` 还可以做出如下箭头效果：
 <ClientOnly>
-  <common-code-view name="line-arrow"/>
+  <common-code-view name="data-line-arrow"/>
 </ClientOnly>
 
 ## line(point)
 线是由点构成的，当然也可以用点表示。
 
 <ClientOnly>
-  <common-code-view name="line-point"/>
+  <common-code-view name="data-line-point"/>
 </ClientOnly>

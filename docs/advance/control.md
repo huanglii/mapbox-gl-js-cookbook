@@ -40,5 +40,5 @@ HelloWorldControl.prototype.onRemove = function () {
 一个快速定位城市的控件。GitHub 地址：[城市选择器](https://github.com/huanglii/city-selector-control)
 
 <ClientOnly>
-  <common-code-view name="city-selector-control" :is-code-view="false"/>
+  <common-code-view name="control-city-selector" :is-code-view="false"/>
 </ClientOnly>
