@@ -15,20 +15,20 @@ yarn lint # 或者：npm run lint
 ## 文档规范
 文档暂无规范，后续补充。
 对于示例代码部分：
-1. 在 `.vuepress/components/map` 中添加 Vue 组件，以 `m-{名称}` 命名，如：`m-tms.vue`。
-2. 在 md 文件中使用添加的 Vue 组件。
+1. 在 `.vuepress/components/map` 中相应文件夹添加 Vue 组件，如 `/data/circle.vue`。
+2. 在 md 文件中使用添加的 Vue 组件，`name` 属性为 `{文件夹}-{文件名}`。
 ```
 <ClientOnly>
-  <common-code-view name="{名称}"/>
+  <common-code-view name="data-circle"/>
 </ClientOnly>
 ```
 如果不需要 `查看代码` 按钮，添加 `is-code-view` 属性为 `false`。
 ```
 <ClientOnly>
-  <common-code-view name="{名称}" :is-code-view="false"/>
+  <common-code-view name="data-circle" :is-code-view="false"/>
 </ClientOnly>
 ```
-3. 如果需要 `查看代码` 按钮，在 `example` 中添加 `{name}.md`，插入相应代码即可。
+3. 如果需要 `查看代码` 按钮，在 `example` 中添加 `data-circle.md`，插入相应代码即可。
 
 ### 代码规范
 [![JavaScript Style Guide](https://cdn.rawgit.com/standard/standard/master/badge.svg)](https://github.com/standard/standard)
