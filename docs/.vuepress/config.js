@@ -75,7 +75,8 @@ module.exports = {
             'track',
             'control',
             'ECharts',
-            'deck-gl'
+            'deck-gl',
+            'threejs'
           ]
         }
       ]

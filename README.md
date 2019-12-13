@@ -1,6 +1,6 @@
 # Mapbox GL JS Cookbook
 
-> Mapbox GL JS 版本号：[v1.1.0](https://docs.mapbox.com/mapbox-gl-js/overview/)
+> Mapbox GL JS 版本号：[v1.6.0](https://docs.mapbox.com/mapbox-gl-js/overview/)
 
 > 部分源码引用自官方示例 [Mapbox GL JS Example](https://docs.mapbox.com/mapbox-gl-js/examples/)。
 
