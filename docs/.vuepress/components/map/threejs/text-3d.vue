@@ -1,5 +1,5 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" :map-clickable="false" @load="handleMapLoaded"/>
 </template>
 
 <script>

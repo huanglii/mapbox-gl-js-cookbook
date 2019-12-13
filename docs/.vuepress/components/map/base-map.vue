@@ -23,6 +23,10 @@ export default {
     mapOptions: {
       type: Object
     },
+    mapClickable: {
+      type: Boolean,
+      default: true
+    },
     borderOptions: {
       type: Object
     }
@@ -82,11 +86,7 @@ export default {
     handleMapLoaded (evt) {
       this.maploaded = true
       this.$emit('load', evt.target)
-      this.map.on('click', this.handleMapClick)
-      // let chinaBorderLayer = this.map.getLayer('border-2oej0r')
-      // if (!chinaBorderLayer) {
-      //   this.addBorderLayer()
-      // }
+      if (this.mapClickable) this.map.on('click', this.handleMapClick)
     },
     handleMapClick (evt) {
       console.log(evt.lngLat)

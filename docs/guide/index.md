@@ -1,7 +1,7 @@
 # 指南
 
 ::: tip
-Mapbox GL JS 版本号：[v1.1.0](https://docs.mapbox.com/mapbox-gl-js/overview/)
+Mapbox GL JS 版本号：[v1.6.0](https://docs.mapbox.com/mapbox-gl-js/overview/)
 :::
 
 ::: tip

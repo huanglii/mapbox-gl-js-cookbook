@@ -11,9 +11,13 @@ class Text3DLayer {
     this.renderingMode = '3d'
 
     this.camera = new THREE.Camera()
+    // this.camera = new THREE.PerspectiveCamera(28, window.innerWidth / window.innerHeight, 0.000000000001, Infinity)
+
     this.scene = new THREE.Scene()
     this.world = new THREE.Group()
     this.scene.add(this.world)
+
+    this.raycaster = new THREE.Raycaster()
   }
 
   onAdd (map, gl) {
@@ -38,6 +42,21 @@ class Text3DLayer {
     this.camera.projectionMatrix = m.multiply(l)
     this.renderer.state.reset()
     this.renderer.render(this.scene, this.camera)
+  }
+
+  // 取不到对象，原因未知
+  queryRenderedFeatures (point) {
+    let mouse = new THREE.Vector2()
+    // scale mouse pixel position to a percentage of the screen's width and height
+    mouse.x = ( point.x / this.map.transform.width ) * 2 - 1;
+    mouse.y = 1 - ( point.y / this.map.transform.height ) * 2;
+
+    this.raycaster.setFromCamera(mouse, this.camera)
+
+    // calculate objects intersecting the picking ray
+    let intersects = this.raycaster.intersectObjects(this.world.children, true)
+
+    return intersects
   }
 
   _addTextGeometry () {

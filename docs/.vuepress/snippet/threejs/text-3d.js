@@ -69,7 +69,7 @@ export default function addText3DLayer (map, fontUrl) {
   })
   const loader = new THREE.FontLoader()
   loader.load(fontUrl, font => {
-    let customLayer = new Text3DLayer({
+    let text3DLayer = new Text3DLayer({
       'id': 'symbol-layer',
       // 'source': symbolPoints,
       'source': 'points',
@@ -83,6 +83,6 @@ export default function addText3DLayer (map, fontUrl) {
       },
       'font': font
     })
-    map.addLayer(customLayer)
+    map.addLayer(text3DLayer)
   })
 }
