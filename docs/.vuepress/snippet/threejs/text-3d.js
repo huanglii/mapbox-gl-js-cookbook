@@ -1,7 +1,8 @@
 import * as THREE from 'three'
 import Text3DLayer from './text-3d-layer'
+import indoorData from '../../public/data/indoor-3d-map.json'
 
-const symbolPoints = {
+const pointData = {
   'type': 'FeatureCollection',
   'features': [{
     'type': 'Feature',
@@ -40,28 +41,29 @@ const symbolPoints = {
 }
 
 export default function addText3DLayer (map, fontUrl) {
-  map.addSource('points', {
+  map.addSource('point-source', {
     type: 'geojson',
-    data: symbolPoints
+    data: pointData
+  })
+  map.addSource('indoor-source', {
+    type: 'geojson',
+    data: indoorData
   })
   map.addLayer({
     'id': 'room-extrusion',
     'type': 'fill-extrusion',
-    'source': {
-      'type': 'geojson',
-      'data': 'https://docs.mapbox.com/mapbox-gl-js/assets/indoor-3d-map.geojson'
-    },
+    'source': 'indoor-source',
     'paint': {
       'fill-extrusion-color': ['get', 'color'],
       'fill-extrusion-height': ['get', 'height'],
       'fill-extrusion-base': ['get', 'base_height'],
-      'fill-extrusion-opacity': 0.5
+      'fill-extrusion-opacity': 0.75
     }
   })
   map.addLayer({
     'id': 'point-layer',
     'type': 'circle',
-    'source': 'points',
+    'source': 'point-source',
     'paint': {
       'circle-radius': 3,
       'circle-color': 'red'
@@ -71,8 +73,8 @@ export default function addText3DLayer (map, fontUrl) {
   loader.load(fontUrl, font => {
     let text3DLayer = new Text3DLayer({
       'id': 'symbol-layer',
-      // 'source': symbolPoints,
-      'source': 'points',
+      // 'source': pointData,
+      'source': 'point-source',
       'style': {
         'height-offset': 1,
         'height': ['get', 'height'],

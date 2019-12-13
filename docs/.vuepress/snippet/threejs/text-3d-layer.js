@@ -1,3 +1,5 @@
+// text-3d-Layers.js
+
 import mapboxgl from 'mapbox-gl'
 import * as THREE from 'three'
 import GJV from 'geojson-validation'
@@ -48,8 +50,8 @@ class Text3DLayer {
   queryRenderedFeatures (point) {
     let mouse = new THREE.Vector2()
     // scale mouse pixel position to a percentage of the screen's width and height
-    mouse.x = ( point.x / this.map.transform.width ) * 2 - 1;
-    mouse.y = 1 - ( point.y / this.map.transform.height ) * 2;
+    mouse.x = (point.x / this.map.transform.width) * 2 - 1
+    mouse.y = 1 - (point.y / this.map.transform.height) * 2
 
     this.raycaster.setFromCamera(mouse, this.camera)
 
