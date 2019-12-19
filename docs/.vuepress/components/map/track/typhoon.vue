@@ -20,7 +20,8 @@ export default {
     return {
       height: 800,
       mapOptions: {
-        style: 'mapbox://styles/huanglii/ck3gplwrs0baz1cpe6mgy8aap?optimize=true',
+        // style: 'mapbox://styles/huanglii/ck3gplwrs0baz1cpe6mgy8aap?optimize=true',
+        style: 'mapbox://styles/huanglii/ck3gplwrs0baz1cpe6mgy8aap',
         center: [124.90, 28.55],
         zoom: 4.2,
         maxZoom: 8
