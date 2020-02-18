@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: 'mapbox://styles/huanglii/ck1ocwsbl1fja1cloy67tyefi?optimize=true',
+        style: STYLE.DARK,
         center: [-74, 40.72],
         zoom: 13,
         pitch: 45,

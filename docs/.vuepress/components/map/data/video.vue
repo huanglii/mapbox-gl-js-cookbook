@@ -5,6 +5,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addVideoLayer from '../../../snippet/data/video'
 export default {
   components: {
@@ -14,7 +15,7 @@ export default {
     return {
       height: 800,
       mapOptions: {
-        style: 'mapbox://styles/huanglii/ck3gplwrs0baz1cpe6mgy8aap?optimize=true',
+        style: STYLE.MONOCHROME,
         center: [104.2945384995, 35.8600924965],
         zoom: 1.5,
         maxZoom: 8

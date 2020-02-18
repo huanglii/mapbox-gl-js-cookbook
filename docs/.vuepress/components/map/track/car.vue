@@ -5,6 +5,7 @@
 <script>
 import { json as fetchJson } from 'd3-fetch'
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addTrackCarLayer from '../../../snippet/track/car'
 export default {
   components: {
@@ -13,7 +14,7 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: 'mapbox://styles/huanglii/ck23131s00los1cnz1qjms49i?optimize=true',
+        style: STYLE.FLUORESCENCE,
         center: [106.573193, 29.558285],
         zoom: 13.5
       }

@@ -4,6 +4,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addCircleClusterLayer from '../../../snippet/data/circle-cluster'
 export default {
   components: {
@@ -12,7 +13,7 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: 'mapbox://styles/huanglii/ck1ocwsbl1fja1cloy67tyefi?optimize=true',
+        style: STYLE.DARK,
         center: [(105.28976 + 110.199858) / 2, (28.160225 + 32.2011870) / 2],
         zoom: 6,
         minZoom: 4

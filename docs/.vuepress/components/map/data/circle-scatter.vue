@@ -4,6 +4,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addCircleScatterLayer from '../../../snippet/data/circle-scatter'
 export default {
   components: {
@@ -12,7 +13,7 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: 'mapbox://styles/huanglii/ck1ocwsbl1fja1cloy67tyefi?optimize=true',
+        style: STYLE.DARK,
         center: [116.3162548, 36.9017491],
         zoom: 2,
         maxZoom: 6,

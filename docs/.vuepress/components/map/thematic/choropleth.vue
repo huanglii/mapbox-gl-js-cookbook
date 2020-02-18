@@ -16,6 +16,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addChoroplethLayer from '../../../snippet/thematic/choropleth'
 export default {
   components: {
@@ -25,7 +26,7 @@ export default {
     return {
       map: undefined,
       mapOptions: {
-        style: 'mapbox://styles/huanglii/ck1naxpm00gvj1co6r4pxgxzl?optimize=true',
+        style: STYLE.GRAY,
         center: [(105.28976 + 110.199858) / 2, (28.160225 + 32.2011870) / 2],
         zoom: 6,
         minZoom: 4

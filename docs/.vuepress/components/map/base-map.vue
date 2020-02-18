@@ -12,7 +12,9 @@
 import uuid from 'uuid/v4'
 import mapboxgl from 'mapbox-gl'
 import HomeControl from '../control/HomeControl'
+import { STYLE } from '../../utils/constant'
 import 'mapbox-gl/dist/mapbox-gl.css'
+
 export default {
   name: 'base-map',
   props: {
@@ -37,8 +39,7 @@ export default {
       maploaded: false,
       mapDefaultOptions: {
         container: uuid(),
-        // style: 'mapbox://styles/huanglii/cjmn2rlvn0c8u2sl97kkiep6r?optimize=true',
-        style: 'mapbox://styles/huanglii/ck1n985b20oan1cmhp4i0o9c9?optimize=true',
+        style: STYLE.DEFAULT,
         center: [-74.50, 40],
         zoom: 6,
         minZoom: 0,
@@ -76,9 +77,9 @@ export default {
       mapboxgl.accessToken = 'pk.eyJ1IjoiaHVhbmdsaWkiLCJhIjoiY2pzNHBtendwMDZ2ZDQzbnVmZXdtMDlvdiJ9.GSija86yNNR4ssBtFFpx0g'
       this.map = new mapboxgl.Map(options)
       this.map.addControl(new mapboxgl.NavigationControl(), 'top-left')
-      let { center, zoom } = options
+      let { center, zoom, pitch, bearing } = options
       this.map.addControl(new HomeControl({
-        center, zoom
+        center, zoom, pitch, bearing
       }), 'bottom-left')
       this.map.addControl(new mapboxgl.FullscreenControl(), 'top-left')
       this.map.on('load', this.handleMapLoaded)

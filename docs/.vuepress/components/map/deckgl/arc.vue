@@ -6,6 +6,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addArcLayer from '../../../snippet/deckgl/arc'
 export default {
   components: {
@@ -14,7 +15,7 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: 'mapbox://styles/huanglii/ck1naxpm00gvj1co6r4pxgxzl?optimize=true',
+        style: STYLE.GRAY,
         center: [-100, 40.7],
         zoom: 2.5,
         pitch: 30,

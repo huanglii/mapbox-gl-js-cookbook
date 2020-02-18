@@ -11,6 +11,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addTyphoonLayer from '../../../snippet/track/typhoon'
 export default {
   components: {
@@ -20,8 +21,7 @@ export default {
     return {
       height: 800,
       mapOptions: {
-        // style: 'mapbox://styles/huanglii/ck3gplwrs0baz1cpe6mgy8aap?optimize=true',
-        style: 'mapbox://styles/huanglii/ck3gplwrs0baz1cpe6mgy8aap',
+        style: STYLE.MONOCHROME,
         center: [124.90, 28.55],
         zoom: 4.2,
         maxZoom: 8

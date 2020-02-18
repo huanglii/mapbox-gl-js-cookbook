@@ -4,6 +4,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addHeatmapLayer from '../../../snippet/data/heatmap'
 export default {
   components: {
@@ -12,7 +13,7 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: 'mapbox://styles/huanglii/ck1ocwsbl1fja1cloy67tyefi?optimize=true',
+        style: STYLE.DARK,
         center: [-120, 50],
         zoom: 2
       },

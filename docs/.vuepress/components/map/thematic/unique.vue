@@ -4,6 +4,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addUniqueLayer from '../../../snippet/thematic/unique'
 export default {
   components: {
@@ -12,7 +13,7 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: 'mapbox://styles/mapbox/satellite-v9',
+        style: STYLE.SATELLITE,
         center: [124.879014, 47.816000],
         zoom: 15.2,
         minZoom: 15

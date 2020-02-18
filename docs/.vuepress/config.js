@@ -19,6 +19,7 @@ module.exports = {
       { text: '数据', link: '/data/' },
       { text: '服务', link: '/service/' },
       { text: '进阶', link: '/advance/' },
+      { text: 'DECK.GL', link: '/deck-gl/' },
       {
         text: 'Mapbox',
         items: [
@@ -75,8 +76,19 @@ module.exports = {
             'track',
             'control',
             'ECharts',
-            'deck-gl',
+            // 'deck-gl',
             'threejs'
+          ]
+        }
+      ],
+      '/deck-gl/': [
+        {
+          title: 'DECK.GL',
+          collapsable: false,
+          children: [
+            '',
+            // 'HexagonLayer',
+            'PathLayer'
           ]
         }
       ]

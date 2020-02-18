@@ -4,6 +4,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 export default {
   components: {
     baseMap
@@ -12,7 +13,7 @@ export default {
     return {
       height: 640,
       mapOptions: {
-        style: 'mapbox://styles/huanglii/cjweb960x1nbn1drxxtuaz9cr?optimize=true',
+        style: STYLE.WATERLIGHT,
         center: [106.98044, 29.35100],
         zoom: 12.7,
         scrollZoom: false,
