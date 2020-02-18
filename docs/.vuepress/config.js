@@ -87,7 +87,7 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            // 'HexagonLayer',
+            'HexagonLayer',
             'PathLayer'
           ]
         }

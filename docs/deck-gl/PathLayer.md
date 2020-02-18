@@ -1,7 +1,7 @@
-# PathLayer
-路径图层，支持带高度的路径。
-
+# 轨迹（PathLayer）
 [示例数据](https://raw.githubusercontent.com/uber-common/deck.gl-data/master/website/bart-lines.json)
+
+## 示例
 
 ``` js
 import { PathLayer } from '@deck.gl/layers'
@@ -26,7 +26,7 @@ const layer = new PathLayer({
 
 ## 参数
 
-`getPath`([Function](https://deck.gl/#/documentation/developer-guide/using-layers?section=accessors), optional)
+### `getPath`([Function](https://deck.gl/#/documentation/developer-guide/using-layers?section=accessors), optional)
 
 调用数据流中的每个对象以检索其对应的路径。默认: `object => object.path`
 
