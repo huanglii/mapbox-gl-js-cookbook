@@ -27,7 +27,7 @@ module.exports = {
           { text: '文档丨中文', link: 'https://www.mapbox.cn/documentation/' }
         ]
       },
-      { text: 'GISer 空间', link: 'https://giser.xyz' }
+      { text: 'GISer 空间', link: 'https://huanglii.github.io' }
     ],
     sidebarDepth: 2,
     sidebar: {

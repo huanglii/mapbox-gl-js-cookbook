@@ -7,11 +7,11 @@
 > 如果对 [Style Specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/) 某一属性含义不理解，可以在 [Studio](https://studio.mapbox.com/) 中去配置下这个属性，看一下效果便知道了。
 
 
-## [数据](https://giser.xyz/mapbox-gl-js-cookbook/data/)
+## [数据](https://huanglii.github.io/mapbox-gl-js-cookbook/data/)
   * 点、线、面、栅格等数据，以及不同数据格式在 Mapbox GL JS 中的可视化。
-## [服务](https://giser.xyz/mapbox-gl-js-cookbook/service//)
+## [服务](https://huanglii.github.io/mapbox-gl-js-cookbook/service//)
   * 加载 WMS、WMTS、TMS 等 OGC、OSGeo 标准的服务。
-## [进阶](https://giser.xyz/mapbox-gl-js-cookbook/advance/)
+## [进阶](https://huanglii.github.io/mapbox-gl-js-cookbook/advance/)
   * 专题图、自定义图层、自定义控件以及与第三方库的结合。
 
 
