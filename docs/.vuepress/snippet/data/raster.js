@@ -8,6 +8,9 @@ export default function addRasterLayer (map) {
         'https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg'
       ],
       'tileSize': 256
+    },
+    'paint': {
+      'raster-opacity': 0.8
     }
   })
 }

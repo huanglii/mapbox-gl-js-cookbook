@@ -4,13 +4,13 @@
       <thead>
         <tr>
           <th>值</th>
-          <th>颜色</th>
+          <th v-for="(item, index) in colors" :key="index">{{ item[0] }}</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(item, index) in colors" :key="index">
-          <td>{{ item[0] }}</td>
-          <td :bgcolor="item[1]">{{ item[1] }}</td>
+        <tr>
+          <td>颜色</td>
+          <td v-for="(item, index) in colors" :key="index" :bgcolor="item[1]">{{ item[1] }}</td>
         </tr>
       </tbody>
     </table>

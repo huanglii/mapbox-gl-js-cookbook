@@ -1,8 +1,8 @@
-export default function addCircleClusterLayer (map) {
+export default function addCircleClusterLayer (map, data) {
   // 分图层
   map.addSource('cq_point', {
     'type': 'geojson',
-    'data': 'https://900913.cn/geoserver/buildings/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=buildings:cq_point&outputFormat=application/json',
+    'data': data,
     'cluster': true,
     'clusterMaxZoom': 10, // 最大聚合 zoom， 超过这个值则不聚合
     'clusterRadius': 50 // 聚合半径，默认 50
@@ -14,25 +14,25 @@ export default function addCircleClusterLayer (map) {
     'source': 'cq_point',
     'filter': ['has', 'point_count'],
     'paint': {
-      //   * Blue, 20px 点数量小于 100
-      //   * Yellow, 30px 点数量 100 - 750
-      //   * Pink, 40px circles 点数量 [750, ∞)
+      //   * Blue, 20px 点数量小于 5
+      //   * Yellow, 30px 点数量 5 - 10
+      //   * Pink, 40px circles 点数量 [10, ∞)
       'circle-color': [
         'step',
         ['get', 'point_count'],
         '#51bbd6',
-        100,
+        5,
         '#f1f075',
-        750,
+        10,
         '#f28cb1'
       ],
       'circle-radius': [
         'step',
         ['get', 'point_count'],
         20,
-        100,
+        5,
         30,
-        750,
+        10,
         40
       ]
     }

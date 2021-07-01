@@ -4,6 +4,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addFillLayer from '../../../snippet/data/fill'
 export default {
   components: {
@@ -12,14 +13,15 @@ export default {
   data () {
     return {
       mapOptions: {
-        center: [106.55955364671473, 29.56198696123272],
-        zoom: 16
+        style: STYLE.GRAY,
+        center: [(105.28976 + 110.199858) / 2, (28.160225 + 32.2011870) / 2],
+        zoom: 6
       }
     }
   },
   methods: {
     handleMapLoaded (map) {
-      addFillLayer(map)
+      addFillLayer(map, this.$withBase('/data/cq.geojson'))
     }
   }
 }

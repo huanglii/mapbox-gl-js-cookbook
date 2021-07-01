@@ -24,11 +24,12 @@ module.exports = {
       {
         text: 'Mapbox',
         items: [
-          { text: '文档丨英文', link: 'https://docs.mapbox.com/' },
-          { text: '文档丨中文', link: 'https://www.mapbox.cn/documentation/' }
+          { text: '文档丨英文', link: 'https://docs.mapbox.com/mapbox-gl-js/api/' },
+          { text: '文档丨中文', link: 'https://www.mapbox.cn/mapbox-gl-js/api/' },
+          { text: '文档丨MapLibre', link: 'https://maplibre.org/maplibre-gl-js-docs/api/' },
         ]
       },
-      { text: 'GISer 空间', link: 'https://huanglii.github.io' }
+      // { text: 'GISer 空间', link: 'https://huanglii.github.io' }
     ],
     sidebarDepth: 2,
     sidebar: {

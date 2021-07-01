@@ -90,7 +90,7 @@ export default {
       if (this.mapClickable) this.map.on('click', this.handleMapClick)
     },
     handleMapClick (evt) {
-      console.log(evt.lngLat)
+      // console.log(evt.lngLat)
       let features = this.map.queryRenderedFeatures(
         evt.point
       )

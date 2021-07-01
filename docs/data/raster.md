@@ -19,7 +19,7 @@
 > 栅格瓦片：[Add a raster tile source](https://docs.mapbox.com/mapbox-gl-js/example/map-tiles/)
 
 ## image
-有如下一张中国大陆范围的温度图：
+有如下一张温度图：
 
 <!-- ![温度图](/images/3857.png) -->
 <div align="center">

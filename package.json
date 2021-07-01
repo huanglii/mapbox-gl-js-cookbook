@@ -43,7 +43,7 @@
     "d3-scale": "^3.0.1",
     "echarts": "^4.5.0",
     "geojson-validation": "^0.2.1",
-    "mapbox-gl": "^1.6.0",
+    "mapbox-gl": "^1.13.0",
     "three": "^0.126.1",
     "uuid": "^3.3.2"
   }

@@ -125,7 +125,7 @@ WMTS 的切片坐标系统和组织方式可参考下图：
   'tiles': [
     'https://900913.cn/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=buildings:Chongqing&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=image/png&TILECOL={x}&TILEROW={y}'
     // 或 geoserver rest 服务
-    // 'https://900913.cn/geoserver/gwc/service/wmts/rest/buildings:Chongqing/polygon/EPSG:900913/EPSG:900913:{z}/{y}/{x}?format=image/png'
+    // 'https://900913.cn/geoserver/gwc/service/wmts/rest/buildings:Chongqing/EPSG:900913/EPSG:900913:{z}/{y}/{x}?format=image/png'
   ]
 }
 ```

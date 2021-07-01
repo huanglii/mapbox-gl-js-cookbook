@@ -14,7 +14,7 @@ export default {
     return {
       mapOptions: {
         style: STYLE.DARK,
-        center: [(105.28976 + 110.199858) / 2, (28.160225 + 32.2011870) / 2],
+        center: [107.744809, 30.180706],
         zoom: 6,
         minZoom: 4
       },
@@ -31,7 +31,7 @@ export default {
   },
   methods: {
     handleMapLoaded (map) {
-      addCircleClusterLayer(map)
+      addCircleClusterLayer(map, this.$withBase('/data/point.geojson'))
     }
   }
 }

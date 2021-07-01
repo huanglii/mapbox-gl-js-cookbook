@@ -4,6 +4,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addFillExtrusionLayer from '../../../snippet/data/fill-extrusion'
 export default {
   components: {
@@ -12,8 +13,9 @@ export default {
   data () {
     return {
       mapOptions: {
-        center: [106.581355, 29.561788],
-        zoom: 16,
+        style: STYLE.GRAY,
+        center: [107.744809, 30.180706],
+        zoom: 6,
         pitch: 60,
         antialias: true
       }

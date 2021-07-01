@@ -1,7 +1,7 @@
 # 指南
 
 ::: tip
-- Mapbox GL JS 版本号：[v1.6.0](https://docs.mapbox.com/mapbox-gl-js/overview/)
+- Mapbox GL JS 版本号：[v1.13.0](https://docs.mapbox.com/mapbox-gl-js/overview/)
 - Mapbox GL JS v2.x 版本在专有许可下发布，可使用 [MapLibre GL JS](https://maplibre.org/maplibre-gl-js-docs/api/)
 - 部分源码引用自官方示例 [Mapbox GL JS Example](https://docs.mapbox.com/mapbox-gl-js/examples/)。
 :::
