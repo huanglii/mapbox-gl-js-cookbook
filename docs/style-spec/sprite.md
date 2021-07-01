@@ -15,7 +15,7 @@
 
 通常我们会使用一些自己的图标，下面介绍几种使用自定义图标的方法。
 
-## Studio
+## Mapbox Studio
 最直接的方法就是在 [Studio](https://studio.mapbox.com/) 中去上传、管理图标。
 <div align="center">
   <img :src="$withBase('/images/sprite1.png')" width="580" />
@@ -29,7 +29,8 @@
 
 ::: tip
 1. 只支持 `svg` 格式；
-2. 在 `iconfont` 下载的图标，可以上传使用。
+2. 在 `iconfont` 下载的图标，可以上传使用；
+3. 地图图标集：[MAKI ICONS](https://labs.mapbox.com/maki-icons/)
 :::
 
 ## addImage

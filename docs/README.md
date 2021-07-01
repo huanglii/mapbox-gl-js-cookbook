@@ -2,7 +2,7 @@
 home: true
 heroImage: /images/hero.jpg
 heroText: Mapbox GL JS Cookbook
-tagline: 可视化中心
+tagline: 地理信息可视化
 actionText: 快速开始 →
 actionLink: /guide/
 features:

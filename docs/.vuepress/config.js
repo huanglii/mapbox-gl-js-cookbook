@@ -12,6 +12,7 @@ module.exports = {
     ['link', { rel: 'icon', href: '/images/logo.png' }]
   ],
   themeConfig: {
+    logo: '/images/logo.png',
     displayAllHeaders: true,
     nav: [
       { text: '指南', link: '/guide/' },

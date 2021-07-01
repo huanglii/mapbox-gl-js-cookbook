@@ -12,3 +12,7 @@
   'layers': [...] // 图层
 }
 ```
+
+::: tip
+如果对 [Style Specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/) 某一属性含义不理解，可以在 [Studio](https://studio.mapbox.com/) 中去配置下这个属性，看一下效果便知道了。
+:::
