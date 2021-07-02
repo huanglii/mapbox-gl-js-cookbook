@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     handleMapLoaded (map) {
-      map.loadImage(this.$withBase('/images/arrow.png'), (error, image) => {
+      map.loadImage(this.$withBase('/assets/images/arrow.png'), (error, image) => {
         if (error) throw error
         map.addImage('arrow', image)
         addLineArrowLayer(map)

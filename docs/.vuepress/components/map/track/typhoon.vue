@@ -47,7 +47,7 @@ export default {
   },
   methods: {
     handleMapLoaded (map) {
-      map.loadImage(this.$withBase('/images/typhoon.png'), (error, image) => {
+      map.loadImage(this.$withBase('/assets/images/typhoon.png'), (error, image) => {
         if (error) throw error
         map.addImage('typhoon', image)
         map.addSource('storm-source', {

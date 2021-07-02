@@ -18,23 +18,23 @@
 ## Mapbox Studio
 最直接的方法就是在 [Studio](https://studio.mapbox.com/) 中去上传、管理图标。
 <div align="center">
-  <img :src="$withBase('/images/sprite1.png')" width="580" />
+  <img :src="$withBase('/assets/images/sprite1.png')" width="580" />
 </div>
 
 在样式预览中，我们可以将 `sprite.png`、`sprite@2x.png` `sprite.json` 文件下载下来，放到服务器使用。
 
 <div align="center">
-  <img :src="$withBase('/images/sprite2.png')" width="580" />
+  <img :src="$withBase('/assets/images/sprite2.png')" width="580" />
 </div>
 
-::: tip
-1. 只支持 `svg` 格式；
-2. 在 `iconfont` 下载的图标，可以上传使用；
+::: tip 提示
+1. 只支持 `svg` 格式
+2. 在 `iconfont` 下载的图标可以上传使用
 3. 地图图标集：[MAKI ICONS](https://labs.mapbox.com/maki-icons/)
 :::
 
 ## addImage
-通过 `map.addImage()` 方法向样式中添加图标。
+通过 [map.addImage()](https://docs.mapbox.com/mapbox-gl-js/api/#map#addimage) 方法向样式中添加图标。
 ``` js
 map.loadImage('/images/cat.png', (error, image) => {
   if (error) throw error
@@ -44,13 +44,8 @@ map.loadImage('/images/cat.png', (error, image) => {
 // 或
 if (!map.hasImage('cat')) map.addImage('cat', './cat-icon.png')
 ```
-
-::: tip
-文档：[addImage](https://docs.mapbox.com/mapbox-gl-js/api/#map#addimage)
-:::
-
 ## styleimagemissing
-当样式所需的图标或图案丢失时将会触发该事件。
+当样式所需的图标或图案丢失时将会触发该事件。[styleimagemissing](https://docs.mapbox.com/mapbox-gl-js/api/#map.event:styleimagemissing)
 
 ``` js
 map.on('styleimagemissing', e => {
@@ -62,36 +57,77 @@ map.on('styleimagemissing', e => {
 })
 ```
 
-::: tip
-文档：[styleimagemissing](https://docs.mapbox.com/mapbox-gl-js/api/#map.event:styleimagemissing)
-
+::: tip 提示
 示例：[Generate and add a missing icon to the map](https://docs.mapbox.com/mapbox-gl-js/example/add-image-missing-generated/)
 :::
 
 ## spritezero
-前面两种方法都是单个图加载，如果需要很多图标，最好直接生成雪碧图。可以使用 [spritezero](https://github.com/mapbox/spritezero) 来创建，它提供了 `cli` 工具，即 `spritezero-cli`，更为方便。
+前面两种方法都是单个图加载，如果需要很多图标，需要多次加载。最好直接生成雪碧图，可以使用 [spritezero](https://github.com/mapbox/spritezero) 创建。
 
-### 安装
-注意需要 `node` 版本 `v8` 才能安装成功。
+### spritezero
+安装（在 `Ubuntu` 安装成功，`Windows` 安装失败）
+``` bash
+npm install @mapbox/spritezero
+```
+
+使用
+
+``` js
+var spritezero = require('@mapbox/spritezero');
+var fs = require('fs');
+var glob = require('glob');
+var path = require('path');
+
+[1, 2].forEach(function (pxRatio) {
+  var svgs = glob.sync(path.resolve(path.join(__dirname, 'input/*.svg')))
+    .map(function (f) {
+      return {
+        svg: fs.readFileSync(f),
+        id: path.basename(f).replace('.svg', '')
+      };
+    });
+  var pngPath = path.resolve(path.join(__dirname, 'output/sprite@' + pxRatio + '.png'));
+  var jsonPath = path.resolve(path.join(__dirname, 'output/sprite@' + pxRatio + '.json'));
+
+  // Pass `true` in the layout parameter to generate a data layout
+  // suitable for exporting to a JSON sprite manifest file.
+  spritezero.generateLayout({ imgs: svgs, pixelRatio: pxRatio, format: true }, function (err, dataLayout) {
+    if (err) return;
+    fs.writeFileSync(jsonPath, JSON.stringify(dataLayout));
+  });
+
+  // Pass `false` in the layout parameter to generate an image layout
+  // suitable for exporting to a PNG sprite image file.
+  spritezero.generateLayout({ imgs: svgs, pixelRatio: pxRatio, format: false }, function (err, imageLayout) {
+    spritezero.generateImage(imageLayout, function (err, image) {
+      if (err) return;
+      fs.writeFileSync(pngPath, image);
+    });
+  });
+});
+```
+
+::: warning 警告
+注意 `node` 版本 `v10` 及以上。
+:::
+
+### spritezero-cli
+`spritezero`提供了命令行工具`spritezero-cli`，可直接文件夹中生成雪碧图。
+
+安装
 ``` bash
 npm install -g @mapbox/spritezero-cli
 ```
 
-### 使用
+使用
 ``` bash
 spritezero [output filename] [input directory]
   --retina      shorthand for --ratio=2
   --ratio=[n]   pixel ratio
 ```
 
-::: tip
-1. 该工具只支持 `svg` 格式；
-2. 我在 `iconfont` 上下载的 svg 格式，生成不太成功，估计是 svg 格式上的问题吧。
+::: warning 警告
+1. 注意 `node` 版本 `v8` 才能安装成功；
+2. 该工具只支持 `svg` 格式；
+3. 在 `iconfont` 上下载的 svg 格式，使用命令行工具生成的图片不对。
 :::
-
-## 代码生成
-我们还可以使用其他生成雪碧图的工具去生成。
-1. [spritezero](https://github.com/mapbox/spritezero)
-2. [spritesmith](https://github.com/Ensighten/spritesmith)
-3. [开源方案搭建可离线的精美矢量切片地图服务-8.mapbox 之sprite大图图标文件生成（附源码）](https://www.cnblogs.com/ATtuing/p/9273391.html)
-4. ...

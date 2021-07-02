@@ -1,7 +1,7 @@
 ---
 home: true
-heroImage: /images/hero.jpg
-heroText: Mapbox GL JS Cookbook
+heroImage: /assets/images/hero.jpg
+heroText: Mapbox/MapLibre GL JS Cookbook
 tagline: 地理信息可视化
 actionText: 快速开始 →
 actionLink: /guide/

@@ -1,6 +1,6 @@
 # 数据源
-数据源的类型由 **`type`** 指定，并且必须是 `vector`, `raster`, `raster-dem`, `geojson`, `image`, `video` 之一。
-::: warning
+数据源类型由 **`type`** 指定，并且必须是 `vector`, `raster`, `raster-dem`, `geojson`, `image`, `video` 之一。
+::: tip 提示
 以前官方文档里还有一个 **`canvas`** 类型，不知为何现在没有了，但是经测试，`canvas` 数据源还是支持的。
 :::
 数据源示例：
@@ -19,6 +19,11 @@
   '{source-id}': {
     'type': 'vector',
     'url': 'http://api.example.com/tilejson.json'
+  },
+  // vector
+  '{source-id}', {
+    'type': 'vector',
+    'url': 'mapbox://huanglii.d41k5fmy'
   },
   // raster
   '{source-id}': {

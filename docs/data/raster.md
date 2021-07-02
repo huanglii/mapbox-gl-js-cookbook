@@ -23,7 +23,7 @@
 
 <!-- ![温度图](/images/3857.png) -->
 <div align="center">
-  <img :src="$withBase('/images/3857.png')" width="300" />
+  <img :src="$withBase('/assets/images/3857.png')" width="300" />
 </div>
 
 ``` js

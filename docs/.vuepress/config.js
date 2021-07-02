@@ -9,10 +9,10 @@ module.exports = {
     }
   },
   head: [
-    ['link', { rel: 'icon', href: '/images/logo.png' }]
+    ['link', { rel: 'icon', href: '/assets/logo.png' }]
   ],
   themeConfig: {
-    logo: '/images/logo.png',
+    logo: '/assets/logo.png',
     displayAllHeaders: true,
     nav: [
       { text: '指南', link: '/guide/' },

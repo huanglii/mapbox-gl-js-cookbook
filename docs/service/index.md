@@ -24,7 +24,7 @@ Tile Map Service（瓦片地图服务），简称 `TMS`。
 
 TMS 的切片坐标系统和组织方式可参考下图：
 <div align="center">
-  <img :src="$withBase('/images/TMS切片坐标系统和组织方式.png')" />
+  <img :src="$withBase('/assets/images/TMS切片坐标系统和组织方式.png')" width="400" />
 </div>
  
 Mapbox GL JS 在加载 TMS 服务时，需要设置 `scheme` 属性为 `tms`。`scheme` 属性影像瓦片坐标 `y` 轴的方向。有两个值可选 `xyz` 和 `tms`，默认 `xyz`。
@@ -42,9 +42,9 @@ Mapbox GL JS 在加载 TMS 服务时，需要设置 `scheme` 属性为 `tms`。`
 }
  ```
 
-<ClientOnly>
+<!-- <ClientOnly>
   <common-code-view name="service-tms"/>
-</ClientOnly>
+</ClientOnly> -->
 
 ## WMS
 > 标准：[Web Map Service](http://www.opengeospatial.org/standards/wms)
@@ -93,9 +93,9 @@ Web Map Service（Web 地图服务），简称 `WMS`。WMS 标准定义了允许
 
 注意 url 中的 `bbox` 参数值 `"{bbox-epsg-3857}"`。Mapbox GL JS 会自动计算地图范围替换该值，获取地图。这也是与下面 WMTS 同样用栅格格式，WMS 不会模糊的原因。
 
-<ClientOnly>
+<!-- <ClientOnly>
   <common-code-view name="service-wms"/>
-</ClientOnly>
+</ClientOnly> -->
 
 ## WMTS
 > 标准：[Web Map Tile Service](http://www.opengeospatial.org/standards/wmts)
@@ -107,7 +107,7 @@ Web Map Tile Service（Web 地图瓦片服务），简称 `WMTS`。WMTS 标准�
 
 WMTS 的切片坐标系统和组织方式可参考下图：
 <div align="center">
-  <img :src="$withBase('/images/WMTS切片坐标系统和组织方式.png')" />
+  <img :src="$withBase('/assets/images/WMTS切片坐标系统和组织方式.png')" />
 </div>
 
 利用 `GetTile` 操作和指定输出格式即可在 Mapbox GL JS 中使用。GeoServer WMTS 1.0.0 支持的输出格式如下：
@@ -145,9 +145,9 @@ WMTS 的切片坐标系统和组织方式可参考下图：
 
 这里也建议在使用 Mapbox GL JS 的时候能使用矢量就尽量用矢量格式。
 
-<ClientOnly>
+<!-- <ClientOnly>
   <common-code-view name="service-wmts"/>
-</ClientOnly>
+</ClientOnly> -->
 
 ## WFS
 > 标准：[Web Feature Service](http://www.opengeospatial.org/standards/wfs)
@@ -174,7 +174,7 @@ Web Feature Service（Web 要素服务），简称 WFS。WFS 标准定义了一�
 * text/xml; subtype=gml/3.1.1
 * text/xml; subtype=gml/3.2
 
-::: tip
+::: tip 提示
 注意不同版本支持的输出格式也不一样，可通过 `GetCapabilities` 操作查看，如：[http://900913.cn/geoserver/ows?service=wfs&version=2.0.0&request=GetCapabilities](http://900913.cn/geoserver/ows?service=wfs&version=2.0.0&request=GetCapabilities)
 :::
 
@@ -192,6 +192,6 @@ Web Feature Service（Web 要素服务），简称 WFS。WFS 标准定义了一�
 }
 ```
 
-<ClientOnly>
+<!-- <ClientOnly>
   <common-code-view name="service-wfs"/>
-</ClientOnly>
+</ClientOnly> -->

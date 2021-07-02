@@ -13,20 +13,11 @@
 | **`paint`** | object | 否 | 图层绘制属性 |
 | **`metadata`** | | 否 | 任意属性，对跟踪图层很有用，不影响渲染 |
 
-::: tip
-**`"type"`** 属性必须是 `background`, `fill`, `line`, `symbol`, `raster`, `circle`, `fill-extrusion`, `heatmap`, `hillshade` 之一。
-
-除 `background` 外的图层都需要引用一个源（source），图层从源获取数据、过滤要素和渲染，所以我一般称之为数据源。
-:::
-
-::: tip
-**`layout`** 属性都有 **`visibility`** 属性，可设置 `"visible"`（默认） 和 `"none"` 。
-* `"visible"` 图层显示
-* `"none"` 图层隐藏
-:::
-
-::: tip
-颜色支持 `十六进制`, `RGB`, `RGBA`, `HSL`, `HSLA`, `HTML 预定义颜色名称` 格式。
+::: tip 提示
+- **`"type"`** 属性必须是 `background`, `fill`, `line`, `symbol`, `raster`, `circle`, `fill-extrusion`, `heatmap`, `hillshade` 之一。
+- 除 `background` 外的图层都需要引用一个源（source），图层从源获取数据、过滤要素和渲染，所以我一般称之为数据源。
+- **`layout`** 属性都有 **`visibility`** 属性，可设置 `"visible"`（默认） 和 `"none"` 。
+- 颜色支持 `十六进制`, `RGB`, `RGBA`, `HSL`, `HSLA`, `HTML 预定义颜色名称` 格式。
 :::
 
 图层示例：
