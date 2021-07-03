@@ -1,4 +1,5 @@
 # 雪碧图
+> [Sprite](https://maplibre.org/maplibre-gl-js-docs/style-spec/sprite/)
 
 如果图层样式中有使用 `background-pattern`、`fill-pattern`、`line-pattern`、`fill-extrusion-pattern`、或 `icon-image` 属性，则必须设置该属性。
 
@@ -107,7 +108,7 @@ var path = require('path');
 });
 ```
 
-::: warning 警告
+::: warning 注意
 注意 `node` 版本 `v10` 及以上。
 :::
 
@@ -126,7 +127,7 @@ spritezero [output filename] [input directory]
   --ratio=[n]   pixel ratio
 ```
 
-::: warning 警告
+::: warning 注意
 1. 注意 `node` 版本 `v8` 才能安装成功；
 2. 该工具只支持 `svg` 格式；
 3. 在 `iconfont` 上下载的 svg 格式，使用命令行工具生成的图片不对。

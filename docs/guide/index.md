@@ -1,5 +1,7 @@
 # 指南
 
+Mapbox GL JS是一个JavaScript库，基于[vector tiles](https://docs.mapbox.com/help/glossary/vector-tiles/)和[Mapbox styles](https://docs.mapbox.com/mapbox-gl-js/style-spec/)，使用`WebGL`渲染互动式地图。Mapbox GL JS是Mapbox GL生态系统之一，其中还包括[Mapbox Mobile](https://www.mapbox.com/mobile/)，它是一个用C++编写的兼容桌面和移动平台的渲染引擎。
+
 ::: tip 提示
 - Mapbox GL JS 版本号：[v1.13.0](https://docs.mapbox.com/mapbox-gl-js/overview/)
 - Mapbox GL JS v2.x 版本在专有许可下发布，可使用 [MapLibre GL JS](https://maplibre.org/maplibre-gl-js-docs/api/)

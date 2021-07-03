@@ -1,5 +1,7 @@
 # 样式规范
-[Mapbox Style Specification](https://maplibre.org/maplibre-gl-js-docs/style-spec/)是定义地图视觉外观的文档：绘制哪些数据，绘制顺序以及绘制数据时如何设置数据样式。
+> [Mapbox Style Specification](https://maplibre.org/maplibre-gl-js-docs/style-spec/)
+
+样式规范是定义地图视觉外观的文档：绘制哪些数据，绘制顺序以及绘制数据时如何设置数据样式。
 
 一个样式有以下根属性： 
 - 描述信息：[version](https://maplibre.org/maplibre-gl-js-docs/style-spec/root/#version), [name](https://maplibre.org/maplibre-gl-js-docs/style-spec/root/#name), [metadata](https://maplibre.org/maplibre-gl-js-docs/style-spec/root/#metadata)

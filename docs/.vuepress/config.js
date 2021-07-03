@@ -18,7 +18,6 @@ module.exports = {
       { text: '指南', link: '/guide/' },
       { text: '样式规范', link: '/style-spec/' },
       { text: '数据', link: '/data/' },
-      { text: '服务', link: '/service/' },
       { text: '进阶', link: '/advance/' },
       { text: 'DECK.GL', link: '/deck-gl/' },
       {
@@ -55,16 +54,9 @@ module.exports = {
             'sprite',
             'glyphs',
             'sources',
-            'layers'
-          ]
-        }
-      ],
-      '/service/': [
-        {
-          title: '服务',
-          collapsable: false,
-          children: [
-            ''
+            'layers',
+            'expression',
+            'filter'
           ]
         }
       ],
@@ -74,11 +66,9 @@ module.exports = {
           collapsable: false,
           children: [
             '',
-            'thematic',
             'track',
             'control',
             'ECharts',
-            // 'deck-gl',
             'threejs'
           ]
         }

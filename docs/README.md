@@ -6,12 +6,12 @@ tagline: 地理信息可视化
 actionText: 快速开始 →
 actionLink: /guide/
 features:
+- title: 样式规范
+  details: 数据源、图层、表达式、过滤器等
 - title: 数据
   details: 点、线、面、栅格
-- title: 服务
-  details: TMS、WMS、WMTS、WFS
 - title: 进阶
-  details: 专题图、自定义图层、自定义控件
+  details: 自定义图层、自定义控件、第三方库结合、轨迹等
 footer: MIT Licensed | Copyright © 2019 by huangli
 ---
 
