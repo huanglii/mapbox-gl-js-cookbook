@@ -21,5 +21,5 @@
 ```
 
 ::: tip 提示
-如果对 [Style Specification](https://maplibre.org/maplibre-gl-js-docs/style-spec/) 某一属性含义不理解，可以在 [Studio](https://studio.mapbox.com/) 中去配置下这个属性，看一下效果便知道了。
+在[Mapbox Studio](https://studio.mapbox.com/)中，通过配置地图样式，可以直观的看到各属性对地图渲染的影响。
 :::

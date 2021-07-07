@@ -54,9 +54,8 @@ module.exports = {
             'sprite',
             'glyphs',
             'sources',
-            'layers',
             'expression',
-            'filter'
+            'layers'
           ]
         }
       ],

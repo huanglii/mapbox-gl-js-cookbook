@@ -14,7 +14,7 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: STYLE.FLUORESCENCE,
+        style: STYLE.NAVIGATION,
         center: [106.573193, 29.558285],
         zoom: 13.5
       }
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     handleMapLoaded (map) {
-      map.loadImage(this.$withBase('/images/arrow.png'), (error, image) => {
+      map.loadImage(this.$withBase('/assets/images/arrow.png'), (error, image) => {
         if (error) throw error
         map.addImage('arrow', image)
         fetchJson(this.$withBase('/data/track.geojson')).then(data => {
