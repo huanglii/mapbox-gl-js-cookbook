@@ -15,11 +15,11 @@
   'name': 'Mapbox Streets', // 样式名称
   'sprite': 'mapbox://sprites/mapbox/streets-v8', // 雪碧图
   'glyphs': 'mapbox://fonts/mapbox/{fontstack}/{range}.pbf', // 字体
-  'sources': {...}, // 数据源
-  'layers': [...] // 图层
+  'sources': {}, // 数据源
+  'layers': [] // 图层
 }
 ```
 
 ::: tip 提示
-在[Mapbox Studio](https://studio.mapbox.com/)中，通过配置地图样式，可以直观的看到各属性对地图渲染的影响。
+在 [Mapbox Studio](https://studio.mapbox.com/) 中，通过配置地图样式，可以直观的看到各属性对地图渲染的影响。
 :::

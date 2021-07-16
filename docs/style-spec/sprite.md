@@ -3,15 +3,15 @@
 
 如果图层样式中有使用 `background-pattern`、`fill-pattern`、`line-pattern`、`fill-extrusion-pattern`、或 `icon-image` 属性，则必须设置该属性。
 
-格式为 `URL` 字符串，必须为绝对路径。 `.png`、`.json` 和 `@2x.png` 扩展会自动添加，如下：
+格式为 `URL` 字符串，必须为绝对路径。`.png`、`.json` 和 `@2x.png` 扩展会自动添加，如下：
 ``` js
-'sprite': 'http://localhost:8081/mapbox/sprite'
+'sprite': 'http://localhost:8080/mapbox/sprite'
 ```
 则实际会加载以下资源：
 ``` js
-// http://localhost:8081/mapbox/sprite.json
-// http://localhost:8081/mapbox/sprite.png
-// http://localhost:8081/mapbox/sprite@2x.png 
+// http://localhost:8080/mapbox/sprite.json
+// http://localhost:8080/mapbox/sprite.png
+// http://localhost:8080/mapbox/sprite@2x.png 
 ```
 
 通常我们会使用一些自己的图标，下面介绍几种使用自定义图标的方法。
@@ -39,8 +39,7 @@
 ``` js
 map.loadImage('/images/cat.png', (error, image) => {
   if (error) throw error
-  // addImage(id, image. options)
-  map.addImage('cat', image)
+  if (!map.hasImage('cat')) map.addImage('cat', image)
 })
 // 或
 if (!map.hasImage('cat')) map.addImage('cat', './cat-icon.png')
@@ -71,7 +70,7 @@ map.on('styleimagemissing', e => {
 npm install @mapbox/spritezero
 ```
 
-使用
+使用：
 
 ``` js
 var spritezero = require('@mapbox/spritezero');
