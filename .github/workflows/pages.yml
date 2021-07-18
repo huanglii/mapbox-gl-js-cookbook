@@ -25,10 +25,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
-      - name: install
-        run: npm install
-        
-      # Runs a single command using the runners shell
-      - name: deploy
-        run: npm run deploy
+      - name: Build and Deploy
+        uses: testthedocs/github-pages-deploy-action@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          # BUILD_DIR: test/build/ # The folder, the action should deploy.
+          BUILD_SCRIPT: npm install && npm run deploy # The build script the action should run prior to deploying.
