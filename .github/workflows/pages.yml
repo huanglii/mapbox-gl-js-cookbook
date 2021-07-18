@@ -26,5 +26,9 @@ jobs:
       - uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
-      - name: delpoy
+      - name: install
+        run: npm install
+        
+      # Runs a single command using the runners shell
+      - name: deploy
         run: npm run deploy
