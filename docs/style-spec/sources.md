@@ -80,7 +80,7 @@ GeoJSON 数据源，必须提供 `data` 属性。详见 [geojson](https://maplib
 ## image & video
 见[数据/栅格](/data/raster)。
 
-## GeoServer 数据源
+## GeoServer
 这里以 `GeoServer` 为例，对常见服务标准简要说明以及如何在 `Mapbox GL JS` 中使用。
 
 ::: tip 提示

@@ -56,8 +56,7 @@ module.exports = {
             'glyphs',
             'sources',
             'layers',
-            'expression',
-            'other'
+            'expression'
           ]
         }
       ],
