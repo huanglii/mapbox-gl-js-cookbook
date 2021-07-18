@@ -40,7 +40,7 @@
 ```
 
 ::: tip 提示
-- **`"type"`** 属性必须是 `background`, `fill`, `line`, `symbol`, `raster`, `circle`, `fill-extrusion`, `heatmap`, `hillshade` 之一，各图层类型使用参考[数据](/data)。
+- **`"type"`** 属性必须是 `background`, `fill`, `line`, `symbol`, `raster`, `circle`, `fill-extrusion`, `heatmap`, `hillshade` 之一，各图层类型使用参考[数据](/data/)。
 - 除 `background` 外的图层都需要引用一个源（source），图层从源获取数据、过滤要素和渲染。
 - **`layout`** 属性都有 **`visibility`** 属性，可设置 `"visible"`（默认） 和 `"none"` 。
 - 颜色支持 `十六进制`, `RGB`, `RGBA`, `HSL`, `HSLA`, `HTML 预定义颜色名称` 格式。
