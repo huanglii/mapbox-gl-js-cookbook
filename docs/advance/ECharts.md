@@ -8,7 +8,7 @@
 
 使用聚合属性来解决图表重叠和性能问题的关键在于：在数据变化时，通过查询可视范围内的 `聚合要素` 及 `非聚合要素` 位置显示图表。
 
-::: warning
+::: warning 注意
 聚合要素的属性与原始属性不一致（参考 [geojson-cluster](https://docs.mapbox.com/mapbox-gl-js/style-spec/#sources-geojson-cluster)），需要通过 `GeoJSONSource.getClusterLeaves()` 方法来获取原始要素属性（参考：[getClusterLeaves](https://docs.mapbox.com/mapbox-gl-js/api/#geojsonsource#getclusterleaves)）。
 
 因为聚合点要素与实际要素的位置有一定的偏差，可以取离聚合点最近的要素。

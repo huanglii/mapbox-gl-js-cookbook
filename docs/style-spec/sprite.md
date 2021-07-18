@@ -1,5 +1,5 @@
 # 雪碧图
-> [Sprite](https://maplibre.org/maplibre-gl-js-docs/style-spec/sprite/)
+> [sprite](https://maplibre.org/maplibre-gl-js-docs/style-spec/sprite/)
 
 如果图层样式中有使用 `background-pattern`、`fill-pattern`、`line-pattern`、`fill-extrusion-pattern`、或 `icon-image` 属性，则必须设置该属性。
 

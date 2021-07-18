@@ -6,6 +6,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addLineLayer from '../../../snippet/deckgl/line'
 export default {
   components: {

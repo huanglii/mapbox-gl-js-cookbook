@@ -7,6 +7,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addHighwayLayer from '../../../snippet/deckgl/highway'
 export default {
   components: {

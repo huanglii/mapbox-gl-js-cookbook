@@ -23,7 +23,7 @@
 </ClientOnly>
 
 ## line-gradient
-::: warning
+::: warning 注意
 1. 使用线性渐变，数据源只能是 **`GeoJSON`**。并设置 **`lineMetrics`** 为 **`true`**；
 2. **`line-gradient`** 必须使用表达式，并且目前只能用 **`line-progress`**；
 3. 经测试，对于 `multiLineString` 和 `featureCollection` 的线数据会按单个 `lineString` 渲染，如下：

@@ -6,6 +6,7 @@
 
 <script>
 import baseMap from '../base-map'
+import { STYLE } from '../../../utils/constant'
 import addTripsLayer from '../../../snippet/deckgl/trips'
 export default {
   components: {

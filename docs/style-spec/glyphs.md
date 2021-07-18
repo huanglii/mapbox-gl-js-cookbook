@@ -1,5 +1,5 @@
 # 字体
-> [Glyphs](https://maplibre.org/maplibre-gl-js-docs/style-spec/glyphs/)
+> [glyphs](https://maplibre.org/maplibre-gl-js-docs/style-spec/glyphs/)
 
 如果图层样式中有使用 `text-field` 属性，则必须设置该属性。
 
