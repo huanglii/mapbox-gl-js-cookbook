@@ -176,21 +176,23 @@ WMTS的切片坐标系统和组织方式可参考下图：
 }
 ```
 
+::: warning 注意
+这种方式请求栅格格式（如 `image/png`）数据会有些模糊，设置 `'tileSize': 256` 会好很多。但是实际 WMTS 请求返回的图片格式是清晰的。模糊的原因是 Mapbox GL JS 的缩放是无极缩放，也就是 `zoom` 可以是小数，而 WMTS 的 `z` 值是整数，在渲染过程中有缩放，所以模糊了。
+
+前面提到加载 wms 也不会模糊，但是 wms 实际上是根据请求范围实时渲染，加载速度不如瓦片服务。
+:::
+
 加载示例（application/vnd.mapbox-vector-tile格式）
 ``` js
 'source-id': {
   'type': 'vector',
   'tiles': [
-    'https://900913.cn/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=buildings:cq_point&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=application/vnd.mapbox-vector-tile&TILECOL={x}&TILEROW={y}'
+    'https://900913.cn/geoserver/gwc/service/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&LAYER=buildings:Chongqing&STYLE=&TILEMATRIX=EPSG:900913:{z}&TILEMATRIXSET=EPSG:900913&FORMAT=application/vnd.mapbox-vector-tile&TILECOL={x}&TILEROW={y}'
+    // 或 geoserver rest 服务
+    // 'https://900913.cn/geoserver/gwc/service/wmts/rest/buildings:Chongqing/EPSG:900913/EPSG:900913:{z}/{y}/{x}?format=application/vnd.mapbox-vector-tile'
   ]
 }
 ```
-
-::: warning 注意
-上述两种格式，栅格会有明显的模糊，但是实际 WMTS 请求返回的图片格式是清晰的。模糊的原因是 Mapbox GL JS 的缩放是无极缩放，也就是 `zoom` 可以是小数，而 WMTS 的 `z` 值是整数，在渲染过程中有缩放，所以模糊了。
-
-前面提到加载wms也不会模糊，但是wms实际上是根据请求范围实时渲染，加载速度不如瓦片服务。
-:::
 
 <!-- <ClientOnly>
   <common-code-view name="service-wmts"/>
