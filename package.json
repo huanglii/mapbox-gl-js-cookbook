@@ -33,6 +33,7 @@
     "@deck.gl/layers": "^8.0.15",
     "@deck.gl/mapbox": "^8.0.15",
     "@deck.gl/mesh-layers": "^8.0.15",
+    "@sakitam-gis/mapbox-wind": "^1.1.1-alpha.2",
     "@turf/bearing": "^6.0.1",
     "@turf/distance": "^6.0.1",
     "@turf/helpers": "^6.1.4",
