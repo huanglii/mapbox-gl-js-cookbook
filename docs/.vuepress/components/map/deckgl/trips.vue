@@ -7,7 +7,7 @@
 <script>
 import baseMap from '../base-map'
 import { STYLE } from '../../../utils/constant'
-import addTripsLayer from '../../../snippet/deckgl/trips'
+// import addTripsLayer from '../../../snippet/deckgl/trips'
 export default {
   components: {
     baseMap
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     handleMapLoaded (map) {
-      addTripsLayer(map, this.canvasId)
+      // addTripsLayer(map, this.canvasId)
     }
   }
 }

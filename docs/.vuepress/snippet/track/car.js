@@ -2,7 +2,9 @@ import { point as pointHelper, featureCollection as featureCollectionHelper } fr
 import { coordAll } from '@turf/meta'
 import bearing from '@turf/bearing'
 
-export default function addTrackCarLayer (map, data) {
+import data from './data/track.json'
+
+export default function addTrackCarLayer (map) {
   let points = coordAll(data)
   let steps = points.length - 1
   let origin = points[0] // 起点
@@ -109,7 +111,7 @@ export default function addTrackCarLayer (map, data) {
     // map.panTo(lnglat)
     map.easeTo({
       pitch: 30,
-      zoom: 17,
+      zoom: 16,
       center: lnglat,
       bearing: point.properties.bearing
     })

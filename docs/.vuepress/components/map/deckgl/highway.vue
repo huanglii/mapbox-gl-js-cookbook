@@ -8,7 +8,7 @@
 <script>
 import baseMap from '../base-map'
 import { STYLE } from '../../../utils/constant'
-import addHighwayLayer from '../../../snippet/deckgl/highway'
+// import addHighwayLayer from '../../../snippet/deckgl/highway'
 export default {
   components: {
     baseMap
@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     handleMapLoaded (map) {
-      addHighwayLayer(map, this.canvasId)
+      // addHighwayLayer(map, this.canvasId)
     }
   }
 }

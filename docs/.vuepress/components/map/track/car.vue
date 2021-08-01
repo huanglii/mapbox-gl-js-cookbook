@@ -3,7 +3,6 @@
 </template>
 
 <script>
-import { json as fetchJson } from 'd3-fetch'
 import baseMap from '../base-map'
 import { STYLE } from '../../../utils/constant'
 import addTrackCarLayer from '../../../snippet/track/car'
@@ -24,10 +23,8 @@ export default {
     handleMapLoaded (map) {
       map.loadImage(this.$withBase('/assets/images/arrow.png'), (error, image) => {
         if (error) throw error
-        map.addImage('arrow', image)
-        fetchJson(this.$withBase('/data/track.geojson')).then(data => {
-          addTrackCarLayer(map, data)
-        })
+        !map.hasImage('arrow') && map.addImage('arrow', image)
+        addTrackCarLayer(map)
       })
     }
   }

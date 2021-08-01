@@ -7,7 +7,7 @@
 <script>
 import baseMap from '../base-map'
 import { STYLE } from '../../../utils/constant'
-import addArcLayer from '../../../snippet/deckgl/arc'
+// import addArcLayer from '../../../snippet/deckgl/arc'
 export default {
   components: {
     baseMap
@@ -26,7 +26,7 @@ export default {
   },
   methods: {
     handleMapLoaded (map) {
-      addArcLayer(map, this.canvasId)
+      // addArcLayer(map, this.canvasId)
     }
   }
 }

@@ -29,7 +29,6 @@
   "dependencies": {
     "@deck.gl/aggregation-layers": "^8.0.15",
     "@deck.gl/core": "^8.0.15",
-    "@deck.gl/geo-layers": "^8.0.15",
     "@deck.gl/layers": "^8.0.15",
     "@deck.gl/mapbox": "^8.0.15",
     "@deck.gl/mesh-layers": "^8.0.15",
@@ -40,13 +39,10 @@
     "@turf/line-arc": "^6.0.0",
     "@turf/meta": "^6.0.2",
     "city-selector-control": "^0.2.2",
-    "d3": "^5.9.7",
-    "d3-fetch": "^1.1.2",
-    "d3-scale": "^3.0.1",
     "echarts": "^4.5.0",
     "geojson-validation": "^0.2.1",
     "mapbox-gl": "^1.13.0",
     "three": "^0.126.1",
-    "uuid": "^3.3.2"
+    "uuid": "^8.3.2"
   }
 }
