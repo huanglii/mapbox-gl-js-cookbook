@@ -68,7 +68,7 @@ module.exports = {
             '',
             'track',
             'control',
-            'eCharts',
+            'ECharts',
             'threejs',
             'met'
           ]
