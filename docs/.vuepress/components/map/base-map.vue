@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import uuid from 'uuid/v4'
+import { v4 as uuidv4 } from 'uuid'
 import mapboxgl from 'mapbox-gl'
 import HomeControl from '../control/HomeControl'
 import { STYLE } from '../../utils/constant'
@@ -38,7 +38,7 @@ export default {
       map: null,
       maploaded: false,
       mapDefaultOptions: {
-        container: uuid(),
+        container: uuidv4(),
         style: STYLE.DEFAULT,
         center: [-74.50, 40],
         zoom: 6,
