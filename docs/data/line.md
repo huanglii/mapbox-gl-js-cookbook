@@ -39,10 +39,3 @@
 <ClientOnly>
   <common-code-view name="data-line-arrow"/>
 </ClientOnly>
-
-## line(point)
-线是由点构成的，当然也可以用点表示。
-
-<ClientOnly>
-  <common-code-view name="data-line-point"/>
-</ClientOnly>

@@ -11,7 +11,7 @@ Mapbox GL 默认文本标注图层不支持高度属性，这里使用 ThreeJS �
 
 但是一个完整的中文字体文件会很大，可通过 Google 开源项目 [sfntly](https://github.com/googlefonts/sfntly) 中的 `sfnttool` 工具提取指定的文字。
 
-### 字体提取步骤
+#### 字体提取步骤：
 1. 下载 `sfnttool` 工具（[直接下载](https://download.csdn.net/download/huangli0/12031450) 或 从源码 [sfntly](https://github.com/googlefonts/sfntly) 编译）
 2. 提取指定文字，输出 `ttf` 文件（需要 java 环境）
 ``` bash

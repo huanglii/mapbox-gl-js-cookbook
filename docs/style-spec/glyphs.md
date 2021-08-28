@@ -1,11 +1,11 @@
 # 字体
-> [glyphs](https://maplibre.org/maplibre-gl-js-docs/style-spec/glyphs/)
+> [glyphs](https://docs.mapbox.com/mapbox-gl-js/style-spec/glyphs/)
 
 如果图层样式中有使用 `text-field` 属性，则必须设置该属性。
 
 如需使用自定义字体，可在 [Mapbox Studio](https://studio.mapbox.com/) 上传 `.TTF` 或者 `.OTF` 字体。也可使用 [mapbox/node-fontnik](https://github.com/mapbox/node-fontnik) 工具生成 `PBF` 格式字体。
 
-使用方法：
+使用方法如下：
 ``` sh
 git clone git@github.com:mapbox/node-fontnik.git
 cd node-fontnik
@@ -49,7 +49,7 @@ function output2pbf(font, start, end, outputDir) {
 convert('./fonts/open-sans/OpenSans-Regular.ttf', './glyphs/OpenSans Regular/');
 ```
 
-::: tip 提示
+::: warning 注意
 上面几种方法（包括在 Mapbox Studio 中上传的字体）生成的字体，似乎不支持中文，如下图：
 
 <img :src="$withBase('/assets/images/fonts.png')" width="120" />

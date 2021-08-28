@@ -1,5 +1,5 @@
 # 表达式
-> [expressions](https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/)
+> [expressions](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/)
 
 任何 `layout` 属性、`paint` 属性或 `filter` 的值都可以是表达式。示例：
 ``` js
@@ -23,9 +23,8 @@
 ## Feature data
 - feature-state：要素状态，要素状态不是数据的某一属性，需要对通过要素 `id` 设置，如给要素设置 `hover` 状态：`map.setFeatureState({source: 'states', id: hoveredStateId}, {hover: false})`，然后在表达式中即可使用：`['feature-state', 'hover']`
 
-::: tip 提示
-示例：[Create a hover effect](https://maplibre.org/maplibre-gl-js-docs/example/hover-styles/)
-:::
+> 示例：[Create a hover effect](https://docs.mapbox.com/mapbox-gl-js/example/hover-styles/)
+
 ## Lookup
 - get：获取要素属性，如获取 `name` 属性：`['get', 'name']`
 ## Decision
@@ -43,7 +42,7 @@
 - rgb
 - rgba
 ## Math
-支持基本的数学运算，详见：[Math](https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/#math)
+支持基本的数学运算，详见：[Math](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#math)
 ``` js
 ['/', ['get', 'gdp'], 1000]
 ```

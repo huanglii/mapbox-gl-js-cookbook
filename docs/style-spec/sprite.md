@@ -1,5 +1,5 @@
 # 雪碧图
-> [sprite](https://maplibre.org/maplibre-gl-js-docs/style-spec/sprite/)
+> [sprite](https://docs.mapbox.com/mapbox-gl-js/style-spec/sprite/)
 
 如果图层样式中有使用 `background-pattern`、`fill-pattern`、`line-pattern`、`fill-extrusion-pattern`、或 `icon-image` 属性，则必须设置该属性。
 
@@ -14,42 +14,35 @@
 // http://localhost:8080/mapbox/sprite@2x.png 
 ```
 
-通常我们会使用一些自己的图标，下面介绍几种使用自定义图标的方法。
+通常我们会使用一些自己的图标，下面介绍几种使用自定义图标的方法：
 
 ## Mapbox Studio
-最直接的方法就是在 [Studio](https://studio.mapbox.com/) 中去上传、管理图标。
+最直接的方法就是在 [Mapbox Studio](https://studio.mapbox.com/) 中上传、管理图标。然后在样式预览中，将 `sprite.png`、`sprite@2x.png` `sprite.json` 文件下载下来使用。
 <div align="center">
-  <img :src="$withBase('/assets/images/sprite1.png')" width="580" />
-</div>
-
-在样式预览中，我们可以将 `sprite.png`、`sprite@2x.png` `sprite.json` 文件下载下来，放到服务器使用。
-
-<div align="center">
-  <img :src="$withBase('/assets/images/sprite2.png')" width="580" />
+  <img :src="$withBase('/assets/images/sprite1.png')" width="420" />
+  <img :src="$withBase('/assets/images/sprite2.png')" width="420" />
 </div>
 
 ::: tip 提示
 1. 只支持 `svg` 格式
 2. 在 `iconfont` 下载的图标可以上传使用
-3. 地图图标集：[MAKI ICONS](https://labs.mapbox.com/maki-icons/)
+3. 官方推荐的地图图标集：[MAKI ICONS](https://labs.mapbox.com/maki-icons/)
 :::
 
 ## addImage
 通过 [map.addImage()](https://docs.mapbox.com/mapbox-gl-js/api/#map#addimage) 方法向样式中添加图标。
 ``` js
-map.loadImage('/images/cat.png', (error, image) => {
+map.loadImage('./images/cat.png', (error, image) => {
   if (error) throw error
   if (!map.hasImage('cat')) map.addImage('cat', image)
 })
-// 或
-if (!map.hasImage('cat')) map.addImage('cat', './cat-icon.png')
 ```
 ## styleimagemissing
-当样式所需的图标或图案丢失时将会触发该事件。[styleimagemissing](https://docs.mapbox.com/mapbox-gl-js/api/#map.event:styleimagemissing)
+当样式所需的图标或图案丢失时将会触发 [styleimagemissing](https://docs.mapbox.com/mapbox-gl-js/api/#map.event:styleimagemissing)事件，通过该事件可添加指定 `id` 图标。
 
 ``` js
 map.on('styleimagemissing', e => {
-  var id = e.id // 丢失图片 id
+  const id = e.id // 丢失图片 id
   map.loadImage(url, (error, image) => {
     if (error) throw error
     map.addImage(id, image)
@@ -57,12 +50,10 @@ map.on('styleimagemissing', e => {
 })
 ```
 
-::: tip 提示
-示例：[Generate and add a missing icon to the map](https://docs.mapbox.com/mapbox-gl-js/example/add-image-missing-generated/)
-:::
+> 示例：[Generate and add a missing icon to the map](https://docs.mapbox.com/mapbox-gl-js/example/add-image-missing-generated/)
 
 ## spritezero
-前面两种方法都是单个图加载，如果需要很多图标，需要多次加载。最好直接生成雪碧图，可以使用 [spritezero](https://github.com/mapbox/spritezero) 创建。
+前两种方法都是单个图标加载，如果需要很多图标，需要多次加载。这个时候最好直接生成雪碧图，则可以使用 [spritezero](https://github.com/mapbox/spritezero) 创建。
 
 ### spritezero
 安装（在 `Ubuntu` 安装成功，`Windows` 安装失败）
@@ -70,7 +61,7 @@ map.on('styleimagemissing', e => {
 npm install @mapbox/spritezero
 ```
 
-使用：
+使用
 
 ``` js
 var spritezero = require('@mapbox/spritezero');
@@ -129,5 +120,5 @@ spritezero [output filename] [input directory]
 ::: warning 注意
 1. 注意 `node` 版本 `v8` 才能安装成功；
 2. 该工具只支持 `svg` 格式；
-3. 在 `iconfont` 上下载的 svg 格式，使用命令行工具生成的图片不对。
+3. 在 `iconfont` 上下载的 svg 格式，使用命令行工具生成的图片不可用。
 :::

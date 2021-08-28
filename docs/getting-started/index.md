@@ -1,4 +1,4 @@
-# 指南
+# 快速开始
 [Mapbox GL JS](https://docs.mapbox.com/mapbox-gl-js/api/) 是一个 JavaScript 库，基于 [vector tiles](https://docs.mapbox.com/help/glossary/vector-tiles/) 和 [Mapbox styles](https://docs.mapbox.com/mapbox-gl-js/style-spec/)，使用 `WebGL` 渲染交互式地图。Mapbox GL JS 是 Mapbox GL 生态系统之一，其中还包括 [Mapbox Mobile](https://www.mapbox.com/mobile/)，它是一个用 C++ 编写的兼容桌面和移动平台的渲染引擎。
 
 ::: tip 提示
@@ -7,13 +7,25 @@
 - [MapLibre GL JS](https://maplibre.org/maplibre-gl-js-docs/api/)是 Mapbox GL JS 的官方开源继承者
 :::
 
-## 目录
-* [样式规范](/style-spec/)
-  * 绘制哪些数据，绘制顺序以及绘制数据时如何设置数据样式。
-* [数据](/data/)
-  * 点、线、面、栅格等数据，以及不同数据格式在 Mapbox GL JS 中的可视化。
-* [服务](/service/)
-  * 加载 WMS、WMTS、TMS 等 OGC、OSGeo 标准的服务。
-* [进阶](/advance/)
-  * 专题图、自定义图层、自定义控件以及与第三方库的结合。
+1. 安装
+```bash
+npm install mapbox-gl
+```
+2. 添加 CSS 样式文件
+```js
+import 'mapbox-gl/dist/mapbox-gl.css';
+```
+3. 初始化地图
+```js
+import mapboxgl from 'mapbox-gl';
 
+mapboxgl.accessToken = '{YOUR MAPBOX ACCESS TOKEN}';
+const map = new mapboxgl.Map({
+  container: 'map', // 地图容器 id
+  style: 'mapbox://styles/mapbox/streets-v11', // 样式
+  center: [-74.5, 40], // 地图初始中心点 [经度, 维度]
+  zoom: 9 // 地图初始缩放级别
+});
+```
+
+> 示例：[Display a map on a webpage](https://docs.mapbox.com/mapbox-gl-js/example/simple-map/)

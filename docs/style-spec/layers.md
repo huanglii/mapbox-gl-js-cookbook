@@ -1,5 +1,5 @@
 # 图层
-> [layers](https://maplibre.org/maplibre-gl-js-docs/style-spec/layers/)
+> [layers](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/)
 
 图层属性配置如下：
 | 属性 | 类型 | 必须 | 描述 |

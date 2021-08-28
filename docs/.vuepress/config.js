@@ -15,7 +15,7 @@ module.exports = {
     logo: '/assets/logo.png',
     displayAllHeaders: true,
     nav: [
-      { text: '指南', link: '/guide/' },
+      { text: '快速开始', link: '/getting-started/' },
       { text: '样式规范', link: '/style-spec/' },
       { text: '数据', link: '/data/' },
       { text: '进阶', link: '/advance/' },
@@ -28,9 +28,8 @@ module.exports = {
           { text: '文档丨MapLibre', link: 'https://maplibre.org/maplibre-gl-js-docs/api/' }
         ]
       }
-      // { text: 'GISer 空间', link: 'https://huanglii.github.io' }
     ],
-    sidebarDepth: 1,
+    sidebarDepth: 2,
     sidebar: {
       '/data/': [
         {
