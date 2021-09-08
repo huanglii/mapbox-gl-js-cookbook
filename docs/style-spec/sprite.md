@@ -99,7 +99,8 @@ var path = require('path');
 ```
 
 ::: warning 注意
-注意 `node` 版本 `v10` 及以上。
+1. 注意 `node` 版本 `v10` 及以上；
+2. 如果需要将 `png` 转换为雪碧图，需要修改 [spritezero](https://github.com/mapbox/spritezero/blob/main/lib/generate.js#L124) 源码，将 `mapnik.Image.fromSVGBytes` 修改为 ` mapnik.Image.fromBytes` 即可。
 :::
 
 ### spritezero-cli
