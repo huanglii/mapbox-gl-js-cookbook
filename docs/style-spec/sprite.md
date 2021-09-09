@@ -55,14 +55,13 @@ map.on('styleimagemissing', e => {
 ## spritezero
 前两种方法都是单个图标加载，如果需要很多图标，需要多次加载。这个时候最好直接生成雪碧图，则可以使用 [spritezero](https://github.com/mapbox/spritezero) 创建。
 
-### spritezero
-安装（在 `Ubuntu` 安装成功，`Windows` 安装失败）
+### 安装
+> 在 `Ubuntu` 安装成功，`Windows` 安装失败
 ``` bash
 npm install @mapbox/spritezero
 ```
 
-使用
-
+### 使用
 ``` js
 var spritezero = require('@mapbox/spritezero');
 var fs = require('fs');
@@ -98,28 +97,9 @@ var path = require('path');
 });
 ```
 
-::: warning 注意
+::: tip 提示
 1. 注意 `node` 版本 `v10` 及以上；
-2. 如果需要将 `png` 转换为雪碧图，需要修改 [spritezero](https://github.com/mapbox/spritezero/blob/main/lib/generate.js#L124) 源码，将 `mapnik.Image.fromSVGBytes` 修改为 ` mapnik.Image.fromBytes` 即可。
-:::
-
-### spritezero-cli
-`spritezero`提供了命令行工具`spritezero-cli`，可直接文件夹中生成雪碧图。
-
-安装
-``` bash
-npm install -g @mapbox/spritezero-cli
-```
-
-使用
-``` bash
-spritezero [output filename] [input directory]
-  --retina      shorthand for --ratio=2
-  --ratio=[n]   pixel ratio
-```
-
-::: warning 注意
-1. 注意 `node` 版本 `v8` 才能安装成功；
-2. 该工具只支持 `svg` 格式；
-3. 在 `iconfont` 上下载的 svg 格式，使用命令行工具生成的图片不可用。
+2. 如果需要将 `png` 转换为雪碧图，需要修改 [spritezero](https://github.com/mapbox/spritezero/blob/main/lib/generate.js#L124) 源码，将 `mapnik.Image.fromSVGBytes` 修改为 ` mapnik.Image.fromBytes` 即可；
+3. **sdf support**：[Option to generate SDF sprites](https://github.com/mapbox/spritezero/pull/66)、[@elastic/spritezero](https://github.com/elastic/spritezero)、[Demo of SDF sprites](http://www.npeihl.com/maki-sdf-sprites/)；
+4. 命令行工具 [spritezero-cli](https://github.com/mapbox/spritezero-cli)，可直接文件夹中生成雪碧图。
 :::
