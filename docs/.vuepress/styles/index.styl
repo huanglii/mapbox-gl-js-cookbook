@@ -1,6 +1,6 @@
 .home,
 .theme-default-content:not(.custom), .page-edit, .page-nav
-  max-width: 1200px !important;
+  max-width: 1080px !important;
 
 @media screen and (max-width: 1080px)
   .home,
@@ -41,3 +41,14 @@
   p
     border: 1px dashed #eaecef;
     padding: 5px;
+
+// 滚动条
+::-webkit-scrollbar
+  width: 6px;
+  background-color: #b9b9b9;
+
+::-webkit-scrollbar-track
+  background-color: #b9b9b9;
+
+::-webkit-scrollbar-thumb
+  background-color: $accentColor;
