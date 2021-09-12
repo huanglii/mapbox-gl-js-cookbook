@@ -1,3 +1,4 @@
+export const TK = 'pk.eyJ1IjoiaHVhbmdsaWkiLCJhIjoiY2pzNHBtendwMDZ2ZDQzbnVmZXdtMDlvdiJ9.GSija86yNNR4ssBtFFpx0g'
 export const STYLE = {
   DEFAULT: 'mapbox://styles/huanglii/ckqt08oxg1kcc18ub9vowurqd?optimize=true',
   SATELLITE: 'mapbox://styles/mapbox/satellite-v9',

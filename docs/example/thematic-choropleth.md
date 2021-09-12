@@ -2,4 +2,4 @@
   <common-code-view name="thematic-choropleth" :is-code-view="false"/>
 </ClientOnly>
 
-<<< @/docs/.vuepress/snippet/thematic/choropleth.js
+@[code js](../.vuepress/snippet/thematic/choropleth.js)

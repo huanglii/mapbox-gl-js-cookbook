@@ -20,7 +20,7 @@ export default {
 }
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .code-view-wrapper {
   position: relative;
   margin: 10px 0;

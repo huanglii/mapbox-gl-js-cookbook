@@ -27,7 +27,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 .marker {
   img {
     border-radius: 50%;

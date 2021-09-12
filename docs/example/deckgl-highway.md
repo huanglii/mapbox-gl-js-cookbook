@@ -2,4 +2,4 @@
   <common-code-view name="deckgl-highway" :is-code-view="false"/>
 </ClientOnly>
 
-<<< @/docs/.vuepress/snippet/deckgl/highway.js
+@[code js](../.vuepress/snippet/deckgl/highway.js)

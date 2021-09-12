@@ -1,6 +1,6 @@
 <template>
   <base-map :height="height" :map-options="mapOptions" @load="handleMapLoaded">
-    <div class="legend custom-typhon">
+    <div class="legend">
       <div class="legend-item" v-for="(item, index) in legendStrong" :key="index">
         <span class="circle" :style="{backgroundColor: item[1]}"></span>
         <span class="text">{{ item[0] }}</span>
@@ -69,11 +69,3 @@ export default {
   }
 }
 </script>
-
-<style lang="less">
-.legend.custom-typhon {
-  .text {
-    color: #496C8A;
-  }
-}
-</style>
