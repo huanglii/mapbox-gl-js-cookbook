@@ -2,4 +2,4 @@
   <common-code-view name="deckgl-arc" :is-code-view="false"/>
 </ClientOnly>
 
-<<< @/docs/.vuepress/snippet/deckgl/arc.js
+@[code js](../.vuepress/snippet/deckgl/arc.js)

@@ -1,6 +1,6 @@
 <template>
   <base-map :map-options="mapOptions" @load="handleMapLoaded">
-    <div class="legend custom">
+    <div class="legend">
       <div class="legend-item" @click="setFilter('0-100')">
         <span class="square"></span>
         <span class="text">全部值</span>
@@ -57,14 +57,3 @@ export default {
 }
 </script>
 
-<style lang="less">
-.legend.custom {
-  background-color: rgba(255, 255, 255, 0.8);
-  .legend-item {
-    cursor: pointer;
-    &:hover {
-      background-color: rgba(0, 0, 0, .1);
-    }
-  }
-}
-</style>

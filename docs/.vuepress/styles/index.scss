@@ -1,54 +1,61 @@
-.home,
-.theme-default-content:not(.custom), .page-edit, .page-nav
-  max-width: 1080px !important;
-
-@media screen and (max-width: 1080px)
-  .home,
-  .theme-default-content:not(.custom), .page-edit, .page-nav
-    max-width: 900px !important;
-
-.mapboxgl-ctrl-icon.mapboxgl-ctrl-home
+// mapbox 控件
+.mapboxgl-ctrl-icon.mapboxgl-ctrl-home {
   background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjE1cHgiIGhlaWdodD0iMTVweCIgdmlld0JveD0iMCAwIDE1IDE1IiBpZD0iaG9tZS0xNSI+CiAgPHBhdGggZD0iTTIsMTMuNzQ3OGMwLDAuMTM4MDcsMC4xMTE5MywwLjI1LDAuMjUsMC4yNWgzLjc0OXYtM2gzdjNoMy43NDljMC4xMzgwNywwLDAuMjUtMC4xMTE5MywwLjI1LTAuMjVWNy45OTg3SDImI3hBOyYjeDk7QzIsNy45OTg3LDIsMTMuNzQ3OCwyLDEzLjc0Nzh6IE0xMy45Myw2LjU3NzhsLTAuOTMxOS0wLjgxODlWMmMwLTAuNTUyMjgtMC40NDc3MS0xLTEtMXMtMSwwLjQ0NzcyLTEsMXYyTDcuNjgwOCwxLjA5JiN4QTsmI3g5O0M3LjU4NjMsMC45ODk3LDcuNDI4NDYsMC45ODQ3OCw3LjMyNzksMS4wNzlMNy4zMTY5LDEuMDlMMS4wNjc4LDYuNTUzQzAuOTczNCw2LjY1Mzc2LDAuOTc4NTYsNi44MTE5NywxLjA3OTMyLDYuOTA2MzcmI3hBOyYjeDk7QzEuMTI0NzgsNi45NDg5NiwxLjE4NDUxLDYuOTczMDQsMS4yNDY4LDYuOTczOUwzLDYuOTk4OWgxMC43NDY4YzAuMTM4MDcsMC4wMDA0NiwwLjI1MDM3LTAuMTExMSwwLjI1MDgzLTAuMjQ5MTcmI3hBOyYjeDk7QzEzLjk5Nzg0LDYuNjg1OTIsMTMuOTczNjUsNi42MjQ0NSwxMy45Myw2LjU3NzlWNi41Nzc4eiIvPgo8L3N2Zz4=");
   background-size: 20px;
   background-position: center;
   background-repeat: no-repeat;
+}
 
 // 图例
-.legend
+.legend {
   position: absolute;
   right: 10px;
   bottom: 38px;
   border-radius: 4px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 0.8);
   font-size: 12px;
   font-weight: bold;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
-  &-item
+  &-item {
     padding: 4px 6px;
-    .circle, .square
+    cursor: pointer;
+    &:hover {
+      background-color: rgba(0, 0, 0, .1);
+    }
+    .circle, .square {
       display: inline-block;
       width: 10px;
       height: 10px;
       margin-right: 2px;
-    .circle
+    }
+    .circle {
       border-radius: 50%;
-    .text
+    }
+    .text {
       color: #2c3e50;
+    }
+  }
+}
 
 // 公式
-.formula
+.formula {
   text-align: center;
-  p
-    border: 1px dashed #eaecef;
+  p {
+    border: 1px dashed var(--c-border);
     padding: 5px;
+  }
+}
 
 // 滚动条
-::-webkit-scrollbar
-  width: 6px;
-  background-color: #b9b9b9;
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
 
-::-webkit-scrollbar-track
-  background-color: #b9b9b9;
+::-webkit-scrollbar-track {
+  background-color: var(--c-bg-light);
+}
 
-::-webkit-scrollbar-thumb
-  background-color: $accentColor;
+::-webkit-scrollbar-thumb {
+  background-color: var(--c-brand);
+}

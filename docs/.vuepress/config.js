@@ -1,20 +1,25 @@
+const { path } = require('@vuepress/utils')
+
 module.exports = {
+  lang: 'zh-CN',
   title: 'Mapbox GL JS Cookbook',
   base: '/mapbox-gl-js-cookbook/',
   description: 'Mapbox GL JS Cookbook',
-  plugins: ['@vuepress/back-to-top'],
-  locales: {
-    '/': {
-      lang: 'zh-CN'
-    }
-  },
   head: [
     ['link', { rel: 'icon', href: '/assets/logo.png' }]
   ],
+  plugins: [
+    ['@vuepress/plugin-search'],
+    [
+      '@vuepress/register-components',
+      {
+        componentsDir: path.resolve(__dirname, './components'),
+      },
+    ],
+  ],
   themeConfig: {
     logo: '/assets/logo.png',
-    displayAllHeaders: true,
-    nav: [
+    navbar: [
       { text: '快速开始', link: '/getting-started/' },
       { text: '样式规范', link: '/style-spec/' },
       { text: '数据', link: '/data/' },
@@ -22,7 +27,7 @@ module.exports = {
       { text: 'DECK.GL', link: '/deck-gl/' },
       {
         text: 'Mapbox',
-        items: [
+        children: [
           { text: '文档丨英文', link: 'https://docs.mapbox.com/mapbox-gl-js/api/' },
           { text: '文档丨中文', link: 'https://www.mapbox.cn/mapbox-gl-js/api/' },
           { text: '文档丨MapLibre', link: 'https://maplibre.org/maplibre-gl-js-docs/api/' }
@@ -30,69 +35,71 @@ module.exports = {
       }
     ],
     sidebarDepth: 2,
+    // sidebar: 'auto',
     sidebar: {
-      '/data/': [
+      '/style-spec/': [
         {
-          title: '数据',
-          collapsable: false,
+          text: '样式规范',
           children: [
-            '',
-            'point',
-            'line',
-            'polygon',
-            'raster',
-            'thematic'
+            '/style-spec/',
+            '/style-spec/sprite',
+            '/style-spec/glyphs',
+            '/style-spec/sources',
+            '/style-spec/layers',
+            '/style-spec/expression'
           ]
         }
       ],
-      '/style-spec/': [
+      '/data/': [
         {
-          title: '样式规范',
-          collapsable: false,
+          text: '数据',
           children: [
-            '',
-            'sprite',
-            'glyphs',
-            'sources',
-            'layers',
-            'expression'
+            '/data/',
+            '/data/point',
+            '/data/line',
+            '/data/polygon',
+            '/data/raster',
+            '/data/thematic'
           ]
         }
       ],
       '/advance/': [
         {
-          title: '进阶',
-          collapsable: false,
+          text: '进阶',
           children: [
-            '',
-            'track',
-            'control',
-            'ECharts',
-            'threejs',
-            'met'
+            '/advance/',
+            '/advance/track',
+            '/advance/control',
+            '/advance/ECharts',
+            '/advance/threejs',
+            '/advance/met'
           ]
         }
       ],
       '/deck-gl/': [
         {
-          title: 'DECK.GL',
-          collapsable: false,
+          text: 'DECK.GL',
           children: [
-            '',
-            'HexagonLayer',
-            'PathLayer'
+            '/deck-gl/',
+            '/deck-gl/HexagonLayer',
+            '/deck-gl/PathLayer'
           ]
         }
       ]
     },
-    // sidebar: 'auto',
-    lastUpdated: '上次更新',
     repo: 'huanglii/mapbox-gl-js-cookbook',
     docsDir: 'docs',
-    editLinks: true,
-    editLinkText: '在 GitHub 上编辑此页！'
-  },
-  markdown: {
-    lineNumbers: true
+    editLink: true,
+    editLinkText: '在 GitHub 上编辑此页！',
+    lastUpdatedText: '上次更新',
+    contributorsText: '贡献者',
+    tip: '提示',
+    warning: '注意',
+    danger: '警告',
+    notFound: ['404 未找到', '找不着了'],
+    backToHome: '返回首页',
+    openInNewWindow: '在新页面打开',
+    toggleDarkMode: '切换夜间模式',
+    toggleSidebar: '切换侧边栏'
   }
 }

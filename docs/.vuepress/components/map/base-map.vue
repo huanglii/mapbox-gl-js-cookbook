@@ -12,7 +12,7 @@
 import { v4 as uuidv4 } from 'uuid'
 import mapboxgl from 'mapbox-gl'
 import HomeControl from '../control/HomeControl'
-import { STYLE } from '../../utils/constant'
+import { TK, STYLE } from '../../utils/constant'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default {
@@ -40,25 +40,14 @@ export default {
       mapDefaultOptions: {
         container: uuidv4(),
         style: STYLE.DEFAULT,
-        center: [-74.50, 40],
-        zoom: 6,
+        center: [104.294538, 35.860092],
+        zoom: 2.4,
         minZoom: 0,
         maxZoom: 22,
         scrollZoom: true,
         pitch: 0,
         bearing: 0,
         antialias: false
-      },
-      borderDefaultOptions: {
-        layout: {
-          'visibility': 'none'
-        },
-        paint: {
-          'line-color': 'hsl(357, 67%, 60%)',
-          'line-opacity': ['step', ['zoom'], 1, 10, 0],
-          'line-width': ['interpolate', ['linear'], ['zoom'], 0, 1, 22, 3]
-        },
-        beforeId: ''
       }
     }
   },
@@ -74,7 +63,7 @@ export default {
   },
   methods: {
     initMap (options) {
-      mapboxgl.accessToken = 'pk.eyJ1IjoiaHVhbmdsaWkiLCJhIjoiY2pzNHBtendwMDZ2ZDQzbnVmZXdtMDlvdiJ9.GSija86yNNR4ssBtFFpx0g'
+      mapboxgl.accessToken = TK
       this.map = new mapboxgl.Map(options)
       this.map.addControl(new mapboxgl.NavigationControl(), 'top-left')
       let { center, zoom, pitch, bearing } = options
@@ -91,9 +80,7 @@ export default {
     },
     handleMapClick (evt) {
       // console.log(evt.lngLat)
-      let features = this.map.queryRenderedFeatures(
-        evt.point
-      )
+      let features = this.map.queryRenderedFeatures(evt.point)
       if (features.length > 0) {
         let { layer, properties } = features[0]
         if (Object.keys(properties).length > 0) {
@@ -112,23 +99,6 @@ export default {
         </div>
       `
     },
-    // 国界线
-    addBorderLayer () {
-      let borderOptions = Object.assign({}, this.borderDefaultOptions, this.borderOptions)
-      let { layout, paint, beforeId } = borderOptions
-      this.map.addSource('border', {
-        type: 'vector',
-        url: 'mapbox://huanglii.4nxu8jv0'
-      })
-      this.map.addLayer({
-        'id': 'border-2oej0r',
-        'source': 'border',
-        'source-layer': 'Border-2oej0r',
-        'type': 'line',
-        'layout': layout,
-        'paint': paint
-      }, beforeId || undefined)
-    },
     resize () {
       this.map.resize()
     }
@@ -136,7 +106,7 @@ export default {
 }
 </script>
 
-<style lang="less">
+<style lang="scss">
 .mapboxgl-popup {
   &-content {
     padding: 0;
