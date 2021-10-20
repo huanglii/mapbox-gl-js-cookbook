@@ -6,7 +6,7 @@ module.exports = {
   base: '/mapbox-gl-js-cookbook/',
   description: 'Mapbox GL JS Cookbook',
   head: [
-    ['link', { rel: 'icon', href: '/assets/logo.png' }]
+    ['link', { rel: 'icon', href: '/mapbox-gl-js-cookbook/assets/logo.png' }]
   ],
   plugins: [
     ['@vuepress/plugin-search'],
