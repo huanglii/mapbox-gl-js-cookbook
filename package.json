@@ -31,6 +31,7 @@
     "echarts": "^5.2.0",
     "geojson-validation": "^1.0.2",
     "mapbox-gl": "^2.4.1",
+    "mapbox-gl-static-image-source": "^0.1.0",
     "three": "^0.132.2",
     "uuid": "^8.3.2"
   }

@@ -1,48 +1,46 @@
 # 栅格
-栅格数据一般发布为 `WMS`、`WMTS` 服务，使用 **`raster`** 格式加载；如果是一些图片格式，并且文件大小比较小，比如：温度图、湿度图、雷达图等，则可以根据经纬度范围使用 **`image`** 格式加载。
+栅格数据一般发布为 `WMS`、`WMTS` 服务，使用 **`raster`** 格式加载；如果是一些图片格式，并且文件大小比较小，比如：温度图、湿度图、雷达图等，则可以根据图片范围使用 **`image`** 格式加载，但只支持 `EPSG:3857`（网络墨卡托） 坐标系的图片，对于其他坐标系的图片如何加载后面会提到。
 
 ## raster
-``` js
-'source-id': {
-  'type': 'raster',
-  'tiles': [
-    'https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg'
-  ],
-  'tileSize': 256,
-}
-```
 
 <ClientOnly>
   <common-code-view name="data-raster"/>
 </ClientOnly>
 
-> 栅格瓦片：[Add a raster tile source](https://docs.mapbox.com/mapbox-gl-js/example/map-tiles/)
+> 示例：[Add a raster tile source](https://docs.mapbox.com/mapbox-gl-js/example/map-tiles/)
 
 ## image
-有如下一张温度图：
+### 网络墨卡托
+有如下一张温度图，坐标系为 `EPSG:3857`：
 
 <!-- ![温度图](/images/3857.png) -->
 <div align="center">
   <img :src="$withBase('/assets/images/3857.png')" width="300" />
 </div>
 
-``` js
-'source-id': {
-  'type': 'image',
-  'url': '/images/3857.png',
-  'coordinates': [
-    [73.5001449800, 53.5614389930],
-    [135.088932019, 53.5614389930],
-    [135.088932019, 18.158746],
-    [73.5001449800, 18.158746]
-  ]
-}
-```
-
 <ClientOnly>
   <common-code-view name="data-image"/>
 </ClientOnly>
 
+### 其他任意投影
+任意投影的图片可以使用插件 [mapbox-gl-static-image-source](https://github.com/huanglii/mapbox-gl-static-image-source) 加载，该插件利用了 [openlayers](https://openlayers.org/) 的 `ol/reproj` 相关方法，将图片进行重投影为 `EPSG:3857` 坐标系。
+
+``` bash
+# use yarn
+yarn add mapbox-gl-static-image-source
+# use npm
+npm i mapbox-gl-static-image-source
+```
+
+有如下一张图片，坐标系为 EPSG:4326：
+
+<div align="center">
+  <img :src="$withBase('/assets/images/4326.png')" width="300" />
+</div>
+
+<ClientOnly>
+  <common-code-view name="data-image-4326"/>
+</ClientOnly>
 
 ## video
 Mapbox GL JS 还支持视频数据源，同 `image` 差不多。

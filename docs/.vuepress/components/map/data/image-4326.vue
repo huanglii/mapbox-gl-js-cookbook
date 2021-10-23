@@ -4,8 +4,7 @@
 
 <script>
 import baseMap from '../base-map'
-import { STYLE } from '../../../utils/constant'
-import addChartPie from '../../../snippet/echarts/pie'
+import addImageLayer from '../../../snippet/data/image4326'
 export default {
   components: {
     baseMap
@@ -13,16 +12,14 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: STYLE.GRAY,
         center: [107.744809, 30.180706],
         zoom: 6,
-        minZoom: 4
       }
     }
   },
   methods: {
     handleMapLoaded (map) {
-      addChartPie(map, this.$withBase('/data/point.geojson'))
+      addImageLayer(map, this.$withBase('/assets/images/4326.png'))
     }
   }
 }
