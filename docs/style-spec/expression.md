@@ -26,7 +26,9 @@
     "code": 500000,
     "name": "重庆市"
   },
+  "type": "fruit",
   "fruits": ["苹果", "香蕉"],
+  "price": 99,
   "color": "#F00"
 },
 ```
@@ -71,8 +73,37 @@
 'text-field': ['slice', ['get', 'fruits'], 1] // ["香蕉"]
 ```
 
-## Decision
+## [Decision](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#decision)
 在表达式中，可使用常用的条件逻辑，比如：`"if/then/else"` 的逻辑可使用 `'case'` 表达式，如需将输入的特定值映射不同的输出，可使用 `'match'` 表达式。
+### [case](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#case)
+```js
+'circle-color': [
+  'case',
+  ['<', ['get', 'price'], 50], '#F00', // if ＜ 50 红色
+  ['<', ['get', 'price'], 100], '#0F0', // else if ＜ 100 绿色
+  '#00F' // else 蓝色
+] // 因为 price = 99，所以最终会显示为绿色。
+```
+### [coalesce](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#coalesce)
+依次计算每一个表达式，直到得到一个有效值。比如下面表达式中，先取 `name_zh-Hans` 属性，如果不存在或为空，再取 `name_en` ，如果仍然无效，就取 `name`。
+```js
+'text-field': [
+  'coalesce',
+  ['get', 'name_zh-Hans'],
+  ['get', 'name_en'],
+  ['get', 'name']
+]
+```
+### [match](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#match)
+```js
+'icon-image': [
+  'match',
+  ['get', 'type'],
+  'fruit', 'fruit-icon', // 类型是 fruit，显示 fruit-icon
+  'vegetable', 'vegetable-icon', // 类型是 vegetable vegetable-icon
+  'default-icon' // 无匹配时，默认图标
+] // 因为 type = 99，所以最终会显示 fruit-icon。
+```
 ## Ramps, scales, curves
 - interpolate：插值，支持 `linear`、`exponential` 和 `cubic-bezier`
 - step：分段
@@ -80,8 +111,8 @@
 - let 绑定变量
 - var 引用 `let` 绑定的变量
 ## String
-- downcase
-- upcase
+- downcase 转小写
+- upcase 转大写
 ## Color
 - rgb
 - rgba
