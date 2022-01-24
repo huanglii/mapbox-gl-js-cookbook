@@ -5,9 +5,7 @@ module.exports = {
   title: 'Mapbox GL JS Cookbook',
   base: '/mapbox-gl-js-cookbook/',
   description: 'Mapbox GL JS Cookbook',
-  head: [
-    ['link', { rel: 'icon', href: '/mapbox-gl-js-cookbook/assets/logo.png' }]
-  ],
+  head: [['link', { rel: 'icon', href: '/mapbox-gl-js-cookbook/assets/logo.png' }]],
   plugins: [
     ['@vuepress/plugin-search'],
     [
@@ -31,9 +29,9 @@ module.exports = {
         children: [
           { text: '文档丨英文', link: 'https://docs.mapbox.com/mapbox-gl-js/api/' },
           { text: '文档丨中文', link: 'https://www.mapbox.cn/mapbox-gl-js/api/' },
-          { text: '文档丨MapLibre', link: 'https://maplibre.org/maplibre-gl-js-docs/api/' }
-        ]
-      }
+          { text: '文档丨MapLibre', link: 'https://maplibre.org/maplibre-gl-js-docs/api/' },
+        ],
+      },
     ],
     sidebarDepth: 2,
     // sidebar: 'auto',
@@ -47,21 +45,15 @@ module.exports = {
             '/style-spec/glyphs',
             '/style-spec/sources',
             '/style-spec/layers',
-            '/style-spec/expression'
-          ]
-        }
+            '/style-spec/expression',
+          ],
+        },
       ],
       '/service/': [
         {
           text: '服务',
-          children: [
-            '/service/',
-            '/service/wmts',
-            '/service/wms',
-            '/service/wfs',
-            '/service/tms'
-          ]
-        }
+          children: ['/service/', '/service/wmts', '/service/wms', '/service/wfs', '/service/tms'],
+        },
       ],
       '/data/': [
         {
@@ -72,9 +64,9 @@ module.exports = {
             '/data/line',
             '/data/polygon',
             '/data/raster',
-            '/data/thematic'
-          ]
-        }
+            '/data/thematic',
+          ],
+        },
       ],
       '/advance/': [
         {
@@ -85,9 +77,9 @@ module.exports = {
             '/advance/control',
             '/advance/ECharts',
             '/advance/threejs',
-            '/advance/met'
-          ]
-        }
+            '/advance/met',
+          ],
+        },
       ],
       '/deck-gl/': [
         {
@@ -96,10 +88,10 @@ module.exports = {
             '/deck-gl/',
             '/deck-gl/HexagonLayer',
             // '/deck-gl/GridLayer',
-            '/deck-gl/PathLayer'
-          ]
-        }
-      ]
+            '/deck-gl/PathLayer',
+          ],
+        },
+      ],
     },
     repo: 'huanglii/mapbox-gl-js-cookbook',
     docsDir: 'docs',
@@ -114,6 +106,6 @@ module.exports = {
     backToHome: '返回首页',
     openInNewWindow: '在新页面打开',
     toggleDarkMode: '切换夜间模式',
-    toggleSidebar: '切换侧边栏'
-  }
+    toggleSidebar: '切换侧边栏',
+  },
 }

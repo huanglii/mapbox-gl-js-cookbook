@@ -2,7 +2,6 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded">
     <!-- <canvas :id="canvasId" slot="custom" style="z-index: 2;"></canvas> -->
   </base-map>
-
 </template>
 
 <script>
@@ -11,24 +10,24 @@ import { STYLE } from '../../../utils/constant'
 // import addHighwayLayer from '../../../snippet/deckgl/highway'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         style: STYLE.DARK,
         center: [-100, 38],
         zoom: 4,
         pitch: 50,
-        bearing: 0
+        bearing: 0,
       },
-      canvasId: 'highway-canvas'
+      canvasId: 'highway-canvas',
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded() {
       // addHighwayLayer(map, this.canvasId)
-    }
-  }
+    },
+  },
 }
 </script>

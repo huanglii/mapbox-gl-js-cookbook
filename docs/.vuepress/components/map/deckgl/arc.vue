@@ -10,24 +10,24 @@ import { STYLE } from '../../../utils/constant'
 // import addArcLayer from '../../../snippet/deckgl/arc'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         style: STYLE.GRAY,
         center: [-100, 40.7],
         zoom: 2.5,
         pitch: 30,
-        bearing: 30
+        bearing: 30,
       },
-      canvasId: 'arc-canvas'
+      canvasId: 'arc-canvas',
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded() {
       // addArcLayer(map, this.canvasId)
-    }
-  }
+    },
+  },
 }
 </script>

@@ -5,7 +5,7 @@ import * as THREE from 'three'
 import GJV from 'geojson-validation'
 
 class Text3DLayer {
-  constructor (options) {
+  constructor(options) {
     this.options = options
 
     this.id = this.options.id || 'custom-layer'
@@ -22,24 +22,32 @@ class Text3DLayer {
     this.raycaster = new THREE.Raycaster()
   }
 
-  onAdd (map, gl) {
+  onAdd(map, gl) {
     this.map = map
     this._addTextGeometry()
     this.renderer = new THREE.WebGLRenderer({
       canvas: map.getCanvas(),
       context: gl,
-      antialias: true
+      antialias: true,
     })
     this.renderer.autoClear = false
   }
 
-  render (gl, matrix) {
+  render(gl, matrix) {
     const m = new THREE.Matrix4().fromArray(matrix)
-    const l = new THREE.Matrix4().makeTranslation(
-      this.modelTransform.translateX,
-      this.modelTransform.translateY,
-      this.modelTransform.translateZ
-    ).scale(new THREE.Vector3(this.modelTransform.scale, -this.modelTransform.scale, this.modelTransform.scale))
+    const l = new THREE.Matrix4()
+      .makeTranslation(
+        this.modelTransform.translateX,
+        this.modelTransform.translateY,
+        this.modelTransform.translateZ
+      )
+      .scale(
+        new THREE.Vector3(
+          this.modelTransform.scale,
+          -this.modelTransform.scale,
+          this.modelTransform.scale
+        )
+      )
 
     this.camera.projectionMatrix = m.multiply(l)
     this.renderer.state.reset()
@@ -47,7 +55,7 @@ class Text3DLayer {
   }
 
   // 取不到对象，原因未知
-  queryRenderedFeatures (point) {
+  queryRenderedFeatures(point) {
     let mouse = new THREE.Vector2()
     // scale mouse pixel position to a percentage of the screen's width and height
     mouse.x = (point.x / this.map.transform.width) * 2 - 1
@@ -61,7 +69,7 @@ class Text3DLayer {
     return intersects
   }
 
-  _addTextGeometry () {
+  _addTextGeometry() {
     let features = []
     const sourceOption = this.options['source']
     if (Object.prototype.toString.call(sourceOption) === '[object String]') {
@@ -83,7 +91,7 @@ class Text3DLayer {
       translateX: refMecCoord.x,
       translateY: refMecCoord.y,
       translateZ: refMecCoord.z,
-      scale: refScale
+      scale: refScale,
     }
 
     const { style } = this.options
@@ -103,7 +111,7 @@ class Text3DLayer {
       const textBufferGeometry = new THREE.TextBufferGeometry(text, {
         font: this.options.font,
         size: fontSize,
-        height: 0
+        height: 0,
       })
       const material = new THREE.MeshBasicMaterial({ color })
       const mesh = new THREE.Mesh(textBufferGeometry, material)
@@ -114,7 +122,7 @@ class Text3DLayer {
     }
   }
 
-  _getPropertyValue (prop, con) {
+  _getPropertyValue(prop, con) {
     if (Array.isArray(con) && con[0] === 'get') {
       return prop[con[1]]
     }

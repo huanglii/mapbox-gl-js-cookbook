@@ -1,5 +1,5 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
 <script>
@@ -7,24 +7,24 @@ import baseMap from '../base-map.vue'
 import addRasterLayer from '../../../snippet/data/raster'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         zoom: 2,
         style: {
           version: 8,
           sources: {},
-          layers: []
-        }
-      }
+          layers: [],
+        },
+      },
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       addRasterLayer(map)
-    }
-  }
+    },
+  },
 }
 </script>

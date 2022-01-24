@@ -6,7 +6,8 @@
   "scripts": {
     "docs:dev": "vuepress dev docs",
     "docs:build": "vuepress build docs",
-    "lint": "eslint --ext .js,.vue ./docs/.vuepress"
+    "lint": "eslint --ext .js,.vue ./docs/.vuepress",
+    "prettier": "prettier --write ."
   },
   "keywords": [],
   "author": "huangli",
@@ -16,7 +17,10 @@
     "@vuepress/plugin-register-components": "^2.0.0-beta.35",
     "@vuepress/plugin-search": "^2.0.0-beta.35",
     "eslint": "^8.7.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-vue": "^8.3.0",
+    "prettier": "^2.5.1",
     "vuepress": "^2.0.0-beta.35"
   },
   "dependencies": {
@@ -35,7 +39,7 @@
     "geojson-validation": "^1.0.2",
     "mapbox-gl": "^2.6.1",
     "mapbox-gl-static-image-source": "^0.1.1",
-    "three": "^0.136.0",
+    "three": "^0.132.2",
     "uuid": "^8.3.2"
   }
 }

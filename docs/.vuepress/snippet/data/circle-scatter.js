@@ -1,8 +1,8 @@
-export default function addCircleScatterLayer (map) {
+export default function addCircleScatterLayer(map) {
   // 分图层
   map.addSource('earthquakes', {
     type: 'vector',
-    url: 'mapbox://huanglii.d41k5fmy'
+    url: 'mapbox://huanglii.d41k5fmy',
   })
   const layerOptions = [
     {
@@ -10,86 +10,86 @@ export default function addCircleScatterLayer (map) {
       color: '#0098a3',
       blur: 1,
       opacity: 0.7,
-      filter: ['<=', 'mag', 5]
+      filter: ['<=', 'mag', 5],
     },
     {
       radius: 3,
       color: '#00ca8d',
       blur: 1,
       opacity: 0.7,
-      filter: ['all', ['>', 'mag', 5], ['<=', 'mag', 6]]
+      filter: ['all', ['>', 'mag', 5], ['<=', 'mag', 6]],
     },
     {
       radius: 4,
       color: '#37C508',
       blur: 1,
       opacity: 0.5,
-      filter: ['all', ['>', 'mag', 6], ['<=', 'mag', 7]]
+      filter: ['all', ['>', 'mag', 6], ['<=', 'mag', 7]],
     },
     {
       radius: 5,
       color: '#98f300',
       blur: 1,
       opacity: 0.6,
-      filter: ['all', ['>', 'mag', 7], ['<=', 'mag', 8]]
+      filter: ['all', ['>', 'mag', 7], ['<=', 'mag', 8]],
     },
     {
       radius: 6,
       color: '#efff85',
       blur: 1,
       opacity: 0.6,
-      filter: ['>', 'mag', 8]
+      filter: ['>', 'mag', 8],
     },
     {
       radius: 1,
       color: '#0098a3',
       blur: 0.4,
       opacity: 0.8,
-      filter: ['<=', 'mag', 5]
+      filter: ['<=', 'mag', 5],
     },
     {
       radius: 1,
       color: '#00ca8d',
       blur: 0.4,
       opacity: 0.8,
-      filter: ['all', ['>', 'mag', 5], ['<=', 'mag', 6]]
+      filter: ['all', ['>', 'mag', 5], ['<=', 'mag', 6]],
     },
     {
       radius: 1,
       color: '#37C508',
       blur: 0.4,
       opacity: 0.8,
-      filter: ['all', ['>', 'mag', 6], ['<=', 'mag', 7]]
+      filter: ['all', ['>', 'mag', 6], ['<=', 'mag', 7]],
     },
     {
       radius: 2,
       color: '#98f300',
       blur: 0.4,
       opacity: 0.8,
-      filter: ['all', ['>', 'mag', 7], ['<=', 'mag', 8]]
+      filter: ['all', ['>', 'mag', 7], ['<=', 'mag', 8]],
     },
     {
       radius: 2,
       color: '#efff85',
       blur: 0.4,
       opacity: 0.8,
-      filter: ['>', 'mag', 8]
-    }
+      filter: ['>', 'mag', 8],
+    },
   ]
   layerOptions.map((option, i) => {
     map.addLayer({
-      'id': `earthquakes-layer-${i}`,
-      'type': 'circle',
-      'source': 'earthquakes',
+      id: `earthquakes-layer-${i}`,
+      type: 'circle',
+      source: 'earthquakes',
       'source-layer': 'earthquakes-cs3906',
-      'maxzoom': 9,
-      'paint': {
+      maxzoom: 9,
+      paint: {
         'circle-radius': option.radius,
         'circle-color': option.color,
         'circle-blur': option.blur,
-        'circle-opacity': option.opacity
+        'circle-opacity': option.opacity,
       },
-      'filter': option.filter
+      filter: option.filter,
     })
   })
 

@@ -1,7 +1,9 @@
 <template>
   <div class="code-view-wrapper">
     <component :is="`map-${name}`"></component>
-    <a class="link" v-if="isCodeView" :href="$withBase(`/example/${name}.html`)" target="_blank">查看代码</a>
+    <a v-if="isCodeView" class="link" :href="$withBase(`/example/${name}.html`)" target="_blank"
+      >查看代码</a
+    >
   </div>
 </template>
 
@@ -10,13 +12,13 @@ export default {
   props: {
     name: {
       type: String,
-      required: true
+      required: true,
     },
     isCodeView: {
       type: Boolean,
-      default: true
-    }
-  }
+      default: true,
+    },
+  },
 }
 </script>
 

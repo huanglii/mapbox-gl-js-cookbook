@@ -22,9 +22,8 @@ export default {
   props: {
     colors: {
       type: Array,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>
-

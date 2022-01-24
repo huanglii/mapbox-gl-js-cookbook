@@ -1,7 +1,9 @@
 # 点
+
 点可以用 **`circle`**、**`symbol`**、**`heatmap`** 三种图层类型来表示。除此之外，还可以用 **`Marker`** 表示，`Marker` 的好处在于是 `div` 渲染，可以用 `css` 来实现炫丽的效果，但是点特别多的情况下，不建议使用。
 
 ## circle
+
 部分 **`paint`** 属性：
 | 属性 | 描述 |
 | :-- | :-- |
@@ -14,35 +16,39 @@
 | **`circle-blur`** | 模糊度，默认`0` |
 
 ### 普通点
+
 <ClientOnly>
   <common-code-view name="data-circle"/>
 </ClientOnly>
 
 ### 聚合点
+
 使用聚合图层时，数据必须为 `geojson`，并设置 `cluster` 为 `true`。
 
-``` js
+```js
 map.addSource('points', {
-  'type': 'geojson',
-  'data': 'https://900913.cn/geoserver/buildings/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=buildings:cq_point&outputFormat=application/json',
-  'cluster': true,
-  'clusterMaxZoom': 10, // 最大聚合 zoom， 超过这个值则不聚合
-  'clusterRadius': 50 // 聚合半径，默认 50
+  type: 'geojson',
+  data: 'https://900913.cn/geoserver/buildings/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=buildings:cq_point&outputFormat=application/json',
+  cluster: true,
+  clusterMaxZoom: 10, // 最大聚合 zoom， 超过这个值则不聚合
+  clusterRadius: 50, // 聚合半径，默认 50
 })
 ```
 
-添加聚合图层时，分三个图层：①聚合图层，②聚合数量图层，③不聚合的点图层。
+添加聚合图层时，分三个图层：① 聚合图层，② 聚合数量图层，③ 不聚合的点图层。
 
 <ClientOnly>
   <common-code-view name="data-circle-cluster"/>
 </ClientOnly>
 
 ### 海量点
+
 <ClientOnly>
   <common-code-view name="data-circle-scatter"/>
 </ClientOnly>
 
 ### 发光
+
 利用点可以做出一些发光效果，如下图：
 
 <div align="center">
@@ -50,6 +56,7 @@ map.addSource('points', {
 </div>
 
 图中由 4 个关键图层构成，四个图层从上到下依次排列：
+
 1. 卫星图层 - 透明度 50%
 2. Mapbox 国家边界地图（全黑填充）
 3. 地名图层- 闪闪发光的出处
@@ -62,6 +69,7 @@ map.addSource('points', {
 </ClientOnly>
 
 ## symbol
+
 部分 **`paint`** 属性：
 | 属性 | 描述 |
 | :-- | :-- |
@@ -97,6 +105,7 @@ map.addSource('points', {
 > 圆形扩散：[Add an animated icon to the map](https://docs.mapbox.com/mapbox-gl-js/example/add-image-animated/)
 
 ## heatmap
+
 部分 **`paint`** 属性：
 | 属性 | 描述 |
 | :-- | :-- |
@@ -106,7 +115,7 @@ map.addSource('points', {
 | **`heatmap-opacity`** | 不透明度，默认`1` |
 | **`heatmap-color`** | 颜色，默认值如下： |
 
-``` js
+```js
 {
   'heatmap-color': [
     'interpolate',
@@ -129,6 +138,7 @@ map.addSource('points', {
 > 热力图：[Create a heatmap layer](https://docs.mapbox.com/mapbox-gl-js/example/heatmap-layer/)
 
 ## Marker
+
 <ClientOnly>
   <common-code-view name="data-marker"/>
 </ClientOnly>

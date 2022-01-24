@@ -1,20 +1,24 @@
 # WMTS
+
 > 标准：[Web Map Tile Service](http://www.opengeospatial.org/standards/wmts)
 
-Web Map Tile Service（Web地图瓦片服务），简称 `WMTS`。WMTS 标准定义了一些操作允许用户访问瓦片地图。WMTS 服务中包括以下 3 个操作：
+Web Map Tile Service（Web 地图瓦片服务），简称 `WMTS`。WMTS 标准定义了一些操作允许用户访问瓦片地图。WMTS 服务中包括以下 3 个操作：
+
 1. GetCapabilities（获取服务的元信息）
 2. GetTile（获取切片）
-3. GetFeatureInfo（可选，获取点选的要素信息） 
+3. GetFeatureInfo（可选，获取点选的要素信息）
 
-WMTS的切片坐标系统和组织方式可参考下图：
+WMTS 的切片坐标系统和组织方式可参考下图：
+
 <div align="center">
   <img :src="$withBase('/assets/images/WMTS切片坐标系统和组织方式.png')" />
 </div>
 
 利用 `GetTile` 操作和指定输出格式即可在 Mapbox GL JS 中使用。
 
-加载示例（image/png格式）：
-``` js
+加载示例（image/png 格式）：
+
+```js
 'source-id': {
   'type': 'raster',
   'tiles': [
@@ -31,8 +35,9 @@ WMTS的切片坐标系统和组织方式可参考下图：
 前面提到加载 wms 也不会模糊，但是 wms 实际上是根据请求范围实时渲染，加载速度不如瓦片服务。
 :::
 
-加载示例（application/vnd.mapbox-vector-tile格式）
-``` js
+加载示例（application/vnd.mapbox-vector-tile 格式）
+
+```js
 'source-id': {
   'type': 'vector',
   'tiles': [

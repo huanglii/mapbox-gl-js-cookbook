@@ -1,9 +1,10 @@
 # 蜂窝热力图（HexagonLayer）
+
 [示例数据](https://raw.githubusercontent.com/uber-common/deck.gl-data/master/website/sf-bike-parking.json)
 
 ## 示例
 
-``` js
+```js
 import { HexagonLayer } from '@deck.gl/aggregation-layers'
 
 const layer = new HexagonLayer({
@@ -13,13 +14,13 @@ const layer = new HexagonLayer({
   extruded: true,
   radius: 200,
   elevationScale: 4,
-  getPosition: d => d.COORDINATES,
+  getPosition: (d) => d.COORDINATES,
   onHover: ({ object, x, y }) => {
-    const tooltip = `${object.centroid.join(', ')}\nCount: ${object.points.length}`;
+    const tooltip = `${object.centroid.join(', ')}\nCount: ${object.points.length}`
     /* Update tooltip
         http://deck.gl/#/documentation/developer-guide/adding-interactivity?section=example-display-a-tooltip-for-hovered-object
     */
-  }
+  },
 })
 ```
 

@@ -1,5 +1,5 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
 <script>
@@ -7,20 +7,20 @@ import baseMap from '../base-map.vue'
 import addFillLineLayer from '../../../snippet/data/fill-line'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         center: [10.5, 10.0],
-        zoom: 3.2
-      }
+        zoom: 3.2,
+      },
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       addFillLineLayer(map)
-    }
-  }
+    },
+  },
 }
 </script>

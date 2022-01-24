@@ -1,4 +1,5 @@
 # 数据源
+
 > [sources](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/)
 
 数据源类型由 `type` 指定，并且必须是 `vector`, `raster`, `raster-dem`, `geojson`, `image`, `video` 之一。
@@ -7,8 +8,10 @@
 :::
 
 ## vector
-使用 `vector` 数据源的图层必须指定 `source-layer` 。  
-``` js
+
+使用 `vector` 数据源的图层必须指定 `source-layer` 。
+
+```js
 'sources': {
   '{source-id}': {
     'type': 'vector',
@@ -27,8 +30,10 @@
   },
 }
 ```
+
 ## raster
-``` js
+
+```js
 'sources': {
   '{source-id}': {
     'type': 'raster',
@@ -40,10 +45,12 @@
   },
 }
 ```
+
 ## raster-dem
+
 栅格 DEM 数据源，只支持 [Mapbox Terrain RGB](https://blog.mapbox.com/global-elevation-data-6689f1d0ba65)。可使用 [rio-rgbify](https://github.com/mapbox/rio-rgbify) 生成。
 
-``` sh
+```sh
 # fill no data
 gdalwarp -t_srs EPSG:3857 -dstnodata None -co TILED=YES -co COMPRESS=DEFLATE -co BIGTIFF=IF_NEEDED E:\test\chongqing.tif  E:\test\chongqing_without_nodata.tif
 
@@ -52,8 +59,10 @@ rio rgbify -b -10000 -i 0.1 E:\test\chongqing_without_nodata.tif E:\test\chongqi
 ```
 
 ## geojson
+
 GeoJSON 数据源，必须提供 `data` 属性。详见 [geojson](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#geojson)，可设置 `cluster`， `filter` 等。
-``` js
+
+```js
 'sources': {
   // inline GeoJSON
   'geojson-marker': {
@@ -77,5 +86,7 @@ GeoJSON 数据源，必须提供 `data` 属性。详见 [geojson](https://docs.m
   }
 }
 ```
+
 ## image & video
+
 见[数据/栅格](/data/raster)。

@@ -8,31 +8,31 @@ import 'echarts/lib/component/title'
 const SOURCE_ID = 'point-source'
 const PIE_WIDTH = 80
 
-export default function addChartPie (map, data) {
+export default function addChartPie(map, data) {
   // 弹窗
   let popup = new mapboxgl.Popup({
     closeButton: false,
     closeOnClick: false,
-    offset: [0, -(PIE_WIDTH / 2)]
+    offset: [0, -(PIE_WIDTH / 2)],
   })
   map.addSource(SOURCE_ID, {
-    'type': 'geojson',
-    'data': data,
-    'cluster': true,
-    'clusterRadius': 85 // 聚合半径，比饼图 DOM 略大即可
+    type: 'geojson',
+    data: data,
+    cluster: true,
+    clusterRadius: 85, // 聚合半径，比饼图 DOM 略大即可
   })
   // 必须添加图层，后面才能取到要素
   map.addLayer({
-    'id': 'earthquake_circle',
-    'type': 'circle',
-    'source': SOURCE_ID,
-    'paint': {
-      'circle-radius': 0 // 设置半径为 0，不显示
-    }
+    id: 'earthquake_circle',
+    type: 'circle',
+    source: SOURCE_ID,
+    paint: {
+      'circle-radius': 0, // 设置半径为 0，不显示
+    },
   })
 
   // 数据加载或更改时，更新饼图
-  map.on('data', e => {
+  map.on('data', (e) => {
     if (e.sourceId !== SOURCE_ID || !e.isSourceLoaded) return
     map.on('move', updateMarkers)
     map.on('moveend', updateMarkers)
@@ -44,7 +44,7 @@ export default function addChartPie (map, data) {
   // 地图上显示的 markers
   let markersOnScreen = {}
 
-  async function updateMarkers () {
+  async function updateMarkers() {
     // 更新后的 markers
     let newMarkers = {}
     let features = map.querySourceFeatures(SOURCE_ID)
@@ -74,7 +74,7 @@ export default function addChartPie (map, data) {
         props.coords = coords
         let el = createPieChart(props)
         marker = markers[id] = new mapboxgl.Marker({
-          element: el
+          element: el,
         }).setLngLat(coords)
       }
       newMarkers[id] = marker
@@ -96,7 +96,7 @@ export default function addChartPie (map, data) {
    * 创建 echart pie
    * @param { Object} props 点属性
    */
-  function createPieChart (props) {
+  function createPieChart(props) {
     let el = document.createElement('div')
     el.style.width = `${PIE_WIDTH}px`
     el.style.height = `${PIE_WIDTH}px`
@@ -111,11 +111,11 @@ export default function addChartPie (map, data) {
         textStyle: {
           fontSize: 12,
           textShadowBlur: 5,
-          textShadowColor: '#3EAF7C'
+          textShadowColor: '#3EAF7C',
         },
         padding: 0,
         shadowColor: 'rgba(0, 0, 0, 0.5)',
-        shadowBlur: 10
+        shadowBlur: 10,
       },
       color: ['#FFD273', '#E86D68', '#A880FF'],
       series: [
@@ -128,21 +128,21 @@ export default function addChartPie (map, data) {
           label: {
             show: true,
             position: 'inside',
-            formatter: '{c}'
+            formatter: '{c}',
           },
           labelLine: {
-            show: false
+            show: false,
           },
           data: [
             { value: props.v1, name: '土豆' },
             { value: props.v2, name: '玉米' },
-            { value: props.v3, name: '红薯' }
-          ]
-        }
-      ]
+            { value: props.v3, name: '红薯' },
+          ],
+        },
+      ],
     })
     // 鼠标经过饼图显示弹窗
-    pieChart.on('mouseover', params => {
+    pieChart.on('mouseover', (params) => {
       let { seriesName, data } = params
       let nameAndCoords = seriesName.split('|')
       let name = nameAndCoords[0]
@@ -150,7 +150,7 @@ export default function addChartPie (map, data) {
       let description = `<p style="padding: 0 10px;">${name}: ${data.name} ${data.value} 万顷</p>`
       popup.setLngLat(coords).setHTML(description).addTo(map)
     })
-    pieChart.on('mouseout', params => {
+    pieChart.on('mouseout', () => {
       popup.remove()
     })
     return el
@@ -162,7 +162,7 @@ export default function addChartPie (map, data) {
    * @param { GeoJSONSource } geojsonSource GeoJSON 数据源
    * @param { Point } targetPoint 聚合点要素
    */
-  function getClusterLeaves (clusterId, geojsonSource, targetPoint) {
+  function getClusterLeaves(clusterId, geojsonSource, targetPoint) {
     return new Promise((resolve, reject) => {
       geojsonSource.getClusterLeaves(clusterId, 30, 0, (error, features) => {
         if (error) {

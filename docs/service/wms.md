@@ -1,16 +1,18 @@
 # WMS
+
 > 标准：[Web Map Service](http://www.opengeospatial.org/standards/wms)
 
-Web Map Service（Web 地图服务），简称 `WMS`。WMS 标准定义了允许用户通过 HTTP 对空间数据进行渲染出图等操作。WMS 服务中包括以下3个操作：
+Web Map Service（Web 地图服务），简称 `WMS`。WMS 标准定义了允许用户通过 HTTP 对空间数据进行渲染出图等操作。WMS 服务中包括以下 3 个操作：
+
 1. GetCapabilities（获取服务中的要素类及支持的操作）
 2. GetMap（获取地图）
-3. GetFeatureInfo（根据地图上的像素点获取更详细的要素信息，类似Identify功能）
+3. GetFeatureInfo（根据地图上的像素点获取更详细的要素信息，类似 Identify 功能）
 
 利用 `GetMap` 操作和指定地图边框范围（`bbox`）和输出格式（`format`）即可在 Mapbox GL JS 中使用。
 
 加载示例（image/png 格式）：
 
-``` js
+```js
 'source-id': {
   'type': 'raster',
   'tiles': [
@@ -19,4 +21,4 @@ Web Map Service（Web 地图服务），简称 `WMS`。WMS 标准定义了允许
 }
 ```
 
-注意url中的 `bbox` 参数值 `"{bbox-epsg-3857}"`。Mapbox GL JS 会自动计算地图范围替换该值，获取地图。这也是与下面WMTS同样用栅格格式，WMS不会模糊的原因。
+注意 url 中的 `bbox` 参数值 `"{bbox-epsg-3857}"`。Mapbox GL JS 会自动计算地图范围替换该值，获取地图。这也是与下面 WMTS 同样用栅格格式，WMS 不会模糊的原因。

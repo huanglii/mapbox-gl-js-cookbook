@@ -7,22 +7,22 @@ import baseMap from '../base-map.vue'
 import addContoursLayer from '../../../snippet/thematic/contours'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         center: [107.78172288228535, 30.19406837416186],
         zoom: 14,
         minZoom: 14,
-        maxZoom: 14
-      }
+        maxZoom: 14,
+      },
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       addContoursLayer(map)
-    }
-  }
+    },
+  },
 }
 </script>

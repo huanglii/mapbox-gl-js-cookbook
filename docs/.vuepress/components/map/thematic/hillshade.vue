@@ -7,9 +7,9 @@ import baseMap from '../base-map.vue'
 import addHillshadeLayer from '../../../snippet/thematic/hillshade'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         style: {
@@ -20,20 +20,20 @@ export default {
               id: 'background-layer',
               type: 'background',
               paint: {
-                'background-color': '#ccc'
-              }
-            }
-          ]
+                'background-color': '#ccc',
+              },
+            },
+          ],
         },
         center: [107.78172288228535, 30.19406837416186],
-        zoom: 10
-      }
+        zoom: 10,
+      },
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       addHillshadeLayer(map)
-    }
-  }
+    },
+  },
 }
 </script>

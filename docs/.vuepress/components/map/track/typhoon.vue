@@ -1,8 +1,8 @@
 <template>
   <base-map :height="height" :map-options="mapOptions" @load="handleMapLoaded">
     <div class="legend">
-      <div class="legend-item" v-for="(item, index) in legendStrong" :key="index">
-        <span class="circle" :style="{backgroundColor: item[1]}"></span>
+      <div v-for="(item, index) in legendStrong" :key="index" class="legend-item">
+        <span class="circle" :style="{ backgroundColor: item[1] }"></span>
         <span class="text">{{ item[0] }}</span>
       </div>
     </div>
@@ -15,16 +15,16 @@ import { STYLE } from '../../../utils/constant'
 import addTyphoonLayer from '../../../snippet/track/typhoon'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       height: 800,
       mapOptions: {
         style: STYLE.MONOCHROME,
-        center: [124.90, 28.55],
+        center: [124.9, 28.55],
         zoom: 4.2,
-        maxZoom: 8
+        maxZoom: 8,
       },
       // 台风强度
       legendStrong: [
@@ -33,7 +33,7 @@ export default {
         ['强热带风暴', '#FE902C'],
         ['台风', '#FE0404'],
         ['强台风', '#FE3AA3'],
-        ['超强台风', '#AE00D9']
+        ['超强台风', '#AE00D9'],
       ],
       // 预报机构
       legendAgency: [
@@ -41,31 +41,39 @@ export default {
         ['中国香港', '#FF66FF'],
         ['中国台湾', '#FFA040'],
         ['日本', '#43FF4B'],
-        ['美国', '#40DDFF']
-      ]
+        ['美国', '#40DDFF'],
+      ],
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       map.loadImage(this.$withBase('/assets/images/typhoon.png'), (error, image) => {
         if (error) throw error
         map.addImage('typhoon', image)
         map.addSource('storm-source', {
           type: 'video',
           urls: [this.$withBase('/data/pwat_noaa.webm'), this.$withBase('/data/pwat_noaa.mp4')],
-          coordinates: [[-180, 70], [180, 70], [180, -70], [-180, -70]]
+          coordinates: [
+            [-180, 70],
+            [180, 70],
+            [180, -70],
+            [-180, -70],
+          ],
         })
-        map.addLayer({
-          type: 'raster',
-          id: 'storm-layer',
-          source: 'storm-source',
-          paint: {
-            'raster-opacity': 0.4
-          }
-        }, 'water')
+        map.addLayer(
+          {
+            type: 'raster',
+            id: 'storm-layer',
+            source: 'storm-source',
+            paint: {
+              'raster-opacity': 0.4,
+            },
+          },
+          'water'
+        )
         addTyphoonLayer(map)
       })
-    }
-  }
+    },
+  },
 }
 </script>

@@ -3,7 +3,7 @@ import { PathLayer } from '@deck.gl/layers'
 
 import data from './data/bart-lines.json'
 
-export default function addLayer (map) {
+export default function addLayer(map) {
   /**
    * Data format:
    * [
@@ -24,10 +24,10 @@ export default function addLayer (map) {
     billboard: true,
     widthScale: 10,
     widthMinPixels: 2,
-    getPath: d => d.path,
-    getColor: d => JSON.parse(d.color),
-    getWidth: d => 5,
-    onHover: (info, e) => {
+    getPath: (d) => d.path,
+    getColor: (d) => JSON.parse(d.color),
+    getWidth: () => 5,
+    onHover: (info) => {
       const $tooltip = document.getElementById('pathlayer-tooltip')
       if (info.object) {
         $tooltip.innerHTML = `名称：${info.object.name}`
@@ -40,7 +40,7 @@ export default function addLayer (map) {
       /* Update tooltip
          http://deck.gl/#/documentation/developer-guide/adding-interactivity?section=example-display-a-tooltip-for-hovered-object
       */
-    }
+    },
   })
   map.addLayer(layer)
 }

@@ -10,9 +10,9 @@ import { STYLE } from '../../../utils/constant'
 import addLayer from '../../../snippet/deckgl/path-layer'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         style: STYLE.GRAY,
@@ -20,15 +20,15 @@ export default {
         zoom: 9,
         minZoom: 8,
         pitch: 45,
-        bearing: 30
-      }
+        bearing: 30,
+      },
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       addLayer(map)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -38,7 +38,7 @@ export default {
   position: absolute;
   top: 0;
   left: 0;
-  padding: .5em .75em;
+  padding: 0.5em 0.75em;
   background-color: #09101d;
   color: #fff;
   border-radius: 10em;

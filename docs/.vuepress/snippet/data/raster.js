@@ -1,16 +1,14 @@
-export default function addRasterLayer (map) {
+export default function addRasterLayer(map) {
   map.addLayer({
-    'id': 'raster-layer',
-    'type': 'raster',
-    'source': {
-      'type': 'raster',
-      'tiles': [
-        'https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg'
-      ],
-      'tileSize': 256
+    id: 'raster-layer',
+    type: 'raster',
+    source: {
+      type: 'raster',
+      tiles: ['https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg'],
+      tileSize: 256,
     },
-    'paint': {
-      'raster-opacity': 0.8
-    }
+    paint: {
+      'raster-opacity': 0.8,
+    },
   })
 }

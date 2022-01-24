@@ -1,5 +1,5 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
 <script>
@@ -7,20 +7,20 @@ import baseMap from '../base-map.vue'
 import addCircleLayer from '../../../snippet/data/circle'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
-        center: [-76.5340, 39.1817],
-        zoom: 16
-      }
+        center: [-76.534, 39.1817],
+        zoom: 16,
+      },
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       addCircleLayer(map)
-    }
-  }
+    },
+  },
 }
 </script>

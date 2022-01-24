@@ -10,24 +10,24 @@ import { STYLE } from '../../../utils/constant'
 // import addLineLayer from '../../../snippet/deckgl/line'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         style: STYLE.DARK,
         center: [7, 47.65],
         zoom: 4.5,
         pitch: 50,
-        bearing: 0
+        bearing: 0,
       },
-      canvasId: 'line-canvas'
+      canvasId: 'line-canvas',
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded() {
       // addLineLayer(map, this.canvasId)
-    }
-  }
+    },
+  },
 }
 </script>

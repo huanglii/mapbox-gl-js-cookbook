@@ -1,5 +1,5 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
 <script>
@@ -8,22 +8,22 @@ import { STYLE } from '../../../utils/constant'
 import addMarker from '../../../snippet/data/marker'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         style: STYLE.GRAY,
         center: [-63.8904723180264, -16.806481318445833],
-        zoom: 5.8
-      }
+        zoom: 5.8,
+      },
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       addMarker(map)
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -37,13 +37,13 @@ export default {
 }
 @keyframes scale {
   0% {
-    transform: scale(0.5)
+    transform: scale(0.5);
   }
   50% {
-    transform: scale(1)
+    transform: scale(1);
   }
   100% {
-    transform: scale(0.5)
+    transform: scale(0.5);
   }
 }
 </style>

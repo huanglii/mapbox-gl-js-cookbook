@@ -16,24 +16,25 @@ import { TK, STYLE } from '../../utils/constant'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 export default {
-  name: 'base-map',
+  name: 'BaseMap',
   props: {
     height: {
       type: Number,
-      default: 520
+      default: 520,
     },
     mapOptions: {
-      type: Object
+      type: Object,
+      default() {
+        return {}
+      },
     },
     mapClickable: {
       type: Boolean,
-      default: true
+      default: true,
     },
-    borderOptions: {
-      type: Object
-    }
   },
-  data () {
+  emits: ['load'],
+  data() {
     return {
       map: null,
       maploaded: false,
@@ -47,38 +48,44 @@ export default {
         scrollZoom: true,
         pitch: 0,
         bearing: 0,
-        antialias: false
-      }
+        antialias: false,
+      },
     }
   },
   computed: {
-    mapContainer () {
+    mapContainer() {
       return this.mapOptions.container || this.mapDefaultOptions.container
-    }
+    },
   },
-  mounted () {
+  mounted() {
     let options = Object.assign({}, this.mapDefaultOptions, this.mapOptions)
     this.initMap(options)
     window.addEventListener('resize', this.resize)
   },
   methods: {
-    initMap (options) {
+    initMap(options) {
       mapboxgl.accessToken = TK
       this.map = new mapboxgl.Map(options)
       this.map.addControl(new mapboxgl.NavigationControl(), 'top-left')
       let { center, zoom, pitch, bearing } = options
-      this.map.addControl(new HomeControl({
-        center, zoom, pitch, bearing
-      }), 'bottom-left')
+      this.map.addControl(
+        new HomeControl({
+          center,
+          zoom,
+          pitch,
+          bearing,
+        }),
+        'bottom-left'
+      )
       this.map.addControl(new mapboxgl.FullscreenControl(), 'top-left')
       this.map.on('load', this.handleMapLoaded)
     },
-    handleMapLoaded (evt) {
+    handleMapLoaded(evt) {
       this.maploaded = true
       this.$emit('load', evt.target)
       if (this.mapClickable) this.map.on('click', this.handleMapClick)
     },
-    handleMapClick (evt) {
+    handleMapClick(evt) {
       // console.log(evt.lngLat)
       let features = this.map.queryRenderedFeatures(evt.point)
       if (features.length > 0) {
@@ -91,18 +98,20 @@ export default {
         }
       }
     },
-    createPropHtml (title, prop) {
+    createPropHtml(title, prop) {
       return `
         <div class="title"><b>${title}</b></div>
         <div class="content">
-          ${Object.keys(prop).map(key => `${`<p><b>${key}: </b>${prop[key]}</p>`}`).join('')}
+          ${Object.keys(prop)
+            .map((key) => `${`<p><b>${key}: </b>${prop[key]}</p>`}`)
+            .join('')}
         </div>
       `
     },
-    resize () {
+    resize() {
       this.map.resize()
-    }
-  }
+    },
+  },
 }
 </script>
 

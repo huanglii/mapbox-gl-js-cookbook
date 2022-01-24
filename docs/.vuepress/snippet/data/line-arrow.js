@@ -13,49 +13,55 @@ const lineStringCoordinates = [
   [-122.48987674713133, 37.83263257682617],
   [-122.49043464660643, 37.832937629287755],
   [-122.49125003814696, 37.832429207817725],
-  [-122.49163627624512, 37.832564787218985]
+  [-122.49163627624512, 37.832564787218985],
 ]
-export default function addLineArrowLayer (map) {
+export default function addLineArrowLayer(map) {
   const linestring = lineStringHelper(lineStringCoordinates)
   map.addLayer({
-    'id': 'line-layer',
-    'type': 'line',
-    'source': {
-      'type': 'geojson',
-      'lineMetrics': true,
-      'data': linestring
+    id: 'line-layer',
+    type: 'line',
+    source: {
+      type: 'geojson',
+      lineMetrics: true,
+      data: linestring,
     },
-    'paint': {
+    paint: {
       'line-width': 10,
       'line-gradient': [
         'interpolate',
         ['linear'],
         ['line-progress'],
-        0, 'blue',
-        0.1, 'royalblue',
-        0.3, 'cyan',
-        0.5, 'lime',
-        0.7, 'yellow',
-        1, 'red'
-      ]
+        0,
+        'blue',
+        0.1,
+        'royalblue',
+        0.3,
+        'cyan',
+        0.5,
+        'lime',
+        0.7,
+        'yellow',
+        1,
+        'red',
+      ],
     },
-    'layout': {
+    layout: {
       'line-cap': 'round',
-      'line-join': 'round'
-    }
+      'line-join': 'round',
+    },
   })
   map.addLayer({
-    'id': 'line-layer-arrow',
-    'type': 'symbol',
-    'source': {
-      'type': 'geojson',
-      'data': linestring
+    id: 'line-layer-arrow',
+    type: 'symbol',
+    source: {
+      type: 'geojson',
+      data: linestring,
     },
-    'layout': {
+    layout: {
       'symbol-placement': 'line',
       'symbol-spacing': 3,
       'icon-image': 'arrow',
-      'icon-size': 0.5
-    }
+      'icon-size': 0.5,
+    },
   })
 }

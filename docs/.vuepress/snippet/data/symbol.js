@@ -1,11 +1,11 @@
 import { point as pointHelper } from '@turf/helpers'
 
-export default function addSymbolLayer (map) {
-  const point1 = pointHelper([-77.0320, 38.9130], {
-    'title': 'Mapbox DC',
-    'icon': 'park'
+export default function addSymbolLayer(map) {
+  const point1 = pointHelper([-77.032, 38.913], {
+    title: 'Mapbox DC',
+    icon: 'park',
   })
-  const point2 = pointHelper([-77.0320, 38.9134])
+  const point2 = pointHelper([-77.032, 38.9134])
 
   // 扩散点
   const size = 200
@@ -25,8 +25,8 @@ export default function addSymbolLayer (map) {
       let duration = 1000
       let t = (performance.now() % duration) / duration
 
-      let radius = size / 2 * 0.3
-      let outerRadius = size / 2 * 0.7 * t + radius
+      let radius = (size / 2) * 0.3
+      let outerRadius = (size / 2) * 0.7 * t + radius
       let context = this.context
 
       // draw outer circle
@@ -53,17 +53,17 @@ export default function addSymbolLayer (map) {
 
       // return `true` to let the map know that the image was updated
       return true
-    }
+    },
   }
   // 普通图标
   map.addLayer({
-    'id': 'symbol-layer',
-    'type': 'symbol',
-    'source': {
-      'type': 'geojson',
-      'data': point1
+    id: 'symbol-layer',
+    type: 'symbol',
+    source: {
+      type: 'geojson',
+      data: point1,
     },
-    'paint': {
+    paint: {
       'icon-opacity': 0.8,
       'icon-color': '#FF0000',
       'icon-halo-color': '#00FF00',
@@ -73,29 +73,29 @@ export default function addSymbolLayer (map) {
       'text-color': '#f7c5c5',
       'text-halo-color': '#9f1919',
       'text-halo-width': 3,
-      'text-halo-blur': 1.5
+      'text-halo-blur': 1.5,
     },
-    'layout': {
+    layout: {
       'icon-size': 2,
       'icon-image': '{icon}-15',
       'icon-rotate': 30,
       'text-field': '{title}',
       'text-offset': [0, 0.6],
       'text-anchor': 'top',
-      'text-size': 32
-    }
+      'text-size': 32,
+    },
   })
   // 自定义动画图标
   map.addImage('pulsing-dot', pulsingDot, { pixelRatio: 2 })
   map.addLayer({
-    'id': 'pulsing-dot-layer',
-    'type': 'symbol',
-    'source': {
-      'type': 'geojson',
-      'data': point2
+    id: 'pulsing-dot-layer',
+    type: 'symbol',
+    source: {
+      type: 'geojson',
+      data: point2,
     },
-    'layout': {
-      'icon-image': 'pulsing-dot'
-    }
+    layout: {
+      'icon-image': 'pulsing-dot',
+    },
   })
 }

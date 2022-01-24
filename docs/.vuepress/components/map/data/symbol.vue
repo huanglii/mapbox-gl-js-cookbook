@@ -1,5 +1,5 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
 <script>
@@ -7,20 +7,20 @@ import baseMap from '../base-map.vue'
 import addSymbolLayer from '../../../snippet/data/symbol'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
-        center: [-77.0320, 38.9132],
-        zoom: 17
-      }
+        center: [-77.032, 38.9132],
+        zoom: 17,
+      },
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       addSymbolLayer(map)
-    }
-  }
+    },
+  },
 }
 </script>

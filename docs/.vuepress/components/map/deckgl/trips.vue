@@ -10,24 +10,24 @@ import { STYLE } from '../../../utils/constant'
 // import addTripsLayer from '../../../snippet/deckgl/trips'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         style: STYLE.DARK,
         center: [-74, 40.72],
         zoom: 13,
         pitch: 45,
-        bearing: 0
+        bearing: 0,
       },
-      canvasId: 'trips-canvas'
+      canvasId: 'trips-canvas',
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded() {
       // addTripsLayer(map, this.canvasId)
-    }
-  }
+    },
+  },
 }
 </script>

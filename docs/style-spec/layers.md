@@ -1,4 +1,5 @@
 # 图层
+
 > [layers](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/)
 
 图层属性配置如下：
@@ -16,7 +17,8 @@
 | **`metadata`** | any | 否 | 任意属性，对跟踪图层很有用，不影响渲染 |
 
 图层示例：
-``` js
+
+```js
 'layers': [
   {
     'id': 'road',
@@ -40,8 +42,9 @@
 ```
 
 ::: tip 提示
+
 - **`"type"`** 属性必须是 `background`, `fill`, `line`, `symbol`, `raster`, `circle`, `fill-extrusion`, `heatmap`, `hillshade` 之一，各图层类型使用参考[数据](/data/)。
 - 除 `background` 外的图层都需要引用一个源（source），图层从源获取数据、过滤要素和渲染。
 - **`layout`** 属性都有 **`visibility`** 属性，可设置 `"visible"`（默认） 和 `"none"` 。
 - 颜色支持 `十六进制`, `RGB`, `RGBA`, `HSL`, `HSLA`, `HTML 预定义颜色名称` 格式。
-:::
+  :::

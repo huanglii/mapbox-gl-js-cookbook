@@ -1,5 +1,5 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
 <script>
@@ -8,21 +8,21 @@ import { STYLE } from '../../../utils/constant'
 import addLineGradientLayer from '../../../snippet/data/line-gradient'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         style: STYLE.GRAY,
-        center: [-77.030, 38.875],
-        zoom: 12
-      }
+        center: [-77.03, 38.875],
+        zoom: 12,
+      },
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       addLineGradientLayer(map)
-    }
-  }
+    },
+  },
 }
 </script>

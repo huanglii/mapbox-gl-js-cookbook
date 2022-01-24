@@ -1,10 +1,10 @@
-export default function addHillshadeLayer (map) {
+export default function addHillshadeLayer(map) {
   map.addSource('mapbox-dem', {
     type: 'raster-dem',
     // url: 'mapbox://mapbox.mapbox-terrain-dem-v1',
     url: 'mapbox://mapbox.terrain-rgb',
     tileSize: 512,
-    maxzoom: 14
+    maxzoom: 14,
   })
   map.addLayer({
     id: 'hillshade-layer',
@@ -16,7 +16,7 @@ export default function addHillshadeLayer (map) {
       'hillshade-highlight-color': '#FFFFFF',
       'hillshade-illumination-anchor': 'viewport',
       'hillshade-illumination-direction': 335,
-      'hillshade-shadow-color': '#000000'
-    }
+      'hillshade-shadow-color': '#000000',
+    },
   })
 }

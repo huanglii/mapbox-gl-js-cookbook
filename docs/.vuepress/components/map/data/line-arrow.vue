@@ -1,5 +1,5 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
 <script>
@@ -8,25 +8,25 @@ import { STYLE } from '../../../utils/constant'
 import addLineArrowLayer from '../../../snippet/data/line-arrow'
 export default {
   components: {
-    baseMap
+    baseMap,
   },
-  data () {
+  data() {
     return {
       mapOptions: {
         style: STYLE.DARK,
         center: [-122.486552, 37.831048],
-        zoom: 15
-      }
+        zoom: 15,
+      },
     }
   },
   methods: {
-    handleMapLoaded (map) {
+    handleMapLoaded(map) {
       map.loadImage(this.$withBase('/assets/images/arrow.png'), (error, image) => {
         if (error) throw error
         map.addImage('arrow', image)
         addLineArrowLayer(map)
       })
-    }
-  }
+    },
+  },
 }
 </script>
