@@ -5,7 +5,7 @@
 <script>
 import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
-import addWindLayer from '../../../snippet/met/wind'
+// import addWindLayer from '../../../snippet/met/wind'
 export default {
   components: {
     baseMap,
@@ -21,8 +21,8 @@ export default {
     }
   },
   methods: {
-    handleMapLoaded(map) {
-      addWindLayer(map)
+    handleMapLoaded() {
+      // addWindLayer(map)
     },
   },
 }

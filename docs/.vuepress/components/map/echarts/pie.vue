@@ -5,7 +5,7 @@
 <script>
 import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
-import addChartPie from '../../../snippet/echarts/pie'
+// import addChartPie from '../../../snippet/echarts/pie'
 export default {
   components: {
     baseMap,
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     handleMapLoaded(map) {
-      addChartPie(map, this.$withBase('/data/point.geojson'))
+      // addChartPie(map, this.$withBase('/data/point.geojson'))
     },
   },
 }
