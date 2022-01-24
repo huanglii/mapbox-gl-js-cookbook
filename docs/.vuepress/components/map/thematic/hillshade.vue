@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import addHillshadeLayer from '../../../snippet/thematic/hillshade'
 export default {
   components: {

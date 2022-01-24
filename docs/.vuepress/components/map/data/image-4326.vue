@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import addImageLayer from '../../../snippet/data/image4326'
 export default {
   components: {

@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 import addWindLayer from '../../../snippet/met/wind'
 export default {

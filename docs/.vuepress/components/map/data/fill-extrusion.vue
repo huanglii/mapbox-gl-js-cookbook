@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 import addFillExtrusionLayer from '../../../snippet/data/fill-extrusion'
 export default {

@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 import addTyphoonLayer from '../../../snippet/track/typhoon'
 export default {

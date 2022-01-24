@@ -22,6 +22,7 @@ module.exports = {
     navbar: [
       { text: '快速开始', link: '/getting-started/' },
       { text: '样式规范', link: '/style-spec/' },
+      { text: '服务', link: '/service/' },
       { text: '数据', link: '/data/' },
       { text: '进阶', link: '/advance/' },
       { text: 'DECK.GL', link: '/deck-gl/' },
@@ -47,6 +48,18 @@ module.exports = {
             '/style-spec/sources',
             '/style-spec/layers',
             '/style-spec/expression'
+          ]
+        }
+      ],
+      '/service/': [
+        {
+          text: '服务',
+          children: [
+            '/service/',
+            '/service/wmts',
+            '/service/wms',
+            '/service/wfs',
+            '/service/tms'
           ]
         }
       ],
@@ -82,6 +95,7 @@ module.exports = {
           children: [
             '/deck-gl/',
             '/deck-gl/HexagonLayer',
+            // '/deck-gl/GridLayer',
             '/deck-gl/PathLayer'
           ]
         }

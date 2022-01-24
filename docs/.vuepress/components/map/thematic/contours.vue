@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import addContoursLayer from '../../../snippet/thematic/contours'
 export default {
   components: {

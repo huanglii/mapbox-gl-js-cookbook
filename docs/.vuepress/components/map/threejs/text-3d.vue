@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import addText3DLayer from '../../../snippet/threejs/text-3d'
 export default {
   components: {

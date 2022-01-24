@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 import addCircleScatterLayer from '../../../snippet/data/circle-scatter'
 export default {

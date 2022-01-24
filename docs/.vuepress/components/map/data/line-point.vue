@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import addLinePointLayer from '../../../snippet/data/line-point'
 export default {
   components: {

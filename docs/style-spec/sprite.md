@@ -11,6 +11,7 @@
 ``` js
 // http://localhost:8080/mapbox/sprite.json
 // http://localhost:8080/mapbox/sprite.png
+// http://localhost:8080/mapbox/sprite@2x.json
 // http://localhost:8080/mapbox/sprite@2x.png 
 ```
 

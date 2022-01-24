@@ -1,11 +1,11 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded"/>
+  <base-map :map-clickable="false" :map-options="mapOptions" @load="handleMapLoaded"/>
 </template>
 
 <script>
 import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
-import addChartPie from '../../../snippet/echarts/pie'
+import addLayer from '../../../snippet/deckgl/grid-layer'
 export default {
   components: {
     baseMap
@@ -13,16 +13,17 @@ export default {
   data () {
     return {
       mapOptions: {
-        style: STYLE.GRAY,
-        center: [107.744809, 30.180706],
-        zoom: 6,
-        minZoom: 4
+        style: STYLE.DARK,
+        center: [-122.441107, 37.755579],
+        zoom: 11.4,
+        minZoom: 8,
+        pitch: 50
       }
     }
   },
   methods: {
     handleMapLoaded (map) {
-      addChartPie(map, this.$withBase('/data/point.geojson'))
+      addLayer(map)
     }
   }
 }

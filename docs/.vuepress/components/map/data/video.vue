@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 import addVideoLayer from '../../../snippet/data/video'
 export default {

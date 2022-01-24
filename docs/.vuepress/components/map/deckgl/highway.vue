@@ -1,12 +1,12 @@
 <template>
   <base-map :map-options="mapOptions" @load="handleMapLoaded">
-    <canvas :id="canvasId" slot="custom" style="z-index: 2;"></canvas>
+    <!-- <canvas :id="canvasId" slot="custom" style="z-index: 2;"></canvas> -->
   </base-map>
 
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 // import addHighwayLayer from '../../../snippet/deckgl/highway'
 export default {

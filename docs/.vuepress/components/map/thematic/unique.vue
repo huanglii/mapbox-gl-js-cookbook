@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import baseMap from '../base-map'
+import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 import addUniqueLayer from '../../../snippet/thematic/unique'
 export default {
