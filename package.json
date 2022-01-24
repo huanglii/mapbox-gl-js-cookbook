@@ -34,7 +34,7 @@
     "@turf/helpers": "^6.5.0",
     "@turf/line-arc": "^6.5.0",
     "@turf/meta": "^6.5.0",
-    "city-selector-control": "^0.2.2",
+    "city-selector-control": "^0.3.2",
     "echarts": "^5.2.2",
     "geojson-validation": "^1.0.2",
     "mapbox-gl": "^2.6.1",
