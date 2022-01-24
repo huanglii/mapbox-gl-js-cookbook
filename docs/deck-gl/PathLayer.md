@@ -1,29 +1,10 @@
-# 轨迹（PathLayer）
-
-[示例数据](https://raw.githubusercontent.com/uber-common/deck.gl-data/master/website/bart-lines.json)
+# PathLayer
 
 ## 示例
 
-```js
-import { PathLayer } from '@deck.gl/layers'
-
-const layer = new PathLayer({
-  id: 'path-layer',
-  data,
-  pickable: true,
-  widthScale: 20,
-  widthMinPixels: 2,
-  getPath: (d) => d.path,
-  getColor: (d) => d.color,
-  getWidth: (d) => 5,
-  onHover: ({ object, x, y }) => {
-    const tooltip = object.name
-    /* Update tooltip
-        http://deck.gl/#/documentation/developer-guide/adding-interactivity?section=example-display-a-tooltip-for-hovered-object
-    */
-  },
-})
-```
+<ClientOnly>
+  <common-code-view name="deckgl-path-layer" />
+</ClientOnly>
 
 ## 参数
 
@@ -43,7 +24,3 @@ new PathLayer({
   positionFormat: `XY`
 })
 ```
-
-<ClientOnly>
-  <common-code-view name="deckgl-path-layer" />
-</ClientOnly>

@@ -58,7 +58,7 @@ export default {
     },
   },
   mounted() {
-    let options = Object.assign({}, this.mapDefaultOptions, this.mapOptions)
+    const options = Object.assign({}, this.mapDefaultOptions, this.mapOptions)
     this.initMap(options)
     window.addEventListener('resize', this.resize)
   },
@@ -67,7 +67,7 @@ export default {
       mapboxgl.accessToken = TK
       this.map = new mapboxgl.Map(options)
       this.map.addControl(new mapboxgl.NavigationControl(), 'top-left')
-      let { center, zoom, pitch, bearing } = options
+      const { center, zoom, pitch, bearing } = options
       this.map.addControl(
         new HomeControl({
           center,
@@ -86,10 +86,10 @@ export default {
       if (this.mapClickable) this.map.on('click', this.handleMapClick)
     },
     handleMapClick(evt) {
-      // console.log(evt.lngLat)
-      let features = this.map.queryRenderedFeatures(evt.point)
+      console.log(evt);
+      const features = this.map.queryRenderedFeatures(evt.point)
       if (features.length > 0) {
-        let { layer, properties } = features[0]
+        const { layer, properties } = features[0]
         if (Object.keys(properties).length > 0) {
           new mapboxgl.Popup()
             .setLngLat(evt.lngLat)

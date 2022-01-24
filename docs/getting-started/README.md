@@ -5,7 +5,8 @@
 1. 安装
 
 ```bash
-npm install mapbox-gl
+npm install --save mapbox-gl
+npm install --save-dev @types/mapbox-gl
 ```
 
 2. 添加 CSS 样式文件

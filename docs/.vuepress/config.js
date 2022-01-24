@@ -86,8 +86,9 @@ module.exports = {
           text: 'DECK.GL',
           children: [
             '/deck-gl/',
+            '/deck-gl/ArcLayer',
+            '/deck-gl/GridLayer',
             '/deck-gl/HexagonLayer',
-            // '/deck-gl/GridLayer',
             '/deck-gl/PathLayer',
           ],
         },

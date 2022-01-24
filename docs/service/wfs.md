@@ -16,7 +16,7 @@ Web Feature Service（Web 要素服务），简称 WFS。WFS 标准定义了一�
 ```js
 'source-id': {
   'type': 'geojson',
-  'data': `https://900913.cn/geoserver/buildings/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=buildings:cq_point&outputFormat=application/json`
+  'data': 'https://900913.cn/geoserver/buildings/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=buildings:cq_point&outputFormat=application/json'
 }
 ```
 

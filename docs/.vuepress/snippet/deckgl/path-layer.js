@@ -1,6 +1,5 @@
 import { MapboxLayer } from '@deck.gl/mapbox'
 import { PathLayer } from '@deck.gl/layers'
-
 import data from './data/bart-lines.json'
 
 export default function addLayer(map) {
@@ -28,7 +27,7 @@ export default function addLayer(map) {
     getColor: (d) => JSON.parse(d.color),
     getWidth: () => 5,
     onHover: (info) => {
-      const $tooltip = document.getElementById('pathlayer-tooltip')
+      const $tooltip = document.getElementById('path-layer-tooltip')
       if (info.object) {
         $tooltip.innerHTML = `名称：${info.object.name}`
         $tooltip.style.display = 'block'
@@ -37,9 +36,6 @@ export default function addLayer(map) {
       } else {
         $tooltip.style.display = 'none'
       }
-      /* Update tooltip
-         http://deck.gl/#/documentation/developer-guide/adding-interactivity?section=example-display-a-tooltip-for-hovered-object
-      */
     },
   })
   map.addLayer(layer)
