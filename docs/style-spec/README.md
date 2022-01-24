@@ -23,5 +23,5 @@
 ```
 
 ::: tip 提示
-在 [Mapbox Studio](https://studio.mapbox.com/) 中，通过配置地图样式，可以直观的看到各属性对地图渲染的影响。
+在 [Mapbox Studio](https://studio.mapbox.com/) 中配置地图样式，可以方便理解各样式属性。
 :::
