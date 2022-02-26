@@ -86,7 +86,7 @@ export default {
       if (this.mapClickable) this.map.on('click', this.handleMapClick)
     },
     handleMapClick(evt) {
-      console.log(evt);
+      console.log(evt)
       const features = this.map.queryRenderedFeatures(evt.point)
       if (features.length > 0) {
         const { layer, properties } = features[0]

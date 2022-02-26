@@ -26,10 +26,10 @@ export default function addLayer(map) {
     data,
     getWidth: 5,
     pickable: true,
-    getSourceColor: d => [Math.sqrt(d.inbound), 140, 0],
-    getSourcePosition: d => d.from.coordinates,
-    getTargetColor: d => [Math.sqrt(d.outbound), 140, 0],
-    getTargetPosition: d => d.to.coordinates,
+    getSourceColor: (d) => [Math.sqrt(d.inbound), 140, 0],
+    getSourcePosition: (d) => d.from.coordinates,
+    getTargetColor: (d) => [Math.sqrt(d.outbound), 140, 0],
+    getTargetPosition: (d) => d.to.coordinates,
   })
   map.addLayer(layer)
 }
