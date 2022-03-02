@@ -29,7 +29,7 @@
     "@deck.gl/layers": "^8.6.6",
     "@deck.gl/mapbox": "^8.6.6",
     "@deck.gl/mesh-layers": "^8.6.6",
-    "@naivemap/mapbox-gl-echarts-layer": "^0.1.1",
+    "@naivemap/mapbox-gl-echarts-layer": "^0.1.2",
     "@turf/bearing": "^6.5.0",
     "@turf/distance": "^6.5.0",
     "@turf/helpers": "^6.5.0",
