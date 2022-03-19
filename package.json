@@ -29,7 +29,7 @@
     "@deck.gl/layers": "^8.6.6",
     "@deck.gl/mapbox": "^8.6.6",
     "@deck.gl/mesh-layers": "^8.6.6",
-    "@naivemap/mapbox-gl-echarts-layer": "^0.1.2",
+    "@naivemap/mapbox-gl-ex-layers": "^0.2.0",
     "@turf/bearing": "^6.5.0",
     "@turf/distance": "^6.5.0",
     "@turf/helpers": "^6.5.0",
@@ -39,7 +39,6 @@
     "echarts": "^5.2.2",
     "geojson-validation": "^1.0.2",
     "mapbox-gl": "^2.6.1",
-    "mapbox-gl-static-image-source": "^0.1.1",
     "three": "^0.132.2",
     "uuid": "^8.3.2"
   }

@@ -2,4 +2,4 @@
   <common-code-view name="echarts-scatter" :is-code-view="false"/>
 </ClientOnly>
 
-@[code js](../.vuepress/snippet/echarts/scatter.js)
+@[code vue](../.vuepress/components/map/echarts/scatter.vue)

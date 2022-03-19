@@ -3,8 +3,8 @@
 </template>
 
 <script>
+import { ImageLayer } from '@naivemap/mapbox-gl-ex-layers'
 import baseMap from '../base-map.vue'
-import addImageLayer from '../../../snippet/data/image4326'
 export default {
   components: {
     baseMap,
@@ -19,7 +19,19 @@ export default {
   },
   methods: {
     handleMapLoaded(map) {
-      addImageLayer(map, this.$withBase('/assets/images/4326.png'))
+      const layer = new ImageLayer('layer-4326', {
+        url: this.$withBase('/assets/images/4326.png'),
+        projection: 'EPSG:4326',
+        // resampling: 'nearest',
+        coordinates: [
+          [105.289838, 32.204171], // top-left
+          [110.195632, 32.204171], // top-right
+          [110.195632, 28.164713], // bottom-right
+          [105.289838, 28.164713], // bottom-left
+        ],
+      })
+
+      map.addLayer(layer, 'aeroway-line')
     },
   },
 }
