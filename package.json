@@ -35,10 +35,12 @@
     "@turf/helpers": "^6.5.0",
     "@turf/line-arc": "^6.5.0",
     "@turf/meta": "^6.5.0",
+    "arrugator": "^1.0.1",
     "city-selector-control": "^0.3.2",
     "echarts": "^5.2.2",
     "geojson-validation": "^1.0.2",
     "mapbox-gl": "^2.6.1",
+    "proj4": "^2.8.0",
     "three": "^0.132.2",
     "uuid": "^8.3.2"
   }
