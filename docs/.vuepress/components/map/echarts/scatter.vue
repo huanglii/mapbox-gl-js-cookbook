@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { EChartsLayer } from '@naivemap/mapbox-gl-ex-layers'
+import { EChartsLayer } from '@naivemap/mapbox-gl-layers'
 import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 export default {

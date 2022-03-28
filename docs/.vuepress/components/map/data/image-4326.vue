@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { ImageLayer } from '@naivemap/mapbox-gl-ex-layers'
+import { ImageLayer } from '@naivemap/mapbox-gl-layers'
 import baseMap from '../base-map.vue'
 export default {
   components: {
