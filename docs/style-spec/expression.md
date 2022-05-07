@@ -36,17 +36,17 @@
 },
 ```
 
-## [Types](https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/#types)
+## [Types](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#types)
 
 表达式拥有强大的类型系统，并支持转换和检测。比如，表达式的输入和输出数据类型需和样式规范中的类型一致，在计算表达式时会自动检测，如果检测到错误，会在控制台输出错误提示。
 
-## [Feature data](https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/#feature-data)
+## [Feature data](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#feature-data)
 
 - feature-state：要素状态，要素状态不是数据的某一属性，需要对通过要素 `id` 设置，如给要素设置 `hover` 状态：`map.setFeatureState({source: 'states', id: hoveredStateId}, {hover: false})`，然后在表达式中即可使用：`['feature-state', 'hover']`
 
 > 示例：[Create a hover effect](https://docs.mapbox.com/mapbox-gl-js/example/hover-styles/)
 
-## [Lookup](https://maplibre.org/maplibre-gl-js-docs/style-spec/expressions/#lookup)
+## [Lookup](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#lookup)
 
 ### at
 

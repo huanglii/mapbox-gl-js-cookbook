@@ -4,7 +4,7 @@
 
 数据源类型由 `type` 指定，并且必须是 `vector`, `raster`, `raster-dem`, `geojson`, `image`, `video` 之一。
 ::: tip 提示
-另外，还有一个 `canvas` 类型，是 `image` 的扩展：[CanvasSource](https://docs.mapbox.com/mapbox-gl-js/api/sources/#canvassource)
+另外，还有一个`canvas`类型，是`image`的扩展：[CanvasSource](https://docs.mapbox.com/mapbox-gl-js/api/sources/#canvassource)
 :::
 
 ## vector
@@ -90,3 +90,13 @@ GeoJSON 数据源，必须提供 `data` 属性。详见 [geojson](https://docs.m
 ## image & video
 
 见[数据/栅格](/data/raster)。
+
+## Custom Source
+
+自 `v2.8.0` 起，可以使用自定义数据源，自定义数据源接口允许用户加载和修改自己的瓦片，必须实现 `loadTile`。
+
+<ClientOnly>
+  <common-code-view name="style-spec-custom-source" />
+</ClientOnly>
+
+> 参考：[custom-source](https://github.com/mapbox/mapbox-gl-js/blob/main/debug/custom-source.html)

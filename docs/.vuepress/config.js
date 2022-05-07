@@ -29,7 +29,6 @@ module.exports = {
         children: [
           { text: '文档丨英文', link: 'https://docs.mapbox.com/mapbox-gl-js/api/' },
           { text: '文档丨中文', link: 'https://www.mapbox.cn/mapbox-gl-js/api/' },
-          { text: '文档丨MapLibre', link: 'https://maplibre.org/maplibre-gl-js-docs/api/' },
         ],
       },
     ],
