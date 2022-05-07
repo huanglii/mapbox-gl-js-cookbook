@@ -1,21 +1,29 @@
+const { defaultTheme } = require('vuepress')
+const { viteBundler } = require('vuepress')
+const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
+const { searchPlugin } = require('@vuepress/plugin-search')
 const { path } = require('@vuepress/utils')
 
 module.exports = {
   lang: 'zh-CN',
   title: 'Mapbox GL JS Cookbook',
-  base: '/mapbox-gl-js-cookbook/',
   description: 'Mapbox GL JS Cookbook',
+  base: '/mapbox-gl-js-cookbook/',
   head: [['link', { rel: 'icon', href: '/mapbox-gl-js-cookbook/assets/logo.png' }]],
+  bundler: viteBundler({
+    // vite bundler config
+  }),
+  
   plugins: [
-    ['@vuepress/plugin-search'],
-    [
-      '@vuepress/register-components',
-      {
-        componentsDir: path.resolve(__dirname, './components'),
-      },
-    ],
+    searchPlugin({
+      // 配置项
+    }),
+    registerComponentsPlugin({
+      // 配置项
+      componentsDir: path.resolve(__dirname, './components'),
+    }),
   ],
-  themeConfig: {
+  theme: defaultTheme({
     logo: '/assets/logo.png',
     navbar: [
       { text: '快速开始', link: '/getting-started/' },
@@ -107,5 +115,5 @@ module.exports = {
     openInNewWindow: '在新页面打开',
     toggleDarkMode: '切换夜间模式',
     toggleSidebar: '切换侧边栏',
-  },
+  })
 }
