@@ -95,8 +95,8 @@ GeoJSON 数据源，必须提供 `data` 属性。详见 [geojson](https://docs.m
 
 自 `v2.8.0` 起，可以使用自定义数据源，自定义数据源接口允许用户加载和修改自己的瓦片，必须实现 `loadTile`。
 
-<ClientOnly>
+<!-- <ClientOnly>
   <common-code-view name="style-spec-custom-source" />
-</ClientOnly>
+</ClientOnly> -->
 
 > 参考：[custom-source](https://github.com/mapbox/mapbox-gl-js/blob/main/debug/custom-source.html)
