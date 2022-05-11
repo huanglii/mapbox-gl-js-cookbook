@@ -16,12 +16,11 @@ Web Feature Service（Web 要素服务），简称 WFS。WFS 标准定义了一�
 ```js
 'source-id': {
   'type': 'geojson',
-  'data': 'https://900913.cn/geoserver/buildings/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=buildings:cq_point&outputFormat=application/json'
+  'data': 'https://a.example.com/geoserver/buildings/ows?service=WFS&version=2.0.0&request=GetFeature&typeName=buildings:cq_point&outputFormat=application/json'
 }
 ```
 
-::: tip 提示
-
+::: tip
 - wfs 会请求全部数据，不适用于大量数据。但是支持空间查询和属性查询，也会经常用到。
 - 文档：[wfs/wms filter](https://docs.geoserver.org/latest/en/user/filter/index.html#filtering)
-  :::
+:::

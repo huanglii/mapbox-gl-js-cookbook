@@ -59,7 +59,13 @@ module.exports = {
       '/service/': [
         {
           text: '服务',
-          children: ['/service/', '/service/wmts', '/service/wms', '/service/wfs', '/service/tms'],
+          children: [
+            '/service/',
+            '/service/wmts',
+            '/service/tms',
+            '/service/wfs',
+            '/service/wms',
+          ],
         },
       ],
       '/data/': [
