@@ -13,7 +13,7 @@ module.exports = {
   bundler: viteBundler({
     // vite bundler config
   }),
-  
+
   plugins: [
     searchPlugin({
       // 配置项
@@ -115,5 +115,5 @@ module.exports = {
     openInNewWindow: '在新页面打开',
     toggleDarkMode: '切换夜间模式',
     toggleSidebar: '切换侧边栏',
-  })
+  }),
 }

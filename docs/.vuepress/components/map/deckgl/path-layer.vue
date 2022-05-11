@@ -1,13 +1,14 @@
 <template>
   <base-map :map-clickable="false" :map-options="mapOptions" @load="handleMapLoaded">
-    <div id="pathlayer-tooltip" class="tooltip"></div>
+    <div id="path-layer-tooltip" class="tooltip"></div>
   </base-map>
 </template>
 
 <script>
 import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
-import addLayer from '../../../snippet/deckgl/path-layer'
+import { MapboxLayer } from '@deck.gl/mapbox'
+import { PathLayer } from '@deck.gl/layers'
 export default {
   components: {
     baseMap,
@@ -26,7 +27,42 @@ export default {
   },
   methods: {
     handleMapLoaded(map) {
-      addLayer(map)
+      /**
+       * Data format:
+       * [
+       *   {
+       *     path: [[-122.4, 37.7], [-122.5, 37.8], [-122.6, 37.85]],
+       *     name: 'Richmond - Millbrae',
+       *     color: '[255, 0, 0]'
+       *   },
+       *   ...
+       * ]
+       */
+      const layer = new MapboxLayer({
+        id: 'path-layer',
+        type: PathLayer,
+        data: '/data/bart-lines.json',
+        pickable: true,
+        rounded: true,
+        billboard: true,
+        widthScale: 10,
+        widthMinPixels: 2,
+        getPath: (d) => d.path,
+        getColor: (d) => JSON.parse(d.color),
+        getWidth: () => 5,
+        onHover: (info) => {
+          const $tooltip = document.getElementById('path-layer-tooltip')
+          if (info.object) {
+            $tooltip.innerHTML = `名称：${info.object.name}`
+            $tooltip.style.display = 'block'
+            $tooltip.style.left = info.x + 'px'
+            $tooltip.style.top = info.y + 'px'
+          } else {
+            $tooltip.style.display = 'none'
+          }
+        },
+      })
+      map.addLayer(layer)
     },
   },
 }

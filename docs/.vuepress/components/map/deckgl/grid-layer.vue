@@ -1,11 +1,14 @@
 <template>
-  <base-map :map-clickable="false" :map-options="mapOptions" @load="handleMapLoaded" />
+  <base-map :map-clickable="false" :map-options="mapOptions" @load="handleMapLoaded">
+    <div id="grid-layer-tooltip" class="tooltip"></div>
+  </base-map>
 </template>
 
 <script>
 import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
-import addLayer from '../../../snippet/deckgl/grid-layer'
+import { MapboxLayer } from '@deck.gl/mapbox'
+import { GridLayer } from '@deck.gl/aggregation-layers'
 export default {
   components: {
     baseMap,
@@ -23,8 +26,46 @@ export default {
   },
   methods: {
     handleMapLoaded(map) {
-      addLayer(map)
+      const layer = new MapboxLayer({
+        id: 'grid-layer',
+        type: GridLayer,
+        data: '/data/sf-bike-parking.json',
+        pickable: true,
+        extruded: true,
+        cellSize: 200,
+        elevationScale: 4,
+        getPosition: (d) => d.COORDINATES,
+        onHover: (info) => {
+          const $tooltip = document.getElementById('grid-layer-tooltip')
+          if (info.object) {
+            $tooltip.innerHTML = `${info.object.position.join(', ')}\nCount: ${info.object.count}`
+            $tooltip.style.display = 'block'
+            $tooltip.style.left = info.x + 'px'
+            $tooltip.style.top = info.y + 'px'
+          } else {
+            $tooltip.style.display = 'none'
+          }
+        },
+      })
+
+      map.addLayer(layer)
     },
   },
 }
 </script>
+
+<style lang="scss">
+.tooltip {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0.5em 0.75em;
+  background-color: #09101d;
+  color: #fff;
+  border-radius: 10em;
+  white-space: nowrap;
+  font-size: 10px;
+  pointer-events: none;
+}
+</style>

@@ -2,4 +2,4 @@
   <common-code-view name="deckgl-arc-layer" :is-code-view="false"/>
 </ClientOnly>
 
-@[code js](../.vuepress/snippet/deckgl/arc-layer.js)
+@[code js](../.vuepress/components/map/deckgl/arc-layer.vue)
