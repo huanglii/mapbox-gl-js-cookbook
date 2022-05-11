@@ -29,7 +29,7 @@ export default {
       const layer = new MapboxLayer({
         id: 'grid-layer',
         type: GridLayer,
-        data: '/data/sf-bike-parking.json',
+        data: this.$withBase('/data/sf-bike-parking.json'),
         pickable: true,
         extruded: true,
         cellSize: 200,

@@ -41,7 +41,7 @@ export default {
       const layer = new MapboxLayer({
         id: 'path-layer',
         type: PathLayer,
-        data: '/data/bart-lines.json',
+        data: this.$withBase('/data/bart-lines.json'),
         pickable: true,
         rounded: true,
         billboard: true,

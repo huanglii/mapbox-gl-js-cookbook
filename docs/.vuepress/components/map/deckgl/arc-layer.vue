@@ -43,7 +43,7 @@ export default {
       const layer = new MapboxLayer({
         id: 'arc-layer',
         type: ArcLayer,
-        data: '/data/bart-segments.json',
+        data: this.$withBase('/data/bart-segments.json'),
         getWidth: 5,
         pickable: true,
         getSourceColor: (d) => [Math.sqrt(d.inbound), 140, 0],
