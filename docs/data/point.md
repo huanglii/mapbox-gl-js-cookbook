@@ -2,7 +2,7 @@
 
 点可以用 **`circle`**、**`symbol`**、**`heatmap`** 三种图层类型来表示。除此之外，还可以用 **`Marker`** 表示，`Marker` 的好处在于是 `div` 渲染，可以用 `css` 来实现炫丽的效果，但是点特别多的情况下，不建议使用。
 
-## circle
+## [circle](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#circle)
 
 部分 **`paint`** 属性：
 | 属性 | 描述 |
@@ -68,7 +68,7 @@ map.addSource('points', {
   <common-code-view name="data-fill-point" :is-code-view="false"/>
 </ClientOnly>
 
-## symbol
+## [symbol](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#symbol)
 
 部分 **`paint`** 属性：
 | 属性 | 描述 |
@@ -104,7 +104,7 @@ map.addSource('points', {
 
 > 圆形扩散：[Add an animated icon to the map](https://docs.mapbox.com/mapbox-gl-js/example/add-image-animated/)
 
-## heatmap
+## [heatmap](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#heatmap)
 
 部分 **`paint`** 属性：
 | 属性 | 描述 |
@@ -137,7 +137,7 @@ map.addSource('points', {
 
 > 热力图：[Create a heatmap layer](https://docs.mapbox.com/mapbox-gl-js/example/heatmap-layer/)
 
-## Marker
+## [Marker](https://docs.mapbox.com/mapbox-gl-js/api/markers/#marker)
 
 <ClientOnly>
   <common-code-view name="data-marker"/>

@@ -86,6 +86,8 @@ module.exports = {
           text: '进阶',
           children: [
             '/advance/',
+            '/advance/custom-source',
+            '/advance/custom-layer',
             '/advance/track',
             '/advance/control',
             '/advance/ECharts',

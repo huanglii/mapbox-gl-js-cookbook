@@ -11,14 +11,14 @@
 - 地图要素：[sources](https://docs.mapbox.com/mapbox-gl-js/style-spec/root/#sources), [layers](https://docs.mapbox.com/mapbox-gl-js/style-spec/root/#layers), [terrain](https://docs.mapbox.com/mapbox-gl-js/style-spec/root/#terrain)
 - 其他：[sprite](https://docs.mapbox.com/mapbox-gl-js/style-spec/root/#sprite), [glyphs](https://docs.mapbox.com/mapbox-gl-js/style-spec/root/#glyphs), [light](https://docs.mapbox.com/mapbox-gl-js/style-spec/root/#light), [fog](https://docs.mapbox.com/mapbox-gl-js/style-spec/root/#fog), [transition](https://docs.mapbox.com/mapbox-gl-js/style-spec/root/#transition)
 
-```js
+```json
 {
-  'version': 8, // 版本号，必须且必须为 8
-  'name': 'Mapbox Streets', // 样式名称
-  'sprite': 'mapbox://sprites/mapbox/streets-v8', // 雪碧图
-  'glyphs': 'mapbox://fonts/mapbox/{fontstack}/{range}.pbf', // 字体
-  'sources': {...}, // 数据源
-  'layers': [...] // 图层，将根据此数组的顺序绘制
+  "version": 8, // 版本号，必须且必须为 8
+  "name": "Mapbox Streets", // 样式名称
+  "sprite": "mapbox://sprites/mapbox/streets-v8", // 雪碧图
+  "glyphs": "mapbox://fonts/mapbox/{fontstack}/{range}.pbf", // 字体
+  "sources": {...}, // 数据源
+  "layers": [...] // 图层，将根据此数组的顺序绘制
 }
 ```
 

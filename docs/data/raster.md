@@ -29,11 +29,30 @@
 
 任意投影的图片可以使用插件 [mapbox-gl-static-image-source](https://github.com/huanglii/mapbox-gl-static-image-source) 加载，该插件利用了 [openlayers](https://openlayers.org/) 的 `ol/reproj` 相关方法，将图片进行重投影为 `EPSG:3857` 坐标系。
 
+安装：
 ```bash
 # use yarn
-yarn add mapbox-gl-static-image-source
+yarn add @naivemap/mapbox-gl-layers
 # use npm
-npm i mapbox-gl-static-image-source
+npm i @naivemap/mapbox-gl-layers
+```
+
+使用：
+```js
+import { ImageLayer } from '@naivemap/mapbox-gl-layers'
+
+const layer = new ImageLayer('layer-4326', {
+  url: '/images/4326.png',
+  projection: 'EPSG:4326',
+  coordinates: [
+    [105.289838, 32.204171], // top-left
+    [110.195632, 32.204171], // top-right
+    [110.195632, 28.164713], // bottom-right
+    [105.289838, 28.164713], // bottom-left
+  ],
+})
+
+map.addLayer(layer, 'aeroway-line')
 ```
 
 有如下一张图片，坐标系为 EPSG:4326：

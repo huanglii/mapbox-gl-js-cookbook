@@ -2,51 +2,52 @@
 
 > [sources](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/)
 
-数据源类型由 `type` 指定，并且必须是 `vector`, `raster`, `raster-dem`, `geojson`, `image`, `video` 之一。
+数据源属性说明了地图要显示那些数据，数据源类型由 `type` 指定，且必须是 `vector`, `raster`, `raster-dem`, `geojson`, `image`, `video` 之一。
+
 ::: tip 提示
 另外，还有一个`canvas`类型，是`image`的扩展：[CanvasSource](https://docs.mapbox.com/mapbox-gl-js/api/sources/#canvassource)
 :::
 
-## vector
+## 瓦片数据源
+瓦片数据源（vector 和 raster）必须根据 [TileJSON](https://github.com/mapbox/tilejson-spec) 规范指定其详细信息。有2种方式：
 
-使用 `vector` 数据源的图层必须指定 `source-layer` 。
+1. 直接在数据源中提供 TileJSON 属性，例如：`tiles`、`minzoom` 和 `maxzoom`：
+```json
+"mapbox-streets": {
+  "type": "vector",
+  "tiles": [
+    "https://a.naivemap.com/tiles/{z}/{x}/{y}.pbf",
+    "https://b.naivemap.com/tiles/{z}/{x}/{y}.pbf"
+  ]
+}
 
-```js
-'sources': {
-  '{source-id}': {
-    'type': 'vector',
-    'tiles': [
-      'http://a.example.com/tiles/{z}/{x}/{y}.pbf'
-    ],
-    'bounds': [-180, -85.051129, 180, 85.051129]
-  },
-  '{source-id}': {
-    'type': 'vector',
-    'url': 'http://api.example.com/tilejson.json'
-  },
-  '{source-id}', {
-    'type': 'vector',
-    'url': 'mapbox://huanglii.d41k5fmy'
-  },
+"tdt_vec_w": {
+  "type": "raster",
+  "tiles": [
+    "http://t0.tianditu.com/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk={天地图 key}",
+    "http://t1.tianditu.com/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk={天地图 key}"
+  ],
+  "tileSize": 256,
+  "maxzoom": 18
+},
+```
+2. 通过 `url` 指定 TileJSON 源：
+```json
+"mapbox-streets": {
+  "type": "vector",
+  "url": "https://naivemap.com/tilejson.json"
 }
 ```
 
-## raster
+## [vector](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#vector)
 
-```js
-'sources': {
-  '{source-id}': {
-    'type': 'raster',
-    'tiles': [
-      'http://t0.tianditu.com/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk={天地图 key}',
-      'http://t1.tianditu.com/DataServer?T=vec_w&x={x}&y={y}&l={z}&tk={天地图 key}'
-    ],
-    'tileSize': 256
-  },
-}
-```
+矢量瓦片数据源，瓦片必须是 [Mapbox Vector Tile](https://docs.mapbox.com/vector-tiles/) 格式。使用 `vector` 数据源的图层必须指定 `source-layer` 。
 
-## raster-dem
+## [raster](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#raster)
+
+栅格瓦片数据源。
+
+## [raster-dem](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#raster-dem)
 
 栅格 DEM 数据源，只支持 [Mapbox Terrain RGB](https://blog.mapbox.com/global-elevation-data-6689f1d0ba65)。可使用 [rio-rgbify](https://github.com/mapbox/rio-rgbify) 生成。
 
@@ -58,7 +59,7 @@ gdalwarp -t_srs EPSG:3857 -dstnodata None -co TILED=YES -co COMPRESS=DEFLATE -co
 rio rgbify -b -10000 -i 0.1 E:\test\chongqing_without_nodata.tif E:\test\chongqing_rgb.tif
 ```
 
-## geojson
+## [geojson](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#geojson)
 
 GeoJSON 数据源，必须提供 `data` 属性。详见 [geojson](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#geojson)，可设置 `cluster`， `filter` 等。
 
@@ -89,14 +90,8 @@ GeoJSON 数据源，必须提供 `data` 属性。详见 [geojson](https://docs.m
 
 ## image & video
 
-见[数据/栅格](/data/raster)。
+图片和视频数据源，通过指定 `url` 和 `coordinate` 将图片和视频显示到地图。注意其坐标系必须是 **网络墨卡托(EPSG:3857)**。
 
-## Custom Source
+## 自定义数据源
 
-自 `v2.8.0` 起，可以使用自定义数据源，自定义数据源接口允许用户加载和修改自己的瓦片，必须实现 `loadTile`。
-
-<ClientOnly>
-  <common-code-view name="style-spec-custom-source" />
-</ClientOnly>
-
-> 参考：[custom-source](https://github.com/mapbox/mapbox-gl-js/blob/main/debug/custom-source.html)
+自 `v2.8.0` 起，可以使用自定义数据源，自定义数据源接口允许用户加载和修改自己的瓦片，必须实现 `loadTile` 方法。

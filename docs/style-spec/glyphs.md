@@ -55,7 +55,7 @@ function output2pbf(font, start, end, outputDir) {
 convert('./fonts/open-sans/OpenSans-Regular.ttf', './glyphs/OpenSans Regular/')
 ```
 
-::: warning 注意
+::: warning
 上面几种方法（包括在 Mapbox Studio 中上传的字体）生成的字体，似乎不支持中文，如下图：
 
 <img :src="$withBase('/assets/images/fonts.png')" width="120" />

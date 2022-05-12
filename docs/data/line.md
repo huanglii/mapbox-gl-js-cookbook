@@ -1,7 +1,5 @@
 # 线
 
-线可以用 **`line`** 表示。
-
 ## line
 
 部分 **`paint`** 属性：
@@ -41,5 +39,5 @@
 
 结合 `symbol` 还可以做出如下箭头效果：
 <ClientOnly>
-<common-code-view name="data-line-arrow"/>
+  <common-code-view name="data-line-arrow"/>
 </ClientOnly>

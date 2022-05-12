@@ -5,15 +5,15 @@
 如果图层样式中有使用 `background-pattern`、`fill-pattern`、`line-pattern`、`fill-extrusion-pattern`、或 `icon-image` 属性，则必须设置该属性。例如：
 
 ```js
-'sprite': 'http://naivemap.com/mapbox/sprite'
+'sprite': 'https://naivemap.com/mapbox/sprite'
 ```
 
 ## 雪碧图文件
 
 一个有效的雪碧图必须包含两种文件：索引和图片。在加载时，会自动生成完整的 URLs：
 
-- [http://naivemap.com/mapbox/sprite.json](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite.json?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA) 和 [http://naivemap.com/mapbox/sprite.png](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA) 或
-- [http://naivemap.com/mapbox/sprite@2x.json](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite@2x.json?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA) 和 [http://naivemap.com/mapbox/sprite@2x.png](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite@2x.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA)（高 DPI 设备）
+- [https://naivemap.com/mapbox/sprite.json](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite.json?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA) 和 [http://naivemap.com/mapbox/sprite.png](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA) 或
+- [https://naivemap.com/mapbox/sprite@2x.json](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite@2x.json?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA) 和 [https://naivemap.com/mapbox/sprite@2x.png](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite@2x.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA)（高 DPI 设备）
 
 ## 创建雪碧图
 
