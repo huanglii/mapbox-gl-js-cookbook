@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: /assets/images/hero.jpg
+heroImage: /assets/images/hero.png
 heroText: Mapbox GL JS Cookbook
 tagline: 地理信息可视化
 actions:
