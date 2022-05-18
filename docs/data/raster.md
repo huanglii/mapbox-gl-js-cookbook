@@ -27,7 +27,7 @@
 
 ### 其他任意投影
 
-任意投影的图片可以使用插件 [mapbox-gl-static-image-source](https://github.com/huanglii/mapbox-gl-static-image-source) 加载，该插件利用了 [openlayers](https://openlayers.org/) 的 `ol/reproj` 相关方法，将图片进行重投影为 `EPSG:3857` 坐标系。
+任意投影的图片可以使用 [@naivemap/mapbox-gl-layers](https://github.com/huanglii/mapbox-gl-static-image-source) 库的 [ImageLayer](https://github.com/naivemap/mapbox-gl-layers/blob/main/doc/imagelayer.md) 加载。
 
 安装：
 ```bash

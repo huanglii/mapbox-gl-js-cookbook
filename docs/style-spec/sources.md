@@ -9,7 +9,7 @@
 :::
 
 ## 瓦片数据源
-瓦片数据源（vector 和 raster）必须根据 [TileJSON](https://github.com/mapbox/tilejson-spec) 规范指定其详细信息。有2种方式：
+瓦片数据源（vector 和 raster）必须根据 [TileJSON](https://github.com/mapbox/tilejson-spec) 规范指定其详细信息。有 2 种方式：
 
 1. 直接在数据源中提供 TileJSON 属性，例如：`tiles`、`minzoom` 和 `maxzoom`：
 ```json
