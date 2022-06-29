@@ -20,8 +20,8 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 ```js
 import mapboxgl from 'mapbox-gl'
 
-mapboxgl.accessToken = '{YOUR MAPBOX ACCESS TOKEN}'
 const map = new mapboxgl.Map({
+  accessToken: '{YOUR MAPBOX ACCESS TOKEN}'
   container: 'map', // 地图容器 id
   style: 'mapbox://styles/mapbox/streets-v11', // 样式
   center: [104.294538, 35.860092], // 地图初始中心点 [经度, 维度]
@@ -29,6 +29,6 @@ const map = new mapboxgl.Map({
 })
 ```
 
-<!-- <map-base-map /> -->
+<map-start />
 
 > 示例：[Display a map on a webpage](https://docs.mapbox.com/mapbox-gl-js/example/simple-map/)

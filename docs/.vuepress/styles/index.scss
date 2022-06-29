@@ -1,5 +1,9 @@
+@import "./fonts/medium.scss";
+@import "./fonts/regular.scss";
+
 :root {
   --content-width: 900px;
+  --font-family: PingFang SC, HarmonyOS_Regular, Helvetica Neue, Microsoft YaHei, sans-serif;
 }
 
 // mapbox 控件

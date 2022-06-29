@@ -27,19 +27,19 @@
 
 ### 其他任意投影
 
-任意投影的图片可以使用 [@naivemap/mapbox-gl-layers](https://github.com/huanglii/mapbox-gl-static-image-source) 库的 [ImageLayer](https://github.com/naivemap/mapbox-gl-layers/blob/main/doc/imagelayer.md) 加载。
+任意投影的图片可以使用 [@naivemap/mapbox-gl-image-layer](https://github.com/naivemap/mapbox-gl-layers/blob/main/packages/mapbox-gl-image-layer/README.md) 加载。
 
 安装：
 ```bash
 # use yarn
-yarn add @naivemap/mapbox-gl-layers
+yarn add @naivemap/mapbox-gl-image-layer proj4
 # use npm
-npm i @naivemap/mapbox-gl-layers
+npm i @naivemap/mapbox-gl-image-layer proj4
 ```
 
 使用：
 ```js
-import { ImageLayer } from '@naivemap/mapbox-gl-layers'
+import ImageLayer from '@naivemap/mapbox-gl-image-layer'
 
 const layer = new ImageLayer('layer-4326', {
   url: '/images/4326.png',
