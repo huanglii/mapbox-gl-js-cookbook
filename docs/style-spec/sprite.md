@@ -5,7 +5,13 @@
 如果图层样式中有使用 `background-pattern`、`fill-pattern`、`line-pattern`、`fill-extrusion-pattern`、或 `icon-image` 属性，则必须设置该属性。例如：
 
 ```js
+// Style property
 'sprite': 'https://naivemap.com/mapbox/sprite'
+```
+
+```js
+// Layout property of SymbolLayer
+'icon-image': 'cat'
 ```
 
 ## 雪碧图文件
@@ -24,9 +30,8 @@
 最直接的方法就是在 [Mapbox Studio](https://studio.mapbox.com/) 中上传、管理图标。然后在样式预览中，将 `sprite.png`、`sprite@2x.png` `sprite.json` 文件下载下来使用。
 
 ::: tip
-1. 只支持`svg`格式
-2. 在`iconfont`下载的图标可以上传使用
-3. 官方推荐的地图图标集：[MAKI ICONS](https://labs.mapbox.com/maki-icons/)
+1. 只支持`svg`格式，可以在 [iconfont](https://www.iconfont.cn/) 下载图标上传
+2. 官方推荐的地图图标集：[MAKI ICONS](https://labs.mapbox.com/maki-icons/)
 :::
 
 ### Mapbox GL JS API
@@ -60,7 +65,7 @@ map.on('styleimagemissing', (e) => {
 
 ### spritezero
 
-前两种方法都是单个图标加载，如果需要很多图标，需要多次加载。这个时候最好直接生成雪碧图，则可以使用 [spritezero](https://github.com/mapbox/spritezero) 创建。
+前两种方法都是加载单个图标，如果需要很多图标，建议提前创建好雪碧图，可以使用前面提到的 [Mapbox Studio](https://studio.mapbox.com/) 创建，也可以使用 [spritezero](https://github.com/mapbox/spritezero) 工具创建雪碧图。
 
 1. 安装
 
@@ -113,8 +118,11 @@ var path = require('path')
 ```
 
 ::: tip
-1. 注意`node`版本`v10`及以上；
-2. 如果需要将`png`转换为雪碧图，需要修改 [spritezero](https://github.com/mapbox/spritezero/blob/main/lib/generate.js#L124) 源码，将`mapnik.Image.fromSVGBytes`修改为`mapnik.Image.fromBytes`即可；
-3. sdf support：[Option to generate SDF sprites](https://github.com/mapbox/spritezero/pull/66)、[@elastic/spritezero](https://github.com/elastic/spritezero)、[Demo of SDF sprites](http://www.npeihl.com/maki-sdf-sprites/)；
-4. 命令行工具 [spritezero-cli](https://github.com/mapbox/spritezero-cli)，可直接文件夹中生成雪碧图。
+1. 注意`node`版本`v10`及以上
+2. 如果需要将`png`转换为雪碧图，需要修改 [spritezero](https://github.com/mapbox/spritezero/blob/main/lib/generate.js#L124) 源码，将`mapnik.Image.fromSVGBytes`修改为`mapnik.Image.fromBytes`即可
+3. 该库提供了命令行工具：[spritezero-cli](https://github.com/mapbox/spritezero-cli)，可直接从文件夹生成雪碧图
+4. [SDF icons](https://docs.mapbox.com/help/troubleshooting/using-recolorable-images-in-mapbox-maps/)：
+   - 在 `generateLayout` 给 `dataLayout` 添加属性： `sdf: true`
+   - [Option to generate SDF sprites](https://github.com/mapbox/spritezero/pull/66)、[@elastic/spritezero](https://github.com/elastic/spritezero)
+   - [Demo of SDF sprites](http://www.npeihl.com/maki-sdf-sprites/)
 :::

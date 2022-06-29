@@ -1,6 +1,6 @@
 # 服务
 
-以 `GeoServer` 为例，对常见服务标准简要说明以及在 `Mapbox GL JS` 中的使用。
+以 `GeoServer` 为例，对常见地图服务标准简要说明以及在 `Mapbox GL JS` 中的使用。
 
 ::: warning
 在 Mapbox GL JS 的 [vector](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#vector) 和 [raster](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#raster) 数据源中有一个 `scheme` 属性。该属性影响瓦片坐标 `y` 轴的方向，有两个值可选：`xyz`（默认）和 `tms`。

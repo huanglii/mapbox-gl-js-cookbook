@@ -28,8 +28,8 @@ module.exports = {
     navbar: [
       { text: '快速开始', link: '/getting-started/' },
       { text: '样式规范', link: '/style-spec/' },
-      { text: '服务', link: '/service/' },
-      { text: '数据', link: '/data/' },
+      { text: '地图服务', link: '/service/' },
+      { text: '空间数据', link: '/data/' },
       { text: '进阶', link: '/advance/' },
       { text: 'DECK.GL', link: '/deck-gl/' },
       {
@@ -58,7 +58,7 @@ module.exports = {
       ],
       '/service/': [
         {
-          text: '服务',
+          text: '地图服务',
           children: [
             '/service/',
             '/service/wmts',
@@ -70,7 +70,7 @@ module.exports = {
       ],
       '/data/': [
         {
-          text: '数据',
+          text: '空间数据',
           children: [
             '/data/',
             '/data/point',

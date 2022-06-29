@@ -56,7 +56,7 @@ convert('./fonts/open-sans/OpenSans-Regular.ttf', './glyphs/OpenSans Regular/')
 ```
 
 ::: warning
-上面几种方法（包括在 Mapbox Studio 中上传的字体）生成的字体，似乎不支持中文，如下图：
+经测试，上面几种方法（包括在 Mapbox Studio 中上传的字体）生成的字体对中文不生效，中文字体还是会显示为默认字体，如下：
 
 <img :src="$withBase('/assets/images/fonts.png')" width="120" />
 :::
