@@ -113,7 +113,9 @@ module.exports = {
     docsDir: 'docs',
     editLink: true,
     editLinkText: '在 GitHub 上编辑此页！',
+    lastUpdated: true,
     lastUpdatedText: '上次更新',
+    contributors: true,
     contributorsText: '贡献者',
     tip: '提示',
     warning: '注意',
@@ -121,7 +123,7 @@ module.exports = {
     notFound: ['404 未找到', '找不着了'],
     backToHome: '返回首页',
     openInNewWindow: '在新页面打开',
-    toggleDarkMode: '切换夜间模式',
+    toggleColorMode: '切换颜色模式',
     toggleSidebar: '切换侧边栏',
   }),
 }

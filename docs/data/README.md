@@ -1,4 +1,4 @@
-# 数据
+# 空间数据
 
 本章以 Mapbox 样式规范（[Style Specification](https://docs.mapbox.com/mapbox-gl-js/style-spec/)）中的图层类型为基础，介绍常用空间数据在 Mapbox GL JS 中如何可视化与交互。
 
