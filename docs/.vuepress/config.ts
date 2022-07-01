@@ -1,10 +1,9 @@
-const { defaultTheme } = require('vuepress')
-const { viteBundler } = require('vuepress')
-const { registerComponentsPlugin } = require('@vuepress/plugin-register-components')
-const { searchPlugin } = require('@vuepress/plugin-search')
-const { path } = require('@vuepress/utils')
+import { defineUserConfig, defaultTheme, viteBundler } from 'vuepress'
+import { path } from '@vuepress/utils'
+import searchPlugin from '@vuepress/plugin-search'
+import registerComponentsPlugin from '@vuepress/plugin-register-components'
 
-module.exports = {
+export default defineUserConfig({
   lang: 'zh-CN',
   title: 'Mapbox GL JS Cookbook',
   description: 'Mapbox GL JS Cookbook',
@@ -13,7 +12,9 @@ module.exports = {
   bundler: viteBundler({
     // vite bundler config
   }),
-
+  alias: {
+    '@': path.resolve(__dirname, './'),
+  },
   plugins: [
     searchPlugin({
       // 配置项
@@ -43,6 +44,16 @@ module.exports = {
     sidebarDepth: 2,
     // sidebar: 'auto',
     sidebar: {
+      '/getting-started/': [
+        {
+          text: '快速开始',
+          link: '/getting-started/',
+        },
+        {
+          text: '术语',
+          link: 'https://docs.mapbox.com/help/glossary/',
+        }
+      ],
       '/style-spec/': [
         {
           text: '样式规范',
@@ -59,13 +70,7 @@ module.exports = {
       '/service/': [
         {
           text: '地图服务',
-          children: [
-            '/service/',
-            '/service/wmts',
-            '/service/tms',
-            '/service/wfs',
-            '/service/wms',
-          ],
+          children: ['/service/', '/service/wmts', '/service/tms', '/service/wfs', '/service/wms'],
         },
       ],
       '/data/': [
@@ -126,4 +131,4 @@ module.exports = {
     toggleColorMode: '切换颜色模式',
     toggleSidebar: '切换侧边栏',
   }),
-}
+})

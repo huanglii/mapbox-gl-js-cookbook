@@ -9,14 +9,15 @@
 使用方法如下：
 
 ```sh
+# 克隆项目并安装
 git clone git@github.com:mapbox/node-fontnik.git
-cd node-fontnik
-npm i
+cd node-fontnik & npm i
+# 进入 bin 目录，转换字体文件
 cd bin
 node ./build-glyphs /home/fonts/open-sans/OpenSans-Regular.ttf ./glyphs/OpenSans Regular
 ```
 
-也可使用下面的代码生成，参考：[mapbox/node-fontnik 工具使用介绍](https://www.jianshu.com/p/23634e54487e)
+也可使用下面的代码生成：
 
 ```js
 var fontnik = require('fontnik')
@@ -54,6 +55,8 @@ function output2pbf(font, start, end, outputDir) {
 
 convert('./fonts/open-sans/OpenSans-Regular.ttf', './glyphs/OpenSans Regular/')
 ```
+
+> 参考：[mapbox/node-fontnik 工具使用介绍](https://www.jianshu.com/p/23634e54487e)
 
 ::: warning
 经测试，上面几种方法（包括在 Mapbox Studio 中上传的字体）生成的字体对中文不生效，中文字体还是会显示为默认字体，如下：

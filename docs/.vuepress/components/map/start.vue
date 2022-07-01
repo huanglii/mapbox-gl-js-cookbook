@@ -4,7 +4,7 @@
 
 <script>
 import baseMap from './base-map.vue'
-import { STYLE } from '../../utils/constant'
+import { STYLE } from '@/utils/constant'
 export default {
   components: {
     baseMap,
