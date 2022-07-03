@@ -31,4 +31,4 @@ const map = new mapboxgl.Map({
 
 <map-start />
 
-> 示例：[Display a map on a webpage](https://docs.mapbox.com/mapbox-gl-js/example/simple-map/)
+> 示例：[Display a globe on a webpage](https://docs.mapbox.com/mapbox-gl-js/example/simple-map/)

@@ -64,6 +64,8 @@ export default defineUserConfig({
             '/style-spec/sources',
             '/style-spec/layers',
             '/style-spec/expression',
+            '/style-spec/light',
+            '/style-spec/terrain',
           ],
         },
       ],
