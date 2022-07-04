@@ -1,31 +1,28 @@
+<script setup>
+defineProps({
+  name: {
+    type: String,
+    required: true,
+  },
+  isCodeView: {
+    type: Boolean,
+    default: true,
+  },
+})
+</script>
+
 <template>
   <div class="code-view-wrapper">
     <component :is="`map-${name}`"></component>
-    <a v-if="isCodeView" class="link" :href="$withBase(`/example/${name}.html`)" target="_blank"
-      >查看代码</a
-    >
+    <a v-if="isCodeView" class="link" :href="$withBase(`/example/${name}.html`)" target="_blank">查看代码</a>
   </div>
 </template>
-
-<script>
-export default {
-  props: {
-    name: {
-      type: String,
-      required: true,
-    },
-    isCodeView: {
-      type: Boolean,
-      default: true,
-    },
-  },
-}
-</script>
 
 <style lang="scss" scoped>
 .code-view-wrapper {
   position: relative;
   margin: 10px 0;
+
   .link {
     position: absolute;
     right: 10px;

@@ -29,6 +29,8 @@ const map = new mapboxgl.Map({
 })
 ```
 
-<map-start />
+<ClientOnly>
+  <common-code-view name="starter-globe"/>
+</ClientOnly>
 
 > 示例：[Display a globe on a webpage](https://docs.mapbox.com/mapbox-gl-js/example/simple-map/)

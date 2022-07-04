@@ -27,7 +27,7 @@ export default defineUserConfig({
   theme: defaultTheme({
     logo: '/assets/logo.png',
     navbar: [
-      { text: '快速开始', link: '/getting-started/' },
+      { text: '快速开始', link: '/starter/' },
       { text: '样式规范', link: '/style-spec/' },
       { text: '地图服务', link: '/service/' },
       { text: '空间数据', link: '/data/' },
@@ -44,10 +44,10 @@ export default defineUserConfig({
     sidebarDepth: 2,
     // sidebar: 'auto',
     sidebar: {
-      '/getting-started/': [
+      '/starter/': [
         {
           text: '快速开始',
-          link: '/getting-started/',
+          link: '/starter/',
         },
         {
           text: '术语',

@@ -5,7 +5,7 @@ heroText: Mapbox GL JS Cookbook
 tagline: 地理信息可视化
 actions:
   - text: 快速开始
-    link: /getting-started/
+    link: /starter/
     type: primary
   - text: 样式规范
     link: /style-spec/

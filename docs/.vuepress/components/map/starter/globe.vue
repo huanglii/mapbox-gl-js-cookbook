@@ -1,6 +1,6 @@
 <script setup>
-import baseMap from './base-map.vue'
 import { STYLE } from '@/utils/constant'
+import baseMap from '../base-map.vue'
 
 const mapOptions = {
   style: STYLE.SATELLITE,

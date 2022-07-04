@@ -40,7 +40,6 @@
     "geojson-validation": "^1.0.2",
     "mapbox-gl": "^2.9.1",
     "proj4": "^2.8.0",
-    "three": "^0.132.2",
-    "uuid": "^8.3.2"
+    "three": "^0.132.2"
   }
 }
