@@ -4,7 +4,6 @@
 
 <script>
 import baseMap from '../base-map.vue'
-import addImageLayer from '../../../snippet/data/image'
 export default {
   components: {
     baseMap,
@@ -19,7 +18,23 @@ export default {
   },
   methods: {
     handleMapLoaded(map) {
-      addImageLayer(map, this.$withBase('/assets/images/3857.png'))
+      map.addLayer(
+        {
+          id: 'image-layer',
+          type: 'raster',
+          source: {
+            type: 'image',
+            url: this.$withBase('/assets/images/3857.png'),
+            coordinates: [
+              [73.50014498, 53.561438993],
+              [135.088932019, 53.561438993],
+              [135.088932019, 18.158746],
+              [73.50014498, 18.158746],
+            ],
+          },
+        },
+        'aeroway-line'
+      )
     },
   },
 }

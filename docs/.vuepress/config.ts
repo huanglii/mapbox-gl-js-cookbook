@@ -31,6 +31,7 @@ export default defineUserConfig({
       { text: '样式规范', link: '/style-spec/' },
       { text: '地图服务', link: '/service/' },
       { text: '空间数据', link: '/data/' },
+      { text: '插件', link: '/plugins/' },
       { text: '进阶', link: '/advance/' },
       { text: 'DECK.GL', link: '/deck-gl/' },
       {
@@ -52,7 +53,7 @@ export default defineUserConfig({
         {
           text: '术语',
           link: 'https://docs.mapbox.com/help/glossary/',
-        }
+        },
       ],
       '/style-spec/': [
         {
@@ -86,6 +87,16 @@ export default defineUserConfig({
             '/data/raster',
             '/data/thematic',
           ],
+        },
+      ],
+      '/plugins/': [
+        // {
+        //   text: 'Plugins and frameworks',
+        //   link: 'https://docs.mapbox.com/mapbox-gl-js/plugins/',
+        // },
+        {
+          text: '插件',
+          children: ['/plugins/image-layer', '/plugins/echarts-layer' ],
         },
       ],
       '/advance/': [

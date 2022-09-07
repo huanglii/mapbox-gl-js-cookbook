@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { EChartsLayer } from '@naivemap/mapbox-gl-layers'
+import EChartsLayer from '@naivemap/mapbox-gl-echarts-layer'
 import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 export default {
@@ -15,7 +15,7 @@ export default {
       mapOptions: {
         style: STYLE.GRAY,
         center: [104.114129, 37.550339],
-        zoom: 2.4,
+        zoom: 3,
         interactive: false,
       },
     }
@@ -420,12 +420,6 @@ export default {
         return res
       }
       const option = {
-        title: {
-          text: '全国主要城市空气质量 - 百度地图',
-          subtext: 'data from PM25.in',
-          sublink: 'http://www.pm25.in',
-          left: 'center',
-        },
         tooltip: {
           trigger: 'item',
         },
