@@ -12,58 +12,15 @@
 
 ## image
 
-### 网络墨卡托
-
-有如下一张温度图，坐标系为 `EPSG:3857`：
-
-<!-- ![温度图](/images/3857.png) -->
-<div align="center">
-  <img :src="$withBase('/assets/images/3857.png')" width="300" />
-</div>
+例如有一张 <a :href="$withBase('/assets/images/3857.png')" target="_blank">图片</a> 要叠加到地图，如下：
 
 <ClientOnly>
   <common-code-view name="data-image"/>
 </ClientOnly>
 
-### 其他任意投影
-
-任意投影的图片可以使用 [@naivemap/mapbox-gl-image-layer](https://github.com/naivemap/mapbox-gl-layers/blob/main/packages/mapbox-gl-image-layer/README.md) 加载。
-
-安装：
-```bash
-# use yarn
-yarn add @naivemap/mapbox-gl-image-layer proj4
-# use npm
-npm i @naivemap/mapbox-gl-image-layer proj4
-```
-
-使用：
-```js
-import ImageLayer from '@naivemap/mapbox-gl-image-layer'
-
-const layer = new ImageLayer('layer-4326', {
-  url: '/images/4326.png',
-  projection: 'EPSG:4326',
-  coordinates: [
-    [105.289838, 32.204171], // top-left
-    [110.195632, 32.204171], // top-right
-    [110.195632, 28.164713], // bottom-right
-    [105.289838, 28.164713], // bottom-left
-  ],
-})
-
-map.addLayer(layer, 'aeroway-line')
-```
-
-有如下一张图片，坐标系为 EPSG:4326：
-
-<div align="center">
-  <img :src="$withBase('/assets/images/4326.png')" width="300" />
-</div>
-
-<ClientOnly>
-  <common-code-view name="data-image-4326"/>
-</ClientOnly>
+::: warning
+注意，图片坐标系必须为 `EPSG:3857` 才能正确叠加。如果要加载任意投影的图片请转至 [ImageLayer](/mapbox-gl-js-cookbook/plugins/image-layer.html)。
+:::
 
 ## video
 

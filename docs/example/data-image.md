@@ -2,4 +2,4 @@
   <common-code-view name="data-image" :is-code-view="false"/>
 </ClientOnly>
 
-@[code js](../.vuepress/snippet/data/image.js)
+@[code vue](../.vuepress/components/map/data/image.vue)

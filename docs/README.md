@@ -21,5 +21,5 @@ features:
     details: 轨迹、蜂窝热力图
   - title: 进阶
     details: 自定义图层、自定义控件、第三方库
-footer: MIT Licensed | Copyright © 2019 by huangli
+footer: MIT Licensed | Copyright © 2019-2022 by huangli
 ---
