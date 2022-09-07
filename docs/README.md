@@ -12,14 +12,10 @@ actions:
     type: secondary
 features:
   - title: 样式规范
-    details: 雪碧图、数据源、图层、表达式
-  - title: 地图服务
-    details: WMTS、WMS、WFS、TMS、OGC API
+    details: 雪碧图，数据源，图层，表达式
   - title: 空间数据
     details: 点、线、面、栅格、常见专题图
-  - title: DECK.GL
-    details: 轨迹、蜂窝热力图
-  - title: 进阶
-    details: 自定义图层、自定义控件、第三方库
+  - title: 插件和进阶
+    details: DECK.GL、自定义图层、自定义控件、第三方库
 footer: MIT Licensed | Copyright © 2019-2022 by huangli
 ---

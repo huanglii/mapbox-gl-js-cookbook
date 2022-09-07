@@ -29,7 +29,6 @@ export default defineUserConfig({
     navbar: [
       { text: '快速开始', link: '/starter/' },
       { text: '样式规范', link: '/style-spec/' },
-      { text: '地图服务', link: '/service/' },
       { text: '空间数据', link: '/data/' },
       { text: '插件', link: '/plugins/' },
       { text: '进阶', link: '/advance/' },
@@ -54,6 +53,17 @@ export default defineUserConfig({
           text: '术语',
           link: 'https://docs.mapbox.com/help/glossary/',
         },
+        {
+          text: '服务',
+          children: [
+            '/starter/service/',
+            '/starter/service/wmts',
+            '/starter/service/tms',
+            '/starter/service/wfs',
+            '/starter/service/wms',
+            '/starter/service/ogcapi',
+          ],
+        },
       ],
       '/style-spec/': [
         {
@@ -68,12 +78,6 @@ export default defineUserConfig({
             '/style-spec/light',
             '/style-spec/terrain',
           ],
-        },
-      ],
-      '/service/': [
-        {
-          text: '地图服务',
-          children: ['/service/', '/service/wmts', '/service/tms', '/service/wfs', '/service/wms'],
         },
       ],
       '/data/': [
@@ -96,7 +100,7 @@ export default defineUserConfig({
         // },
         {
           text: '插件',
-          children: ['/plugins/image-layer', '/plugins/echarts-layer' ],
+          children: ['/plugins/image-layer', '/plugins/echarts-layer'],
         },
       ],
       '/advance/': [
