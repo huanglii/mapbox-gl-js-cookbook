@@ -36,8 +36,9 @@ export default defineUserConfig({
       {
         text: 'Mapbox',
         children: [
-          { text: '文档丨英文', link: 'https://docs.mapbox.com/mapbox-gl-js/api/' },
-          { text: '文档丨中文', link: 'https://www.mapbox.cn/mapbox-gl-js/api/' },
+          { text: '文档', link: 'https://docs.mapbox.com/mapbox-gl-js/api/' },
+          { text: '术语', link: 'https://docs.mapbox.com/help/glossary/' },
+          { text: '示例', link: 'https://docs.mapbox.com/mapbox-gl-js/example/' },
         ],
       },
     ],
@@ -50,11 +51,7 @@ export default defineUserConfig({
           link: '/starter/',
         },
         {
-          text: '术语',
-          link: 'https://docs.mapbox.com/help/glossary/',
-        },
-        {
-          text: '服务',
+          text: '地图服务',
           children: [
             '/starter/service/',
             '/starter/service/wmts',
