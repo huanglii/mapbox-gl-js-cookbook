@@ -51,6 +51,10 @@ export default defineUserConfig({
           link: '/starter/',
         },
         {
+          text: '用户界面',
+          children: ['/starter/userinterface/control'],
+        },
+        {
           text: '地图服务',
           children: [
             '/starter/service/',
@@ -108,7 +112,6 @@ export default defineUserConfig({
             '/advance/custom-source',
             '/advance/custom-layer',
             '/advance/track',
-            '/advance/control',
             '/advance/ECharts',
             '/advance/threejs',
             '/advance/met',

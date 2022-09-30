@@ -1,8 +1,42 @@
 # 控件
 
+## 定位
+
+[GeolocateControl](https://docs.mapbox.com/mapbox-gl-js/api/markers/#geolocatecontrol)
+
+```js
+map.addControl(new mapboxgl.GeolocateControl())
+```
+
+## 全屏
+
+[FullscreenControl](https://docs.mapbox.com/mapbox-gl-js/api/markers/#fullscreencontrol) 可以切换地图的全屏模式。
+
+```js
+map.addControl(new mapboxgl.FullscreenControl())
+```
+
+## 导航
+
+[NavigationControl](https://docs.mapbox.com/mapbox-gl-js/api/markers/#navigationcontrol)
+
+```js
+map.addControl(new mapboxgl.NavigationControl({ visualizePitch: true }))
+```
+
+## 比例尺
+
+[ScaleControl](https://docs.mapbox.com/mapbox-gl-js/api/markers/#scalecontrol)
+
+```js
+map.addControl(new mapboxgl.ScaleControl())
+```
+
+## 自定义
+
 Mapbox GL JS 提供了 **`IControl`** 接口。自定义控件必须实现 **`onAdd`** 和 **`onRemove`** 方法，并且有一个 HTML 元素，通常为 `div` 元素。如果要使用 Mapbox GL JS 默认控件样式，需要给元素添加 **`mapboxgl-ctrl`** 样式。
 
-## 官方示例
+### 官方示例
 
 ```js
 // es6 类
@@ -38,10 +72,10 @@ HelloWorldControl.prototype.onRemove = function () {
 }
 ```
 
-## 城市选择器
+### 城市选择器
 
 一个快速定位城市的控件。GitHub 地址：[城市选择器](https://github.com/huanglii/city-selector-control)
 
 <ClientOnly>
-  <common-code-view name="control-city-selector" :is-code-view="false"/>
+  <common-code-view name="starter-userinterface-city-selector" :is-code-view="false"/>
 </ClientOnly>
