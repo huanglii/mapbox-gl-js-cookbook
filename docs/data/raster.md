@@ -1,8 +1,10 @@
 # 栅格
 
-栅格数据一般发布为 `WMS`、`WMTS` 服务，使用 **`raster`** 格式加载；如果是一些图片格式，并且文件大小比较小，比如：温度图、湿度图、雷达图等，则可以根据图片范围使用 **`image`** 格式加载，但只支持 `EPSG:3857`（网络墨卡托） 坐标系的图片，对于其他坐标系的图片如何加载后面会提到。
+栅格数据一般发布为 `WMS`、`WMTS` 服务，使用 `raster` 类型的图层加载，其数据源可以是 `raster`（栅格瓦片）、`image`（图片） 或 `video`（视频）。
 
-## raster
+如果是一些图片格式，并且文件大小比较小，比如：温度图、湿度图、雷达图等，则可以根据图片范围使用 `image` 格式加载，但只支持 `EPSG:3857`（网络墨卡托） 坐标系的图片，对于其他坐标系的图片可以使用 [ImageLayer](/mapbox-gl-js-cookbook/plugins/image-layer.html) 加载。
+
+## 栅格瓦片
 
 <ClientOnly>
   <common-code-view name="data-raster"/>
@@ -10,7 +12,7 @@
 
 > 示例：[Add a raster tile source](https://docs.mapbox.com/mapbox-gl-js/example/map-tiles/)
 
-## image
+## 图片
 
 例如有一张 <a :href="$withBase('/assets/images/3857.png')" target="_blank">图片</a> 要叠加到地图，如下：
 
@@ -22,7 +24,7 @@
 注意，图片坐标系必须为 `EPSG:3857` 才能正确叠加。如果要加载任意投影的图片请转至 [ImageLayer](/mapbox-gl-js-cookbook/plugins/image-layer.html)。
 :::
 
-## video
+## 视频
 
 Mapbox GL JS 还支持视频数据源，同 `image` 差不多。
 

@@ -2,7 +2,7 @@
 
 ## 定位
 
-[GeolocateControl](https://docs.mapbox.com/mapbox-gl-js/api/markers/#geolocatecontrol)
+[GeolocateControl](https://docs.mapbox.com/mapbox-gl-js/api/markers/#geolocatecontrol) 提供一个按钮，该按钮使用浏览器的 [Geolocation API](https://developer.mozilla.org/zh-CN/docs/Web/API/Geolocation) 在地图上定位用户。
 
 ```js
 map.addControl(new mapboxgl.GeolocateControl())
@@ -18,7 +18,7 @@ map.addControl(new mapboxgl.FullscreenControl())
 
 ## 导航
 
-[NavigationControl](https://docs.mapbox.com/mapbox-gl-js/api/markers/#navigationcontrol)
+[NavigationControl](https://docs.mapbox.com/mapbox-gl-js/api/markers/#navigationcontrol) 包含缩放和指南针。
 
 ```js
 map.addControl(new mapboxgl.NavigationControl({ visualizePitch: true }))
@@ -26,11 +26,15 @@ map.addControl(new mapboxgl.NavigationControl({ visualizePitch: true }))
 
 ## 比例尺
 
-[ScaleControl](https://docs.mapbox.com/mapbox-gl-js/api/markers/#scalecontrol)
+[ScaleControl](https://docs.mapbox.com/mapbox-gl-js/api/markers/#scalecontrol) 显示地图上的距离与地面上相应距离的比率。
 
 ```js
 map.addControl(new mapboxgl.ScaleControl())
 ```
+
+<ClientOnly>
+  <common-code-view name="starter-userinterface-control" :is-code-view="false"/>
+</ClientOnly>
 
 ## 自定义
 

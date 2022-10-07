@@ -26,6 +26,7 @@ const map = new mapboxgl.Map({
   style: 'mapbox://styles/mapbox/streets-v11', // 样式
   center: [104.294538, 35.860092], // 地图初始中心点 [经度, 维度]
   zoom: 2.4, // 地图初始缩放级别
+  projection: 'globe', // 地图投影
 })
 ```
 

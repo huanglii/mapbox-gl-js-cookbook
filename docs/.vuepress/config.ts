@@ -52,7 +52,11 @@ export default defineUserConfig({
         },
         {
           text: '用户界面',
-          children: ['/starter/userinterface/control'],
+          children: [
+            '/starter/userinterface/popup',
+            '/starter/userinterface/control',
+            '/starter/userinterface/marker',
+          ],
         },
         {
           text: '地图服务',

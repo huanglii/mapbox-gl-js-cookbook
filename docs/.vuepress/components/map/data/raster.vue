@@ -2,29 +2,30 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script>
+<script setup>
 import baseMap from '../base-map.vue'
-import addRasterLayer from '../../../snippet/data/raster'
-export default {
-  components: {
-    baseMap,
+
+const mapOptions = {
+  zoom: 2,
+  style: {
+    version: 8,
+    sources: {},
+    layers: [],
   },
-  data() {
-    return {
-      mapOptions: {
-        zoom: 2,
-        style: {
-          version: 8,
-          sources: {},
-          layers: [],
-        },
-      },
-    }
-  },
-  methods: {
-    handleMapLoaded(map) {
-      addRasterLayer(map)
+}
+
+const handleMapLoaded = (map) => {
+  map.addLayer({
+    id: 'raster-tile-layer',
+    type: 'raster',
+    source: {
+      type: 'raster',
+      tiles: ['https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg'],
+      tileSize: 256,
     },
-  },
+    paint: {
+      'raster-opacity': 0.8,
+    },
+  })
 }
 </script>
