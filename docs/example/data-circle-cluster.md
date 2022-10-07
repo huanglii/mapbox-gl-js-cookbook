@@ -2,4 +2,4 @@
   <common-code-view name="data-circle-cluster" :is-code-view="false"/>
 </ClientOnly>
 
-@[code js](../.vuepress/snippet/data/circle-cluster.js)
+@[code vue](../.vuepress/components/map/data/circle-cluster.vue)

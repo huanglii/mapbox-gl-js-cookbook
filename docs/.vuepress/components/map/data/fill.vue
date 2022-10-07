@@ -4,6 +4,7 @@
 
 <script setup>
 import baseMap from '../base-map.vue'
+import { withBase } from '@vuepress/client'
 import { STYLE } from '../../../utils/constant'
 
 const mapOptions = {
@@ -15,7 +16,7 @@ const mapOptions = {
 const handleMapLoaded = (map) => {
   map.addSource('chongqing', {
     type: 'geojson',
-    data: this.$withBase('/data/cq.geojson'),
+    data: withBase('/data/cq.geojson'),
   })
   map.addLayer({
     id: 'polygon-layer-0',
