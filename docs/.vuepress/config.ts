@@ -90,7 +90,16 @@ export default defineUserConfig({
           text: '空间数据',
           children: [
             '/data/',
-            '/data/point',
+            {
+              text: '点',
+              children: [
+                '/data/point/',
+                '/data/point/circle',
+                '/data/point/symbol',
+                '/data/point/heatmap',
+                '/data/point/marker',
+              ],
+            },
             '/data/line',
             '/data/polygon',
             '/data/raster',
