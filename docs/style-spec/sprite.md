@@ -21,18 +21,9 @@
 - [https://naivemap.com/mapbox/sprite.json](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite.json?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA) 和 [http://naivemap.com/mapbox/sprite.png](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA) 或
 - [https://naivemap.com/mapbox/sprite@2x.json](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite@2x.json?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA) 和 [https://naivemap.com/mapbox/sprite@2x.png](https://api.mapbox.com/styles/v1/mapbox/light-v9/sprite@2x.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA)（高 DPI 设备）
 
-## 创建雪碧图
+## 添加/创建雪碧图
 
 通常我们会使用一些自己的图标，下面介绍几种使用自定义图标的方法：
-
-### Mapbox Studio
-
-最直接的方法就是在 [Mapbox Studio](https://studio.mapbox.com/) 中上传、管理图标。然后在样式预览中，将 `sprite.png`、`sprite@2x.png` `sprite.json` 文件下载下来使用。
-
-::: tip
-1. 只支持`svg`格式，可以在 [iconfont](https://www.iconfont.cn/) 下载图标上传
-2. 官方推荐的地图图标集：[MAKI ICONS](https://labs.mapbox.com/maki-icons/)
-:::
 
 ### Mapbox GL JS API
 
@@ -47,9 +38,7 @@ map.loadImage('./images/cat.png', (error, image) => {
 })
 ```
 
-#### styleimagemissing
-
-当样式所需的图标或图案丢失时将会触发 [styleimagemissing](https://docs.mapbox.com/mapbox-gl-js/api/#map.event:styleimagemissing)事件，通过该事件可添加指定 `id` 图标。
+此外，当样式所需的图标丢失时将会触发 [styleimagemissing](https://docs.mapbox.com/mapbox-gl-js/api/#map.event:styleimagemissing) 事件，通过该事件可添加指定 `id` 图标。
 
 ```js
 map.on('styleimagemissing', (e) => {
@@ -63,9 +52,19 @@ map.on('styleimagemissing', (e) => {
 
 > 示例：[Generate and add a missing icon to the map](https://docs.mapbox.com/mapbox-gl-js/example/add-image-missing-generated/)
 
+### Mapbox Studio
+
+最直接的方法就是在 [Mapbox Studio](https://studio.mapbox.com/) 中上传、管理图标。然后在样式预览中，将 `sprite.png`、`sprite@2x.png`、`sprite.json` 和 `sprite@2x.json` 文件下载下来使用。
+
+::: tip
+
+1. 只支持`svg`格式，可以在 [iconfont](https://www.iconfont.cn/) 下载图标上传
+2. 官方推荐的地图图标集：[MAKI ICONS](https://labs.mapbox.com/maki-icons/)
+   :::
+
 ### spritezero
 
-前两种方法都是加载单个图标，如果需要很多图标，建议提前创建好雪碧图，可以使用前面提到的 [Mapbox Studio](https://studio.mapbox.com/) 创建，也可以使用 [spritezero](https://github.com/mapbox/spritezero) 工具创建雪碧图。
+也可以使用 [spritezero](https://github.com/mapbox/spritezero) 工具生成雪碧图文件。
 
 1. 安装
 
@@ -118,6 +117,7 @@ var path = require('path')
 ```
 
 ::: tip
+
 1. 注意`node`版本`v10`及以上
 2. 如果需要将`png`转换为雪碧图，需要修改 [spritezero](https://github.com/mapbox/spritezero/blob/main/lib/generate.js#L124) 源码，将`mapnik.Image.fromSVGBytes`修改为`mapnik.Image.fromBytes`即可
 3. 该库提供了命令行工具：[spritezero-cli](https://github.com/mapbox/spritezero-cli)，可直接从文件夹生成雪碧图
@@ -125,4 +125,4 @@ var path = require('path')
    - 在 `generateLayout` 给 `dataLayout` 添加属性： `sdf: true`
    - [Option to generate SDF sprites](https://github.com/mapbox/spritezero/pull/66)、[@elastic/spritezero](https://github.com/elastic/spritezero)
    - [Demo of SDF sprites](http://www.npeihl.com/maki-sdf-sprites/)
-:::
+     :::
