@@ -1,9 +1,6 @@
 <template>
   <div class="map-wrapper">
-    <div :id="mapContainer" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }">
-      <!-- 自定义层(canvas) -->
-      <slot name="custom"></slot>
-    </div>
+    <div :id="mapContainer" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }"></div>
     <slot v-if="maploaded"></slot>
   </div>
 </template>
@@ -59,7 +56,6 @@ export default {
   mounted() {
     const options = Object.assign({}, this.mapDefaultOptions, this.mapOptions)
     this.initMap(options)
-    window.addEventListener('resize', this.resize)
   },
   methods: {
     initMap(options) {
@@ -102,13 +98,10 @@ export default {
         <div class="title"><b>${title}</b></div>
         <div class="content">
           ${Object.keys(prop)
-            .map((key) => `${`<p><b>${key}: </b>${prop[key]}</p>`}`)
-            .join('')}
+          .map((key) => `${`<p><b>${key}: </b>${prop[key]}</p>`}`)
+          .join('')}
         </div>
       `
-    },
-    resize() {
-      this.map.resize()
     },
   },
 }
@@ -118,6 +111,7 @@ export default {
 .mapboxgl-popup {
   &-content {
     padding: 0;
+
     .title {
       padding: 0 30px 0 10px;
       line-height: 32px;
@@ -125,18 +119,21 @@ export default {
       color: #fff;
       background-color: #3eaf7c;
     }
+
     .content {
       padding: 10px;
       max-height: 200px;
       overflow-x: hidden;
       overflow-y: auto;
       background-color: #fff;
+
       p {
         margin: 0;
         line-height: 24px;
       }
     }
   }
+
   &-close-button {
     outline: none;
     color: #fff;
