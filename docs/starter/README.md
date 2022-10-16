@@ -35,3 +35,25 @@ const map = new mapboxgl.Map({
 </ClientOnly>
 
 > 示例：[Display a globe on a webpage](https://docs.mapbox.com/mapbox-gl-js/example/simple-map/)
+
+因为 Mapbox GL JS 中的图层是异步的。因此，通常使用[事件](https://docs.mapbox.com/mapbox-gl-js/api/map/#map-events)绑定在合适的时间更改地图。例如：
+
+```js
+map.on('load', () => {
+  map.addLayer({
+    id: 'terrain-data',
+    type: 'line',
+    source: {
+      type: 'vector',
+      url: 'mapbox://mapbox.mapbox-terrain-v2',
+    },
+    'source-layer': 'contour',
+  })
+})
+```
+
+此示例代码用于仅在加载地图的资源（包括样式）后添加图层。如果立即运行 `map.addLayer`，则会触发错误：`Error: Style is not done loading`，因为要添加图层的样式不存在。
+
+::: tip
+有关地图图层的渲染，请参考：[样式规范](/mapbox-gl-js-cookbook/style-spec/)。
+:::

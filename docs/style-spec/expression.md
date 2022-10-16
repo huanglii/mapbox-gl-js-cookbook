@@ -16,7 +16,7 @@
 }
 ```
 
-::: warning 注意
+::: warning
 在表达式中， `layout` 属性和 `paint` 属性有一个很重要的区别。`paint` 属性，只要缩放级别发生变化，都会重新计算 `paint` 属性，即使是小数变化，比如在 4.1 - 4.6 之间。而 `layout` 属性只在整数缩放级别时计算，在 4.1 - 4.6 之间不会发生变化，只有在高于 5 或小于 4 时计算。
 :::
 
@@ -58,10 +58,11 @@
 
 ### get
 
-获取要素属性，如果提供了第二个参数，则判断第二个参数对象。如使用要素的 `title` 属性作为注记：
+获取要素属性，如果提供了第二个参数，则判断第二个参数对象。如：
 
 ```js
 'text-field': ['get', 'title'] // 有点意思
+'text-field': ['get', 'name', 'district'] // 重庆市
 ```
 
 ### has
@@ -159,7 +160,7 @@
 支持基本的数学运算，详见：[Math](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#math)
 
 ```js
-;['/', ['get', 'gdp'], 1000]
+['/', ['get', 'gdp'], 1000]
 ```
 
 ## Zoom

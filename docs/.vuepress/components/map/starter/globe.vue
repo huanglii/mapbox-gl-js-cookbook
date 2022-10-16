@@ -6,6 +6,7 @@ const mapOptions = {
   style: STYLE.SATELLITE,
   zoom: 1.2,
   projection: 'globe',
+  interactive: false,
 }
 
 function handleMapLoaded(map) {
