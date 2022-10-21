@@ -3,10 +3,13 @@
 HTML
 
 ```js
-const popup = new mapboxgl.Popup({ className: 'my-class' })
-
-popup.setHTML('<h1>Hello World!</h1>').setLngLat(e.lngLat).addTo(map)
+const popup = new mapboxgl.Popup({ closeOnClick: false })
+  .setLngLat([-96, 37.8])
+  .setHTML('<h1>Hello World!</h1>')
+  .addTo(map)
 ```
+
+> 参考：[Display a popup](https://docs.mapbox.com/mapbox-gl-js/example/popup/)
 
 ReactDOM
 

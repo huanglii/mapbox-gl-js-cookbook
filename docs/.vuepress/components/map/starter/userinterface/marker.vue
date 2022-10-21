@@ -4,6 +4,7 @@
 
 <script setup>
 import mapboxgl from 'mapbox-gl'
+import { withBase } from '@vuepress/client'
 import baseMap from '../../base-map.vue'
 import { STYLE } from '../../../../utils/constant'
 
@@ -35,7 +36,7 @@ const handleMapLoaded = (map) => {
     el.style.height = `${point.iconSize[1]}px`
 
     const img = document.createElement('img')
-    img.src = `https://placekitten.com/g/${point.iconSize.join('/')}/`
+    img.src = withBase('/assets/images/cat.jfif')
     el.appendChild(img)
 
     new mapboxgl.Marker(el).setLngLat(point.coordinates).addTo(map)
