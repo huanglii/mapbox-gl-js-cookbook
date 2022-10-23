@@ -2,4 +2,4 @@
   <common-code-view name="data-video" :is-code-view="false"/>
 </ClientOnly>
 
-@[code js](../.vuepress/snippet/data/video.js)
+@[code vue](../.vuepress/components/map/data/video.vue)
