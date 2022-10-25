@@ -37,8 +37,8 @@ export default {
           const imageData = context.getImageData(0, 0, tileSize, tileSize)
           return imageData
         },
-        hasTile({ z, x, y }) {
-          return (x + y) % 2 === 0
+        hasTile(tile) {
+          return (tile.x + tile.y) % 2 === 0
         },
       })
 

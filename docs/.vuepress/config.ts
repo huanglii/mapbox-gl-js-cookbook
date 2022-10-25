@@ -59,6 +59,10 @@ export default defineUserConfig({
           ],
         },
         {
+          text: '教程',
+          children: ['/starter/tutorials/highlight'],
+        },
+        {
           text: '地图服务',
           children: [
             '/starter/service/',

@@ -5,7 +5,6 @@
 <script setup>
 import { point as pointHelper } from '@turf/helpers'
 import baseMap from '../base-map.vue'
-import addSymbolLayer from '../../../snippet/data/symbol'
 
 const mapOptions = {
   center: [-77.032, 38.9132],

@@ -160,7 +160,7 @@
 支持基本的数学运算，详见：[Math](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#math)
 
 ```js
-['/', ['get', 'gdp'], 1000]
+;['/', ['get', 'gdp'], 1000]
 ```
 
 ## Zoom

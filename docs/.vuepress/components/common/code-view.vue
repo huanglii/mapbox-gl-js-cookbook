@@ -14,7 +14,9 @@ defineProps({
 <template>
   <div class="code-view-wrapper">
     <component :is="`map-${name}`"></component>
-    <a v-if="isCodeView" class="link" :href="$withBase(`/example/${name}.html`)" target="_blank">查看代码</a>
+    <a v-if="isCodeView" class="link" :href="$withBase(`/example/${name}.html`)" target="_blank"
+      >查看代码</a
+    >
   </div>
 </template>
 

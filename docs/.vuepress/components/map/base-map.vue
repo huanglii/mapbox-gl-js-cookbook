@@ -1,6 +1,9 @@
 <template>
   <div class="map-wrapper">
-    <div :id="mapContainer" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }"></div>
+    <div
+      :id="mapContainer"
+      :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }"
+    ></div>
     <slot v-if="maploaded"></slot>
   </div>
 </template>
@@ -98,8 +101,8 @@ export default {
         <div class="title"><b>${title}</b></div>
         <div class="content">
           ${Object.keys(prop)
-          .map((key) => `${`<p><b>${key}: </b>${prop[key]}</p>`}`)
-          .join('')}
+            .map((key) => `${`<p><b>${key}: </b>${prop[key]}</p>`}`)
+            .join('')}
         </div>
       `
     },

@@ -79,31 +79,27 @@ const handleMapLoaded = (map) => {
       ],
     },
   }
-  map.addLayer(
-    {
-      id: 'line-gradient-layer-1',
-      type: 'line',
-      source: {
-        // 'line-gradient' can only be used with GeoJSON sources
-        // and the source must have the 'lineMetrics' option set to true
-        type: 'geojson',
-        lineMetrics: true,
-        data: linestring1,
-      },
-      ...lineGradientLayerOption
-    }
-  )
-  map.addLayer(
-    {
-      id: 'line-gradient-layer-2',
-      type: 'line',
-      source: {
-        type: 'geojson',
-        lineMetrics: true,
-        data: linestring2,
-      },
-      ...lineGradientLayerOption
-    }
-  )
+  map.addLayer({
+    id: 'line-gradient-layer-1',
+    type: 'line',
+    source: {
+      // 'line-gradient' can only be used with GeoJSON sources
+      // and the source must have the 'lineMetrics' option set to true
+      type: 'geojson',
+      lineMetrics: true,
+      data: linestring1,
+    },
+    ...lineGradientLayerOption,
+  })
+  map.addLayer({
+    id: 'line-gradient-layer-2',
+    type: 'line',
+    source: {
+      type: 'geojson',
+      lineMetrics: true,
+      data: linestring2,
+    },
+    ...lineGradientLayerOption,
+  })
 }
 </script>
