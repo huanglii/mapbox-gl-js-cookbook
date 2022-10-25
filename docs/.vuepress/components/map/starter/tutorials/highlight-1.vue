@@ -8,6 +8,7 @@ import baseMap from '../../base-map.vue'
 const mapOptions = {
   center: [-100.486052, 37.830348],
   zoom: 2,
+  interactive: false,
 }
 
 const handleMapLoaded = (map) => {
@@ -15,7 +16,7 @@ const handleMapLoaded = (map) => {
     type: 'geojson',
     data: 'https://docs.mapbox.com/mapbox-gl-js/assets/us_states.geojson',
   })
-  // 普通面图层
+  // 普通图层
   map.addLayer({
     id: 'state-fills',
     type: 'fill',
@@ -32,7 +33,7 @@ const handleMapLoaded = (map) => {
     source: 'states',
     paint: {
       'fill-color': '#627BC1',
-      'fill-opacity': 1,
+      'fill-opacity': 1, // 高亮图层的透明度与原图层
     },
     filter: ['==', ['get', 'STATE_ID'], '999'], // 默认不显示任何要素
   })
@@ -49,7 +50,7 @@ const handleMapLoaded = (map) => {
       map.setFilter('state-fills-highlight', ['==', ['get', 'STATE_ID'], '999'])
     }
   })
-  // 鼠标移出 state-fill 图层时，过滤调所有要素
+  // 鼠标移出 state-fill 图层时，过滤掉所有要素
   map.on('mouseleave', 'state-fills', () => {
     map.setFilter('state-fills-highlight', ['==', ['get', 'STATE_ID'], '999'])
   })

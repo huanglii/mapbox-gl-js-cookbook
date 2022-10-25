@@ -8,6 +8,7 @@ import baseMap from '../../base-map.vue'
 const mapOptions = {
   center: [-100.486052, 37.830348],
   zoom: 2,
+  interactive: false,
 }
 
 let hoveredStateId = null
