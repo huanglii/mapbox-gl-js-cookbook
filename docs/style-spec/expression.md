@@ -56,13 +56,24 @@
 'text-field': ['to-string', ['at', 1, ['get', 'fruits']]] // 香蕉
 ```
 
-### get
+### [get](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#get)
 
-获取要素属性，如果提供了第二个参数，则判断第二个参数对象。如：
+获取要素属性，如果提供了第二个参数，则判断第二个参数对象。语法如下：
+
+```
+["get", string]: value
+
+["get", string, object]: value
+```
+
+示例：
 
 ```js
 'text-field': ['get', 'title'] // 有点意思
-'text-field': ['get', 'name', 'district'] // 重庆市
+// 对象
+'text-field': ['get', 'name', ['literal', { name: '重庆市' }]] // 重庆市
+// 要素属性对象
+'text-field': ['get', 'name', ['object', ['get', 'district']]], // // 重庆市
 ```
 
 ### has
