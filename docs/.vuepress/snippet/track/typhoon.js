@@ -212,10 +212,8 @@ function radiiToPolygon(center, radii) {
   let rSW = radiiArr[2]
   let rNW = radiiArr[3]
 
-  // lineArc 的一个 bug，需将 steps 设置得足够大，生成的圆弧才看起来正常
-  // 详见：https://github.com/Turfjs/turf/pull/1590
   let lineArcOptions = {
-    steps: 1024,
+    steps: 100,
   }
   let ne = lineArc(center, rNE, 0, 90, lineArcOptions).geometry.coordinates
   let se = lineArc(center, rSE, 90, 180, lineArcOptions).geometry.coordinates

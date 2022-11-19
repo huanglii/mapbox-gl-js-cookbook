@@ -1,8 +1,8 @@
 # 面
 
-面可以用 **`fill`** 和 **`fill-extrusion`** 表示。
+## 填充
 
-## fill
+详细规范请查阅：[fill](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#fill)
 
 ```js
 map.addLayer({
@@ -23,7 +23,9 @@ map.addLayer({
   <common-code-view name="data-fill"/>
 </ClientOnly>
 
-## fill-extrusion
+## 填充挤压
+
+详细规范请查阅：[fill-extrusion](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#fill-extrusion)
 
 <ClientOnly>
   <common-code-view name="data-fill-extrusion"/>
