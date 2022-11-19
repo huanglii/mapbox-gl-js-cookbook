@@ -3,8 +3,8 @@
 </template>
 
 <script setup>
-import baseMap from '../base-map.vue'
 import { withBase } from '@vuepress/client'
+import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 
 const mapOptions = {
@@ -21,6 +21,10 @@ const handleMapLoaded = (map) => {
     cluster: true,
     clusterMaxZoom: 10, // 最大聚合 zoom， 超过这个值则不聚合
     clusterRadius: 50, // 聚合半径，默认 50
+    clusterProperties: {
+      // 'sum': ['+', ['to-number', ['get', 'v1']]]
+      'sum': [['+', ['accumulated'], ['get', 'sum']], ['to-number', ['get', 'v1']]]
+    }
   })
   // 聚合图层
   map.addLayer({
@@ -59,6 +63,17 @@ const handleMapLoaded = (map) => {
       'circle-radius': 4,
       'circle-stroke-width': 1,
       'circle-stroke-color': '#fff',
+    },
+  })
+
+  // 不聚合图层
+  map.addLayer({
+    id: 'unclustered-point-1',
+    type: 'symbol',
+    source: 'points',
+    filter: ['!', ['has', 'point_count']],
+    layout: {
+      'text-field': ['accumulated'],
     },
   })
 }

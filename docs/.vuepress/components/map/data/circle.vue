@@ -1,5 +1,5 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
+  <base-map :map-options="mapOptions" :height="220" @load="handleMapLoaded" />
 </template>
 
 <script setup>
@@ -12,9 +12,9 @@ const mapOptions = {
 }
 
 const handleMapLoaded = (map) => {
-  const point1 = pointHelper([-76.536, 39.1817], { id: 1 })
-  const point2 = pointHelper([-76.534, 39.1817], { id: 2 })
-  const point3 = pointHelper([-76.532, 39.1817], { id: 3 })
+  const point1 = pointHelper([-76.536, 39.1817], { fid: 1 })
+  const point2 = pointHelper([-76.534, 39.1817], { fid: 2 })
+  const point3 = pointHelper([-76.532, 39.1817], { fid: 3 })
   const fc = featureCollectionHelper([point1, point2, point3])
 
   map.addSource('points', {
@@ -33,7 +33,7 @@ const handleMapLoaded = (map) => {
       'circle-stroke-color': '#DA4949',
       'circle-stroke-opacity': 0.4,
     },
-    filter: ['==', 'id', 1],
+    filter: ['==', 'fid', 1],
   })
   map.addLayer({
     id: 'circle-layer-2',
@@ -44,7 +44,7 @@ const handleMapLoaded = (map) => {
       'circle-color': '#DA4949',
       'circle-blur': 0.8,
     },
-    filter: ['==', 'id', 2],
+    filter: ['==', 'fid', 2],
   })
   map.addLayer({
     id: 'circle-layer-3',
@@ -57,7 +57,7 @@ const handleMapLoaded = (map) => {
       'circle-stroke-color': '#DA4949',
       'circle-stroke-opacity': 0.5,
     },
-    filter: ['==', 'id', 3],
+    filter: ['==', 'fid', 3],
   })
 }
 </script>

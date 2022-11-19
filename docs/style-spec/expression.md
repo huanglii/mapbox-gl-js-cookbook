@@ -42,7 +42,32 @@
 
 ## [Feature data](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#feature-data)
 
-- feature-state：要素状态，要素状态不是数据的某一属性，需要对通过要素 `id` 设置，如给要素设置 `hover` 状态：`map.setFeatureState({source: 'states', id: hoveredStateId}, {hover: false})`，然后在表达式中即可使用：`['feature-state', 'hover']`
+### [accumulated](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#accumulated)
+
+返回累积的聚合属性的值，只能用于开启聚合的 `GeoJSON` 源的 [clusterProperties](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#geojson-clusterProperties) 选项。如：
+
+```js
+// 聚合点会新增 `sum` 属性，表示聚合的所有点的 `value` 值的和：
+map.addSource('points', {
+  type: 'geojson',
+  data: '/data/point.geojson',
+  cluster: true,
+  clusterProperties: {
+    sum: [
+      ['+', ['accumulated'], ['get', 'sum']],
+      ['get', 'value'], // 要素 value 属性
+    ],
+  },
+})
+```
+
+### [feature-state](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#feature-state)
+
+要素状态，要素状态不是数据的某一属性，需要通过编码对某要素设置，如给要素设置 `hover` 状态（如下），然后在表达式中即可使用：`['feature-state', 'hover']`
+
+```js
+map.setFeatureState({ source: 'states', id: hoveredStateId }, { hover: false })
+```
 
 > 示例：[Create a hover effect](https://docs.mapbox.com/mapbox-gl-js/example/hover-styles/)
 
@@ -73,7 +98,7 @@
 // 对象
 'text-field': ['get', 'name', ['literal', { name: '重庆市' }]] // 重庆市
 // 要素属性对象
-'text-field': ['get', 'name', ['object', ['get', 'district']]], // // 重庆市
+'text-field': ['get', 'name', ['object', ['get', 'district']]], // 重庆市
 ```
 
 ### has

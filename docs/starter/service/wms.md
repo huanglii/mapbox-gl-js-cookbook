@@ -22,5 +22,5 @@ Web Map Service（Web 地图服务），简称 `WMS`。WMS 标准定义了允许
 ```
 
 ::: tip
-注意 url 中的 `bbox` 参数值 `"{bbox-epsg-3857}"`。Mapbox GL JS 会自动计算地图范围替换该值，获取地图。这也是与下面 WMTS 同样用栅格格式，WMS 不会模糊的原因。
+注意 url 中的 `bbox` 参数值 `"{bbox-epsg-3857}"`。Mapbox GL JS 会自动计算地图范围替换该值，获取地图。
 :::

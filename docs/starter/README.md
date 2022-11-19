@@ -20,13 +20,13 @@ import 'mapbox-gl/dist/mapbox-gl.css'
 ```js
 import mapboxgl from 'mapbox-gl'
 
+mapboxgl.accessToken = '<your access token here>'
 const map = new mapboxgl.Map({
-  accessToken: '{YOUR MAPBOX ACCESS TOKEN}'
   container: 'map', // 地图容器 id
   style: 'mapbox://styles/mapbox/streets-v11', // 样式
   center: [104.294538, 35.860092], // 地图初始中心点 [经度, 维度]
   zoom: 2.4, // 地图初始缩放级别
-  projection: 'globe', // 地图投影
+  projection: 'globe', // 地图投影，自 v2.9.0 起支持 'globe'
 })
 ```
 

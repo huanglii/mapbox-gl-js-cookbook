@@ -1,9 +1,6 @@
 <template>
   <div class="map-wrapper">
-    <div
-      :id="mapContainer"
-      :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }"
-    ></div>
+    <div :id="mapContainer" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }"></div>
     <slot v-if="maploaded"></slot>
   </div>
 </template>
@@ -84,10 +81,11 @@ export default {
       if (this.mapClickable) this.map.on('click', this.handleMapClick)
     },
     handleMapClick(evt) {
-      console.log(evt)
       const features = this.map.queryRenderedFeatures(evt.point)
       if (features.length > 0) {
         const { layer, properties } = features[0]
+        console.log(evt, properties)
+
         if (Object.keys(properties).length > 0) {
           new mapboxgl.Popup()
             .setLngLat(evt.lngLat)
@@ -101,8 +99,8 @@ export default {
         <div class="title"><b>${title}</b></div>
         <div class="content">
           ${Object.keys(prop)
-            .map((key) => `${`<p><b>${key}: </b>${prop[key]}</p>`}`)
-            .join('')}
+          .map((key) => `${`<p><b>${key}: </b>${prop[key]}</p>`}`)
+          .join('')}
         </div>
       `
     },

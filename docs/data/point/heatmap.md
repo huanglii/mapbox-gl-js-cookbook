@@ -1,13 +1,6 @@
-# [热力图](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#heatmap)
+# 热力图
 
-部分 **`paint`** 属性：
-| 属性 | 描述 |
-| :-- | :-- |
-| **`heatmap-radius`** | 热力点的影响半径，默认`30` |
-| **`heatmap-weight`** | 权重，默认`1` |
-| **`heatmap-intensity`** | 强度，默认`1` |
-| **`heatmap-opacity`** | 不透明度，默认`1` |
-| **`heatmap-color`** | 颜色，默认值如下： |
+详细规范请查阅：[heatmap](https://docs.mapbox.com/mapbox-gl-js/style-spec/layers/#heatmap)
 
 ```js
 {

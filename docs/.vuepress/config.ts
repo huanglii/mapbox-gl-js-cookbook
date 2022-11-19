@@ -99,6 +99,7 @@ export default defineUserConfig({
               children: [
                 '/data/point/',
                 '/data/point/circle',
+                '/data/point/cluster',
                 '/data/point/symbol',
                 '/data/point/heatmap',
                 '/data/point/marker',

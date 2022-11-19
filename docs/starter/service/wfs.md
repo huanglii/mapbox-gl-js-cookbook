@@ -22,6 +22,6 @@ Web Feature Service（Web 要素服务），简称 WFS。WFS 标准定义了一�
 
 ::: tip
 
-- wfs 会请求全部数据，不适用于大量数据。但是支持空间查询和属性查询，也会经常用到。
-- 文档：[wfs/wms filter](https://docs.geoserver.org/latest/en/user/filter/index.html#filtering)
+- WFS 会请求全部数据，不适用于大量数据。但是支持空间查询和属性查询，也会经常用到。
+- 文档：[GeoServer Filtering](https://docs.geoserver.org/latest/en/user/filter/index.html#filtering)
   :::

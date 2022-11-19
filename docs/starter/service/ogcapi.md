@@ -4,7 +4,7 @@
 
 ## OGC API - FEATURES
 
-[OGC API - FEATURES](https://github.com/opengeospatial/ogcapi-features) 即 WFS3.0，提供在 Web 上创建、修改和查询空间数据的功能，并为希望遵循标准方式共享要素数据的 API 指定要求和建议。
+[OGC API - FEATURES](https://github.com/opengeospatial/ogcapi-features) 即 WFS 3.0，提供在 Web 上创建、修改和查询空间数据的功能，并为希望遵循标准方式共享要素数据的 API 指定要求和建议。
 
 如，查询 `test:point` 集合下的所有数据：
 

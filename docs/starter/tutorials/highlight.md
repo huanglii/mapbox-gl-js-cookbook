@@ -22,4 +22,4 @@ Mapbox GL JS 中有两种方法可以实现要素高亮效果。
   <common-code-view name="starter-tutorials-highlight-2"/>
 </ClientOnly>
 
-> 鼠标悬停效果：[Create a hover effect](http://localhost:8080/mapbox-gl-js-cookbook/data/point/symbol.html)
+> 鼠标悬停效果：[Create a hover effect](https://docs.mapbox.com/mapbox-gl-js/example/hover-styles/)
