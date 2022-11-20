@@ -1,8 +1,6 @@
 # 表达式
 
-> [expressions](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/)
-
-任何 `layout` 属性、`paint` 属性或 `filter` 的值都可以是表达式。示例：
+任何 `layout` 属性、`paint` 属性或 `filter` 的值都可以是表达式（[expressions](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/)）。示例如下：
 
 ```js
 {
@@ -35,6 +33,13 @@
   "color": "#F00"
 },
 ```
+
+<iframe src="https://codesandbox.io/embed/mapbox-gl-cookbook-playground-7z3rz3?fontsize=14&hidenavigation=1&module=%2Fsrc%2FApp.vue&theme=light&view=preview"
+  style="width:100%; height:300px; border:0; border-radius: 6px; overflow:hidden;"
+  title="mapbox-gl-cookbook-playground"
+  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
 
 ## [Types](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#types)
 
@@ -227,7 +232,7 @@ map.setFeatureState({ source: 'states', id: hoveredStateId }, { hover: false })
 支持基本的数学运算，详见：[Math](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#math)
 
 ```js
-;['/', ['get', 'gdp'], 1000]
+'circle-radius': ['/', ['get', 'gdp'], 1000]
 ```
 
 ## Zoom
