@@ -44,10 +44,10 @@
 
 ### [accumulated](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#accumulated)
 
-返回累积的聚合属性的值，只能用于开启聚合的 `GeoJSON` 源的 [clusterProperties](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#geojson-clusterProperties) 选项。如：
+返回累积的聚合属性的值，只能用于开启聚合的 `GeoJSON` 源的 [clusterProperties](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#geojson-clusterProperties) 选项，如：
 
 ```js
-// 聚合点会新增 `sum` 属性，表示聚合的所有点的 `value` 值的和：
+// 聚合点会新增 `sum` 属性，表示聚合的所有点的 `value` 值的和
 map.addSource('points', {
   type: 'geojson',
   data: '/data/point.geojson',
@@ -61,6 +61,8 @@ map.addSource('points', {
 })
 ```
 
+> 参考：[聚合](/mapbox-gl-js-cookbook/data/point/cluster)
+
 ### [feature-state](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#feature-state)
 
 要素状态，要素状态不是数据的某一属性，需要通过编码对某要素设置，如给要素设置 `hover` 状态（如下），然后在表达式中即可使用：`['feature-state', 'hover']`
@@ -73,9 +75,9 @@ map.setFeatureState({ source: 'states', id: hoveredStateId }, { hover: false })
 
 ## [Lookup](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#lookup)
 
-### at
+### [at](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#at)
 
-从数组中检索项目
+从数组中检索项目。
 
 ```js
 'text-field': ['to-string', ['at', 1, ['get', 'fruits']]] // 香蕉
@@ -85,7 +87,7 @@ map.setFeatureState({ source: 'states', id: hoveredStateId }, { hover: false })
 
 获取要素属性，如果提供了第二个参数，则判断第二个参数对象。语法如下：
 
-```
+```js
 ["get", string]: value
 
 ["get", string, object]: value
@@ -171,10 +173,39 @@ map.setFeatureState({ source: 'states', id: hoveredStateId }, { hover: false })
 ] // 因为 type = 99，所以最终会显示 fruit-icon。
 ```
 
-## Ramps, scales, curves
+## [Ramps, scales, curves](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#ramps-scales-curves)
 
-- interpolate：插值，支持 `linear`、`exponential` 和 `cubic-bezier`
-- step：分段
+### [interpolate](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#interpolate)
+
+通过在输入和输出值对之间插值来产生连续、平滑的结果。支持 `linear`、`exponential` 和 `cubic-bezier`，`stops` 数值必须严格增序。语法如下：
+
+```js
+["interpolate",
+  interpolation: ["linear"] | ["exponential", base] | ["cubic-bezier", x1, y1, x2, y2],
+  input: number,
+  stop_input_1: number, stop_output_1: OutputType,
+  stop_input_n: number, stop_output_n: OutputType, ...
+]: OutputType (number, array<number>, or Color)
+```
+
+`interpolate-hcl` 和 `interpolate-lab` 与其类似，但是输出必须为 `Color`，前者在 Hue-Chroma-Luminance 色彩空间插值，后者在 CIELAB 色彩空间插值。
+
+> 参考：[比例符号图](/mapbox-gl-js-cookbook/data/thematic.html#比例符号图)、[台风路径](/mapbox-gl-js-cookbook/advance/track.html#台风路径)
+
+### [step](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#step)
+
+通过评估由输入和输出值对定义的分段常数函数，产生离散的阶梯式结果。`stops` 数值必须严格增序。语法如下：
+
+```js
+["step",
+  input: number,
+  stop_output_0: OutputType,
+  stop_input_1: number, stop_output_1: OutputType,
+  stop_input_n: number, stop_output_n: OutputType, ...
+]: OutputType
+```
+
+> 参考：[点密度图](/mapbox-gl-js-cookbook/data/thematic.html#点密度图)
 
 ## Variable binding
 

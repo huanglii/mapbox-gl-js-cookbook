@@ -83,12 +83,15 @@ export default {
     handleMapClick(evt) {
       const features = this.map.queryRenderedFeatures(evt.point)
       if (features.length > 0) {
-        const { layer, properties } = features[0]
-        console.log(evt, properties)
-
+        const feature = features[0]
+        const { layer, properties, geometry } = feature
+        let lngLat = evt.lngLat
+        if (geometry.type === 'Point') {
+          lngLat = geometry.coordinates
+        }
         if (Object.keys(properties).length > 0) {
           new mapboxgl.Popup()
-            .setLngLat(evt.lngLat)
+            .setLngLat(lngLat)
             .setHTML(this.createPropHtml(layer.id, properties))
             .addTo(this.map)
         }

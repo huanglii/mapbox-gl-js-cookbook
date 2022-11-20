@@ -3,8 +3,8 @@
 </template>
 
 <script setup>
-import baseMap from '../base-map.vue'
 import { withBase } from '@vuepress/client'
+import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 
 const mapOptions = {

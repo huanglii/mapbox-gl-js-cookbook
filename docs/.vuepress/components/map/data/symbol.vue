@@ -72,6 +72,7 @@ const handleMapLoaded = (map) => {
     source: {
       type: 'geojson',
       data: point1,
+      generateId: true,
     },
     paint: {
       'icon-opacity': 0.8,

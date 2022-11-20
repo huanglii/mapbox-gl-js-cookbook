@@ -12,7 +12,7 @@ map.addSource('points', {
 })
 ```
 
-添加聚合图层时，分三个图层：① 聚合图层，② 聚合数量图层，③ 不聚合的点图层。
+添加聚合图层时，分三个图层：① 聚合图层（circle），② 聚合数量图层（symbol），③ 不聚合的点图层（circle）。
 
 <ClientOnly>
   <common-code-view name="data-circle-cluster"/>
