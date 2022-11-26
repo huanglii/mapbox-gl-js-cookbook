@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import mapboxgl from 'mapbox-gl';
+import mapboxgl from 'mapbox-gl'
 import BaseMap from '../base-map.vue'
 
 const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {

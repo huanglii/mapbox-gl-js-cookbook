@@ -47,12 +47,17 @@ const handleMapLoaded = (e) => {
       'fill-color': [
         'match',
         ['get', 'type'],
-        1, '#FFD273',
-        2, '#E86D68',
-        3, '#A880FF',
-        4, '#68E0E8',
-        5, '#9BFF69',
-        '#fff'
+        1,
+        '#FFD273',
+        2,
+        '#E86D68',
+        3,
+        '#A880FF',
+        4,
+        '#68E0E8',
+        5,
+        '#9BFF69',
+        '#fff',
       ],
       // 'fill-color': {
       //   property: 'type',

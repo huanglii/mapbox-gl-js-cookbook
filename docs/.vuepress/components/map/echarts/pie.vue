@@ -14,25 +14,21 @@ import { PieChart } from 'echarts/charts'
 import { TitleComponent } from 'echarts/components'
 import { CanvasRenderer } from 'echarts/renderers'
 
-echarts.use([
-  PieChart,
-  TitleComponent,
-  CanvasRenderer
-])
+echarts.use([PieChart, TitleComponent, CanvasRenderer])
 
 interface DataProperties {
   id: string | number
-  name: string,
-  v1: number,
-  v2: number,
+  name: string
+  v1: number
+  v2: number
   v3: number
-  coords?: Position,
+  coords?: Position
 }
 
 interface ClusterProperties {
-  cluster: boolean,
-  cluster_id: number,
-  point_count: number,
+  cluster: boolean
+  cluster_id: number
+  point_count: number
   point_count_abbreviated: number
 }
 
@@ -183,7 +179,7 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
       const { seriesName, data } = params
       const nameAndCoords = seriesName!.split('|')
       const name = nameAndCoords[0]
-      const coords = nameAndCoords[1].split(',').map(item => Number(item)) as mapboxgl.LngLatLike
+      const coords = nameAndCoords[1].split(',').map((item) => Number(item)) as mapboxgl.LngLatLike
       // @ts-ignore
       const description = `<p style="padding: 0 10px;">${name}: ${data.name} ${data.value} 万顷</p>`
       popup.setLngLat(coords).setHTML(description).addTo(map)

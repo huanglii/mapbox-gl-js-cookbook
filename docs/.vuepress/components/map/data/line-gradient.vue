@@ -17,11 +17,11 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
     type: 'FeatureCollection',
     features: [
       {
-        "type": "Feature",
-        "properties": {},
-        "geometry": {
-          "type": "MultiLineString",
-          "coordinates": [
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'MultiLineString',
+          coordinates: [
             [
               [-77.044211, 38.852924],
               [-77.045659, 38.860158],
@@ -31,7 +31,7 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
               [-77.040338, 38.86943],
               [-77.04264, 38.872528],
               [-77.03696, 38.878424],
-              [-77.032309, 38.87937]
+              [-77.032309, 38.87937],
             ],
             [
               [-77.030056, 38.880945],
@@ -41,17 +41,17 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
               [-77.028054, 38.887449],
               [-77.02806, 38.892088],
               [-77.03364, 38.892108],
-              [-77.033643, 38.899926]
-            ]
-          ]
-        }
+              [-77.033643, 38.899926],
+            ],
+          ],
+        },
       },
       {
-        "type": "Feature",
-        "properties": {},
-        "geometry": {
-          "type": "LineString",
-          "coordinates": [
+        type: 'Feature',
+        properties: {},
+        geometry: {
+          type: 'LineString',
+          coordinates: [
             [-77.034211, 38.852924],
             [-77.035659, 38.860158],
             [-77.0342329, 38.862326],
@@ -68,11 +68,11 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
             [-77.018054, 38.887449],
             [-77.01806, 38.892088],
             [-77.02364, 38.892108],
-            [-77.023643, 38.899926]
-          ]
-        }
-      }
-    ]
+            [-77.023643, 38.899926],
+          ],
+        },
+      },
+    ],
   }
 
   map.addSource('line-source', {

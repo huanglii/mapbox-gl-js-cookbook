@@ -69,10 +69,6 @@ const handleMapLoaded = (e: mapboxgl.Map) => {
 const setFilter = (value: string) => {
   const min = Number(value.split('-')[0])
   const max = Number(value.split('-')[1])
-  map.setFilter('choropleth-layer', [
-    'all',
-    ['>=', ['get', 'value'], min],
-    ['<', ['get', 'value'], max],
-  ])
+  map.setFilter('choropleth-layer', ['all', ['>=', ['get', 'value'], min], ['<', ['get', 'value'], max]])
 }
 </script>

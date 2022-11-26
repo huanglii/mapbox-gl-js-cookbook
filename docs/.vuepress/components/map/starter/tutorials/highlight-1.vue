@@ -41,11 +41,7 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
   // 鼠标移入 state-fill 图层时，根据要素属性设置 state-fills-highlight 图层的 filter
   map.on('mousemove', 'state-fills', (e) => {
     if (e.features && e.features[0].properties) {
-      map.setFilter('state-fills-highlight', [
-        '==',
-        ['get', 'STATE_ID'],
-        e.features[0].properties['STATE_ID'],
-      ])
+      map.setFilter('state-fills-highlight', ['==', ['get', 'STATE_ID'], e.features[0].properties['STATE_ID']])
     } else {
       map.setFilter('state-fills-highlight', ['==', ['get', 'STATE_ID'], '999'])
     }

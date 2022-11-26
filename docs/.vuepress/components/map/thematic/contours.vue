@@ -7,7 +7,7 @@ import BaseMap from '../base-map.vue'
 
 const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   center: [107.781722, 30.194068],
-  zoom: 14
+  zoom: 14,
 }
 
 const handleMapLoaded = (map: mapboxgl.Map) => {

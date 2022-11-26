@@ -1,10 +1,10 @@
 <script setup lang="ts">
 interface Props {
-  name: string,
-  isCodeView?: boolean,
+  name: string
+  isCodeView?: boolean
 }
 withDefaults(defineProps<Props>(), {
-  isCodeView: true
+  isCodeView: true,
 })
 </script>
 

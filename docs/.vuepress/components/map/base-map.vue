@@ -14,13 +14,13 @@ import { createPropHtml } from '../../utils'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
 interface Props {
-  height?: number,
+  height?: number
   mapOptions?: Omit<mapboxgl.MapboxOptions, 'container'>
   mapClickable?: boolean
 }
 const props = withDefaults(defineProps<Props>(), {
   height: 520,
-  mapClickable: true
+  mapClickable: true,
 })
 const emit = defineEmits<{
   (e: 'load', map: mapboxgl.Map): void
@@ -76,10 +76,7 @@ const initMap = (options: mapboxgl.MapboxOptions) => {
           lngLat = geometry.coordinates as [number, number]
         }
         if (properties) {
-          new mapboxgl.Popup()
-            .setLngLat(lngLat)
-            .setHTML(createPropHtml(layer.id, properties))
-            .addTo(map)
+          new mapboxgl.Popup().setLngLat(lngLat).setHTML(createPropHtml(layer.id, properties)).addTo(map)
         }
       }
     })

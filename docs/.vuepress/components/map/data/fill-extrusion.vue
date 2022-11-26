@@ -24,20 +24,8 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
     },
     minzoom: 5,
     paint: {
-      'fill-extrusion-color': [
-        'interpolate-hcl',
-        ['linear'],
-        ['get', 'area'],
-        0, '#6BD089',
-        5000, '#DC6C6C',
-      ],
-      'fill-extrusion-height': [
-        'interpolate',
-        ['linear'],
-        ['zoom'],
-        5, 0,
-        8, ['*', ['get', 'area'], 10],
-      ],
+      'fill-extrusion-color': ['interpolate-hcl', ['linear'], ['get', 'area'], 0, '#6BD089', 5000, '#DC6C6C'],
+      'fill-extrusion-height': ['interpolate', ['linear'], ['zoom'], 5, 0, 8, ['*', ['get', 'area'], 10]],
       'fill-extrusion-base': 0,
       'fill-extrusion-opacity': 0.6,
     },

@@ -1,4 +1,3 @@
-
 <template>
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>

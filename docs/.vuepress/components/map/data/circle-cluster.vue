@@ -23,8 +23,11 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
     clusterRadius: 50, // 聚合半径，默认 50
     clusterProperties: {
       // 'sum': ['+', ['to-number', ['get', 'v1']]]
-      'sum': [['+', ['accumulated'], ['get', 'sum']], ['to-number', ['get', 'v1']]]
-    }
+      sum: [
+        ['+', ['accumulated'], ['get', 'sum']],
+        ['to-number', ['get', 'v1']],
+      ],
+    },
   })
   // 聚合图层
   map.addLayer({

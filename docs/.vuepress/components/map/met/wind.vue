@@ -12,5 +12,4 @@ const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   zoom: 2.8,
   minZoom: 1,
 }
-
 </script>

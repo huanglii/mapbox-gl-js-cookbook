@@ -90,10 +90,7 @@ export default {
           lngLat = geometry.coordinates
         }
         if (Object.keys(properties).length > 0) {
-          new mapboxgl.Popup()
-            .setLngLat(lngLat)
-            .setHTML(this.createPropHtml(layer.id, properties))
-            .addTo(this.map)
+          new mapboxgl.Popup().setLngLat(lngLat).setHTML(this.createPropHtml(layer.id, properties)).addTo(this.map)
         }
       }
     },
@@ -102,8 +99,8 @@ export default {
         <div class="title"><b>${title}</b></div>
         <div class="content">
           ${Object.keys(prop)
-          .map((key) => `${`<p><b>${key}: </b>${prop[key]}</p>`}`)
-          .join('')}
+            .map((key) => `${`<p><b>${key}: </b>${prop[key]}</p>`}`)
+            .join('')}
         </div>
       `
     },

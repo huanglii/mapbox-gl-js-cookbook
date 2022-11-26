@@ -19,10 +19,7 @@
   // 矢量瓦片数据源
   "mapbox-streets": {
     "type": "vector",
-    "tiles": [
-      "https://a.naivemap.com/tiles/{z}/{x}/{y}.pbf",
-      "https://b.naivemap.com/tiles/{z}/{x}/{y}.pbf"
-    ]
+    "tiles": ["https://a.naivemap.com/tiles/{z}/{x}/{y}.pbf", "https://b.naivemap.com/tiles/{z}/{x}/{y}.pbf"]
   },
   // 栅格瓦片数据源
   "tdt_vec_w": {
