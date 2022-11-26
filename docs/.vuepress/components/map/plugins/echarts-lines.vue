@@ -2,20 +2,21 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
-import EChartsLayer from '@naivemap/mapbox-gl-echarts-layer'
-import baseMap from '../base-map.vue'
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
+import EChartsLayer, { ECOption } from '@naivemap/mapbox-gl-echarts-layer'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.MONOCHROME,
   center: [104.114129, 37.550339],
   zoom: 3,
   interactive: false,
 }
-const handleMapLoaded = (map) => {
+
+const handleMapLoaded = (map: mapboxgl.Map) => {
   const colors = ['#00F8FF', '#00FF00', '#FFF800', '#FF0000']
-  const getColor = (value) => {
+  const getColor = (value: number) => {
     if (value <= 10) {
       return colors[0]
     } else if (value > 10 && value <= 20) {
@@ -61,8 +62,8 @@ const handleMapLoaded = (map) => {
     [101.777819, 36.617289, 106.547764, 29.565907, '西宁', 2],
   ]
 
-  const scatterData = []
-  const lineData = []
+  const scatterData: any[] = []
+  const lineData: any[] = []
 
   for (let i = 0; i < data.length; i++) {
     const item = data[i]
@@ -80,7 +81,7 @@ const handleMapLoaded = (map) => {
     })
   }
 
-  const option = {
+  const option: ECOption = {
     tooltip: {
       trigger: 'item',
       textStyle: {
@@ -96,6 +97,7 @@ const handleMapLoaded = (map) => {
         name: 'bgLine',
         type: 'lines',
         lineStyle: {
+          // @ts-ignore
           color: (param) => getColor(param.data.value),
           width: 2,
           opacity: 0.5,
@@ -117,6 +119,7 @@ const handleMapLoaded = (map) => {
         },
         symbolSize: 5,
         itemStyle: {
+          // @ts-ignore
           color: (param) => getColor(param.data.value[2]),
         },
         data: scatterData,
@@ -131,6 +134,7 @@ const handleMapLoaded = (map) => {
           symbolSize: 5,
         },
         lineStyle: {
+          // @ts-ignore
           color: (param) => getColor(param.data.value),
           width: 0,
           curveness: 0.2,
@@ -140,7 +144,7 @@ const handleMapLoaded = (map) => {
     ],
   }
 
-  const layer = new EChartsLayer('layer-id', option)
+  const layer = new EChartsLayer('lines-layer', option)
   map.addLayer(layer)
 }
 </script>

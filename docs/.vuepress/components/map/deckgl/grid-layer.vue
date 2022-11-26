@@ -4,14 +4,14 @@
   </base-map>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { withBase } from '@vuepress/client'
 import { MapboxLayer } from '@deck.gl/mapbox'
 import { GridLayer } from '@deck.gl/aggregation-layers'
-import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.DARK,
   center: [-122.441107, 37.755579],
   zoom: 11.4,
@@ -19,7 +19,8 @@ const mapOptions = {
   pitch: 50,
   antialias: true,
 }
-const handleMapLoaded = (map) => {
+
+const handleMapLoaded = (map: mapboxgl.Map) => {
   const layer = new MapboxLayer({
     id: 'grid-layer',
     type: GridLayer,
@@ -30,7 +31,7 @@ const handleMapLoaded = (map) => {
     elevationScale: 4,
     getPosition: (d) => d.COORDINATES,
     onHover: (info) => {
-      const $tooltip = document.getElementById('grid-layer-tooltip')
+      const $tooltip = document.getElementById('grid-layer-tooltip')!
       if (info.object) {
         $tooltip.innerHTML = `${info.object.position.join(', ')}\nCount: ${info.object.count}`
         $tooltip.style.display = 'block'

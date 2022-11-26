@@ -2,19 +2,19 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import mapboxgl from 'mapbox-gl'
 import { withBase } from '@vuepress/client'
 import baseMap from '../../base-map.vue'
 import { STYLE } from '../../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.GRAY,
   center: [-63.8904723180264, -16.806481318445833],
   zoom: 5.8,
 }
 
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   const points = [
     {
       iconSize: [80, 80],
@@ -39,7 +39,7 @@ const handleMapLoaded = (map) => {
     img.src = withBase('/assets/images/cat.jfif')
     el.appendChild(img)
 
-    new mapboxgl.Marker(el).setLngLat(point.coordinates).addTo(map)
+    new mapboxgl.Marker(el).setLngLat(point.coordinates as mapboxgl.LngLatLike).addTo(map)
   })
 }
 </script>

@@ -2,16 +2,16 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
-import { withBase } from '@vuepress/client'
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import ImageLayer from '@naivemap/mapbox-gl-image-layer'
-import baseMap from '../base-map.vue'
+import { withBase } from '@vuepress/client'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   center: [107.744809, 30.180706],
   zoom: 6,
 }
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   const layer = new ImageLayer('layer-4326', {
     url: withBase('/assets/images/4326.png'),
     projection: 'EPSG:4326',

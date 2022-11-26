@@ -2,15 +2,15 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
-import baseMap from '../base-map.vue'
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { withBase } from '@vuepress/client'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   center: [104.2945384995, 35.8600924965],
   zoom: 2.4,
 }
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   map.addLayer(
     {
       id: 'image-layer',

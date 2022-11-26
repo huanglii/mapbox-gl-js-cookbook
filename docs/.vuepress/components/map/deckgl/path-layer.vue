@@ -4,14 +4,14 @@
   </base-map>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { withBase } from '@vuepress/client'
 import { MapboxLayer } from '@deck.gl/mapbox'
 import { PathLayer } from '@deck.gl/layers'
-import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.GRAY,
   center: [-122.275307, 37.802267],
   zoom: 9,
@@ -19,7 +19,8 @@ const mapOptions = {
   pitch: 45,
   bearing: 30,
 }
-const handleMapLoaded = (map) => {
+
+const handleMapLoaded = (map: mapboxgl.Map) => {
   /**
    * Data format:
    * [
@@ -36,7 +37,8 @@ const handleMapLoaded = (map) => {
     type: PathLayer,
     data: withBase('/data/bart-lines.json'),
     pickable: true,
-    rounded: true,
+    jointRounded: true,
+    capRounded: true,
     billboard: true,
     widthScale: 10,
     widthMinPixels: 2,
@@ -44,7 +46,7 @@ const handleMapLoaded = (map) => {
     getColor: (d) => JSON.parse(d.color),
     getWidth: () => 5,
     onHover: (info) => {
-      const $tooltip = document.getElementById('path-layer-tooltip')
+      const $tooltip = document.getElementById('path-layer-tooltip')!
       if (info.object) {
         $tooltip.innerHTML = `名称：${info.object.name}`
         $tooltip.style.display = 'block'

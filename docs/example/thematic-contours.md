@@ -2,4 +2,4 @@
   <common-code-view name="thematic-contours" :is-code-view="false"/>
 </ClientOnly>
 
-@[code js](../.vuepress/snippet/thematic/contours.js)
+@[code vue](../.vuepress/components/map/thematic/contours.vue)

@@ -36,18 +36,8 @@ class Text3DLayer {
   render(gl, matrix) {
     const m = new THREE.Matrix4().fromArray(matrix)
     const l = new THREE.Matrix4()
-      .makeTranslation(
-        this.modelTransform.translateX,
-        this.modelTransform.translateY,
-        this.modelTransform.translateZ
-      )
-      .scale(
-        new THREE.Vector3(
-          this.modelTransform.scale,
-          -this.modelTransform.scale,
-          this.modelTransform.scale
-        )
-      )
+      .makeTranslation(this.modelTransform.translateX, this.modelTransform.translateY, this.modelTransform.translateZ)
+      .scale(new THREE.Vector3(this.modelTransform.scale, -this.modelTransform.scale, this.modelTransform.scale))
 
     this.camera.projectionMatrix = m.multiply(l)
     this.renderer.state.reset()

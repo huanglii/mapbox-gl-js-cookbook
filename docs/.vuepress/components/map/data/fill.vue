@@ -2,18 +2,18 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { withBase } from '@vuepress/client'
-import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.GRAY,
   center: [107.744809, 30.180706],
   zoom: 6,
 }
 
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   map.addSource('chongqing', {
     type: 'geojson',
     data: withBase('/data/cq.geojson'),

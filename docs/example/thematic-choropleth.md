@@ -2,4 +2,4 @@
   <common-code-view name="thematic-choropleth" :is-code-view="false"/>
 </ClientOnly>
 
-@[code js](../.vuepress/snippet/thematic/choropleth.js)
+@[code vue](../.vuepress/components/map/thematic/choropleth.vue)

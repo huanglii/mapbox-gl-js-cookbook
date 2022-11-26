@@ -2,16 +2,16 @@
   <base-map :map-options="mapOptions" :height="220" @load="handleMapLoaded" />
 </template>
 
-<script setup>
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { point as pointHelper, featureCollection as featureCollectionHelper } from '@turf/helpers'
-import baseMap from '../base-map.vue'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   center: [-76.534, 39.1817],
   zoom: 16,
 }
 
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   const point1 = pointHelper([-76.536, 39.1817], { fid: 1 })
   const point2 = pointHelper([-76.534, 39.1817], { fid: 2 })
   const point3 = pointHelper([-76.532, 39.1817], { fid: 3 })

@@ -2,11 +2,11 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
-import baseMap from '../base-map.vue'
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.DARK,
   center: [116.3162548, 36.9017491],
   zoom: 2,
@@ -14,7 +14,7 @@ const mapOptions = {
   minZoom: 1,
 }
 
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   map.addSource('earthquakes', {
     type: 'vector',
     url: 'mapbox://huanglii.d41k5fmy',

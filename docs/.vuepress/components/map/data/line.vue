@@ -2,16 +2,16 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { lineString as lineStringHelper } from '@turf/helpers'
-import baseMap from '../base-map.vue'
 
-const mapOptions = {
-  center: [-122.486552 + 0.004, 37.831048],
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
+  center: [-122.482552, 37.831048],
   zoom: 14.5,
 }
 
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   const lineStringCoordinates = [
     [-122.48404, 37.830497],
     [-122.483482, 37.82992],

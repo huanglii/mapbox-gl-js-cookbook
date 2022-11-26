@@ -2,7 +2,7 @@
 
 ## 风场
 
-使用风场插件：[wind-layer](https://sakitam-fdd.github.io/wind-layer/zh/)
+使用风场插件：[wind-layer](https://blog.sakitam.com/wind-layer/guide/mapbox-gl)
 
 <!-- <ClientOnly>
   <common-code-view name="met-wind" />

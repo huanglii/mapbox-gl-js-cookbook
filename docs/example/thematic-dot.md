@@ -2,4 +2,4 @@
   <common-code-view name="thematic-dot" :is-code-view="false"/>
 </ClientOnly>
 
-@[code js](../.vuepress/snippet/thematic/dot.js)
+@[code vue](../.vuepress/components/map/thematic/dot.vue)

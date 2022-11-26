@@ -52,11 +52,7 @@ export default defineUserConfig({
         },
         {
           text: '用户界面',
-          children: [
-            '/starter/userinterface/popup',
-            '/starter/userinterface/control',
-            '/starter/userinterface/marker',
-          ],
+          children: ['/starter/userinterface/popup', '/starter/userinterface/control', '/starter/userinterface/marker'],
         },
         {
           text: '教程',
