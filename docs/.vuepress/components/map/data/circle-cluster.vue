@@ -2,19 +2,19 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { withBase } from '@vuepress/client'
-import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.DARK,
   center: [107.744809, 30.180706],
   zoom: 6,
   minZoom: 4,
 }
 
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   map.addSource('points', {
     type: 'geojson',
     data: withBase('/data/point.geojson'),
@@ -63,17 +63,6 @@ const handleMapLoaded = (map) => {
       'circle-radius': 4,
       'circle-stroke-width': 1,
       'circle-stroke-color': '#fff',
-    },
-  })
-
-  // 不聚合图层
-  map.addLayer({
-    id: 'unclustered-point-1',
-    type: 'symbol',
-    source: 'points',
-    filter: ['!', ['has', 'point_count']],
-    layout: {
-      'text-field': ['accumulated'],
     },
   })
 }

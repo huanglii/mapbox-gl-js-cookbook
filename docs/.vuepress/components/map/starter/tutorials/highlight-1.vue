@@ -2,16 +2,16 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
-import baseMap from '../../base-map.vue'
+<script setup lang="ts">
+import BaseMap from '../../base-map.vue'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   center: [-100.486052, 37.830348],
   zoom: 2,
   interactive: false,
 }
 
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   map.addSource('states', {
     type: 'geojson',
     data: 'https://docs.mapbox.com/mapbox-gl-js/assets/us_states.geojson',
@@ -40,7 +40,7 @@ const handleMapLoaded = (map) => {
 
   // 鼠标移入 state-fill 图层时，根据要素属性设置 state-fills-highlight 图层的 filter
   map.on('mousemove', 'state-fills', (e) => {
-    if (e.features.length > 0) {
+    if (e.features && e.features[0].properties) {
       map.setFilter('state-fills-highlight', [
         '==',
         ['get', 'STATE_ID'],

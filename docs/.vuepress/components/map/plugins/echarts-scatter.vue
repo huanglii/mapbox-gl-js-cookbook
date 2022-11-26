@@ -2,18 +2,18 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
-import EChartsLayer from '@naivemap/mapbox-gl-echarts-layer'
-import baseMap from '../base-map.vue'
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
+import EChartsLayer, { ECOption } from '@naivemap/mapbox-gl-echarts-layer'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.GRAY,
   center: [104.114129, 37.550339],
   zoom: 3,
   interactive: false,
 }
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   const data = [
     { name: '海门', value: 9 },
     { name: '鄂尔多斯', value: 12 },
@@ -399,9 +399,9 @@ const handleMapLoaded = (map) => {
     大庆: [125.03, 46.58],
   }
   const convertData = function (data) {
-    var res = []
-    for (var i = 0; i < data.length; i++) {
-      var geoCoord = geoCoordMap[data[i].name]
+    const res: any[] = []
+    for (let i = 0; i < data.length; i++) {
+      const geoCoord = geoCoordMap[data[i].name]
       if (geoCoord) {
         res.push({
           name: data[i].name,
@@ -411,7 +411,7 @@ const handleMapLoaded = (map) => {
     }
     return res
   }
-  const option = {
+  const option: ECOption = {
     tooltip: {
       trigger: 'item',
     },
@@ -474,7 +474,7 @@ const handleMapLoaded = (map) => {
     ],
   }
 
-  const layer = new EChartsLayer('layer-id', option)
+  const layer = new EChartsLayer('scatter-layer', option)
   map.addLayer(layer)
 }
 </script>

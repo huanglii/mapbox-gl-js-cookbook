@@ -17,13 +17,8 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    colors: {
-      type: Array,
-      required: true,
-    },
-  },
-}
+<script setup lang="ts">
+defineProps<{
+  colors: [string, string]
+}>()
 </script>

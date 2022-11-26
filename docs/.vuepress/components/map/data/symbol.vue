@@ -2,15 +2,16 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { point as pointHelper } from '@turf/helpers'
-import baseMap from '../base-map.vue'
+import BaseMap from '../base-map.vue'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   center: [-77.032, 38.9132],
   zoom: 17,
 }
-const handleMapLoaded = (map) => {
+
+const handleMapLoaded = (map: mapboxgl.Map) => {
   const point1 = pointHelper([-77.032, 38.913], {
     title: 'Mapbox DC',
     icon: 'park',

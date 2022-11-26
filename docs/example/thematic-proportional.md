@@ -2,4 +2,4 @@
   <common-code-view name="thematic-proportional" :is-code-view="false"/>
 </ClientOnly>
 
-@[code js](../.vuepress/snippet/thematic/proportional.js)
+@[code vue](../.vuepress/components/map/thematic/proportional.vue)

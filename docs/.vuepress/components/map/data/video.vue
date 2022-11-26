@@ -2,18 +2,18 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded"> </base-map>
 </template>
 
-<script setup>
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { withBase } from '@vuepress/client'
-import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.MONOCHROME,
   center: [104.2945384995, 35.8600924965],
   zoom: 1.5,
   maxZoom: 8,
 }
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   map.addSource('storm-source', {
     type: 'video',
     urls: [withBase('/data/pwat_noaa.webm'), withBase('/data/pwat_noaa.mp4')],

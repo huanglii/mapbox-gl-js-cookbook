@@ -1,29 +1,16 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
+  <base-map :map-options="mapOptions" />
 </template>
 
-<script>
-import baseMap from '../base-map.vue'
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
-// import addWindLayer from '../../../snippet/met/wind'
-export default {
-  components: {
-    baseMap,
-  },
-  data() {
-    return {
-      mapOptions: {
-        style: STYLE.DARK,
-        center: [104.28817, 28.48424],
-        zoom: 2.8,
-        minZoom: 1,
-      },
-    }
-  },
-  methods: {
-    handleMapLoaded() {
-      // addWindLayer(map)
-    },
-  },
+
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
+  style: STYLE.DARK,
+  center: [104.28817, 28.48424],
+  zoom: 2.8,
+  minZoom: 1,
 }
+
 </script>

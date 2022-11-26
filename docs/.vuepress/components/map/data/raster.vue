@@ -2,10 +2,10 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
-import baseMap from '../base-map.vue'
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   zoom: 2,
   style: {
     version: 8,
@@ -14,7 +14,7 @@ const mapOptions = {
   },
 }
 
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   map.addLayer({
     id: 'raster-tile-layer',
     type: 'raster',

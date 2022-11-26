@@ -6,7 +6,7 @@ import {
 } from '@turf/helpers'
 import lineArc from '@turf/line-arc'
 
-import lekima from '../../public/data/lekima'
+import lekima from './data/lekima.json'
 
 export default function addTyphoonLayer(map) {
   let typhoonFeatureCollection = pointsToFeatureCollection(lekima.points)

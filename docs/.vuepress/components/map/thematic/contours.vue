@@ -2,27 +2,50 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded"></base-map>
 </template>
 
-<script>
-import baseMap from '../base-map.vue'
-import addContoursLayer from '../../../snippet/thematic/contours'
-export default {
-  components: {
-    baseMap,
-  },
-  data() {
-    return {
-      mapOptions: {
-        center: [107.78172288228535, 30.19406837416186],
-        zoom: 14,
-        minZoom: 14,
-        maxZoom: 14,
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
+
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
+  center: [107.781722, 30.194068],
+  zoom: 14
+}
+
+const handleMapLoaded = (map: mapboxgl.Map) => {
+  map.addSource('contours-source', {
+    type: 'vector',
+    url: 'mapbox://mapbox.mapbox-terrain-v2',
+  })
+  map.addLayer(
+    {
+      id: 'contours-layer',
+      type: 'line',
+      source: 'contours-source',
+      'source-layer': 'contour',
+      layout: {
+        visibility: 'visible',
+        'line-join': 'round',
+        'line-cap': 'round',
       },
-    }
-  },
-  methods: {
-    handleMapLoaded(map) {
-      addContoursLayer(map)
+      paint: {
+        'line-color': [
+          'interpolate',
+          ['linear'],
+          ['get', 'ele'],
+          100,
+          '#FEF3E0',
+          200,
+          '#FFBD9F',
+          300,
+          '#F07E5C',
+          400,
+          '#BA1929',
+          500,
+          '#900502',
+        ],
+        'line-width': ['case', ['==', ['%', ['get', 'ele'], 100], 0], 2, 1],
+      },
     },
-  },
+    'poi-label'
+  )
 }
 </script>

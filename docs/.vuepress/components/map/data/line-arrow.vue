@@ -2,22 +2,22 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
-import baseMap from '../base-map.vue'
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { withBase } from '@vuepress/client'
 import { lineString as lineStringHelper } from '@turf/helpers'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.DARK,
   center: [-122.486552, 37.831048],
   zoom: 15,
 }
 
-const handleMapLoaded = (map) => {
+const handleMapLoaded = (map: mapboxgl.Map) => {
   map.loadImage(withBase('/assets/images/arrow.png'), (error, image) => {
     if (error) throw error
-    map.addImage('arrow', image)
+    if (image && !map.hasImage('arrow')) map.addImage('arrow', image)
 
     const lineStringCoordinates = [
       [-122.48404026031496, 37.83049717427869],

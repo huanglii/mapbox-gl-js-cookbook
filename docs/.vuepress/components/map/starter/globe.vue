@@ -1,3 +1,8 @@
+
+<template>
+  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
+</template>
+
 <script setup>
 import { STYLE } from '@/utils/constant'
 import baseMap from '../base-map.vue'
@@ -13,7 +18,3 @@ function handleMapLoaded(map) {
   map.setFog({})
 }
 </script>
-
-<template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
-</template>

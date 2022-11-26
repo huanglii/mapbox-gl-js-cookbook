@@ -2,55 +2,88 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
-import baseMap from '../base-map.vue'
-import {
-  lineString as lineStringHelper,
-  multiLineString as multiLineStringHelper,
-} from '@turf/helpers'
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.GRAY,
   center: [-77.03, 38.875],
   zoom: 12,
 }
 
-const handleMapLoaded = (map) => {
-  // addLineGradientLayer(map)
-  const lineStringCoordinates1 = [
-    [
-      [-77.044211, 38.852924],
-      [-77.045659, 38.860158],
-      [-77.044232, 38.862326],
-      [-77.040879, 38.865454],
-      [-77.039936, 38.867698],
-      [-77.040338, 38.86943],
-      [-77.04264, 38.872528],
-      [-77.03696, 38.878424],
-      [-77.032309, 38.87937],
-    ],
-    [
-      [-77.030056, 38.880945],
-      [-77.027645, 38.881779],
-      [-77.026946, 38.882645],
-      [-77.026942, 38.885502],
-      [-77.028054, 38.887449],
-      [-77.02806, 38.892088],
-      [-77.03364, 38.892108],
-      [-77.033643, 38.899926],
-    ],
-  ]
-  const lineStringCoordinates2 = [].concat(
-    ...lineStringCoordinates1.map((line) => {
-      return line.map((coord) => {
-        return [coord[0] + 0.01, coord[1]]
-      })
-    })
-  )
-  const linestring1 = multiLineStringHelper(lineStringCoordinates1)
-  const linestring2 = lineStringHelper(lineStringCoordinates2)
-  const lineGradientLayerOption = {
+const handleMapLoaded = (map: mapboxgl.Map) => {
+  const line: GeoJSON.FeatureCollection = {
+    type: 'FeatureCollection',
+    features: [
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "MultiLineString",
+          "coordinates": [
+            [
+              [-77.044211, 38.852924],
+              [-77.045659, 38.860158],
+              [-77.044232, 38.862326],
+              [-77.040879, 38.865454],
+              [-77.039936, 38.867698],
+              [-77.040338, 38.86943],
+              [-77.04264, 38.872528],
+              [-77.03696, 38.878424],
+              [-77.032309, 38.87937]
+            ],
+            [
+              [-77.030056, 38.880945],
+              [-77.027645, 38.881779],
+              [-77.026946, 38.882645],
+              [-77.026942, 38.885502],
+              [-77.028054, 38.887449],
+              [-77.02806, 38.892088],
+              [-77.03364, 38.892108],
+              [-77.033643, 38.899926]
+            ]
+          ]
+        }
+      },
+      {
+        "type": "Feature",
+        "properties": {},
+        "geometry": {
+          "type": "LineString",
+          "coordinates": [
+            [-77.034211, 38.852924],
+            [-77.035659, 38.860158],
+            [-77.0342329, 38.862326],
+            [-77.030879, 38.865454],
+            [-77.029936, 38.867698],
+            [-77.030338, 38.86943],
+            [-77.03264, 38.872528],
+            [-77.02696, 38.878424],
+            [-77.022309, 38.87937],
+            [-77.020056, 38.880945],
+            [-77.017645, 38.881779],
+            [-77.016946, 38.882645],
+            [-77.016942, 38.885502],
+            [-77.018054, 38.887449],
+            [-77.01806, 38.892088],
+            [-77.02364, 38.892108],
+            [-77.023643, 38.899926]
+          ]
+        }
+      }
+    ]
+  }
+
+  map.addSource('line-source', {
+    type: 'geojson',
+    lineMetrics: true,
+    data: line,
+  })
+  map.addLayer({
+    id: 'line-gradient-layer',
+    type: 'line',
+    source: 'line-source',
     layout: {
       'line-cap': 'round',
       'line-join': 'round',
@@ -78,28 +111,6 @@ const handleMapLoaded = (map) => {
         'red',
       ],
     },
-  }
-  map.addLayer({
-    id: 'line-gradient-layer-1',
-    type: 'line',
-    source: {
-      // 'line-gradient' can only be used with GeoJSON sources
-      // and the source must have the 'lineMetrics' option set to true
-      type: 'geojson',
-      lineMetrics: true,
-      data: linestring1,
-    },
-    ...lineGradientLayerOption,
-  })
-  map.addLayer({
-    id: 'line-gradient-layer-2',
-    type: 'line',
-    source: {
-      type: 'geojson',
-      lineMetrics: true,
-      data: linestring2,
-    },
-    ...lineGradientLayerOption,
   })
 }
 </script>

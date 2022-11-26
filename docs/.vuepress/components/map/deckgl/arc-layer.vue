@@ -2,21 +2,22 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
+<script setup lang="ts">
+import BaseMap from '../base-map.vue'
 import { withBase } from '@vuepress/client'
 import { MapboxLayer } from '@deck.gl/mapbox'
 import { ArcLayer } from '@deck.gl/layers'
-import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.GRAY,
   center: [-122.19, 37.75],
   zoom: 9.16,
   pitch: 30,
   antialias: true,
 }
-const handleMapLoaded = (map) => {
+
+const handleMapLoaded = (map: mapboxgl.Map) => {
   /**
    * Data format:
    * [

@@ -1,113 +1,89 @@
 <template>
   <div class="map-wrapper">
     <div :id="mapContainer" :style="{ width: '100%', height: `${height}px`, borderRadius: '6px' }"></div>
-    <slot v-if="maploaded"></slot>
+    <slot v-if="mapLoaded"></slot>
   </div>
 </template>
 
-<script>
+<script setup lang="ts">
+import { onMounted, ref } from 'vue'
 import mapboxgl from 'mapbox-gl'
 import HomeControl from '../control/HomeControl'
 import { TK, STYLE } from '../../utils/constant'
+import { createPropHtml } from '../../utils'
 import 'mapbox-gl/dist/mapbox-gl.css'
 
-export default {
-  name: 'BaseMap',
-  props: {
-    height: {
-      type: Number,
-      default: 520,
-    },
-    mapOptions: {
-      type: Object,
-      default() {
-        return {}
-      },
-    },
-    mapClickable: {
-      type: Boolean,
-      default: true,
-    },
-  },
-  emits: ['load'],
-  data() {
-    return {
-      map: null,
-      maploaded: false,
-      mapDefaultOptions: {
-        container: Math.random().toString(16).substring(2),
-        style: STYLE.DEFAULT,
-        center: [104.294538, 35.860092],
-        zoom: 2.4,
-        minZoom: 0,
-        maxZoom: 22,
-        scrollZoom: true,
-        pitch: 0,
-        bearing: 0,
-        antialias: false,
-      },
-    }
-  },
-  computed: {
-    mapContainer() {
-      return this.mapOptions.container || this.mapDefaultOptions.container
-    },
-  },
-  mounted() {
-    const options = Object.assign({}, this.mapDefaultOptions, this.mapOptions)
-    this.initMap(options)
-  },
-  methods: {
-    initMap(options) {
-      mapboxgl.accessToken = TK
-      this.map = new mapboxgl.Map(options)
-      this.map.addControl(new mapboxgl.NavigationControl(), 'top-left')
-      const { center, zoom, pitch, bearing } = options
-      this.map.addControl(
-        new HomeControl({
-          center,
-          zoom,
-          pitch,
-          bearing,
-        }),
-        'bottom-left'
-      )
-      this.map.addControl(new mapboxgl.FullscreenControl(), 'top-left')
-      this.map.on('load', this.handleMapLoaded)
-    },
-    handleMapLoaded(evt) {
-      this.maploaded = true
-      this.$emit('load', evt.target)
-      if (this.mapClickable) this.map.on('click', this.handleMapClick)
-    },
-    handleMapClick(evt) {
-      const features = this.map.queryRenderedFeatures(evt.point)
+interface Props {
+  height?: number,
+  mapOptions?: Omit<mapboxgl.MapboxOptions, 'container'>
+  mapClickable?: boolean
+}
+const props = withDefaults(defineProps<Props>(), {
+  height: 520,
+  mapClickable: true
+})
+const emit = defineEmits<{
+  (e: 'load', map: mapboxgl.Map): void
+}>()
+
+const mapContainer = Math.random().toString(16).substring(2)
+let map: mapboxgl.Map
+let mapLoaded = ref(false)
+
+onMounted(() => {
+  const mapDefaultOptions = {
+    container: mapContainer,
+    style: STYLE.DEFAULT,
+    center: [104.294538, 35.860092],
+    zoom: 2.4,
+    minZoom: 0,
+    maxZoom: 22,
+    scrollZoom: true,
+    pitch: 0,
+    bearing: 0,
+    antialias: false,
+  }
+  const options = Object.assign({}, mapDefaultOptions, props.mapOptions)
+  initMap(options)
+})
+
+const initMap = (options: mapboxgl.MapboxOptions) => {
+  mapboxgl.accessToken = TK
+  map = new mapboxgl.Map(options)
+  map.addControl(new mapboxgl.NavigationControl(), 'top-left')
+  map.addControl(new mapboxgl.FullscreenControl(), 'top-left')
+  map.addControl(
+    new HomeControl({
+      center: options.center,
+      zoom: options.zoom,
+      pitch: options.pitch,
+      bearing: options.bearing,
+    }),
+    'bottom-left'
+  )
+  map.on('load', (e: mapboxgl.MapboxEvent<undefined> & mapboxgl.EventData) => {
+    mapLoaded.value = true
+    emit('load', e.target)
+  })
+  if (props.mapClickable) {
+    map.on('click', (e: mapboxgl.MapMouseEvent & mapboxgl.EventData) => {
+      const features = map.queryRenderedFeatures(e.point)
       if (features.length > 0) {
         const feature = features[0]
         const { layer, properties, geometry } = feature
-        let lngLat = evt.lngLat
+        let lngLat: mapboxgl.LngLatLike = e.lngLat
         if (geometry.type === 'Point') {
-          lngLat = geometry.coordinates
+          lngLat = geometry.coordinates as [number, number]
         }
-        if (Object.keys(properties).length > 0) {
+        if (properties) {
           new mapboxgl.Popup()
             .setLngLat(lngLat)
-            .setHTML(this.createPropHtml(layer.id, properties))
-            .addTo(this.map)
+            .setHTML(createPropHtml(layer.id, properties))
+            .addTo(map)
         }
       }
-    },
-    createPropHtml(title, prop) {
-      return `
-        <div class="title"><b>${title}</b></div>
-        <div class="content">
-          ${Object.keys(prop)
-          .map((key) => `${`<p><b>${key}: </b>${prop[key]}</p>`}`)
-          .join('')}
-        </div>
-      `
-    },
-  },
+    })
+  }
 }
 </script>
 
