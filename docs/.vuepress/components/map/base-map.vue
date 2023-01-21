@@ -31,7 +31,7 @@ let map: mapboxgl.Map
 let mapLoaded = ref(false)
 
 onMounted(() => {
-  const mapDefaultOptions = {
+  const mapDefaultOptions: mapboxgl.MapboxOptions = {
     container: mapContainer,
     style: STYLE.DEFAULT,
     center: [104.294538, 35.860092],
@@ -42,6 +42,7 @@ onMounted(() => {
     pitch: 0,
     bearing: 0,
     antialias: false,
+    attributionControl: false
   }
   const options = Object.assign({}, mapDefaultOptions, props.mapOptions)
   initMap(options)
@@ -50,6 +51,9 @@ onMounted(() => {
 const initMap = (options: mapboxgl.MapboxOptions) => {
   mapboxgl.accessToken = TK
   map = new mapboxgl.Map(options)
+  map.addControl(new mapboxgl.AttributionControl({
+    customAttribution: mapboxgl.version
+  }))
   map.addControl(new mapboxgl.NavigationControl(), 'top-left')
   map.addControl(new mapboxgl.FullscreenControl(), 'top-left')
   map.addControl(

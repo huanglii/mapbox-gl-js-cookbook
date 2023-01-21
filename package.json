@@ -14,7 +14,7 @@
   "license": "MIT",
   "homepage": "https://huanglii.github.io/mapbox-gl-js-cookbook",
   "devDependencies": {
-    "@types/mapbox-gl": "^2.7.8",
+    "@types/mapbox-gl": "^2.7.10",
     "@typescript-eslint/eslint-plugin": "^5.44.0",
     "@typescript-eslint/parser": "^5.44.0",
     "@vuepress/plugin-register-components": "^2.0.0-beta.53",
@@ -23,15 +23,15 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.8.0",
-    "prettier": "^2.8.0",
+    "prettier": "^2.8.3",
     "vuepress": "^2.0.0-beta.53"
   },
   "dependencies": {
-    "@deck.gl/aggregation-layers": "^8.8.9",
-    "@deck.gl/core": "^8.8.9",
-    "@deck.gl/layers": "^8.8.9",
-    "@deck.gl/mapbox": "^8.8.9",
-    "@deck.gl/mesh-layers": "^8.8.9",
+    "@deck.gl/aggregation-layers": "^8.8.23",
+    "@deck.gl/core": "^8.8.23",
+    "@deck.gl/layers": "^8.8.23",
+    "@deck.gl/mapbox": "^8.8.23",
+    "@deck.gl/mesh-layers": "^8.8.23",
     "@naivemap/mapbox-gl-echarts-layer": "^0.3.2",
     "@naivemap/mapbox-gl-image-layer": "^0.4.2",
     "@turf/bearing": "^7.0.0-alpha.0",
@@ -40,10 +40,10 @@
     "@turf/line-arc": "^7.0.0-alpha.0",
     "@turf/meta": "^7.0.0-alpha.0",
     "city-selector-control": "^0.3.2",
-    "echarts": "^5.4.0",
+    "echarts": "^5.4.1",
     "geojson-validation": "^1.0.2",
-    "mapbox-gl": "^2.11.0",
-    "proj4": "^2.8.0",
+    "mapbox-gl": "^2.12.0",
+    "proj4": "^2.8.1",
     "three": "^0.132.2"
   }
 }
