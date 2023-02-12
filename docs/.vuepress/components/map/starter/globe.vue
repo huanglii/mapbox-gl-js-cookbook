@@ -2,18 +2,18 @@
   <base-map :map-options="mapOptions" @load="handleMapLoaded" />
 </template>
 
-<script setup>
-import { STYLE } from '@/utils/constant'
-import baseMap from '../base-map.vue'
+<script setup lang="ts">
+import { STYLE } from '../../../utils/constant'
+import BaseMap from '../base-map.vue'
 
-const mapOptions = {
+const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.SATELLITE,
-  zoom: 1.2,
-  projection: 'globe',
+  zoom: 2,
+  projection: { name: 'globe' },
   interactive: false,
 }
 
-function handleMapLoaded(map) {
+function handleMapLoaded(map: mapboxgl.Map) {
   map.setFog({})
 }
 </script>
