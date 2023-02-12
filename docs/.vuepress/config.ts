@@ -59,6 +59,10 @@ export default defineUserConfig({
           children: ['/starter/tutorials/highlight'],
         },
         {
+          text: '地理与几何',
+          link: '/starter/geography/',
+        },
+        {
           text: '地图服务',
           children: [
             '/starter/service/',
