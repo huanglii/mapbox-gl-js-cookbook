@@ -51,8 +51,8 @@ export default defineUserConfig({
           link: '/starter/',
         },
         {
-          text: '用户界面',
-          children: ['/starter/userinterface/popup', '/starter/userinterface/control', '/starter/userinterface/marker'],
+          text: '交互处理',
+          children: ['/starter/handlers/popup', '/starter/handlers/control', '/starter/handlers/marker'],
         },
         {
           text: '教程',

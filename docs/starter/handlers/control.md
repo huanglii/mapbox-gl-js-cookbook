@@ -33,7 +33,7 @@ map.addControl(new mapboxgl.ScaleControl())
 ```
 
 <ClientOnly>
-  <common-code-view name="starter-userinterface-control" :is-code-view="false"/>
+  <common-code-view name="starter-handlers-control" :is-code-view="false"/>
 </ClientOnly>
 
 ## 自定义
@@ -81,5 +81,5 @@ HelloWorldControl.prototype.onRemove = function () {
 一个快速定位城市的控件。GitHub 地址：[城市选择器](https://github.com/huanglii/city-selector-control)
 
 <ClientOnly>
-  <common-code-view name="starter-userinterface-city-selector" :is-code-view="false"/>
+  <common-code-view name="starter-handlers-city-selector" :is-code-view="false"/>
 </ClientOnly>
