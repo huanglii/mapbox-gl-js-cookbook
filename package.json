@@ -34,6 +34,7 @@
     "@deck.gl/mesh-layers": "^8.8.23",
     "@naivemap/mapbox-gl-echarts-layer": "^0.3.2",
     "@naivemap/mapbox-gl-image-layer": "^0.4.2",
+    "@naivemap/mapbox-gl-polygon-morpher": "^0.1.0",
     "@turf/bearing": "^7.0.0-alpha.0",
     "@turf/distance": "^7.0.0-alpha.0",
     "@turf/helpers": "^7.0.0-alpha.0",

@@ -119,7 +119,7 @@ export default defineUserConfig({
         // },
         {
           text: '插件',
-          children: ['/plugins/image-layer', '/plugins/echarts-layer'],
+          children: ['/plugins/image-layer', '/plugins/echarts-layer', '/plugins/polygon-morpher'],
         },
       ],
       '/advance/': [

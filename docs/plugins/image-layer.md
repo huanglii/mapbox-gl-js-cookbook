@@ -1,6 +1,6 @@
 # ImageLayer
 
-借助 [ImageLayer](https://www.npmjs.com/package/@naivemap/mapbox-gl-image-layer) 插件可以加载任意投影的图片，该插件使用了 [Arrugator](https://gitlab.com/IvanSanchez/arrugator) 和 [Proj4js](https://github.com/proj4js/proj4js) 工具对图片重新投影，使其正确叠加到地图。
+借助 [@naivemap/mapbox-gl-image-layer](https://www.npmjs.com/package/@naivemap/mapbox-gl-image-layer) 插件可以加载任意投影的图片，该插件使用了 [Arrugator](https://gitlab.com/IvanSanchez/arrugator) 和 [Proj4js](https://github.com/proj4js/proj4js) 工具对图片重新投影，使其正确叠加到地图。
 
 ```bash
 # yarn
