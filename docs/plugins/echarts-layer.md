@@ -1,6 +1,6 @@
 # EChartsLayer
 
-借助插件 [@naivemap/mapbox-gl-echarts-layer](https://www.npmjs.com/package/@naivemap/mapbox-gl-echarts-layer) 可直接在 Mapbox GL JS 中使用 Apache ECharts 的 [scatter](https://echarts.apache.org/zh/option.html#series-scatter)、[effectScatter](https://echarts.apache.org/zh/option.html#series-effectScatter) 和 [lines](https://echarts.apache.org/zh/option.html#series-lines)。
+借助 [@naivemap/mapbox-gl-echarts-layer](https://www.npmjs.com/package/@naivemap/mapbox-gl-echarts-layer) 插件可直接在 Mapbox GL JS 中使用 Apache ECharts 的 [scatter](https://echarts.apache.org/zh/option.html#series-scatter)、[effectScatter](https://echarts.apache.org/zh/option.html#series-effectScatter) 和 [lines](https://echarts.apache.org/zh/option.html#series-lines)。
 
 ```bash
 # yarn
