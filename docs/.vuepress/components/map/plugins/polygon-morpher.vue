@@ -1,8 +1,8 @@
 <template>
   <base-map :map-options="mapOptions" @load="handleMapLoaded">
     <div class="control">
-      <div class="control-item" @click="morph(-1)">prev</div>
-      <div class="control-item" @click="morph(1)">next</div>
+      <span class="control-item" @click="morph(-1)">上一个</span>
+      <span class="control-item" @click="morph(1)">下一个</span>
     </div>
   </base-map>
 </template>
@@ -10,20 +10,11 @@
 <script setup lang="ts">
 import BaseMap from '../base-map.vue'
 import PolygonMorpher from '@naivemap/mapbox-gl-polygon-morpher'
+import { withBase } from '@vuepress/client'
 
 const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   center: [-73.950543, 40.76110],
   zoom: 11,
-}
-
-const buildGeoJSONDistricts = (results): GeoJSON.Feature<GeoJSON.Polygon | GeoJSON.MultiPolygon>[] => {
-  return results.map((row, i) => {
-    return {
-      type: 'Feature',
-      geometry: JSON.parse(row.boundary_simple),
-      properties: row
-    }
-  })
 }
 
 let features: GeoJSON.Feature<GeoJSON.Polygon | GeoJSON.MultiPolygon>[]
@@ -72,10 +63,12 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
   const geojsonSource = map.getSource('geojson-source') as mapboxgl.GeoJSONSource
   polygonMorpher = new PolygonMorpher(geojsonSource)
 
-  fetch('https://us-congress-districts.api.aclu.org/pip?min_session=86&lat=40.7306&lng=-73.9866')
+  fetch(withBase('/data/ny.geojson'))
     .then((res) => res.json())
     .then((data) => {
-      features = buildGeoJSONDistricts(data.results)
+      features = data.features
+      console.log(features);
+
       polygonMorpher.morph(features[index])
     })
 }
@@ -84,21 +77,19 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
 <style lang="scss">
 .control {
   position: absolute;
-  right: 10px;
-  bottom: 38px;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
   border-radius: 4px;
   background-color: rgba(255, 255, 255, 0.8);
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 14px;
   box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
 
   &-item {
-    padding: 4px 6px;
+    padding: 0 7px;
+    line-height: 30px;
     cursor: pointer;
-
-    &:not(:last-child) {
-      border-bottom: 1.5px solid #ccc;
-    }
 
     &:hover {
       background-color: rgba(0, 0, 0, 0.1);
