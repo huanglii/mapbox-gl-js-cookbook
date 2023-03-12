@@ -67,8 +67,6 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
     .then((res) => res.json())
     .then((data) => {
       features = data.features
-      console.log(features);
-
       polygonMorpher.morph(features[index])
     })
 }

@@ -52,7 +52,7 @@ const initMap = (options: mapboxgl.MapboxOptions) => {
   mapboxgl.accessToken = TK
   map = new mapboxgl.Map(options)
   map.addControl(new mapboxgl.AttributionControl({
-    customAttribution: mapboxgl.version
+    customAttribution: `v${mapboxgl.version}`
   }))
   map.addControl(new mapboxgl.NavigationControl(), 'top-left')
   map.addControl(new mapboxgl.FullscreenControl(), 'top-left')
