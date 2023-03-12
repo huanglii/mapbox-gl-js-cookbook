@@ -17,5 +17,5 @@ features:
     details: 点、线、面、栅格、常见专题图
   - title: 插件和进阶
     details: DECK.GL、自定义数据源、自定义图层、第三方库
-footer: MIT Licensed | Copyright © 2019-2022 by huangli
+footer: MIT Licensed | Copyright © 2019-2023 by huangli
 ---

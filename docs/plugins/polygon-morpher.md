@@ -14,7 +14,7 @@ import PolygonMorpher from '@naivemap/mapbox-gl-polygon-morpher'
 
 // 1. 构造一个 PolygonMorpher
 const geojsonSource = map.getSource('geojson-source') // 只需要一个 GeoJSON 数据源
-polygonMorpher = new PolygonMorpher(geojsonSource)
+const polygonMorpher = new PolygonMorpher(geojsonSource)
 
 // 2. 变化到新的多边形
 const newPolygonFeature = { type: 'Feature', geometry: { type: 'Polygon', coordinates: [] } }
