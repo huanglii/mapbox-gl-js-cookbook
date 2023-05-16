@@ -32,4 +32,4 @@ map.addLayer(layer, 'aeroway-line')
   <common-code-view name="plugins-image-layer"/>
 </ClientOnly>
 
-> 更多参数（如透明度）和方法请查看 [ImageLayer API](https://github.com/naivemap/mapbox-gl-layers/blob/main/packages/mapbox-gl-image-layer/README.md)
+> 更多参数（如透明度、掩膜）和方法请查看 [ImageLayer API](https://github.com/naivemap/mapbox-gl-layers/blob/main/packages/mapbox-gl-image-layer/README.md)

@@ -81,7 +81,16 @@ export default defineUserConfig({
             '/style-spec/',
             '/style-spec/sprite',
             '/style-spec/glyphs',
-            '/style-spec/sources',
+            {
+              text: '数据源',
+              children: [
+                '/style-spec/sources',
+                '/style-spec/sources/tile',
+                '/style-spec/sources/geojson',
+                '/style-spec/sources/image-video',
+                '/style-spec/sources/custom',
+              ]
+            },
             '/style-spec/layers',
             '/style-spec/expression',
             '/style-spec/light',
