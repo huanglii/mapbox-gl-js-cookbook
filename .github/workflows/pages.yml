@@ -25,6 +25,11 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      - name: Set node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
       - name: Build and Deploy
         uses: testthedocs/github-pages-deploy-action@master
         env:
