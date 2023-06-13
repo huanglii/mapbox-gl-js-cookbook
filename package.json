@@ -32,7 +32,8 @@
     "@deck.gl/layers": "^8.9.15",
     "@deck.gl/mapbox": "^8.9.15",
     "@deck.gl/mesh-layers": "^8.9.15",
-    "@naivemap/mapbox-gl-echarts-layer": "^0.3.2",
+    "@naivemap/mapbox-gl-echarts-layer": "^0.3.3",
+    "@naivemap/mapbox-gl-grid-layer": "^0.1.0",
     "@naivemap/mapbox-gl-image-layer": "^0.5.0",
     "@naivemap/mapbox-gl-polygon-morpher": "^0.1.0",
     "@turf/bearing": "^7.0.0-alpha.0",
@@ -43,7 +44,8 @@
     "city-selector-control": "^0.3.2",
     "echarts": "^5.4.2",
     "geojson-validation": "^1.0.2",
-    "mapbox-gl": "^2.14.1",
+    "geotiff": "^2.0.7",
+    "mapbox-gl": "^2.15.0",
     "proj4": "^2.9.0",
     "three": "^0.132.2"
   }

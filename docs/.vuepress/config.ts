@@ -89,7 +89,7 @@ export default defineUserConfig({
                 '/style-spec/sources/geojson',
                 '/style-spec/sources/image-video',
                 '/style-spec/sources/custom',
-              ]
+              ],
             },
             '/style-spec/layers',
             '/style-spec/expression',
@@ -128,7 +128,12 @@ export default defineUserConfig({
         // },
         {
           text: '插件',
-          children: ['/plugins/image-layer', '/plugins/echarts-layer', '/plugins/polygon-morpher'],
+          children: [
+            '/plugins/image-layer',
+            '/plugins/grid-layer',
+            '/plugins/echarts-layer',
+            '/plugins/polygon-morpher',
+          ],
         },
       ],
       '/advance/': [
