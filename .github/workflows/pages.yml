@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: Deploy to GitHub Pages
 
 # Controls when the workflow will run
@@ -36,7 +34,7 @@ jobs:
 
       # 运行构建脚本
       - name: Build VuePress site
-        run: npm install && docs:build
+        run: npm install && npm run docs:build
 
       # 查看 workflow 的文档来获取更多信息
       # @see https://github.com/crazy-max/ghaction-github-pages
