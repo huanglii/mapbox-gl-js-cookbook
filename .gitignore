@@ -5,5 +5,5 @@ docs/.vuepress/dist
 docs/.vuepress/.temp
 docs/.vuepress/.cache
 
-package-lock.json
-yarn.lock
+# package-lock.json
+# yarn.lock
