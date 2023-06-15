@@ -1,5 +1,5 @@
+import path from 'path'
 import { defineUserConfig, defaultTheme, viteBundler } from 'vuepress'
-import { path } from '@vuepress/utils'
 import searchPlugin from '@vuepress/plugin-search'
 import registerComponentsPlugin from '@vuepress/plugin-register-components'
 
