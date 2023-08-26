@@ -33,7 +33,7 @@
     "@deck.gl/mapbox": "^8.9.15",
     "@deck.gl/mesh-layers": "^8.9.15",
     "@naivemap/mapbox-gl-echarts-layer": "^0.3.3",
-    "@naivemap/mapbox-gl-grid-layer": "^0.1.0",
+    "@naivemap/mapbox-gl-grid-layer": "^0.2.0",
     "@naivemap/mapbox-gl-image-layer": "^0.5.0",
     "@naivemap/mapbox-gl-polygon-morpher": "^0.1.0",
     "@turf/bearing": "^7.0.0-alpha.0",
