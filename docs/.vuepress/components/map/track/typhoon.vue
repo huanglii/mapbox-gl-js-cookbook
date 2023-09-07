@@ -13,6 +13,7 @@
 import baseMap from '../base-map.vue'
 import { STYLE } from '../../../utils/constant'
 import addTyphoonLayer from '../../../snippet/track/typhoon'
+import { addImages } from '../../../utils'
 export default {
   components: {
     baseMap,
@@ -47,32 +48,29 @@ export default {
   },
   methods: {
     handleMapLoaded(map) {
-      map.loadImage(this.$withBase('/assets/images/typhoon.png'), (error, image) => {
-        if (error) throw error
-        map.addImage('typhoon', image)
-        map.addSource('storm-source', {
-          type: 'video',
-          urls: [this.$withBase('/data/pwat_noaa.webm'), this.$withBase('/data/pwat_noaa.mp4')],
-          coordinates: [
-            [-180, 70],
-            [180, 70],
-            [180, -70],
-            [-180, -70],
-          ],
-        })
-        map.addLayer(
-          {
-            type: 'raster',
-            id: 'storm-layer',
-            source: 'storm-source',
-            paint: {
-              'raster-opacity': 0.4,
-            },
-          },
-          'water'
-        )
-        addTyphoonLayer(map)
+      addImages(map, ['/assets/icons/i-typhoon.png'])
+      map.addSource('storm-source', {
+        type: 'video',
+        urls: [this.$withBase('/data/pwat_noaa.webm'), this.$withBase('/data/pwat_noaa.mp4')],
+        coordinates: [
+          [-180, 70],
+          [180, 70],
+          [180, -70],
+          [-180, -70],
+        ],
       })
+      map.addLayer(
+        {
+          type: 'raster',
+          id: 'storm-layer',
+          source: 'storm-source',
+          paint: {
+            'raster-opacity': 0.4,
+          },
+        },
+        'water'
+      )
+      addTyphoonLayer(map)
     },
   },
 }

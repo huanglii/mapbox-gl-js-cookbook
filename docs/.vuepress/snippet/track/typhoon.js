@@ -106,7 +106,7 @@ export default function addTyphoonLayer(map) {
     type: 'symbol',
     source: 'typhoon-source',
     layout: {
-      'icon-image': 'typhoon',
+      'icon-image': 'i-typhoon',
     },
     filter: ['all', ['==', '$type', 'Point'], ['==', 'type', 'current']],
   })

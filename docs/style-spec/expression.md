@@ -22,6 +22,7 @@
 
 ```json
 "properties": {
+  "name": "苹果,香蕉",
   "title": "有点意思",
   "district": {
     "code": 500000,
@@ -216,6 +217,21 @@ map.setFeatureState({ source: 'states', id: hoveredStateId }, { hover: false })
 
 - let 绑定变量
 - var 引用 `let` 绑定的变量
+
+如：`name` 字段值有 `'香蕉'`、`'苹果,香蕉'` 等以逗号分隔的词，仅展示第一个值：
+
+```js
+{
+  'text-field': [
+    'let', 'idx', ['index-of', ',', ['get', 'name']],
+    [
+      'case',
+      ['<', ['var', 'idx'], 0], ['get', 'name'],
+      ['slice', ['get', 'name'], 0, ['var', 'idx']]
+    ],
+  ]
+}
+```
 
 ## String
 

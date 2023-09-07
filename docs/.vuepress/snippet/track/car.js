@@ -47,7 +47,7 @@ export default function addTrackCarLayer(map) {
     layout: {
       'symbol-placement': 'line',
       'symbol-spacing': 3,
-      'icon-image': 'arrow',
+      'icon-image': 'i-arrow',
       'icon-size': 0.5,
     },
     paint: {
@@ -61,7 +61,7 @@ export default function addTrackCarLayer(map) {
     layout: {
       visibility: 'visible',
       'icon-size': 0.65,
-      'icon-image': 'car',
+      'icon-image': 'i-car',
       'icon-rotate': ['get', 'bearing'],
       'icon-rotation-alignment': 'map',
       'icon-allow-overlap': true,
@@ -74,8 +74,8 @@ export default function addTrackCarLayer(map) {
     source: {
       type: 'geojson',
       data: featureCollectionHelper([
-        pointHelper(origin, { name: '两路口', icon: 'start' }),
-        pointHelper(destination, { name: '小什字', icon: 'end' }),
+        pointHelper(origin, { name: '两路口', icon: 'i-marker' }),
+        pointHelper(destination, { name: '小什字', icon: 'i-marker' }),
       ]),
     },
     paint: {
