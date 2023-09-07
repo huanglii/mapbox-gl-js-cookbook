@@ -1,3 +1,5 @@
+import { withBase } from '@vuepress/client'
+
 export const createDom = (tagName: string, className?: string, container?: HTMLElement) => {
   const el = window.document.createElement(tagName)
   if (className) el.className = className
@@ -21,4 +23,14 @@ export const createPropHtml = (title: string, prop: Record<string, any>) => {
             .join('')}
         </div>
       `
+}
+
+export const addImages = (map: mapboxgl.Map, urls: string[]) => {
+  for (const url of urls) {
+    const id = url.replace(/(.*\/)*([^.]+).*/gi, '$2')
+    map.loadImage(withBase(url), (error, image) => {
+      if (error) throw error
+      if (image && !map.hasImage(id)) map.addImage(id, image)
+    })
+  }
 }
