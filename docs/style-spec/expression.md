@@ -179,6 +179,27 @@ map.setFeatureState({ source: 'states', id: hoveredStateId }, { hover: false })
 ] // 因为 type = 99，所以最终会显示 fruit-icon。
 ```
 
+### [within](https://docs.mapbox.com/style-spec/reference/expressions/#within)
+
+如果要素完全包含在输入的多边形内，则返回 `true`，否则返回 `false`。输入可以是类型为 Polygon、MultiPolygon、Feature 或 FeatureCollection 的有效 GeoJSON，仅支持 `Point` 和 `LineString`。
+
+```js
+{
+  "filter": {
+    "coordinates": [
+      [
+        [107, 30],
+        [107, 29],
+        [108, 29],
+        [108, 30],
+        [107, 30]
+      ]
+    ],
+    "type": "Polygon"
+  }
+}
+```
+
 ## [Ramps, scales, curves](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#ramps-scales-curves)
 
 ### [interpolate](https://docs.mapbox.com/mapbox-gl-js/style-spec/expressions/#interpolate)
