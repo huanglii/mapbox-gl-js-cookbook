@@ -9,7 +9,6 @@ import BaseMap from '../base-map.vue'
 const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   zoom: 2,
   projection: { name: 'globe' },
-  interactive: false,
 }
 
 function handleMapLoaded(map: mapboxgl.Map) {

@@ -38,10 +38,11 @@ onMounted(() => {
     zoom: 2.4,
     minZoom: 0,
     maxZoom: 22,
-    scrollZoom: true,
     pitch: 0,
     bearing: 0,
     antialias: false,
+    scrollZoom: true,
+    cooperativeGestures: true,
     attributionControl: false
   }
   const options = Object.assign({}, mapDefaultOptions, props.mapOptions)

@@ -11,7 +11,6 @@ const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   style: STYLE.GRAY,
   center: [104.114129, 37.550339],
   zoom: 3,
-  interactive: false,
 }
 const handleMapLoaded = (map: mapboxgl.Map) => {
   const data = [
