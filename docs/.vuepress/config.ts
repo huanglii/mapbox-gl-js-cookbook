@@ -129,6 +129,7 @@ export default defineUserConfig({
         {
           text: '插件',
           children: [
+            '/plugins/draw',
             '/plugins/image-layer',
             '/plugins/grid-layer',
             '/plugins/echarts-layer',
