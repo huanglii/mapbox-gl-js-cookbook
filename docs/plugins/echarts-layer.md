@@ -4,9 +4,9 @@
 
 ```bash
 # yarn
-yarn add @naivemap/mapbox-gl-echarts-layer proj4
+yarn add @naivemap/mapbox-gl-echarts-layer echarts
 # 或 npm
-npm i @naivemap/mapbox-gl-echarts-layer proj4
+npm i @naivemap/mapbox-gl-echarts-layer echarts
 ```
 
 ```js

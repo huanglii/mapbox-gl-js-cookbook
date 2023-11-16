@@ -11,7 +11,7 @@ const popup = new mapboxgl.Popup({ closeOnClick: false })
 
 > 参考：[Display a popup](https://docs.mapbox.com/mapbox-gl-js/example/popup/)
 
-Vue3
+Vue 3
 
 ```js
 const popupNode = document.createElement('div')
@@ -20,11 +20,20 @@ createApp(Popup).mount(popupNode)
 popup.setDOMContent(popupNode).setLngLat([107.7, 29.9]).addTo(map)
 ```
 
-ReactDOM
+React 17
 
 ```js
 const popupNode = document.createElement('div')
 // Popup 为 React 组件
 ReactDOM.render(<Popup />, popupNode)
+popup.setDOMContent(popupNode).setLngLat([107.7, 29.9]).addTo(map)
+```
+
+React 18
+
+```js
+const popupNode = document.createElement('div')
+// Popup 为 React 组件
+createRoot(popupNode).render(<Popup />)
 popup.setDOMContent(popupNode).setLngLat([107.7, 29.9]).addTo(map)
 ```
