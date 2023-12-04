@@ -6,12 +6,12 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
 import mapboxgl from 'mapbox-gl'
-import HomeControl from '../control/HomeControl'
-import { TK, STYLE } from '../../utils/constant'
-import { createPropHtml } from '../../utils'
 import 'mapbox-gl/dist/mapbox-gl.css'
+import { onMounted, ref } from 'vue'
+import { createPropHtml } from '../../utils'
+import { STYLE, TK } from '../../utils/constant'
+import HomeControl from '../control/HomeControl'
 
 interface Props {
   height?: number
@@ -72,6 +72,8 @@ const initMap = (options: mapboxgl.MapboxOptions) => {
   })
   if (props.mapClickable) {
     map.on('click', (e: mapboxgl.MapMouseEvent & mapboxgl.EventData) => {
+      console.log(map.getZoom(), map.getCenter())
+
       const features = map.queryRenderedFeatures(e.point)
       if (features.length > 0) {
         const feature = features[0]
