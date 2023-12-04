@@ -1,7 +1,7 @@
-import { defineUserConfig, defaultTheme, viteBundler } from 'vuepress'
-import { path } from '@vuepress/utils'
-import searchPlugin from '@vuepress/plugin-search'
 import registerComponentsPlugin from '@vuepress/plugin-register-components'
+import searchPlugin from '@vuepress/plugin-search'
+import { path } from '@vuepress/utils'
+import { defaultTheme, defineUserConfig, viteBundler } from 'vuepress'
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -146,7 +146,6 @@ export default defineUserConfig({
             '/advance/custom-layer',
             '/advance/track',
             '/advance/ECharts',
-            '/advance/threejs',
             '/advance/met',
           ],
         },

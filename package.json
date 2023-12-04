@@ -47,7 +47,6 @@
     "geojson-validation": "^1.0.2",
     "geotiff": "^2.1.0",
     "mapbox-gl": "^3.0.0",
-    "proj4": "^2.9.2",
-    "three": "^0.132.2"
+    "proj4": "^2.9.2"
   }
 }
