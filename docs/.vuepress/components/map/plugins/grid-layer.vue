@@ -3,11 +3,13 @@
 </template>
 
 <script setup lang="ts">
-import { withBase } from '@vuepress/client'
 import GridLayer from '@naivemap/mapbox-gl-grid-layer'
+import { withBase } from '@vuepress/client'
+import { STYLE } from '../../../utils/constant'
 import BaseMap from '../base-map.vue'
 
 const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
+  style: STYLE.DEFAULT,
   center: [107.744809, 30.180706],
   zoom: 6,
 }

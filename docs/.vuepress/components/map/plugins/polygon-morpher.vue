@@ -54,8 +54,12 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
     id: 'line-layer',
     type: 'line',
     source: 'geojson-source',
+    layout: {
+      'line-cap': 'round',
+      'line-join': 'round',
+    },
     paint: {
-      'line-width': 2,
+      'line-width': 3,
       'line-color': 'rgba(255, 178, 125, 1)',
     },
   })

@@ -45,7 +45,23 @@ onMounted(() => {
     antialias: false,
     scrollZoom: true,
     cooperativeGestures: true,
-    attributionControl: false
+    attributionControl: false,
+    locale: {
+      'AttributionControl.ToggleAttribution': 'Toggle attribution',
+      'AttributionControl.MapFeedback': 'Map feedback',
+      'FullscreenControl.Enter': '全屏',
+      'FullscreenControl.Exit': '退出全屏',
+      'GeolocateControl.FindMyLocation': '定位',
+      'GeolocateControl.LocationNotAvailable': '定位不可用',
+      'LogoControl.Title': 'Mapbox logo',
+      'Map.Title': 'Map',
+      'NavigationControl.ResetBearing': '指北',
+      'NavigationControl.ZoomIn': '放大',
+      'NavigationControl.ZoomOut': '缩小',
+      'ScrollZoomBlocker.CtrlMessage': '使用 ctrl + 滚轮缩放地图',
+      'ScrollZoomBlocker.CmdMessage': '使用 ⌘ + 滚轮缩放地图',
+      'TouchPanBlocker.Message': '使用双指移动底图'
+    }
   }
   const options = Object.assign({}, mapDefaultOptions, props.mapOptions)
   initMap(options)
