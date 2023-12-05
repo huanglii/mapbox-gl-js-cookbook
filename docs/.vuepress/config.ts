@@ -51,8 +51,8 @@ export default defineUserConfig({
           link: '/starter/',
         },
         {
-          text: 'Mapbox 标准样式',
-          link: '/starter/mapbox-standard/',
+          text: '标准样式',
+          link: '/starter/standard-style/',
         },
         {
           text: '交互处理',

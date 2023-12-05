@@ -6,12 +6,13 @@
 </template>
 
 <script setup lang="ts">
-import mapboxgl from 'mapbox-gl'
-import 'mapbox-gl/dist/mapbox-gl.css'
-import { onMounted, ref } from 'vue'
-import { createPropHtml } from '../../utils'
-import { STYLE, TK } from '../../utils/constant'
-import HomeControl from '../control/HomeControl'
+import { withBase } from '@vuepress/client';
+import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css';
+import { onMounted, ref } from 'vue';
+import { createPropHtml } from '../../utils';
+import { TK } from '../../utils/constant';
+import HomeControl from '../control/HomeControl';
 
 interface Props {
   height?: number
@@ -33,7 +34,8 @@ let mapLoaded = ref(false)
 onMounted(() => {
   const mapDefaultOptions: mapboxgl.MapboxOptions = {
     container: mapContainer,
-    style: STYLE.DEFAULT,
+    // style: STYLE.DEFAULT,
+    style: withBase('/mapbox/standard.json'),
     center: [104.294538, 35.860092],
     zoom: 2.4,
     minZoom: 0,
@@ -55,7 +57,9 @@ const initMap = (options: mapboxgl.MapboxOptions) => {
   map.addControl(new mapboxgl.AttributionControl({
     customAttribution: `v${mapboxgl.version}`
   }))
-  map.addControl(new mapboxgl.NavigationControl(), 'top-left')
+  map.addControl(new mapboxgl.NavigationControl({
+    visualizePitch: true
+  }), 'top-left')
   map.addControl(new mapboxgl.FullscreenControl(), 'top-left')
   map.addControl(
     new HomeControl({
@@ -72,9 +76,8 @@ const initMap = (options: mapboxgl.MapboxOptions) => {
   })
   if (props.mapClickable) {
     map.on('click', (e: mapboxgl.MapMouseEvent & mapboxgl.EventData) => {
-      console.log(map.getZoom(), map.getCenter())
-
       const features = map.queryRenderedFeatures(e.point)
+
       if (features.length > 0) {
         const feature = features[0]
         const { layer, properties, geometry } = feature
