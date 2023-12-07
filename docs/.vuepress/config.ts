@@ -70,10 +70,7 @@ export default defineUserConfig({
           text: '地图服务',
           children: [
             '/starter/service/',
-            '/starter/service/wmts',
-            '/starter/service/tms',
-            '/starter/service/wfs',
-            '/starter/service/wms',
+            '/starter/service/geoserver',
             '/starter/service/ogcapi',
           ],
         },
