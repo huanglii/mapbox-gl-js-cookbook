@@ -4,16 +4,7 @@
 
 ## WMTS
 
-> 标准：[Web Map Tile Service](http://www.opengeospatial.org/standards/wmts)
-
-Web Map Tile Service（Web 地图瓦片服务），简称 `WMTS`。WMTS 标准定义了一些操作允许用户访问瓦片地图。WMTS 服务中包括以下 3 个操作：
-
-1. GetCapabilities（获取服务的元信息）
-2. GetTile（获取瓦片）
-3. GetFeatureInfo（可选，获取点选的要素信息）
-
 利用 `GetTile` 操作和指定输出格式即可在 Mapbox GL JS 中使用。
-
 
 ```js
 // 栅格瓦片 image/png
@@ -39,10 +30,6 @@ Web Map Tile Service（Web 地图瓦片服务），简称 `WMTS`。WMTS 标准�
 
 ## TMS
 
-> 标准：[Tile Map Service](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification)
-
-Tile Map Service（瓦片地图服务），简称 `TMS`。
-
 ```js{7,16}
 // 矢量
 'source-id': {
@@ -65,15 +52,6 @@ Tile Map Service（瓦片地图服务），简称 `TMS`。
 
 ## WFS
 
-> 标准：[Web Feature Service](http://www.opengeospatial.org/standards/wfs)
-
-Web Feature Service（Web 要素服务），简称 WFS。WFS 标准定义了一些操作允许用户通过 HTTP 对空间数据进行查询、编辑等操作。WFS 服务中常用的操作包括：
-
-1. GetCapabilities（获取服务中的要素类及支持的操作）
-2. DescribeFeatureType（描述要素类的信息）
-3. GetFeature（获取要素）
-4. Transaction（创建、更新、删除数据的事务操作）
-
 利用 `GetFeature` 操作和指定输出格式即可在 Mapbox GL JS 中使用。
 
 加载示例（application/json 格式）：
@@ -92,14 +70,6 @@ Web Feature Service（Web 要素服务），简称 WFS。WFS 标准定义了一�
   :::
 
 ## WMS
-
-> 标准：[Web Map Service](http://www.opengeospatial.org/standards/wms)
-
-Web Map Service（Web 地图服务），简称 `WMS`。WMS 标准定义了允许用户通过 HTTP 对空间数据进行渲染出图等操作。WMS 服务中包括以下 3 个操作：
-
-1. GetCapabilities（获取服务中的要素类及支持的操作）
-2. GetMap（获取地图）
-3. GetFeatureInfo（根据地图上的像素点获取更详细的要素信息，类似 Identify 功能）
 
 利用 `GetMap` 操作和指定地图边框范围（`bbox`）和输出格式（`format`）即可在 Mapbox GL JS 中使用。
 
