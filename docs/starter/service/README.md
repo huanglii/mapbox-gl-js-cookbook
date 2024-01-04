@@ -12,9 +12,11 @@ Web Map Service（Web 地图服务），简称 `WMS`。WMS 标准定义了允许
 2. GetMap（获取地图）
 3. GetFeatureInfo（根据地图上的像素点获取更详细的要素信息，类似 Identify 功能）
 
-## [TMS](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification) 与 [WMTS](http://www.opengeospatial.org/standards/wmts)
+## [TMS](https://wiki.osgeo.org/wiki/Tile_Map_Service_Specification)
 
 瓦片地图服务 (Tile Map Service，简称 `TMS`) 是开源空间信息基金会 (Open Source Geospatial Foundation，简称 OSGeo) 定义的瓦片地图服务，与开放地理空间信息联盟 (Open Geospatial Consortium，简称 OGC) 定义的 WMTS(Web Map Tile Service) 有所区别。
+
+## [WMTS](http://www.opengeospatial.org/standards/wmts)
 
 Web 地图瓦片服务 (Web Map Tile Service，简称 `WMTS`)，标准定义了一些操作允许用户访问瓦片地图。WMTS 服务中包括以下 3 个操作：
 
@@ -22,7 +24,7 @@ Web 地图瓦片服务 (Web Map Tile Service，简称 `WMTS`)，标准定义了�
 2. GetTile（获取瓦片）
 3. GetFeatureInfo（可选，获取点选的要素信息）
 
-**两者的切片规则不同：**
+**与 TMS 切片规则不同：**
 
 在 Mapbox GL JS 的 [vector](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#vector) 和 [raster](https://docs.mapbox.com/mapbox-gl-js/style-spec/sources/#raster) 数据源中有一个 `scheme` 属性。该属性影响瓦片坐标 `y` 轴的方向，有两个值可选：`xyz`（默认）和 `tms`。
 
@@ -36,11 +38,11 @@ Web 地图瓦片服务 (Web Map Tile Service，简称 `WMTS`)，标准定义了�
 1. [The difference between XYZ and TMS tiles and how to convert between them]()
    :::
 
-## [WFS](http://www.opengeospatial.org/standards/wfs)
+<!-- ## [WFS](http://www.opengeospatial.org/standards/wfs)
 
 Web Feature Service（Web 要素服务），简称 WFS。WFS 标准定义了一些操作允许用户通过 HTTP 对空间数据进行查询、编辑等操作。WFS 服务中常用的操作包括：
 
 1. GetCapabilities（获取服务中的要素类及支持的操作）
 2. DescribeFeatureType（描述要素类的信息）
 3. GetFeature（获取要素）
-4. Transaction（创建、更新、删除数据的事务操作）
+4. Transaction（创建、更新、删除数据的事务操作） -->
