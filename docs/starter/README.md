@@ -6,8 +6,14 @@
 
 ```bash
 npm install --save mapbox-gl
-npm install --save-dev @types/mapbox-gl
+
+# v3.5.0 之后无需安装
+# npm install --save-dev @types/mapbox-gl
 ```
+
+::: tip
+[mapbox-gl@v3.5.0](https://github.com/mapbox/mapbox-gl-js/releases/tag/v3.5.0) 转为 TypeScript，不用再需安装 `@types/mapbox-gl`。
+:::
 
 2. 添加 CSS 样式文件
 
@@ -55,5 +61,5 @@ map.on('load', () => {
 此示例代码用于仅在加载地图的资源（包括样式）后添加图层。如果立即运行 `map.addLayer`，则会触发错误：`Error: Style is not done loading`，因为要添加图层的样式不存在。
 
 ::: tip
-有关地图图层的渲染，请参考：[样式规范](/mapbox-gl-js-cookbook/style-spec/)。
+有关地图图层的渲染规范，请参考：[样式规范](/mapbox-gl-js-cookbook/style-spec/)。
 :::

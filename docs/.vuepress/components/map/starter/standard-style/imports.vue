@@ -1,12 +1,13 @@
 <template>
-  <base-map :map-options="mapOptions" @load="handleMapLoaded" />
+  <base-map :map-options="mapOptions" />
 </template>
 
 <script setup lang="ts">
-import { withBase } from '@vuepress/client'
-import BaseMap from '../../base-map.vue'
+import { withBase } from '@vuepress/client';
+import type { MapOptions } from 'mapbox-gl';
+import BaseMap from '../../base-map.vue';
 
-const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
+const mapOptions: Omit<MapOptions, 'container'> = {
   center: [107.744809, 30.180706],
   zoom: 6,
   style: {
@@ -36,9 +37,5 @@ const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
       }
     ]
   }
-}
-
-function handleMapLoaded(map: mapboxgl.Map) {
-
 }
 </script>

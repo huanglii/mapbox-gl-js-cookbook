@@ -1,12 +1,13 @@
+import type { AnimationOptions, CameraOptions } from 'mapbox-gl'
 import { createDom, removeDom } from '../../utils'
 
 const className = 'mapboxgl-ctrl'
 class HomeControl implements mapboxgl.IControl {
   private _container: HTMLElement
   private _map?: mapboxgl.Map
-  private _options: mapboxgl.EaseToOptions
+  private _options: CameraOptions & AnimationOptions
 
-  constructor(options: mapboxgl.EaseToOptions) {
+  constructor(options: CameraOptions & AnimationOptions) {
     this._options = Object.assign(
       {},
       {

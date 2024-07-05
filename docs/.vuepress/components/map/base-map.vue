@@ -16,7 +16,7 @@ import HomeControl from '../control/HomeControl';
 
 interface Props {
   height?: number
-  mapOptions?: Omit<mapboxgl.MapboxOptions, 'container'>
+  mapOptions?: Omit<mapboxgl.MapOptions, 'container'>
   mapClickable?: boolean
 }
 const props = withDefaults(defineProps<Props>(), {
@@ -32,9 +32,8 @@ let map: mapboxgl.Map
 let mapLoaded = ref(false)
 
 onMounted(() => {
-  const mapDefaultOptions: mapboxgl.MapboxOptions = {
+  const mapDefaultOptions: mapboxgl.MapOptions = {
     container: mapContainer,
-    // style: STYLE.DEFAULT,
     style: withBase('/mapbox/standard.json'),
     center: [104.294538, 35.860092],
     zoom: 2.4,
@@ -67,7 +66,7 @@ onMounted(() => {
   initMap(options)
 })
 
-const initMap = (options: mapboxgl.MapboxOptions) => {
+const initMap = (options: mapboxgl.MapOptions) => {
   mapboxgl.accessToken = TK
   map = new mapboxgl.Map(options)
   map.addControl(new mapboxgl.AttributionControl({
@@ -86,12 +85,12 @@ const initMap = (options: mapboxgl.MapboxOptions) => {
     }),
     'bottom-left'
   )
-  map.on('load', (e: mapboxgl.MapboxEvent<undefined> & mapboxgl.EventData) => {
+  map.on('load', (e) => {
     mapLoaded.value = true
     emit('load', e.target)
   })
   if (props.mapClickable) {
-    map.on('click', (e: mapboxgl.MapMouseEvent & mapboxgl.EventData) => {
+    map.on('click', (e) => {
       const features = map.queryRenderedFeatures(e.point)
 
       if (features.length > 0) {
@@ -101,7 +100,7 @@ const initMap = (options: mapboxgl.MapboxOptions) => {
         if (geometry.type === 'Point') {
           lngLat = geometry.coordinates as [number, number]
         }
-        if (properties) {
+        if (layer && properties) {
           new mapboxgl.Popup().setLngLat(lngLat).setHTML(createPropHtml(layer.id, properties)).addTo(map)
         }
       }

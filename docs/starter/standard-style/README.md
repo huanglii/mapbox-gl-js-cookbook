@@ -115,3 +115,9 @@ Mapbox 标准样式类似于底图 (`basemap`) 的概念，但又不同于传统
 ```ts
 map.setConfigProperty('basemap', 'showPlaceLabels', false)
 ```
+
+<!-- ## 模型
+
+<ClientOnly>
+  <common-code-view name="starter-standard-style-model"/>
+</ClientOnly> -->

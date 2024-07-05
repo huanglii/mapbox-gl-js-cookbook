@@ -3,15 +3,16 @@
 </template>
 
 <script setup lang="ts">
-import BaseMap from '../../base-map.vue'
+import type { MapOptions } from 'mapbox-gl';
+import BaseMap from '../../base-map.vue';
 
-const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
+const mapOptions: Omit<MapOptions, 'container'> = {
   center: [2.2945, 48.8606],
   zoom: 15.4,
   pitch: 60,
 }
 
-function handleMapLoaded(map: mapboxgl.Map) {
+function handleMapLoaded(map) {
   let lightPreset = 'day'
   const h = new Date().getHours()
 
