@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-4210e1f2","path":"/example/data-heatmap.html","title":"","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1720189011000,"contributors":[{"name":"huanglii","email":"naivemap@163.com","commits":1}]},"filePathRelative":"example/data-heatmap.md"}');export{a as data};

@@ -1,0 +1,1 @@
+const a=JSON.parse('{"key":"v-9d854f3c","path":"/plugins/image-layer.html","title":"ImageLayer","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1720189011000,"contributors":[{"name":"huanglii","email":"naivemap@163.com","commits":1}]},"filePathRelative":"plugins/image-layer.md"}');export{a as data};
