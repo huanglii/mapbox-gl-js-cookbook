@@ -1,1 +1,0 @@
-const e=JSON.parse('{"key":"v-45f33db2","path":"/style-spec/sources/custom.html","title":"自定义数据源","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1720189011000,"contributors":[{"name":"huanglii","email":"naivemap@163.com","commits":1}]},"filePathRelative":"style-spec/sources/custom.md"}');export{e as data};

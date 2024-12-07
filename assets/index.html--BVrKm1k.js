@@ -1,1 +1,0 @@
-const a=JSON.parse('{"key":"v-1a3a3bea","path":"/data/point/","title":"点数据","lang":"zh-CN","frontmatter":{},"headers":[],"git":{"updatedTime":1720189011000,"contributors":[{"name":"huanglii","email":"naivemap@163.com","commits":1}]},"filePathRelative":"data/point/README.md"}');export{a as data};
