@@ -1,4 +1,4 @@
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 
 export const createDom = (tagName: string, className?: string, container?: HTMLElement) => {
   const el = window.document.createElement(tagName)

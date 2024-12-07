@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { withBase } from '@vuepress/client';
+import { withBase } from 'vuepress/client';
 import { STYLE } from '../../../utils/constant';
 import BaseMap from '../base-map.vue';
 

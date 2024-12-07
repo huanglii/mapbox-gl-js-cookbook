@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import BaseMap from '../base-map.vue'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 
 const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   center: [104.2945384995, 35.8600924965],
@@ -15,6 +15,7 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
     {
       id: 'image-layer',
       type: 'raster',
+      slot: 'bottom',
       source: {
         type: 'image',
         url: withBase('/assets/images/3857.png'),
@@ -25,8 +26,7 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
           [73.50014498, 18.158746],
         ],
       },
-    },
-    'aeroway-line'
+    }
   )
 }
 </script>

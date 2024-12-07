@@ -10,7 +10,7 @@
 <script setup lang="ts">
 import BaseMap from '../base-map.vue'
 import PolygonMorpher from '@naivemap/mapbox-gl-polygon-morpher'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 
 const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   center: [-73.950543, 40.76110],

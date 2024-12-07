@@ -1,7 +1,12 @@
-import registerComponentsPlugin from '@vuepress/plugin-register-components'
-import searchPlugin from '@vuepress/plugin-search'
-import { path } from '@vuepress/utils'
-import { defaultTheme, defineUserConfig, viteBundler } from 'vuepress'
+import { viteBundler } from '@vuepress/bundler-vite'
+import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { searchPlugin } from '@vuepress/plugin-search'
+import { defaultTheme } from '@vuepress/theme-default'
+import { defineUserConfig } from 'vuepress/cli'
+import { getDirname, path } from 'vuepress/utils'
+
+
+const __dirname = import.meta.dirname || getDirname(import.meta.url)
 
 export default defineUserConfig({
   lang: 'zh-CN',
@@ -9,9 +14,6 @@ export default defineUserConfig({
   description: 'Mapbox GL JS Cookbook',
   base: '/mapbox-gl-js-cookbook/',
   head: [['link', { rel: 'icon', href: '/mapbox-gl-js-cookbook/assets/logo.png' }]],
-  bundler: viteBundler({
-    // vite bundler config
-  }),
   alias: {
     '@': path.resolve(__dirname, './'),
   },
@@ -68,11 +70,7 @@ export default defineUserConfig({
         },
         {
           text: '地图服务',
-          children: [
-            '/starter/service/',
-            '/starter/service/geoserver',
-            '/starter/service/ogcapi',
-          ],
+          children: ['/starter/service/', '/starter/service/geoserver', '/starter/service/ogcapi'],
         },
       ],
       '/style-spec/': [
@@ -85,7 +83,7 @@ export default defineUserConfig({
             {
               text: '数据源',
               children: [
-                '/style-spec/sources',
+                '/style-spec/sources/',
                 '/style-spec/sources/tile',
                 '/style-spec/sources/geojson',
                 '/style-spec/sources/image-video',
@@ -181,4 +179,6 @@ export default defineUserConfig({
     toggleColorMode: '切换颜色模式',
     toggleSidebar: '切换侧边栏',
   }),
+
+  bundler: viteBundler(),
 })

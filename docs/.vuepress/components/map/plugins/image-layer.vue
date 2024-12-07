@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import ImageLayer from '@naivemap/mapbox-gl-image-layer'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 import { STYLE } from '../../../utils/constant'
 import BaseMap from '../base-map.vue'
 

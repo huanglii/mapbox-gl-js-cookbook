@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import BaseMap from '../base-map.vue'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 import { MapboxLayer } from '@deck.gl/mapbox'
 import { GridLayer } from '@deck.gl/aggregation-layers'
 import { STYLE } from '../../../utils/constant'

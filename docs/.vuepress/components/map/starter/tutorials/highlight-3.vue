@@ -5,7 +5,7 @@
 <script setup lang="ts">
 import { addImages } from '../../../../utils'
 import baseMap from '../../base-map.vue'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 
 const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
   center: [107.744809, 30.180706],

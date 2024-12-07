@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import mapboxgl from 'mapbox-gl'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 import baseMap from '../../base-map.vue'
 import { STYLE } from '../../../../utils/constant'
 

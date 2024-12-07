@@ -1,5 +1,5 @@
-@import './fonts/medium.scss';
-@import './fonts/regular.scss';
+@use './fonts/medium.scss';
+@use './fonts/regular.scss';
 
 :root {
   --content-width: 900px;
