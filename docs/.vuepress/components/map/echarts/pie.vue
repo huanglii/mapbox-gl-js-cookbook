@@ -6,7 +6,7 @@
 import BaseMap from '../base-map.vue'
 import mapboxgl from 'mapbox-gl'
 import turfDistance from '@turf/distance'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 import type { Position } from 'geojson'
 import { STYLE } from '../../../utils/constant'
 import * as echarts from 'echarts/core'

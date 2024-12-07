@@ -3,7 +3,7 @@
 </template>
 
 <script setup lang="ts">
-import { withBase } from '@vuepress/client';
+import { withBase } from 'vuepress/client';
 import type { MapOptions } from 'mapbox-gl';
 import BaseMap from '../../base-map.vue';
 

@@ -4,7 +4,7 @@
 
 <script setup lang="ts">
 import BaseMap from '../base-map.vue'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 import { STYLE } from '../../../utils/constant'
 import addTrackCarLayer from '../../../snippet/track/car'
 import { addImages } from '../../../utils';

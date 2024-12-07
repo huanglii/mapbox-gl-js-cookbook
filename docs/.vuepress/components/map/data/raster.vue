@@ -6,7 +6,6 @@
 import BaseMap from '../base-map.vue'
 
 const mapOptions: Omit<mapboxgl.MapboxOptions, 'container'> = {
-  zoom: 2,
   style: {
     version: 8,
     sources: {},
@@ -20,11 +19,8 @@ const handleMapLoaded = (map: mapboxgl.Map) => {
     type: 'raster',
     source: {
       type: 'raster',
-      tiles: ['https://stamen-tiles.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.jpg'],
+      tiles: ['https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}'],
       tileSize: 256,
-    },
-    paint: {
-      'raster-opacity': 0.8,
     },
   })
 }

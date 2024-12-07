@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import { withBase } from '@vuepress/client';
+import { withBase } from 'vuepress/client';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css';
 import { onMounted, ref } from 'vue';

@@ -15,7 +15,7 @@
 
 <script setup lang="ts">
 import BaseMap from '../base-map.vue'
-import { withBase } from '@vuepress/client'
+import { withBase } from 'vuepress/client'
 import { STYLE } from '../../../utils/constant'
 
 let map: mapboxgl.Map
