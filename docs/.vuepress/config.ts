@@ -1,7 +1,7 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
-// import { docsearchPlugin } from '@vuepress/plugin-docsearch'
-import { searchPlugin } from '@vuepress/plugin-search'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
+// import { searchPlugin } from '@vuepress/plugin-search'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { getDirname, path } from 'vuepress/utils'
@@ -22,47 +22,54 @@ export default defineUserConfig({
     '@': path.resolve(__dirname, './'),
   },
   plugins: [
-    searchPlugin({
-      // 配置项
-    }),
-    // docsearchPlugin({
-    //   appId: 'O28CRXQHGQ',
-    //   apiKey: 'fa3d7a24cc80e676ff6553e308f28527',
-    //   indexName: 'naivemap',
-    //   locales: {
-    //     '/': {
-    //       placeholder: '搜索文档',
-    //       translations: {
-    //         button: {
-    //           buttonText: '搜索文档',
-    //         },
-    //         modal: {
-    //           searchBox: {
-    //             resetButtonTitle: '清空查询条件',
-    //             resetButtonAriaLabel: '清空查询条件',
-    //             cancelButtonText: '取消',
-    //             cancelButtonAriaLabel: '取消',
-    //           },
-    //           startScreen: {
-    //             recentSearchesTitle: '搜索历史',
-    //             noRecentSearchesText: '没有搜索历史',
-    //             saveRecentSearchButtonTitle: '保存至搜索历史',
-    //           },
-    //           errorScreen: {
-    //             titleText: '无法获取结果',
-    //             helpText: '你可能需要检查你的网络连接',
-    //           },
-    //           footer: {
-    //             selectText: '选择',
-    //             navigateText: '切换',
-    //             closeText: '关闭',
-    //             searchByText: '搜索提供者',
-    //           },
-    //         },
-    //       },
-    //     },
-    //   },
+    // searchPlugin({
+    //   // 配置项
     // }),
+    docsearchPlugin({
+      appId: 'O28CRXQHGQ',
+      apiKey: 'ec3d37117d44f07718bd289ce2f56016',
+      indexName: 'naivemap',
+      locales: {
+        '/': {
+          placeholder: '搜索文档',
+          translations: {
+            button: {
+              buttonText: '搜索文档',
+            },
+            modal: {
+              searchBox: {
+                resetButtonTitle: '清空查询条件',
+                resetButtonAriaLabel: '清空查询条件',
+                cancelButtonText: '取消',
+                cancelButtonAriaLabel: '取消',
+              },
+              startScreen: {
+                recentSearchesTitle: '搜索历史',
+                noRecentSearchesText: '没有搜索历史',
+                saveRecentSearchButtonTitle: '保存至搜索历史',
+              },
+              errorScreen: {
+                titleText: '无法获取结果',
+                helpText: '你可能需要检查你的网络连接',
+              },
+              noResultsScreen: {
+                noResultsText: '无法找到相关结果',
+                reportMissingResultsText: '你认为该查询应该有结果?',
+                reportMissingResultsLinkText: '点击反馈',
+                suggestedQueryText: '你可以尝试查询',
+              },
+
+              footer: {
+                selectText: '选择',
+                navigateText: '切换',
+                closeText: '关闭',
+                searchByText: '搜索提供者',
+              },
+            },
+          },
+        },
+      },
+    }),
     registerComponentsPlugin({
       // 配置项
       componentsDir: path.resolve(__dirname, './components'),
