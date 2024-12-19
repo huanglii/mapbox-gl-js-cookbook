@@ -1,10 +1,10 @@
 import { viteBundler } from '@vuepress/bundler-vite'
 import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { docsearchPlugin } from '@vuepress/plugin-docsearch'
 import { searchPlugin } from '@vuepress/plugin-search'
 import { defaultTheme } from '@vuepress/theme-default'
 import { defineUserConfig } from 'vuepress/cli'
 import { getDirname, path } from 'vuepress/utils'
-
 
 const __dirname = import.meta.dirname || getDirname(import.meta.url)
 
@@ -13,13 +13,32 @@ export default defineUserConfig({
   title: 'Mapbox GL JS Cookbook',
   description: 'Mapbox GL JS Cookbook',
   base: '/mapbox-gl-js-cookbook/',
-  head: [['link', { rel: 'icon', href: '/mapbox-gl-js-cookbook/assets/logo.png' }]],
+  head: [
+    ['link', { rel: 'icon', href: '/mapbox-gl-js-cookbook/assets/logo.png' }],
+    // <meta name="algolia-site-verification"  content="5BFCC22EEF46CEE6" />
+    ['meta', { name: 'algolia-site-verification', content: '5BFCC22EEF46CEE6' }],
+  ],
   alias: {
     '@': path.resolve(__dirname, './'),
   },
   plugins: [
-    searchPlugin({
-      // 配置项
+    // searchPlugin({
+    //   // 配置项
+    // }),
+    docsearchPlugin({
+      appId: 'O28CRXQHGQ',
+      apiKey: 'fa3d7a24cc80e676ff6553e308f28527',
+      indexName: 'naivemap',
+      locales: {
+        '/': {
+          placeholder: '搜索文档',
+          translations: {
+            button: {
+              buttonText: '搜索文档',
+            },
+          },
+        },
+      },
     }),
     registerComponentsPlugin({
       // 配置项
