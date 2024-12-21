@@ -15,8 +15,7 @@ export default defineUserConfig({
   base: '/mapbox-gl-js-cookbook/',
   head: [
     ['link', { rel: 'icon', href: '/mapbox-gl-js-cookbook/assets/logo.png' }],
-    // <meta name="algolia-site-verification"  content="5BFCC22EEF46CEE6" />
-    ['meta', { name: 'algolia-site-verification', content: '5BFCC22EEF46CEE6' }],
+    ['meta', { name: 'algolia-site-verification', content: '4A24609825FB7212' }],
   ],
   alias: {
     '@': path.resolve(__dirname, './'),
