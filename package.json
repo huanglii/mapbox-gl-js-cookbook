@@ -48,6 +48,6 @@
     "@turf/meta": "^7.1.0",
     "city-selector-control": "^0.3.2",
     "echarts": "^5.5.1",
-    "mapbox-gl": "^3.8.0"
+    "mapbox-gl": "^3.10.0"
   }
 }
