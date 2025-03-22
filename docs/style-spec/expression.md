@@ -185,7 +185,7 @@ map.setFeatureState({ source: 'states', id: hoveredStateId }, { hover: false })
 
 ```js
 {
-  "filter": {
+  "filter": ["within", {
     "coordinates": [
       [
         [107, 30],
@@ -196,7 +196,7 @@ map.setFeatureState({ source: 'states', id: hoveredStateId }, { hover: false })
       ]
     ],
     "type": "Polygon"
-  }
+  }]
 }
 ```
 
